@@ -1,0 +1,766 @@
+code: SG
+name: Singapore
+native_name: Singapore / 新加坡 / Singapura / சிங்கப்பூர்
+region: Asia
+languages: [en, zh, ms, ta]
+updated: 2026-11-05
+research: research/example-identifiers-india-singapore.md
+summary: >
+  Singapore publishes official UBL 2.1 examples (PINT-SG, the InvoiceNow profile of Peppol)
+  and 19 Myinfo sandbox NRIC/FINs. However, every UEN in IMDA's examples fails its check
+  letter, and some UENs in them, or their "corrected" forms, belong to real entities. The
+  usable UENs here are therefore derived: they pass the check letter and were looked up in
+  ACRA's full open register (2.1 million rows). Local company numbers use a past year whose
+  serial range is closed, so they can never be issued. No authority reserves phone numbers,
+  domains, postcodes or company numbers for fiction. Not obtained: the IRAS Check GST
+  Register sandbox test data and the Myinfo v5 test personas. Postal sector 74 looks unused
+  but was not exhaustively verified.
+
+identifiers:
+  - name: UEN (Unique Entity Number)
+    format: "Business (ROB) nnnnnnnnX; local company (ROC) yyyynnnnnX; others [TSR]yyPQnnnnX"
+    check: sg-uen
+    authority: ACRA (and other issuing agencies for the "others" format)
+    notes: ACRA does not publish the check-letter algorithms; the python-stdnum rules were verified against all 2.1 M ACRA records. Peppol endpoint value is SGUEN + UEN.
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195"]
+  - name: GST registration number
+    format: Usually the UEN; otherwise M + check character + 7 digits + check letter (10 characters, e.g. M2-1234567-K)
+    authority: IRAS
+    notes: No public check algorithm for the M… format.
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+  - name: NRIC / FIN
+    format: "S/T (citizens, PRs) or F/G/M (foreigners) + 7 digits + check letter"
+    check: sg-nric
+    authority: ICA
+    notes: ICA does not publish the rule. The M series (FINs from 2022) uses a different table that was not verified.
+  - name: Postal code
+    format: 6 digits; first two = postal sector (01–82), last four = delivery point (one code per building)
+    authority: SingPost
+  - name: Telephone number
+    format: +65 + 8 digits; leading 6 fixed, 8/9 mobile, 3 VoIP
+    authority: IMDA (National Numbering Plan)
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: sg-uen-200212345e
+    category: organisation
+    type: UEN (local company)
+    value: 200212345E
+    label: PINT-SG example seller UEN with the check letter corrected
+    status: derived
+    checks: [sg-uen]
+    verified: &uen-2002-verified
+      - "Not in ACRA's open register, Entities Registered with ACRA, 2,127,089 rows (2026-11-05)"
+      - "Serial above 2002's highest issued serial 11246, so it can never be issued (2026-11-05)"
+    notes: &uen-gst-note >-
+      For most entities the GST registration number is the UEN, so this value also serves as
+      the GST number. Peppol endpoint value SGUEN200212345E. The official example uses 200212345Z, which fails the check letter.
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195", "cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: &uen-sources
+      - title: OpenPeppol / IMDA PINT-SG specification and examples
+        url: https://docs.peppol.eu/poac/sg/pint-sg/
+        publisher: OpenPeppol / IMDA
+        accessed: 2026-11-05
+      - title: Entities Registered with ACRA (data.gov.sg)
+        url: https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view
+        publisher: ACRA
+        accessed: 2026-11-05
+  - id: sg-uen-200254321c
+    category: organisation
+    type: UEN (local company)
+    value: 200254321C
+    label: PINT-SG example buyer UEN with the check letter corrected
+    status: derived
+    checks: [sg-uen]
+    verified: *uen-2002-verified
+    notes: The official example uses 200254321Z, which fails the check letter. Peppol endpoint value SGUEN200254321C; also usable as the GST number.
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195", "cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *uen-sources
+  - id: sg-uen-201054321z
+    category: organisation
+    type: UEN (local company)
+    value: 201054321Z
+    label: Local company UEN from closed year 2010
+    status: derived
+    checks: [sg-uen]
+    verified:
+      - "Not in ACRA's open register, 2,127,089 rows (2026-11-05)"
+      - "Serial 54321 above 2010's highest issued serial 27553 (2026-11-05)"
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195", "cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: &acra
+      - title: Entities Registered with ACRA (data.gov.sg)
+        url: https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view
+        publisher: ACRA
+        accessed: 2026-11-05
+  - id: sg-uen-200599999k
+    category: organisation
+    type: UEN (local company)
+    value: 200599999K
+    label: Local company UEN from closed year 2005
+    status: derived
+    checks: [sg-uen]
+    verified:
+      - "Not in ACRA's open register, 2,127,089 rows (2026-11-05)"
+      - "Serial 99999 above 2005's highest issued serial (2026-11-05)"
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195", "cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *acra
+  - id: sg-uen-201799990e
+    category: organisation
+    type: UEN (local company)
+    value: 201799990E
+    label: Local company UEN from closed year 2017
+    status: derived
+    checks: [sg-uen]
+    verified:
+      - "Not in ACRA's open register, 2,127,089 rows (2026-11-05)"
+      - "Serial 99990 above 2017's highest issued serial 37283 (2026-11-05)"
+    notes: Do not use years 2018 and later, where serials up to 99999 exist.
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195", "cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *acra
+  - id: sg-uen-99000001w
+    category: organisation
+    type: UEN (business)
+    value: 99000001W
+    label: Business (ROB) UEN with unused prefix 99
+    status: derived
+    checks: [sg-uen]
+    verified: &rob-verified
+      - "Not in ACRA's open register, 2,127,089 rows; highest issued ROB prefix is 53 (2026-11-05)"
+    notes: &rob-note Prefixes 54–99 are unused and will stay free for decades, but they are not formally closed.
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195"]
+    sources: *acra
+  - id: sg-uen-99000002l
+    category: organisation
+    type: UEN (business)
+    value: 99000002L
+    label: Business (ROB) UEN with unused prefix 99
+    status: derived
+    checks: [sg-uen]
+    verified: *rob-verified
+    notes: *rob-note
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195"]
+    sources: *acra
+  - id: sg-uen-99000003j
+    category: organisation
+    type: UEN (business)
+    value: 99000003J
+    label: Business (ROB) UEN with unused prefix 99
+    status: derived
+    checks: [sg-uen]
+    verified: *rob-verified
+    notes: *rob-note
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195"]
+    sources: *acra
+  - id: sg-uen-t99ll0001j
+    category: organisation
+    type: UEN (others)
+    value: T99LL0001J
+    label: LLP UEN in the "others" format for year 2099
+    status: derived
+    checks: [sg-uen]
+    verified: ["Not in ACRA's open register, 2,127,089 rows (2026-11-05)"]
+    notes: The open dataset holds ACRA-issued UENs only; "others" UENs from other agencies were not checked.
+    ubl: ["cbc:EndpointID @schemeID=0195", "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195"]
+    sources: *acra
+  - id: sg-gst-m21234567k
+    category: organisation
+    type: GST registration number
+    value: M21234567K
+    label: IRAS's own example of a separate GST registration number
+    status: published-example
+    notes: Also written M2-1234567-K; used in the PINT-SG examples too (with M2-7654321-K and MR85004322). There is no public check algorithm, so the value could not be validated.
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources:
+      - title: IRAS — Invoicing customers
+        url: https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/invoicing-price-display-and-record-keeping/invoicing-customers
+        publisher: IRAS
+        accessed: 2026-11-05
+      - title: OpenPeppol / IMDA PINT-SG specification and examples
+        url: https://docs.peppol.eu/poac/sg/pint-sg/
+        publisher: OpenPeppol / IMDA
+        accessed: 2026-11-05
+  - id: sg-name-gallery-photo-supplier
+    category: organisation
+    type: Company name
+    value: Gallery Photo Supplier
+    label: Seller name in the official PINT-SG examples
+    status: published-example
+    verified: ["No ACRA entity name contains it, open register of 2,127,089 rows (2026-11-05)"]
+    ubl: ["cac:PartyLegalEntity/cbc:RegistrationName"]
+    sources: &pintsg
+      - title: OpenPeppol / IMDA PINT-SG — resources.zip (examples)
+        url: https://docs.peppol.eu/poac/sg/pint-sg/resources.zip
+        publisher: OpenPeppol / IMDA
+        accessed: 2026-11-05
+
+  # --- Address ----------------------------------------------------------------
+  - id: sg-address-upu-private-landed
+    category: address
+    type: Address example (private person)
+    kind: placeholder
+    value: "Ms. Tan Bee Soo / 16 Sandilands Road / SINGAPORE 546080"
+    label: UPU's example of a Singapore house address
+    status: published-example
+    verified: ["Real address, found in SLA OneMap (2026-11-05)"]
+    notes: Invented person at a real address, the same pattern as La Poste in France.
+    sources: &upu-sg
+      - title: UPU — Postal addressing systems, Singapore (07/2009)
+        url: https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/sgpEn.pdf
+        publisher: Universal Postal Union
+        accessed: 2026-11-05
+  - id: sg-address-upu-private-unit
+    category: address
+    type: Address example (private person, apartment)
+    kind: placeholder
+    value: "Mr. M. Rajendran / Blk 35 Mandalay Road / # 13–37 Mandalay Towers / SINGAPORE 308215"
+    label: UPU's example of a Singapore block address with unit number
+    status: published-example
+    verified: ["Real address, found in SLA OneMap (2026-11-05)"]
+    notes: "#13-37 = floor 13, unit 37."
+    sources: *upu-sg
+  - id: sg-address-jalan-ang-teng
+    category: address
+    type: Address example (company)
+    kind: placeholder
+    value: "888 Jalan Ang Teng / Singapore 560009"
+    label: Invented street and postcode from the official PINT-SG examples
+    status: published-example
+    verified: ["Postcode 560009 not found in SLA OneMap (2026-11-05)"]
+    notes: Passes a 6-digit format check only; fails any existence check.
+    sources: *pintsg
+  - id: sg-address-central-road
+    category: address
+    type: Address example (company)
+    kind: placeholder
+    value: "Central road 56 / Singapore 321156"
+    label: Invented street and postcode from the official PINT-SG examples
+    status: published-example
+    verified: ["Postcode 321156 not found in SLA OneMap (2026-11-05)"]
+    sources: *pintsg
+  - id: sg-postcode-unused-sectors
+    category: address
+    type: Postcode range
+    kind: range
+    value: 00xxxx, 83xxxx–99xxxx
+    label: Postal sectors beyond the defined range 01–82
+    status: derived
+    verified: ["Sample codes 000000, 830000 and 990000 not found in SLA OneMap (2026-11-05)"]
+    notes: Pass a 6-digit format check but fail any existence check.
+    sources:
+      - title: Wikipedia — Postal codes in Singapore
+        url: https://en.wikipedia.org/wiki/Postal_codes_in_Singapore
+        publisher: Wikipedia
+        accessed: 2026-11-05
+      - title: SLA OneMap Search API
+        url: https://www.onemap.gov.sg/apidocs/
+        publisher: Singapore Land Authority
+        accessed: 2026-11-05
+
+  # --- Contact -------------------------------------------------------------------
+  - id: sg-phone-4
+    category: contact
+    type: Phone range
+    kind: range
+    value: +65 4xxx xxxx
+    label: Numbers with an unassigned leading digit (4)
+    status: derived
+    verified: &nnp-verified ["IMDA National Numbering Plan Issue 2 (February 2026) §2.2.1: leading digits 2, 4 and 5 have no service type and cannot be used (2026-11-05)"]
+    notes: &nnp-note Cannot be assigned under the current plan, but not formally reserved for fiction. libphonenumber flags them as invalid.
+    sources: &nnp
+      - title: IMDA National Numbering Plan
+        url: https://www.imda.gov.sg/-/media/imda/files/regulation-licensing-and-consultations/frameworks-and-policies/numbering/national-numbering-plan-and-allocation-process/imda-national-numbering-plan.pdf
+        publisher: IMDA
+        accessed: 2026-11-05
+  - id: sg-phone-5
+    category: contact
+    type: Phone range
+    kind: range
+    value: +65 5xxx xxxx
+    label: Numbers with an unassigned leading digit (5)
+    status: derived
+    verified: *nnp-verified
+    notes: *nnp-note
+    sources: *nnp
+  - id: sg-phone-2
+    category: contact
+    type: Phone range
+    kind: range
+    value: +65 2xxx xxxx
+    label: Numbers with an unassigned leading digit (2)
+    status: derived
+    verified: *nnp-verified
+    notes: *nnp-note
+    sources: *nnp
+
+  # --- Banking -------------------------------------------------------------------
+  - id: sg-account-000166000001
+    category: banking
+    type: Bank account number
+    value: "000166000001"
+    label: Payee account number in the PINT-SG examples
+    status: published-example
+    notes: Singapore has no IBAN and no account checksum. Do not reuse the branch/BIC ICDLOG from the same examples.
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+    sources: *pintsg
+  - id: sg-account-17173211234567890
+    category: banking
+    type: Bank account number
+    value: "17173211234567890"
+    label: Payee account number in the PINT-SG examples
+    status: published-example
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+    sources: *pintsg
+  - id: sg-account-93274234
+    category: banking
+    type: Bank account number
+    value: "93274234"
+    label: Payee account number in the PINT-SG examples
+    status: published-example
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+    sources: *pintsg
+  - id: sg-paymentmeans-z01
+    category: banking
+    type: Payment means code
+    value: Z01
+    label: GIRO payment means code used in PINT-SG
+    status: published-example
+    notes: Other codes in the examples are 30 (bank transfer) and 54 (credit card).
+    ubl: ["cac:PaymentMeans/cbc:PaymentMeansCode"]
+    sources: *pintsg
+  - id: sg-paymentmeans-z02
+    category: banking
+    type: Payment means code
+    value: Z02
+    label: PayNow payment means code used in PINT-SG
+    status: published-example
+    notes: No public PayNow test environment or test proxy exists.
+    ubl: ["cac:PaymentMeans/cbc:PaymentMeansCode"]
+    sources: *pintsg
+
+  # --- Person ----------------------------------------------------------------------
+  - id: sg-nric-s9812381d
+    category: person
+    type: NRIC
+    value: S9812381D
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: &nric-note >-
+      GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could
+      coincide with real people's numbers. Use the number only: persona data includes real
+      addresses, live-range mobiles and a gmail.com address.
+    sources: &myinfo
+      - title: Singpass developer docs — Myinfo v4 Tutorial 1, person sample data
+        url: https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data
+        publisher: GovTech Singapore
+        accessed: 2026-11-05
+  - id: sg-nric-s9812382b
+    category: person
+    type: NRIC
+    value: S9812382B
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9812385g
+    category: person
+    type: NRIC
+    value: S9812385G
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9812387c
+    category: person
+    type: NRIC
+    value: S9812387C
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9812379b
+    category: person
+    type: NRIC
+    value: S9812379B
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9912363z
+    category: person
+    type: NRIC
+    value: S9912363Z
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9912366d
+    category: person
+    type: NRIC
+    value: S9912366D
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9912369i
+    category: person
+    type: NRIC
+    value: S9912369I
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9912370b
+    category: person
+    type: NRIC
+    value: S9912370B
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9912372i
+    category: person
+    type: NRIC
+    value: S9912372I
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s9912374e
+    category: person
+    type: NRIC
+    value: S9912374E
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s6005053h
+    category: person
+    type: NRIC
+    value: S6005053H
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-nric-s6005055d
+    category: person
+    type: NRIC
+    value: S6005055D
+    label: Myinfo sandbox persona NRIC
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-fin-f1612347k
+    category: person
+    type: FIN
+    value: F1612347K
+    label: Myinfo sandbox persona FIN
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-fin-g1612348q
+    category: person
+    type: FIN
+    value: G1612348Q
+    label: Myinfo sandbox persona FIN
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-fin-g1612349n
+    category: person
+    type: FIN
+    value: G1612349N
+    label: Myinfo sandbox persona FIN
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-fin-g1612350t
+    category: person
+    type: FIN
+    value: G1612350T
+    label: Myinfo sandbox persona FIN
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-fin-g1612352n
+    category: person
+    type: FIN
+    value: G1612352N
+    label: Myinfo sandbox persona FIN
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+  - id: sg-fin-g1612353l
+    category: person
+    type: FIN
+    value: G1612353L
+    label: Myinfo sandbox persona FIN
+    status: published-example
+    checks: [sg-nric]
+    notes: *nric-note
+    sources: *myinfo
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: sg-avoid-uen-201012456c
+    category: organisation
+    type: UEN
+    value: 201012456C
+    label: Seller UEN in PINT-SG example 07 (foreign buyer)
+    status: avoid
+    checks: [sg-uen]
+    reason: Real company, SINGTEL MOBILE SINGAPORE PTE. LTD. (ACRA register, registered 2010-06-10).
+    sources: &pintsg-acra
+      - title: OpenPeppol / IMDA PINT-SG — resources.zip (examples)
+        url: https://docs.peppol.eu/poac/sg/pint-sg/resources.zip
+        publisher: OpenPeppol / IMDA
+        accessed: 2026-11-05
+      - title: Entities Registered with ACRA (data.gov.sg)
+        url: https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view
+        publisher: ACRA
+        accessed: 2026-11-05
+  - id: sg-avoid-uen-t08ga0028a
+    category: organisation
+    type: UEN
+    value: T08GA0028A
+    label: Government buyer UEN in PINT-SG example 05
+    status: avoid
+    checks: [sg-uen]
+    reason: Real UEN of the Accountant-General's Department, the government's central e-invoice receiving point. Use only when a real government buyer is intended.
+    sources: *pintsg
+  - id: sg-avoid-uen-202012345h
+    category: organisation
+    type: UEN
+    value: 202012345H
+    label: '"Corrected" form of the IMDA TX2 annex UEN 202012345M'
+    status: avoid
+    checks: [sg-uen]
+    reason: Real ACRA entity (VMG TECH PTE. LTD.). Do not "fix" the check letter of official example UENs.
+    sources: &tx2-acra
+      - title: IMDA TX2 Annex — Data specifications
+        url: https://www.imda.gov.sg/-/media/imda/files/programme/nationwide-e-invoicing-framework/invoicenow-technical-playbook/tx2---annex---data-specifications.pdf
+        publisher: IMDA
+        accessed: 2026-11-05
+      - title: Entities Registered with ACRA (data.gov.sg)
+        url: https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view
+        publisher: ACRA
+        accessed: 2026-11-05
+  - id: sg-avoid-uen-202345678w
+    category: organisation
+    type: UEN
+    value: 202345678W
+    label: '"Corrected" form of the IMDA TX2 annex UEN 202345678A'
+    status: avoid
+    checks: [sg-uen]
+    reason: Real ACRA entity. Do not "fix" the check letter of official example UENs.
+    sources: *tx2-acra
+  - id: sg-avoid-uen-200212345z
+    category: organisation
+    type: UEN
+    value: 200212345Z
+    label: Seller UEN in the official PINT-SG examples
+    status: avoid
+    fails_checks: [sg-uen]
+    reason: Wrong check letter (correct is E). Use 200212345E instead.
+    sources: *pintsg
+  - id: sg-avoid-uen-200254321z
+    category: organisation
+    type: UEN
+    value: 200254321Z
+    label: Buyer UEN in the official PINT-SG examples
+    status: avoid
+    fails_checks: [sg-uen]
+    reason: Wrong check letter (correct is C). Use 200254321C instead.
+    sources: *pintsg
+  - id: sg-avoid-uen-200212345y
+    category: organisation
+    type: UEN
+    value: 200212345Y
+    label: Payee ID in IMDA's InvoiceNow Enterprise Best Practice Guide
+    status: avoid
+    fails_checks: [sg-uen]
+    reason: Wrong check letter.
+    sources:
+      - title: IMDA InvoiceNow Enterprise Best Practice Guide v1.1
+        url: https://file.go.gov.sg/invoicenow-enterprise-guide.pdf
+        publisher: IMDA
+        accessed: 2026-11-05
+  - id: sg-avoid-uen-202012345m
+    category: organisation
+    type: UEN
+    value: 202012345M
+    label: UEN in IMDA's TX2 annex
+    status: avoid
+    fails_checks: [sg-uen]
+    reason: Wrong check letter, and the corrected form 202012345H is a real company.
+    sources: *tx2-acra
+  - id: sg-avoid-uen-202345678a
+    category: organisation
+    type: UEN
+    value: 202345678A
+    label: UEN in IMDA's TX2 annex (as SGUEN202345678A)
+    status: avoid
+    fails_checks: [sg-uen]
+    reason: Wrong check letter, and the corrected form 202345678W is a real entity.
+    sources: *tx2-acra
+  - id: sg-avoid-uen-123456789a
+    category: organisation
+    type: UEN
+    value: 123456789A
+    label: IRAS's example "UEN / GST Reg No. 123456789A"
+    status: avoid
+    fails_checks: [sg-uen]
+    reason: Not a valid UEN (year 1234, wrong check letter).
+    sources:
+      - title: IRAS — Invoicing customers
+        url: https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/invoicing-price-display-and-record-keeping/invoicing-customers
+        publisher: IRAS
+        accessed: 2026-11-05
+  - id: sg-avoid-paynow-uen123456879
+    category: banking
+    type: PayNow proxy
+    value: UEN123456879
+    label: PayNow proxy in the PINT-SG examples
+    status: avoid
+    fails_checks: [sg-uen]
+    reason: Not a valid UEN.
+    sources: *pintsg
+  - id: sg-avoid-name-imda-agd
+    category: organisation
+    type: Company name
+    value: IMDA, AGD
+    label: Buyer names in the PINT-SG examples
+    status: avoid
+    reason: Real government bodies.
+    sources: *pintsg
+  - id: sg-avoid-gln-5790000436071
+    category: trade
+    type: GLN
+    value: "5790000436071"
+    label: GLN in the PINT-SG examples (copied from EU Peppol examples)
+    status: avoid
+    checks: [gs1]
+    reason: Prefix 579 is GS1 Denmark; owner unknown, possibly a real GLN. Use a GS1 952 demonstration prefix instead.
+    sources:
+      - title: OpenPeppol / IMDA PINT-SG — resources.zip (examples)
+        url: https://docs.peppol.eu/poac/sg/pint-sg/resources.zip
+        publisher: OpenPeppol / IMDA
+        accessed: 2026-11-05
+      - title: GS1 Company Prefix
+        url: https://www.gs1.org/standards/id-keys/company-prefix
+        publisher: GS1
+        accessed: 2026-11-05
+  - id: sg-avoid-gln-1234567890121
+    category: trade
+    type: GLN
+    value: "1234567890121"
+    label: GLN in the PINT-SG examples
+    status: avoid
+    fails_checks: [gs1]
+    reason: Wrong GS1 check digit.
+    sources: *pintsg
+  - id: sg-avoid-gln-6754238987648
+    category: trade
+    type: GLN
+    value: "6754238987648"
+    label: GLN in the PINT-SG examples
+    status: avoid
+    fails_checks: [gs1]
+    reason: Wrong GS1 check digit.
+    sources: *pintsg
+  - id: sg-avoid-bic-icdlog
+    category: banking
+    type: BIC
+    value: ICDLOG
+    label: Branch/BIC in the PINT-SG examples
+    status: avoid
+    fails_checks: [bic]
+    reason: Not a valid BIC (6 characters).
+    sources: *pintsg
+  - id: sg-avoid-address-somerset-road
+    category: address
+    type: Address
+    value: 111 Somerset Road 238164
+    label: Address in the PINT-SG examples
+    status: avoid
+    reason: Real building (SLA OneMap, 2026-11-05). Acceptable only with clearly fictitious party names.
+    sources: *pintsg
+  - id: sg-avoid-address-bedok-north
+    category: address
+    type: Address
+    value: "102 Bedok North Avenue 4, #09-128, Pearl Garden, 460102"
+    label: Address of Myinfo sandbox persona S9812381D
+    status: avoid
+    reason: Real residential address (SLA OneMap, 2026-11-05).
+    sources: *myinfo
+  - id: sg-avoid-phone-4621230
+    category: contact
+    type: Phone number
+    value: "4621230"
+    label: Telephone number in the PINT-SG examples (also 5121230)
+    status: avoid
+    reason: Not an 8-digit Singapore number (malformed).
+    sources: *pintsg
+  - id: sg-avoid-phone-97399245
+    category: contact
+    type: Phone number
+    value: +65 97399245
+    label: Mobile number of Myinfo sandbox persona S9812381D
+    status: avoid
+    reason: In the live mobile range; may belong to a real subscriber.
+    sources: *myinfo
+  - id: sg-avoid-email-myinfotesting
+    category: contact
+    type: Email address
+    value: myinfotesting@gmail.com
+    label: Email of Myinfo sandbox persona S9812381D
+    status: avoid
+    fails_checks: [reserved-domain]
+    reason: Real mail provider; the mailbox may exist.
+    sources: *myinfo
+  - id: sg-avoid-email-pintsg
+    category: contact
+    type: Email address
+    value: peter@seller.org, bill@imda.sg, einvoice@imda.gov.sg, test_vendor@gmail.com
+    label: Emails in the PINT-SG examples and IMDA guide
+    status: avoid
+    fails_checks: [reserved-domain]
+    reason: Registered domains, a real IMDA mailbox and a real mail provider.
+    sources:
+      - title: OpenPeppol / IMDA PINT-SG — resources.zip (examples)
+        url: https://docs.peppol.eu/poac/sg/pint-sg/resources.zip
+        publisher: OpenPeppol / IMDA
+        accessed: 2026-11-05
+      - title: IMDA InvoiceNow Enterprise Best Practice Guide v1.1
+        url: https://file.go.gov.sg/invoicenow-enterprise-guide.pdf
+        publisher: IMDA
+        accessed: 2026-11-05
+  - id: sg-avoid-domain-test-sg
+    category: contact
+    type: Email domain
+    value: test.sg
+    label: Tempting Singapore "test" domain
+    status: avoid
+    fails_checks: [reserved-domain]
+    reason: Registered (DNS checked 2026-11-05). Use a .test domain or example.com.
+    sources:
+      - title: RFC 6761 — Special-Use Domain Names
+        url: https://www.rfc-editor.org/rfc/rfc6761
+        publisher: IETF
+        accessed: 2026-11-05

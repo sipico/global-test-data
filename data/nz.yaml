@@ -1,0 +1,396 @@
+code: NZ
+name: New Zealand
+native_name: Aotearoa New Zealand
+region: Oceania
+languages: [en]
+updated: 2026-11-05
+research: research/example-identifiers-australia-nz.md
+summary: >
+  New Zealand has no official fictitious NZBN: the two NZBNs in the Peppol PINT A-NZ
+  examples belong to real (removed) companies, and the NZ party data in those examples
+  should not be copied. There is no reserved telephone range, so leave phone numbers out.
+  Inland Revenue publishes the IRD and bank account algorithms with worked examples, but
+  every valid IRD number may belong to a real taxpayer, so none is listed as usable.
+  NHI numbers starting with Z are reserved for testing. NZ Post's examples put invented
+  people at real places; no open postcode file exists to check against.
+
+identifiers:
+  - name: NZBN (New Zealand Business Number)
+    format: 13-digit GS1 GLN, all seen start with 9429
+    check: gs1
+    authority: MBIE (NZBN Register), numbers from GS1 New Zealand
+    notes: GS1 mod-10 check digit. The NZBN API sandbox mixes test cases with old real Companies Register data, so its NZBNs are not safe.
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID @schemeID=0088", "cbc:EndpointID @schemeID=0088"]
+  - name: IRD number
+    format: 8 or 9 digits, shown nn-nnn-nnn or nnn-nnn-nnn
+    check: nz-ird
+    authority: Inland Revenue
+    notes: Valid range 10,000,000-200,000,000 (raised from 150,000,000 on 1 April 2026); mod-11 with weights 3 2 7 6 5 4 3 2, secondary weights 7 4 3 2 5 2 7 6 if the result is 10. The range check means a valid number is in the issued range and may belong to a real taxpayer. IR's test IRD numbers are only on the Gateway Services developer portal.
+  - name: GST number
+    format: Same as the IRD number, usually shown nnn-nnn-nnn
+    check: nz-ird
+    authority: Inland Revenue
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+  - name: Company number
+    format: Sequential number, e.g. 1873404
+    authority: Companies Office (MBIE)
+    notes: No check digit.
+  - name: Bank account number
+    format: BB-bbbb-AAAAAAA(A)-SSS(S) (bank 2, branch 4, base 7-8, suffix 2-4 digits)
+    authority: Payments NZ (Bank Branch Register); algorithm published by Inland Revenue
+    notes: Weighted mod-11/mod-10 algorithms A, B, D, E, F, G, X chosen by bank ID (IR spec §7). NZ has no IBAN.
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+  - name: NHI number (National Health Index)
+    format: AAANNNC (old) or AAANNAC (new)
+    authority: Health New Zealand (HISO 10046)
+    notes: Numbers starting with Z are reserved for testing. Not needed in UBL.
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: nz-nzbn-9429999990009
+    category: organisation
+    type: NZBN
+    value: "9429999990009"
+    label: Derived NZBN far above the issued range
+    status: derived
+    checks: [gs1]
+    verified: ["No match in the NZ Companies Register search (2026-11-05); not checked in the full NZBN register (needs an API key)"]
+    notes: Partly verified only. Issued NZBNs seen run 94290…-94290 5…; non-company NZBNs are not in the Companies Register.
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID @schemeID=0088", "cbc:EndpointID @schemeID=0088"]
+    sources: &nzbn
+      - title: MBIE — What's an NZBN
+        url: https://www.nzbn.govt.nz/whats-an-nzbn/
+        publisher: MBIE
+        accessed: 2026-11-05
+      - title: NZ Companies Register search
+        url: https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/search
+        publisher: Companies Office (MBIE)
+        accessed: 2026-11-05
+  - id: nz-nzbn-9429999990016
+    category: organisation
+    type: NZBN
+    value: "9429999990016"
+    label: Derived NZBN far above the issued range
+    status: derived
+    checks: [gs1]
+    verified: ["No match in the NZ Companies Register search (2026-11-05); not checked in the full NZBN register (needs an API key)"]
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID @schemeID=0088", "cbc:EndpointID @schemeID=0088"]
+    sources: *nzbn
+  - id: nz-nzbn-9429999990023
+    category: organisation
+    type: NZBN
+    value: "9429999990023"
+    label: Derived NZBN far above the issued range
+    status: derived
+    checks: [gs1]
+    verified: ["No match in the NZ Companies Register search (2026-11-05); not checked in the full NZBN register (needs an API key)"]
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID @schemeID=0088", "cbc:EndpointID @schemeID=0088"]
+    sources: *nzbn
+
+  # --- Address ----------------------------------------------------------------
+  - id: nz-address-nzpost-urban
+    category: address
+    type: Address example (private person)
+    kind: placeholder
+    value: "Mr A B Sample / 123 Sample St / Redwood / Christchurch 8051"
+    label: NZ Post's own example of an urban address
+    status: published-example
+    notes: Since 1 July 2011 suburb, town and postcode may share one line (Redwood Christchurch 8051). No punctuation, 4-digit postcode, no region.
+    sources: &nzpostweb
+      - title: NZ Post — Address layout standards
+        url: https://www.nzpost.co.nz/business/shipping-in-nz/bulk-mail/address-layout-standards
+        publisher: NZ Post
+        accessed: 2026-11-05
+  - id: nz-address-nzpost-organisation
+    category: address
+    type: Address example (organisation, unit and floor)
+    kind: placeholder
+    value: "Mrs Parker / McKay's Emporium / Shop 1 Level 2 / 320A Sydney Street West / Thorndon / Wellington 6011"
+    label: NZ Post's example of an organisation address with unit and floor
+    status: published-example
+    notes: Invented people and businesses at real places. Unit before floor; street type in full where possible.
+    sources: &adv358
+      - title: NZ Post — Address Standards ADV 358
+        url: https://www.nzpost.co.nz/sites/nz/files/2021-10/adv358-address-standards.pdf
+        publisher: NZ Post
+        accessed: 2026-11-05
+  - id: nz-address-nzpost-rural
+    category: address
+    type: Address example (rural)
+    kind: placeholder
+    value: "John Smith / Apt 2 / 153A Farm Road / RD 1 / Outram 9073"
+    label: NZ Post's example of a rural delivery address
+    status: published-example
+    sources: *adv358
+  - id: nz-address-nzpost-po-box
+    category: address
+    type: Address example (PO Box)
+    kind: placeholder
+    value: "John Smith / PO Box 4099 / Highfield / Timaru 7942"
+    label: NZ Post's example of a PO Box address
+    status: published-example
+    notes: Box numbers have no spaces; never combine a PO Box with a street address.
+    sources: *adv358
+  - id: nz-address-nzpost-private-bag
+    category: address
+    type: Address example (Private Bag)
+    kind: placeholder
+    value: "ABC Finance / Private Bag 92132 / Auckland 1142"
+    label: NZ Post's example of a company Private Bag address
+    status: published-example
+    sources: *adv358
+
+  # --- Contact -------------------------------------------------------------------
+  - id: nz-email-alias-test
+    category: contact
+    type: Email address
+    kind: placeholder
+    value: accounts@<alias>.test
+    label: Pattern for example emails on the reserved .test top-level domain
+    status: reserved
+    checks: [reserved-domain]
+    notes: example.nz, example.co.nz and test.nz are registered; use .test (or .example, example.com/.net/.org).
+    sources: &rfc
+      - title: RFC 2606 — Reserved Top Level DNS Names
+        url: https://www.rfc-editor.org/rfc/rfc2606
+        publisher: IETF
+        accessed: 2026-11-05
+      - title: RFC 6761 — Special-Use Domain Names
+        url: https://www.rfc-editor.org/rfc/rfc6761
+        publisher: IETF
+        accessed: 2026-11-05
+
+  # --- Banking -------------------------------------------------------------------
+  - id: nz-account-01-902-0068389-00
+    category: banking
+    type: Bank account number
+    value: 01-902-0068389-00
+    label: Inland Revenue worked example 1 (algorithm A)
+    status: published-example
+    notes: Bank 01 (ANZ) is real; whether the account exists is unknown. No reserved test account was found.
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+    sources: &irspec
+      - title: Inland Revenue — Payroll calculations and business rules specification 2026-27 (§6 IRD, §7 bank accounts)
+        url: https://www.ird.govt.nz/-/media/project/ir/home/documents/digital-service-providers/software-providers/payroll-calculations-business-rules-specifications/payroll-calculations-and-business-rules-specification.pdf
+        publisher: Inland Revenue
+        accessed: 2026-11-05
+  - id: nz-account-08-6523-1954512-001
+    category: banking
+    type: Bank account number
+    value: 08-6523-1954512-001
+    label: Inland Revenue worked example 2 (algorithm D)
+    status: published-example
+    notes: Bank 08 is the former National Australia Bank NZ; whether the account exists is unknown.
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+    sources: *irspec
+  - id: nz-account-26-2600-0320871-032
+    category: banking
+    type: Bank account number
+    value: 26-2600-0320871-032
+    label: Inland Revenue worked example 3 (algorithm G)
+    status: published-example
+    notes: Bank ID 26 is not in IR's own algorithm table; whether the account exists is unknown.
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+    sources: *irspec
+
+  # --- Trade -------------------------------------------------------------------
+  - id: nz-gln-9520000000011
+    category: trade
+    type: GLN
+    value: "9520000000011"
+    label: GS1 example-prefix GLN as an alternative party identifier
+    status: reserved
+    checks: [gs1-952]
+    notes: Passes the Peppol 0088 syntax rule but is not an NZBN and fails an NZ-specific NZBN check. GS1 NZ's own prefix 94 belongs to real companies.
+    ubl: ["cbc:EndpointID @schemeID=0088"]
+    sources: &gs1
+      - title: GS1 Company Prefix
+        url: https://www.gs1.org/standards/id-keys/company-prefix
+        publisher: GS1
+        accessed: 2026-11-05
+      - title: GS1 General Specifications
+        url: https://ref.gs1.org/standards/genspecs/
+        publisher: GS1
+        accessed: 2026-11-05
+  - id: nz-gln-9520000000028
+    category: trade
+    type: GLN
+    value: "9520000000028"
+    label: GS1 example-prefix GLN as an alternative party identifier
+    status: reserved
+    checks: [gs1-952]
+    ubl: ["cbc:EndpointID @schemeID=0088"]
+    sources: *gs1
+
+  # --- Person -------------------------------------------------------------------
+  - id: nz-nhi-z-prefix
+    category: person
+    type: NHI number range
+    kind: range
+    value: Zxxxxxx (any NHI starting with Z, old and new formats)
+    label: NHI numbers reserved as test numbers
+    status: reserved
+    sources: &hiso
+      - title: HISO 10046:2023 Consumer Health Identity Standard §2.1.6 (copy)
+        url: https://ehealthforum.nz/uploads/short-url/zdzy3oGbJ3KWMi2Q77EfMlgjzIq.pdf
+        publisher: Health New Zealand (HISO)
+        accessed: 2026-11-05
+  - id: nz-nhi-zaa0105
+    category: person
+    type: NHI number
+    value: ZAA0105
+    label: Test NHI number in the reserved Z range
+    status: reserved
+    notes: Passes the old-format (AAANNNC) mod-11 check.
+    sources: *hiso
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: nz-avoid-nzbn-9429033821733
+    category: organisation
+    type: NZBN
+    value: "9429033821733"
+    label: Seller NZBN in the PINT A-NZ examples
+    status: avoid
+    checks: [gs1]
+    reason: Real company (Scarlet Software Services Limited, company 1873404, removed).
+    sources: &pint
+      - title: Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)
+        url: https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip
+        publisher: Australian & New Zealand Peppol Authorities (ATO, MBIE)
+        accessed: 2026-11-05
+      - title: NZ Companies Register search
+        url: https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/search
+        publisher: Companies Office (MBIE)
+        accessed: 2026-11-05
+  - id: nz-avoid-nzbn-9429033591476
+    category: organisation
+    type: NZBN
+    value: "9429033591476"
+    label: Buyer NZBN in the PINT A-NZ examples
+    status: avoid
+    checks: [gs1]
+    reason: Real company (Scarlet Software Services NZ Limited, company 1911796, removed).
+    sources: *pint
+  - id: nz-avoid-nzbn-9429041926024
+    category: organisation
+    type: NZBN
+    value: "9429041926024"
+    label: '"Example NZBN" on third-party sites'
+    status: avoid
+    checks: [gs1]
+    reason: Reported as Inland Revenue's own NZBN (not verified).
+    sources: *nzbn
+  - id: nz-avoid-nzbn-9429032389470
+    category: organisation
+    type: NZBN
+    value: "9429032389470"
+    label: NZBN in an SDK example
+    status: avoid
+    checks: [gs1]
+    reason: Reported as Burger Fuel Limited (a real company).
+    sources: *nzbn
+  - id: nz-avoid-ird-49091850
+    category: organisation
+    type: IRD / GST number
+    value: 49-091-850
+    label: Inland Revenue worked example 1 for IRD validation
+    status: avoid
+    checks: [nz-ird]
+    reason: Valid and inside the issued range, so it may belong to a real taxpayer (unknown). If used at all, mark it as an IR worked example.
+    sources: *irspec
+  - id: nz-avoid-ird-35901981
+    category: organisation
+    type: IRD / GST number
+    value: 35-901-981
+    label: Inland Revenue worked example 2 for IRD validation
+    status: avoid
+    checks: [nz-ird]
+    reason: Valid and inside the issued range, so it may belong to a real taxpayer (unknown). If used at all, mark it as an IR worked example.
+    sources: *irspec
+  - id: nz-avoid-ird-150000026
+    category: organisation
+    type: IRD number
+    value: 150-000-026
+    label: Inland Revenue worked example 3 (9-digit)
+    status: avoid
+    fails_checks: [nz-ird]
+    reason: The spec declares it valid, but its own written steps reject it (primary check digit is 5, not 10); validators disagree.
+    sources: *irspec
+  - id: nz-avoid-ird-9125568
+    category: organisation
+    type: IRD number
+    value: 9-125-568
+    label: Inland Revenue worked example 4
+    status: avoid
+    fails_checks: [nz-ird]
+    reason: Invalid by design (below the valid range).
+    sources: *irspec
+  - id: nz-avoid-gst-888888888
+    category: organisation
+    type: GST number
+    value: 888-888-888
+    label: GST number in the PINT A-NZ examples (also 999-999-999, 777-777-777)
+    status: avoid
+    fails_checks: [nz-ird]
+    reason: Fails the IRD check (above 200,000,000).
+    sources: *pint
+  - id: nz-avoid-account-02-0500-0632487-000
+    category: banking
+    type: Bank account number
+    value: 02-0500-0632487-000
+    label: Bank account in the PINT A-NZ BIS
+    status: avoid
+    reason: Fails the bank account checksum (algorithm A).
+    sources:
+      - title: Peppol PINT A-NZ Billing (BIS)
+        url: https://docs.peppol.eu/poac/aunz/pint-aunz/
+        publisher: Australian & New Zealand Peppol Authorities (ATO, MBIE)
+        accessed: 2026-11-05
+      - title: Inland Revenue — Payroll calculations and business rules specification 2026-27 (§7 bank accounts)
+        url: https://www.ird.govt.nz/-/media/project/ir/home/documents/digital-service-providers/software-providers/payroll-calculations-business-rules-specifications/payroll-calculations-and-business-rules-specification.pdf
+        publisher: Inland Revenue
+        accessed: 2026-11-05
+  - id: nz-avoid-postcode-pint
+    category: address
+    type: Postcode
+    value: NZ 123 EW, A36577, 21234, 1111
+    label: Postcodes in the PINT A-NZ NZ examples
+    status: avoid
+    reason: NZ postcodes are 4 digits; 1111 is not a Wellington postcode.
+    sources: *pint
+  - id: nz-avoid-address-pint
+    category: address
+    type: Street address
+    value: 16 Stout Street, Wellington; 100 Queen Street, Auckland; Delivery street 2, Auckland
+    label: Street addresses in the PINT A-NZ NZ examples
+    status: avoid
+    reason: Real street names in central Wellington/Auckland, with region/town mismatches (Kapiti Coast, Northland).
+    sources: *pint
+  - id: nz-avoid-phone-pint
+    category: contact
+    type: Phone number
+    value: 021 1090666
+    label: Mobile number in the PINT A-NZ NZ examples
+    status: avoid
+    reason: In a live mobile range; NZ has no reserved fictional range.
+    sources: *pint
+  - id: nz-avoid-phone-fake
+    category: contact
+    type: Phone number
+    value: "*555, (09) 4299 xxxx"
+    label: '"Fake" NZ numbers seen in productions and examples'
+    status: avoid
+    reason: "*555 is the live NZ Police traffic-report number; (09) 4299 xxxx (Shortland Street) is a convention, not a reservation."
+    sources:
+      - title: Telephone numbers in New Zealand (Wikipedia)
+        url: https://en.wikipedia.org/wiki/Telephone_numbers_in_New_Zealand
+        publisher: Wikipedia
+        accessed: 2026-11-05
+  - id: nz-avoid-domain-registered
+    category: contact
+    type: Email domain
+    value: example.nz, example.co.nz, test.nz, blackhouse.com
+    label: Domains used or tempting in example emails
+    status: avoid
+    reason: All registered (DNS checked 2026-11-05). qualitygoods.co.nz from the PINT examples is unregistered today but could be registered at any time. Use a .test domain.
+    sources: *pint

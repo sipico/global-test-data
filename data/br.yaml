@@ -1,0 +1,635 @@
+code: BR
+name: Brazil
+native_name: Brasil
+region: Latin America
+languages: [pt, en]
+updated: 2026-11-05
+research: research/example-identifiers-south-america.md
+summary: >
+  Brazil has strong official material: Receita Federal's worked example for the new
+  alphanumeric CNPJ (12.ABC.345/01DE-35) passes the check digits and is not in the
+  register, Serpro publishes 22 "CPF fictícios" for its API trial, and the NF-e
+  homologação environment reserves a CNPJ (99.999.999/0001-91) and mandatory test texts.
+  Serpro's numeric "fictitious" CNPJs, however, belong to real companies. Brazil does not
+  use UBL or Peppol (national NF-e/CT-e/NFS-e XML). Anatel reserves no telephone numbers
+  for fiction, so leave phones out. State IE (Inscrição Estadual) examples from SINTEGRA
+  were not checked against state registers and are not listed.
+
+identifiers:
+  - name: CNPJ (Cadastro Nacional da Pessoa Jurídica)
+    format: 14 characters, 8-character root + 4-character branch (0001 = head office) + 2 numeric check digits; written NN.NNN.NNN/NNNN-NN
+    check: br-cnpj
+    authority: Receita Federal do Brasil
+    notes: Mod 11 (weights 5-4-3-2-9-8-7-6-5-4-3-2, then 6-5-4-3-2-9-8-7-6-5-4-3-2; remainder < 2 → 0). From July 2026 the first 12 positions may be A–Z (value = ASCII − 48), IN RFB 2.229/2024; numeric CNPJs stay valid.
+  - name: CPF (Cadastro de Pessoas Físicas)
+    format: 11 digits, 9 base digits + 2 mod-11 check digits; written NNN.NNN.NNN-NN
+    check: br-cpf
+    authority: Receita Federal do Brasil
+    notes: The 9th digit is the fiscal region. There is no open CPF register lookup.
+  - name: Inscrição Estadual (IE)
+    format: Varies by state (length and check-digit routine published on SINTEGRA)
+    authority: State tax administrations (SEFAZ)
+    notes: Empty for non-contributors (indIEDest = 9); the literal ISENTO is used for IE-exempt contributors.
+  - name: CEP (postcode)
+    format: NNNNN-NNN, alone on the last address line, without the word "CEP" and without dots
+    authority: Correios
+  - name: Pix key
+    format: CPF, CNPJ, e-mail, phone (+55…) or random key (EVP, UUID)
+    authority: Banco Central do Brasil
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: br-cnpj-12abc34501de35
+    category: organisation
+    type: CNPJ (alphanumeric)
+    value: 12.ABC.345/01DE-35
+    label: Receita Federal's worked example of the alphanumeric CNPJ
+    status: published-example
+    checks: [br-cnpj]
+    verified: ["Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)"]
+    notes: Best choice for a Brazilian company. Unformatted 12ABC34501DE35. Also used in the Serpro DV paper, the RFB normative annex and the BCB Pix manual.
+    sources: &rfb_cnpj
+      - title: CNPJ alfanumérico – Perguntas e Respostas (question 14)
+        url: https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf
+        publisher: Receita Federal do Brasil
+        accessed: 2026-11-05
+      - title: Cálculo dos DV do CNPJ alfanumérico
+        url: https://www.serpro.gov.br/menu/noticias/videos/calculodvcnpjalfanaumerico.pdf
+        publisher: Serpro
+        accessed: 2026-11-05
+      - title: Anexo normativo (cálculo DV)
+        url: https://normas.receita.fazenda.gov.br/sijut2consulta/anexoOutros.action?idArquivoBinario=76204
+        publisher: Receita Federal do Brasil
+        accessed: 2026-11-05
+  - id: br-cnpj-aa345678000a29
+    category: organisation
+    type: CNPJ (alphanumeric)
+    value: AA.345.678/000A-29
+    label: Alphanumeric branch example in the Receita Federal FAQ (question 23, Ex2)
+    status: published-example
+    checks: [br-cnpj]
+    verified: ["Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)"]
+    sources: &rfb_faq
+      - title: CNPJ alfanumérico – Perguntas e Respostas
+        url: https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf
+        publisher: Receita Federal do Brasil
+        accessed: 2026-11-05
+  - id: br-cnpj-l9j5byrt000101
+    category: organisation
+    type: CNPJ (alphanumeric)
+    value: L9J5BYRT000101
+    label: Fictitious CNPJ with status "active" in the Serpro Consulta CNPJ trial
+    status: published-example
+    checks: [br-cnpj]
+    verified: ["Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)"]
+    sources: &serpro_cnpj
+      - title: API Consulta CNPJ – guia rápido (dados para testes)
+        url: http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cnpj/pt/quick_start/
+        publisher: Serpro
+        accessed: 2026-11-05
+  - id: br-cnpj-l9j5byrtd90r79
+    category: organisation
+    type: CNPJ (alphanumeric)
+    value: L9J5BYRTD90R79
+    label: Fictitious branch CNPJ with status "active" in the Serpro trial
+    status: published-example
+    checks: [br-cnpj]
+    verified: ["Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)"]
+    sources: *serpro_cnpj
+  - id: br-cnpj-10y7g69e000163
+    category: organisation
+    type: CNPJ (alphanumeric)
+    value: 10Y7G69E000163
+    label: Fictitious CNPJ with status "closed" in the Serpro trial
+    status: published-example
+    checks: [br-cnpj]
+    verified: ["Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)"]
+    notes: Useful for negative tests (closed company).
+    sources: *serpro_cnpj
+  - id: br-cnpj-99999999000191
+    category: organisation
+    type: CNPJ (homologação)
+    value: 99.999.999/0001-91
+    label: Receiver CNPJ required in NF-e test environment (tpAmb = 2)
+    status: reserved
+    checks: [br-cnpj]
+    verified: ["Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)"]
+    notes: >
+      Rejection 597 in NT 2011/002 if different. Since layout 3.10 (NT 2015.003) states may
+      require a valid receiver instead; with this CNPJ use indIEDest = 9 (non-contributor).
+      Enforcement varies by state.
+    sources:
+      - title: NF-e Nota Técnica 2011/002
+        url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Ll7tbBdZPyE%3D
+        publisher: Portal Nacional da NF-e
+        accessed: 2026-11-05
+      - title: FlexDocs — Rejeição 597
+        url: https://flexdocs.net/suporte/knowledgebase.php?article=97
+        publisher: FlexDocs
+        accessed: 2026-11-05
+  - id: br-cnpj-simulador-rfb
+    category: organisation
+    type: CNPJ generator
+    kind: range
+    value: https://servicos.receitafederal.gov.br/servico/cnpj-alfa/simular
+    label: Official Simulador Nacional de CNPJ for tests with fictitious data
+    status: published-example
+    notes: Generates and validates up to 1,000 fictitious CNPJs per user (RFB FAQ questions 47–51). Output is random, so check each number against the register before use.
+    sources:
+      - title: Simulador Nacional de CNPJ
+        url: https://servicos.receitafederal.gov.br/servico/cnpj-alfa/simular
+        publisher: Receita Federal do Brasil
+        accessed: 2026-11-05
+      - title: CNPJ alfanumérico – Perguntas e Respostas (questions 47–51)
+        url: https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf
+        publisher: Receita Federal do Brasil
+        accessed: 2026-11-05
+
+  # --- Address ----------------------------------------------------------------
+  - id: br-address-correios-example
+    category: address
+    type: Address example
+    kind: placeholder
+    value: "João da Silva / Avenida Paulista 123, Loja B / Paraíso / 01311-000 São Paulo/SP"
+    label: Correios' own example of a correctly formatted address
+    status: published-example
+    notes: Fictitious person at a real street and CEP. The Correios lookup gives bairro Bela Vista for 01311-000, so the example's bairro (Paraíso) is inconsistent.
+    sources: &correios
+      - title: Guia Técnico de Endereçamento de Correspondências v1.4
+        url: https://www.correios.com.br/enviar/correspondencia/arquivos/nacional/guia-tecnico-de-enderecamento-de-correspondencias.pdf
+        publisher: Correios
+        accessed: 2026-11-05
+  - id: br-address-upu-guarapuava
+    category: address
+    type: Address example
+    kind: placeholder
+    value: "Marina Costa e Silva / Rua Afonso Camargo, 805 / Santana / GUARAPUAVA – PR / 85070-200"
+    label: UPU example of a Brazilian street address
+    status: published-example
+    notes: Fictitious person at a real street. The UPU sheet's Brasília example (SBN – Quadra 13 – Bloco B, 70002-900) is the real Correios head office.
+    sources: &upu_br
+      - title: Postal addressing — Brazil
+        url: https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf
+        publisher: Universal Postal Union
+        accessed: 2026-11-05
+  - id: br-address-upu-caixa-postal
+    category: address
+    type: Address example (PO box)
+    kind: placeholder
+    value: "Caixa Postal 443 / 85100-970"
+    label: UPU example of a PO box address
+    status: published-example
+    sources: *upu_br
+  - id: br-cep-unused-00
+    category: address
+    type: Postcode range
+    kind: range
+    value: 00000-000 – 00999-999
+    label: CEPs below the lowest assigned range (01000-000, São Paulo)
+    status: derived
+    verified: ["00000000 and 00999999 rejected as \"CEP INVÁLIDO\" by the Correios service, via BrasilAPI (2026-11-05)"]
+    notes: Pass a format check but fail any lookup. Use only where failing a lookup is acceptable.
+    sources:
+      - title: BrasilAPI — CEP and CNPJ lookups
+        url: https://brasilapi.com.br/docs
+        publisher: BrasilAPI
+        accessed: 2026-11-05
+  - id: br-cep-suffix-conventions
+    category: address
+    type: Postcode suffix range
+    kind: range
+    value: "-900…-959 large users; -960 and above PO boxes / community boxes (e.g. -970, -994)"
+    label: CEP suffix conventions seen in the UPU examples
+    status: published-example
+    notes: Derived from the UPU examples; the full Correios suffix table was not read.
+    sources: *upu_br
+
+  # --- Contact -------------------------------------------------------------------
+  - id: br-email-domain-example-com
+    category: contact
+    type: Email domain
+    value: example.com
+    label: Reserved domain for example e-mail addresses (also *.test)
+    status: reserved
+    checks: [reserved-domain]
+    notes: The registration status of exemplo.com.br could not be checked (registro.br RDAP returned 403), so do not use it.
+    sources: &rfc_domains
+      - title: RFC 2606 — Reserved Top Level DNS Names
+        url: https://www.rfc-editor.org/rfc/rfc2606
+        publisher: IETF
+        accessed: 2026-11-05
+      - title: RFC 6761 — Special-Use Domain Names
+        url: https://www.rfc-editor.org/rfc/rfc6761
+        publisher: IETF
+        accessed: 2026-11-05
+
+  # --- Banking -------------------------------------------------------------------
+  - id: br-pix-evp-123e4567
+    category: banking
+    type: Pix random key (EVP)
+    value: 123e4567-e12b-12d1-a456-426655440000
+    label: Random Pix key used in all static BR Code examples of the BCB manual
+    status: published-example
+    sources: &bcb_pix
+      - title: Manual de Padrões para Iniciação do Pix v2.10.0 (§2.5.1, §2.6)
+        url: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf
+        publisher: Banco Central do Brasil
+        accessed: 2026-11-05
+  - id: br-pix-email-fulano
+    category: banking
+    type: Pix e-mail key
+    value: fulano_da_silva.recebedor@example.com
+    label: E-mail Pix key example on a reserved domain
+    status: published-example
+    checks: [reserved-domain]
+    sources: *bcb_pix
+  - id: br-pix-cnpj-12abc34501de35
+    category: banking
+    type: Pix CNPJ key
+    value: 12ABC34501DE35
+    label: CNPJ Pix key example (same as the RFB alphanumeric example)
+    status: published-example
+    checks: [br-cnpj]
+    sources: *bcb_pix
+  - id: br-pix-brcode-static
+    category: banking
+    type: Pix static BR Code (EMV QR)
+    value: "00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913Fulano de Tal6008BRASILIA62070503***63041D3D"
+    label: Static BR Code example for merchant "Fulano de Tal" in Brasília
+    status: published-example
+    notes: CRC16-CCITT 1D3D recomputed during research. "Fulano de Tal" is the Portuguese "John Doe".
+    sources:
+      - title: Manual de Padrões para Iniciação do Pix v2.10.0 (§2.6)
+        url: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf
+        publisher: Banco Central do Brasil
+        accessed: 2026-11-05
+      - title: Manual do BR Code
+        url: https://www.bcb.gov.br/content/estabilidadefinanceira/spb_docs/ManualBRCode.pdf
+        publisher: Banco Central do Brasil
+        accessed: 2026-11-05
+  - id: br-pix-dynamic-url
+    category: banking
+    type: Pix dynamic BR Code URL
+    kind: range
+    value: pix.example.com/…
+    label: Payload location of dynamic BR Codes in the BCB manual
+    status: published-example
+    notes: Uses the reserved example.com domain.
+    sources: *bcb_pix
+
+  # --- Person --------------------------------------------------------------------
+  - id: br-cpf-40442820135
+    category: person
+    type: CPF
+    value: 404.428.201-35
+    label: Fictitious CPF, status "Regular", born 14/11/1970 (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: &cpf_note Serpro labels these "CPF fictícios", but they cannot be checked against the CPF register, and Serpro's numeric "fictitious" CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.
+    sources: &serpro_cpf
+      - title: API Consulta CPF – guia rápido / dados para testes
+        url: http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/
+        publisher: Serpro
+        accessed: 2026-11-05
+  - id: br-cpf-63017285995
+    category: person
+    type: CPF
+    value: 630.172.859-95
+    label: Fictitious CPF, status "Regular", born 26/12/1964 (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-91708635203
+    category: person
+    type: CPF
+    value: 917.086.352-03
+    label: Fictitious CPF, status "Regular", born 03/01/1943 (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-58136053391
+    category: person
+    type: CPF
+    value: 581.360.533-91
+    label: Fictitious CPF, status "Regular", born 20/11/1972 (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-40532176871
+    category: person
+    type: CPF
+    value: "40532176871"
+    label: Fictitious CPF, status "Suspensa" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-47123586964
+    category: person
+    type: CPF
+    value: "47123586964"
+    label: Fictitious CPF, status "Suspensa" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-07691852312
+    category: person
+    type: CPF
+    value: "07691852312"
+    label: Fictitious CPF, status "Pendente de regularização" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-10975384600
+    category: person
+    type: CPF
+    value: "10975384600"
+    label: Fictitious CPF, status "Pendente de regularização" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-01648527949
+    category: person
+    type: CPF
+    value: "01648527949"
+    label: Fictitious CPF, status "Cancelada por multiplicidade" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-47893062592
+    category: person
+    type: CPF
+    value: "47893062592"
+    label: Fictitious CPF, status "Cancelada por multiplicidade" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-98302514705
+    category: person
+    type: CPF
+    value: "98302514705"
+    label: Fictitious CPF, status "Nula" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-18025346790
+    category: person
+    type: CPF
+    value: "18025346790"
+    label: Fictitious CPF, status "Nula" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-64913872591
+    category: person
+    type: CPF
+    value: "64913872591"
+    label: Fictitious CPF, status "Cancelada de ofício" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-52389071686
+    category: person
+    type: CPF
+    value: "52389071686"
+    label: Fictitious CPF, status "Cancelada de ofício" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-05137518743
+    category: person
+    type: CPF
+    value: "05137518743"
+    label: Fictitious CPF, status "Titular falecido" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-08849979878
+    category: person
+    type: CPF
+    value: "08849979878"
+    label: Fictitious CPF, status "Titular falecido" (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-30272095079
+    category: person
+    type: CPF
+    value: "30272095079"
+    label: Fictitious CPF of a minor (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-14898746071
+    category: person
+    type: CPF
+    value: "14898746071"
+    label: Fictitious CPF of a minor (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-20803407009
+    category: person
+    type: CPF
+    value: "20803407009"
+    label: Fictitious CPF of a minor (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-78411139000
+    category: person
+    type: CPF
+    value: "78411139000"
+    label: Fictitious CPF of a minor (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-88373571094
+    category: person
+    type: CPF
+    value: "88373571094"
+    label: Fictitious CPF with partial data (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+  - id: br-cpf-47460609080
+    category: person
+    type: CPF
+    value: "47460609080"
+    label: Fictitious CPF with partial data (Serpro trial)
+    status: published-example
+    checks: [br-cpf]
+    notes: *cpf_note
+    sources: *serpro_cpf
+
+  # --- Document ------------------------------------------------------------------
+  - id: br-nfe-homologacao-xnome
+    category: document
+    type: Test environment text (NF-e)
+    kind: placeholder
+    value: NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL
+    label: Mandatory receiver name (dest/xNome) in NF-e homologação (tpAmb = 2)
+    status: reserved
+    notes: Rejection 598 if different. Capitals, no accents, ASCII hyphen.
+    sources:
+      - title: NF-e Nota Técnica 2011/002
+        url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Ll7tbBdZPyE%3D
+        publisher: Portal Nacional da NF-e
+        accessed: 2026-11-05
+      - title: SEFAZ-PE Guia de Procedimentos NF-e
+        url: https://www.sefaz.pe.gov.br/Servicos/nota-fiscal-eletronica/Guias%20e%20Procedimentos/NF-e%20%20Guia%20De%20Procedimentos%20(05-08-2015).pdf
+        publisher: SEFAZ Pernambuco
+        accessed: 2026-11-05
+  - id: br-nfce-homologacao-xprod
+    category: document
+    type: Test environment text (NFC-e)
+    kind: placeholder
+    value: NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL
+    label: Mandatory description of the first item (det/prod/xProd) in NFC-e homologação
+    status: reserved
+    notes: Rejection 373. Different wording from NF-e ("NOTA FISCAL", not "NF-E"). Attributed to NT 2015/002; only vendor knowledge-base pages were read.
+    sources:
+      - title: TecnoSpeed — Rejeição 373
+        url: https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360010301653
+        publisher: TecnoSpeed
+        accessed: 2026-11-05
+  - id: br-cte-homologacao-xnome
+    category: document
+    type: Test environment text (CT-e)
+    kind: placeholder
+    value: CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL
+    label: Mandatory party names (remetente, expedidor, recebedor, destinatário) in CT-e homologação
+    status: reserved
+    notes: Rejections 646–649. Only vendor knowledge bases were read; some states reportedly want CTE without the hyphen.
+    sources:
+      - title: Oobj — Rejeição 649 (CT-e)
+        url: https://oobj.com.br/bc/rejeicao-649-como-resolver/
+        publisher: Oobj
+        accessed: 2026-11-05
+
+  # --- Other ---------------------------------------------------------------------
+  - id: br-plate-abc1c34
+    category: other
+    type: Vehicle plate (Mercosur)
+    value: ABC1C34
+    label: Example plate (converted from old ABC1234) in CONTRAN Res. 780/2019
+    status: published-example
+    notes: Format LLLNLNN; Res. 780/2019 was replaced by Res. 969/2022 with the same format. Combinations are assigned at random, so the example may exist on a real vehicle.
+    sources:
+      - title: Resolução CONTRAN 780/2019, Anexo II (LegisWeb)
+        url: https://www.legisweb.com.br/legislacao/?id=424984
+        publisher: LegisWeb
+        accessed: 2026-11-05
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: br-avoid-cnpj-11222333000181
+    category: organisation
+    type: CNPJ
+    value: 11.222.333/0001-81
+    label: Ubiquitous "valid example CNPJ" in validator documentation
+    status: avoid
+    checks: [br-cnpj]
+    reason: Real and active (a school fund in São Sebastião do Caí/RS), BrasilAPI (2026-11-05).
+    sources: &brasilapi
+      - title: BrasilAPI — CNPJ and CEP lookups
+        url: https://brasilapi.com.br/docs
+        publisher: BrasilAPI
+        accessed: 2026-11-05
+  - id: br-avoid-cnpj-12345678000195
+    category: organisation
+    type: CNPJ
+    value: 12.345.678/0001-95
+    label: Prose example in the Receita Federal FAQ
+    status: avoid
+    checks: [br-cnpj]
+    reason: Real taxpayer (closed), BrasilAPI (2026-11-05).
+    sources: *rfb_faq
+  - id: br-avoid-cnpj-12345678000a08
+    category: organisation
+    type: CNPJ (alphanumeric branch)
+    value: 12.345.678/000A-08
+    label: Receita Federal FAQ question 23, Ex3
+    status: avoid
+    checks: [br-cnpj]
+    reason: The branch is not registered, but the root 12345678 belongs to a real (closed) taxpayer.
+    sources: *rfb_faq
+  - id: br-avoid-cnpj-aa345678000329
+    category: organisation
+    type: CNPJ
+    value: AA.345.678/0003-29
+    label: Receita Federal FAQ question 23, Ex1
+    status: avoid
+    fails_checks: [br-cnpj]
+    reason: Wrong check digits (BrasilAPI also returns "inválido").
+    sources: *rfb_faq
+  - id: br-avoid-cnpj-00000000000191
+    category: organisation
+    type: CNPJ
+    value: 00.000.000/0001-91
+    label: The "first" numeric CNPJ
+    status: avoid
+    checks: [br-cnpj]
+    reason: Real company (Banco do Brasil), BrasilAPI (2026-11-05).
+    sources: *brasilapi
+  - id: br-avoid-cnpj-00000000e08g12
+    category: organisation
+    type: CNPJ (alphanumeric)
+    value: 00.000.000/E08G-12
+    label: The first alphanumeric CNPJ issued
+    status: avoid
+    checks: [br-cnpj]
+    reason: Real Banco do Brasil branch.
+    sources: *brasilapi
+  - id: br-avoid-cnpj-00038166000105
+    category: organisation
+    type: CNPJ
+    value: 00.038.166/0001-05
+    label: CNPJ Pix key in the BCB Pix manual
+    status: avoid
+    checks: [br-cnpj]
+    reason: Banco Central do Brasil itself (BrasilAPI, 2026-11-05).
+    sources: *bcb_pix
+  - id: br-avoid-cnpj-serpro-numeric
+    category: organisation
+    type: CNPJ
+    value: 34238864000168, 54447820000155, 46768703000165, 31151791000184, 34428654000132, 06115832000130, 52293473000128, 07781066000105, 60367129000164
+    label: Numeric "CNPJ fictícios" in the Serpro Consulta CNPJ trial data
+    status: avoid
+    reason: All registered to real businesses (several are MEIs named after real people), BrasilAPI (2026-11-05).
+    sources: *serpro_cnpj
+  - id: br-avoid-cpf-12345678900
+    category: person
+    type: CPF
+    value: 123.456.789-00
+    label: CPF Pix key example in the BCB Pix manual
+    status: avoid
+    fails_checks: [br-cpf]
+    reason: Fails the check digits (correct would be -09).
+    sources: *bcb_pix
+  - id: br-avoid-phone-5561912345678
+    category: contact
+    type: Phone number
+    value: "+5561912345678"
+    label: Phone Pix key example in the BCB Pix manual
+    status: avoid
+    reason: A plausible real Brasília mobile number; no range is reserved for fiction in Brazil.
+    sources: *bcb_pix

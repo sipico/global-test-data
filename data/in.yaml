@@ -1,0 +1,401 @@
+code: IN
+name: India
+native_name: भारत (Bhārat)
+region: Asia
+languages: [en, hi]
+updated: 2026-11-05
+research: research/example-identifiers-india-singapore.md
+summary: >
+  India's best official test data are sandbox values: GSTINs listed for testing on NIC's
+  e-invoice API developer portal, and test Aadhaar numbers that UIDAI publishes for its
+  staging environment. The NIC portal could not be fetched directly, so the GSTINs were
+  confirmed through search-engine extracts and a GSP's documentation. No authority
+  reserves phone numbers, domains, PIN codes or company numbers for fiction, and no open
+  API exists to check that a PAN or GSTIN is unused. India has no UBL: its e-invoice is a
+  GSTN JSON schema, so only the identifiers carry over. Left out as unverified: the e-Way
+  Bill sandbox GSTIN 05AAACG2140A1ZL (secondary sources only, PAN owner unknown), GSTINs
+  derived from made-up PANs (no collision check possible), and the unregistered but
+  unreserved domain example.in.
+
+identifiers:
+  - name: GSTIN (GST identification number)
+    format: 15 characters = 2-digit state code + PAN + entity number (1–9, A–Z) + Z + check character
+    check: in-gstin
+    authority: GSTN / CBIC
+    notes: Check character is Luhn mod-36 over the first 14 characters. GSTN has not published the algorithm; the rule used is python-stdnum's.
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+  - name: PAN (Permanent Account Number)
+    format: "AAAAA9999A: 3 letters, holder-type letter (A B C F G H J L P T), initial of name, 4-digit serial, check letter"
+    authority: Income Tax Department
+    notes: The check-letter algorithm is undocumented; validators check shape and holder type only. Since DGFT Trade Notice 09/2017 the importer-exporter code (IEC) equals the PAN.
+  - name: Aadhaar (UID)
+    format: 12 digits, first digit not 0 or 1, Verhoeff check digit
+    check: in-aadhaar
+    authority: UIDAI
+  - name: CIN (Corporate Identity Number)
+    format: "21 characters: L/U + 5-digit NIC 2008 activity code + 2-letter state + 4-digit year + 3-letter class (PTC, PLC, OPC…) + 6-digit ROC number"
+    authority: Ministry of Corporate Affairs (MCA)
+    notes: No checksum. No MCA-published example was found.
+  - name: LLPIN
+    format: AAA-9999
+    authority: Ministry of Corporate Affairs (MCA)
+  - name: IFSC (bank branch code)
+    format: 4-letter bank code + 0 + 6-character branch code (11 characters)
+    authority: Reserve Bank of India
+    notes: No official test IFSC exists.
+  - name: PIN code
+    format: 6 digits; 1st digit = region (1–8 geographic, 9 Army Postal Service), first 3 = sorting district
+    authority: India Post
+  - name: HSN code
+    format: 4–8 digits based on the Harmonized System
+    authority: CBIC
+    ubl: ["cac:CommodityClassification/cbc:ItemClassificationCode"]
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: in-gstin-33gsptn1882g1z3
+    category: organisation
+    type: GSTIN
+    value: 33GSPTN1882G1Z3
+    label: Tamil Nadu sandbox GSTIN on NIC's e-invoice API portal
+    status: published-example
+    checks: [in-gstin]
+    notes: &gstin-caveat >-
+      Test GSTIN listed on the NIC e-invoice API sandbox page "Sync GSTIN Details from CP".
+      The NIC site could not be fetched during research; the value was confirmed via
+      search-engine extracts of the page and Masters India's API documentation. No live GST
+      lookup was possible (captcha). Recommended: it also passes PAN shape and state-code checks.
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: &nic-sync
+      - title: NIC e-Invoice API sandbox — Sync GSTIN Details from CP (v1.03)
+        url: https://einv-apisandbox.nic.in/version1.03/Sync-GSTIN-Details-from-CP.html
+        publisher: National Informatics Centre
+        accessed: 2026-11-05
+      - title: Masters India — Sync GSTIN details from CP
+        url: https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp
+        publisher: Masters India
+        accessed: 2026-11-05
+  - id: in-gstin-33gsptn3381g1z5
+    category: organisation
+    type: GSTIN
+    value: 33GSPTN3381G1Z5
+    label: Tamil Nadu sandbox GSTIN on NIC's e-invoice API portal
+    status: published-example
+    checks: [in-gstin]
+    notes: *gstin-caveat
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *nic-sync
+  - id: in-gstin-33gsptn3382g1z4
+    category: organisation
+    type: GSTIN
+    value: 33GSPTN3382G1Z4
+    label: Tamil Nadu sandbox GSTIN on NIC's e-invoice API portal
+    status: published-example
+    checks: [in-gstin]
+    notes: *gstin-caveat
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *nic-sync
+  - id: in-gstin-27gspmh1881g1zh
+    category: organisation
+    type: GSTIN
+    value: 27GSPMH1881G1ZH
+    label: Maharashtra sandbox GSTIN on NIC's e-invoice API portal
+    status: published-example
+    checks: [in-gstin]
+    notes: &gstin-mh-caveat >-
+      Same source and caveat as the Tamil Nadu sandbox GSTINs (confirmed via secondary
+      sources only). Passes the check character, but the 4th PAN character M is not a PAN
+      holder type, so strict validators such as python-stdnum reject it. Prefer the 33GSPTN… values.
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *nic-sync
+  - id: in-gstin-27gspmh1882g1zg
+    category: organisation
+    type: GSTIN
+    value: 27GSPMH1882G1ZG
+    label: Maharashtra sandbox GSTIN on NIC's e-invoice API portal
+    status: published-example
+    checks: [in-gstin]
+    notes: *gstin-mh-caveat
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *nic-sync
+  - id: in-gstin-27gspmh3381g1zi
+    category: organisation
+    type: GSTIN
+    value: 27GSPMH3381G1ZI
+    label: Maharashtra sandbox GSTIN on NIC's e-invoice API portal
+    status: published-example
+    checks: [in-gstin]
+    notes: *gstin-mh-caveat
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *nic-sync
+  - id: in-name-gstn2-mh-taxpayer-1
+    category: organisation
+    type: Company name
+    value: GSTN2 MH TaxPayer 1 Ltd
+    label: Legal name returned by the sandbox for GSTIN 27GSPMH1881G1ZH
+    status: published-example
+    notes: Obviously fictitious. Returned by Masters India's sandbox documentation with an empty address and PIN 0.
+    ubl: ["cac:PartyLegalEntity/cbc:RegistrationName"]
+    sources:
+      - title: Masters India — Sync GSTIN details from CP
+        url: https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp
+        publisher: Masters India
+        accessed: 2026-11-05
+
+  # --- Address ----------------------------------------------------------------
+  - id: in-address-upu-private-delhi
+    category: address
+    type: Address example (private person)
+    kind: placeholder
+    value: "Mr. Rajiv Rattan / 4, Amrita Shergill Road / New Delhi 110003"
+    label: UPU's example of an Indian private address
+    status: published-example
+    notes: Invented person at a real street and PIN (Amrita Shergill Road is a real New Delhi street).
+    sources: &upu-in
+      - title: UPU — Postal addressing systems, India (01/2013)
+        url: https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/indEn.pdf
+        publisher: Universal Postal Union
+        accessed: 2026-11-05
+  - id: in-address-upu-private-bangalore
+    category: address
+    type: Address example (private person)
+    kind: placeholder
+    value: "Mr. N Gopalarathnam / 32/1, 2nd Main Road, 8th Block / Jayanagar / Bangalore, Karnataka 560082"
+    label: UPU's example of an Indian address with block and locality
+    status: published-example
+    notes: Real street and PIN, fictitious-looking name.
+    sources: *upu-in
+  - id: in-address-upu-company-ranchi
+    category: address
+    type: Address example (company)
+    kind: placeholder
+    value: "Popular Electronics / Astro High Complex / Near Old Taxi Stand, Main Road / Ranchi, Jharkhand 834001-34"
+    label: UPU's example of an Indian business address with landmark
+    status: published-example
+    notes: The "-34" suffix after the PIN is as printed by the UPU.
+    sources: *upu-in
+  - id: in-address-upu-po-box
+    category: address
+    type: Address example (PO box)
+    kind: placeholder
+    value: "Post Box No. 4380 / Kalkaji Post Office / New Delhi 110019"
+    label: UPU's example of an Indian post box address
+    status: published-example
+    sources: *upu-in
+  - id: in-pin-unused-0
+    category: address
+    type: PIN code range
+    kind: range
+    value: 0xxxxx
+    label: PIN codes with first digit 0, not used by any postal region
+    status: derived
+    verified: ["Checked against the PIN structure documented by the UPU and Wikipedia (regions 1–8 geographic, 9 Army Postal Service); no PIN-directory lookup was possible (2026-11-05)"]
+    notes: Passes a 6-digit format check but fails any check that the PIN exists.
+    sources:
+      - title: UPU — Postal addressing systems, India (01/2013)
+        url: https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/indEn.pdf
+        publisher: Universal Postal Union
+        accessed: 2026-11-05
+      - title: Wikipedia — Postal Index Number
+        url: https://en.wikipedia.org/wiki/Postal_Index_Number
+        publisher: Wikipedia
+        accessed: 2026-11-05
+
+  # --- Banking -------------------------------------------------------------------
+  - id: in-account-5697389713210
+    category: banking
+    type: Bank account number
+    value: "5697389713210"
+    label: Payee account number in NIC's Generate IRN sample
+    status: published-example
+    notes: Indian account numbers have no checksum. Do not reuse the IFSC from the same sample (see avoid list).
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+    sources: &nic-irn
+      - title: NIC e-Invoice API sandbox — Generate IRN (v1.03)
+        url: https://einv-apisandbox.nic.in/version1.03/generate-irn.html
+        publisher: National Informatics Centre
+        accessed: 2026-11-05
+
+  # --- Trade ---------------------------------------------------------------------
+  - id: in-hsn-1006
+    category: trade
+    type: HSN code
+    value: "1006"
+    label: HSN heading for rice (HS 2022 chapter 10)
+    status: published-example
+    notes: NIC's Generate IRN sample describes the item as "Rice" but uses HsnCd 1001 (wheat and meslin); 1006 is the correct heading for rice.
+    ubl: ["cac:CommodityClassification/cbc:ItemClassificationCode"]
+    sources: *nic-irn
+
+  # --- Person ----------------------------------------------------------------------
+  - id: in-aadhaar-999941057058
+    category: person
+    type: Aadhaar number
+    value: "999941057058"
+    label: UIDAI staging test UID (test resident Shivshankar Choudhury, New Delhi)
+    status: published-example
+    checks: [in-aadhaar]
+    notes: &aadhaar-note >-
+      Test UID for UIDAI's staging/pre-production authentication environment; the 9999
+      prefix marks the test series. Use the number only: the test records' emails
+      (dummyemail.com, mailserver.com) are registered domains and the phone values look like
+      real landlines. UBL rarely carries Aadhaar.
+    sources: &uidai
+      - title: UIDAI — Data and Downloads (Testing Data and License Keys)
+        url: https://uidai.gov.in/en/data-and-download
+        publisher: UIDAI
+        accessed: 2026-11-05
+      - title: UIDAI — Developer Section
+        url: https://uidai.gov.in/en/developer-section
+        publisher: UIDAI
+        accessed: 2026-11-05
+  - id: in-aadhaar-999971658847
+    category: person
+    type: Aadhaar number
+    value: "999971658847"
+    label: UIDAI staging test UID (test resident Kumar Agarwal, Udaipur)
+    status: published-example
+    checks: [in-aadhaar]
+    notes: *aadhaar-note
+    sources: *uidai
+  - id: in-aadhaar-999933119405
+    category: person
+    type: Aadhaar number
+    value: "999933119405"
+    label: UIDAI staging test UID (test resident Fatima Bedi, Bareilly)
+    status: published-example
+    checks: [in-aadhaar]
+    notes: *aadhaar-note
+    sources: *uidai
+  - id: in-aadhaar-999990501894
+    category: person
+    type: Aadhaar number
+    value: "999990501894"
+    label: UIDAI staging test UID (test resident Anisha Jay Kapoor, Bangalore)
+    status: published-example
+    checks: [in-aadhaar]
+    notes: *aadhaar-note
+    sources: *uidai
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: in-avoid-gstin-37arzpt4384q1mt
+    category: organisation
+    type: GSTIN
+    value: 37ARZPT4384Q1MT
+    label: Seller GSTIN in NIC's Generate IRN sample
+    status: avoid
+    fails_checks: [in-gstin]
+    reason: Malformed (14th character M instead of Z) and wrong check character.
+    sources: *nic-irn
+  - id: in-avoid-gstin-29awgpv7107b1z1
+    category: organisation
+    type: GSTIN
+    value: 29AWGPV7107B1Z1
+    label: Buyer / ship-to GSTIN in NIC's Generate IRN sample
+    status: avoid
+    fails_checks: [in-gstin]
+    reason: Wrong check character (correct would be F), and a ClearTax IRP document links this PAN to "VIKAS EXPORTS", so it may be a real taxpayer.
+    sources: *nic-irn
+  - id: in-avoid-gstin-12awgpv7107b1z1
+    category: organisation
+    type: GSTIN
+    value: 12AWGPV7107B1Z1
+    label: Transporter ID in NIC's Generate IRN sample
+    status: avoid
+    fails_checks: [in-gstin]
+    reason: Wrong check character; same possibly real PAN as 29AWGPV7107B1Z1.
+    sources: *nic-irn
+  - id: in-avoid-gstin-29aafcd5862r000
+    category: organisation
+    type: GSTIN
+    value: 29AAFCD5862R000
+    label: ClearTax GSP sandbox "GSTIN" (one of a list, e.g. also 27AAFCD5862R013)
+    status: avoid
+    fails_checks: [in-gstin]
+    reason: Not a valid GSTIN (13th character 0, 14th character not Z); private GSP sandbox value.
+    sources:
+      - title: ClearTax — Sandbox GSTIN for e-invoicing GSP API
+        url: https://docs.cleartax.in/cleartax-docs/e-invoicing-gsp-api/getting-started-with-einv-gsp-api/sandbox-gstin-for-einv-gsp
+        publisher: ClearTax
+        accessed: 2026-11-05
+  - id: in-avoid-pan-abcde1234f
+    category: organisation
+    type: PAN
+    value: ABCDE1234F
+    label: Common textbook placeholder PAN
+    status: avoid
+    reason: 4th character D is not a PAN holder type, so the value is invalid.
+    sources:
+      - title: python-stdnum 2.2 (in_.pan)
+        url: https://pypi.org/project/python-stdnum/
+        publisher: Arthur de Jong
+        accessed: 2026-11-05
+  - id: in-avoid-pin-9
+    category: address
+    type: PIN code range
+    kind: range
+    value: 9xxxxx
+    label: PIN codes starting with 9
+    status: avoid
+    reason: Used by the Army Postal Service / Field Post Offices (real military routing).
+    sources:
+      - title: Wikipedia — Postal Index Number
+        url: https://en.wikipedia.org/wiki/Postal_Index_Number
+        publisher: Wikipedia
+        accessed: 2026-11-05
+  - id: in-avoid-address-mumbai-243001
+    category: address
+    type: Address example (private person)
+    kind: placeholder
+    value: "603/4 Vindyachal, 7th Road Raja Wadi, Ghatkopar (East), Mumbai 243001"
+    label: UIDAI test resident address (Rohit Pandey)
+    status: avoid
+    reason: PIN 243001 is Bareilly, not Mumbai (data error in the UIDAI test data).
+    sources: *uidai
+  - id: in-avoid-email-gmail-yahoo
+    category: contact
+    type: Email address
+    value: abc@gmail.com, xyz@yahoo.com
+    label: Emails in NIC's Generate IRN sample
+    status: avoid
+    fails_checks: [reserved-domain]
+    reason: Real mail providers; the mailboxes may exist. Use a .test or example.com domain.
+    sources: *nic-irn
+  - id: in-avoid-domain-uidai-test
+    category: contact
+    type: Email domain
+    value: dummyemail.com, mailserver.com
+    label: Email domains in UIDAI's test resident data
+    status: avoid
+    fails_checks: [reserved-domain]
+    reason: Registered (parked) domains (DNS checked 2026-11-05).
+    sources: *uidai
+  - id: in-avoid-domain-example-co-in
+    category: contact
+    type: Email domain
+    value: example.co.in
+    label: Tempting Indian "example" domain
+    status: avoid
+    fails_checks: [reserved-domain]
+    reason: Registered (DNS NS records present, 2026-11-05). Not reserved; use example.com or a .test domain.
+    sources:
+      - title: RFC 2606 — Reserved Top Level DNS Names
+        url: https://www.rfc-editor.org/rfc/rfc2606
+        publisher: IETF
+        accessed: 2026-11-05
+  - id: in-avoid-ifsc-sbin11000
+    category: banking
+    type: IFSC
+    value: SBIN11000
+    label: IFSC in NIC's Generate IRN sample
+    status: avoid
+    reason: Malformed (9 characters instead of 11) and uses the real State Bank of India prefix SBIN.
+    sources: *nic-irn
+  - id: in-avoid-hsn-1001-rice
+    category: trade
+    type: HSN code
+    value: "1001"
+    label: HSN code paired with "Rice" in NIC's Generate IRN sample
+    status: avoid
+    reason: 1001 is wheat and meslin, not rice; use 1006 for rice.
+    sources: *nic-irn

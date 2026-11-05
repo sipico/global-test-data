@@ -1,0 +1,154 @@
+code: CN
+name: China (mainland)
+native_name: 中国大陆
+region: Asia
+languages: [zh, en]
+updated: 2026-11-05
+research: research/example-identifiers-china-hk-taiwan.md
+summary: >
+  Mainland China reserves no identifiers, telephone numbers or postcodes for fiction or
+  tests. The national standards publish worked examples instead: the Unified Social
+  Credit Code example 91350100M000100Y43 from GB 32100-2015 (its existence could not be
+  checked, because the national register needs a captcha) and two resident ID numbers
+  from GB 11643-1999. Deriving more USCCs is easy, but without a register lookup they may
+  belong to real entities, so none are listed. No fictitious bank (CNAPS) code, customs
+  party code or postcode was found; China Post's 999077/999078/999079 are internal
+  sorting codes for Hong Kong, Macao and Taiwan. For GLN/GTIN use the GS1 prefix 952
+  (see the global file); GS1 China prefixes 690–699 are real.
+
+identifiers:
+  - name: Unified Social Credit Code (统一社会信用代码, USCC)
+    format: >-
+      18 characters from 0-9 and A-Y without I, O, S, V, Z: registration authority (9 =
+      market regulation) + entity category (1 = enterprise) + 6-digit division code
+      (GB/T 2260) + 9-character organisation code (GB 11714) + check character
+    check: cn-uscc
+    authority: State Administration for Market Regulation (GB 32100-2015)
+    notes: >-
+      Check character = 31 − (Σ Ci·Wi mod 31) with Wi = 3^(i−1) mod 31; 31 → 0. No
+      China-specific ISO 6523 ICD was found, so use cbc:CompanyID without schemeID.
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID"]
+  - name: Taxpayer identification number (纳税人识别号)
+    format: Same as the USCC for organisations
+    check: cn-uscc
+    authority: State Taxation Administration
+    notes: Since the 2015 "three certificates in one" reform; the e-invoice field is labelled 统一社会信用代码/纳税人识别号.
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+  - name: Resident identity number (公民身份号码)
+    format: 6-digit address code + 8-digit birth date (YYYYMMDD) + 3-digit sequence (odd = male, even = female) + check character (0-9 or X)
+    check: cn-resident-id
+    authority: Ministry of Public Security (GB 11643-1999)
+    notes: ISO 7064 MOD 11-2.
+  - name: Fully digitalised e-invoice number (数电发票号码)
+    format: 20 digits — year (2) + provincial tax bureau area code (2) + issuing channel (1) + sequence (15)
+    authority: State Taxation Administration (公告2024年第11号)
+    notes: >-
+      No example number is published; the official sample (票样) has blank layouts only.
+      Mandatory face fields include 发票号码, 开票日期, 购买方信息, 销售方信息, 项目名称,
+      数量, 单价, 金额, 税率/征收率, 税额, 价税合计, 开票人.
+    ubl: ["cbc:ID"]
+  - name: Postal code (邮政编码)
+    format: 6 digits (province, postal area, county, delivery office)
+    authority: China Post (GB/T 7156)
+    ubl: ["cac:PostalAddress/cbc:PostalZone"]
+  - name: Vehicle plate (机动车号牌)
+    format: Province abbreviation + authority letter + 5 serial characters (6 for new-energy vehicles); serials never use I or O
+    authority: Ministry of Public Security (GA 36-2018)
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: cn-uscc-91350100m000100y43
+    category: organisation
+    type: USCC
+    value: 91350100M000100Y43
+    label: Worked example of an enterprise code (Fuzhou) in the national standard
+    status: published-example
+    checks: [cn-uscc]
+    notes: >-
+      GB 32100-2015 Appendix B. The embedded organisation code M000100Y-4 also passes
+      the GB 11714 check. Existence NOT verified: the national register (gsxt.gov.cn)
+      needs a captcha. Widely reused as a test value; use it for one Chinese party at
+      most. It is also the party's taxpayer identification number.
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID", "cac:PartyTaxScheme/cbc:CompanyID"]
+    sources:
+      - title: GB 32100-2015 法人和其他组织统一社会信用代码编码规则 (full text)
+        url: https://zh.wikisource.org/wiki/GB_32100-2015_%E6%B3%95%E4%BA%BA%E5%92%8C%E5%85%B6%E4%BB%96%E7%BB%84%E7%BB%87%E7%BB%9F%E4%B8%80%E7%A4%BE%E4%BC%9A%E4%BF%A1%E7%94%A8%E4%BB%A3%E7%A0%81%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99
+        publisher: Wikisource
+        accessed: 2026-11-05
+      - title: GB 32100-2015 — national standard record
+        url: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=24691C25985C1073D3A7C85629378AC0
+        publisher: State Administration for Market Regulation
+        accessed: 2026-11-05
+
+  # --- Contact -------------------------------------------------------------------
+  - id: cn-email-placeholder-test
+    category: contact
+    type: Email address
+    kind: placeholder
+    value: fapiao@<party-alias>.test
+    label: Invoice email pattern on the reserved .test domain
+    status: reserved
+    checks: [reserved-domain]
+    notes: Replace <party-alias> with a short alias for the party (fapiao = invoice). No CNNIC-reserved example domain exists.
+    sources: &rfc
+      - title: RFC 2606 — Reserved Top Level DNS Names
+        url: https://www.rfc-editor.org/rfc/rfc2606
+        publisher: IETF
+        accessed: 2026-11-05
+      - title: RFC 6761 — Special-Use Domain Names
+        url: https://www.rfc-editor.org/rfc/rfc6761
+        publisher: IETF
+        accessed: 2026-11-05
+
+  # --- Person --------------------------------------------------------------------
+  - id: cn-resident-id-440524188001010014
+    category: person
+    type: Resident identity number
+    value: "440524188001010014"
+    label: Worked example (male, born 1880-01-01) in the national standard
+    status: published-example
+    checks: [cn-resident-id]
+    notes: >-
+      GB 11643-1999 Appendix A. Safe choice: birth year 1880, and address code 440524
+      (Chaoyang county, Shantou) is no longer a current division code.
+    sources: &gb11643
+      - title: GB 11643-1999 公民身份号码 (full text)
+        url: https://zh.wikisource.org/wiki/GB_11643-1999_%E5%85%AC%E6%B0%91%E8%BA%AB%E4%BB%BD%E5%8F%B7%E7%A0%81
+        publisher: Wikisource
+        accessed: 2026-11-05
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: cn-avoid-resident-id-11010519491231002x
+    category: person
+    type: Resident identity number
+    value: 11010519491231002X
+    label: Other worked example (female, Beijing Chaoyang) in the national standard
+    status: avoid
+    checks: [cn-resident-id]
+    reason: Valid and realistic (current address code 110105, plausible birth date); may belong to a real person. Use 440524188001010014.
+    sources: *gb11643
+  - id: cn-avoid-phone-invented
+    category: contact
+    type: Phone range
+    kind: range
+    value: +86 1xx xxxx xxxx, +86 10 xxxx xxxx
+    label: Invented mainland mobile or Beijing landline numbers
+    status: avoid
+    reason: >-
+      MIIT reserves no range for fiction or documentation; any invented number may be
+      real. The newest dedicated range, 700, is a real number-protection service.
+    sources:
+      - title: 电信网编号计划（2017年版）
+        url: https://www.miit.gov.cn/jgsj/xgj/wjfb/art/2020/art_eb0adf5b6e7148cbb70802b264878b1e.html
+        publisher: MIIT
+        accessed: 2026-11-05
+  - id: cn-avoid-domain-example-com-cn
+    category: contact
+    type: Email domain
+    value: example.com.cn, test.cn, ceshi.cn, shili.cn, example.cn
+    label: Chinese-looking example domains
+    status: avoid
+    reason: >-
+      Registered (NS records present, DNS checked 2026-11-05); example.cn returns
+      SERVFAIL, so it is probably registered too. Use a .test domain.
+    sources: *rfc

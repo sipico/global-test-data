@@ -1,0 +1,213 @@
+code: AR
+name: Argentina
+native_name: Argentina
+region: Latin America
+languages: [es, en]
+updated: 2026-11-05
+research: research/example-identifiers-south-america.md
+summary: >
+  Argentina has little official test data. ARCA (formerly AFIP) publishes no shared test
+  CUIT; its e-invoicing developer manual only uses example CUITs such as 30000000007 and
+  20111111112, plus the meaningful "No Categorizado" value 23000000000. None of these can
+  be checked against the tax register (no open padrón lookup). E-invoices are SOAP web
+  service requests (WSFEv1), not UBL. The BCRA gives the CBU check-digit rule but no
+  example number, the CBUs found online use real bank codes, and ENACOM reserves no
+  telephone numbers for fiction. No official test DNI exists.
+
+identifiers:
+  - name: CUIT / CUIL
+    format: 11 digits, 2-digit type prefix + 8-digit DNI or serial + check digit; written NN-NNNNNNNN-N
+    check: ar-cuit
+    authority: ARCA (formerly AFIP)
+    notes: Prefixes 20/23/24/27 = persons, 30/33/34 = legal entities. Weights 5-4-3-2-7-6-5-4-3-2, DV = 11 − (sum mod 11), 11 → 0; a result of 10 switches the prefix to 23/33. No ARCA primary source for the algorithm was found.
+  - name: DNI
+    format: 7–8 digits, no check digit
+    authority: RENAPER
+  - name: CBU / CVU
+    format: 22 digits, entity (3) + branch (4) + DV, then account (13) + DV
+    authority: Banco Central de la República Argentina
+    notes: Each DV is mod 10 with weights 9-7-1-3 (Com. "A" 2622). CVU (Com. "A" 6510) uses prefix 000 + 4-digit PSP code. No validator exists yet in tools/checks.py.
+  - name: CPA (Código Postal Argentino)
+    format: A9999AAA, province letter + 4-digit postcode + 3-letter block-face code, written left of the locality
+    authority: Correo Argentino
+    notes: Province letter as in ISO 3166-2:AR (C = CABA, B = Buenos Aires province, X = Córdoba).
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: ar-cuit-30000000007
+    category: organisation
+    type: CUIT
+    value: "30000000007"
+    label: Legal-entity receiver CUIT in ARCA's e-invoicing examples
+    status: published-example
+    checks: [ar-cuit]
+    notes: Best Argentine company ID. Serial 00000000 is very unlikely to be assigned, but there is no open register to confirm it.
+    sources: &arca_manual
+      - title: Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0
+        url: https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf
+        publisher: ARCA
+        accessed: 2026-11-05
+  - id: ar-cuit-23000000000
+    category: organisation
+    type: CUIT (No Categorizado)
+    value: "23000000000"
+    label: Receiver "not categorised"; ARCA skips the padrón check
+    status: reserved
+    checks: [ar-cuit]
+    notes: Used with DocTipo 80 (errors 10015, 1425 etc.). It has a meaning, so do not use it as a party identifier.
+    sources: *arca_manual
+
+  # --- Address ----------------------------------------------------------------
+  - id: ar-address-upu-casilla
+    category: address
+    type: Address example (PO box)
+    kind: placeholder
+    value: "SR. JUAN LOPEZ / CASILLA DE CORREOS 432 / CORREO CENTRAL / C1000WAE CAPITAL FEDERAL"
+    label: UPU example of a PO box address in Buenos Aires city
+    status: published-example
+    notes: Lines of at most 40 characters, no accents; CPA left of the locality.
+    sources: &upu_ar
+      - title: Postal addressing — Argentina
+        url: https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/argEn.pdf
+        publisher: Universal Postal Union
+        accessed: 2026-11-05
+  - id: ar-cpa-x5187yab
+    category: address
+    type: CPA and locality
+    value: X5187YAB SAN CLEMENTE
+    label: UPU example of a CPA with locality
+    status: published-example
+    sources: *upu_ar
+
+  # --- Contact -------------------------------------------------------------------
+  - id: ar-email-domain-example-com
+    category: contact
+    type: Email domain
+    value: example.com
+    label: Reserved domain for example e-mail addresses (also *.test)
+    status: reserved
+    checks: [reserved-domain]
+    sources: &rfc_domains
+      - title: RFC 2606 — Reserved Top Level DNS Names
+        url: https://www.rfc-editor.org/rfc/rfc2606
+        publisher: IETF
+        accessed: 2026-11-05
+      - title: RFC 6761 — Special-Use Domain Names
+        url: https://www.rfc-editor.org/rfc/rfc6761
+        publisher: IETF
+        accessed: 2026-11-05
+
+  # --- Person --------------------------------------------------------------------
+  - id: ar-cuit-20111111112
+    category: person
+    type: CUIT / CUIL
+    value: "20111111112"
+    label: Person-type receiver CUIT (DocTipo 80) in ARCA's examples
+    status: published-example
+    checks: [ar-cuit]
+    notes: Prefix 20 + DNI 11111111, so it could belong to a real person; not checkable (no open padrón lookup). Prefer 30000000007.
+    sources: *arca_manual
+  - id: ar-consumidor-final
+    category: person
+    type: Final consumer document
+    kind: placeholder
+    value: DocTipo 99 / DocNro 0
+    label: Anonymous final consumer on B/C invoices (consumidor final)
+    status: reserved
+    notes: Allowed below the RG 4444 threshold (errors 1415–1419).
+    sources: *arca_manual
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: ar-avoid-cuit-33693450239
+    category: organisation
+    type: CUIT
+    value: "33693450239"
+    label: Auth/Cuit in ARCA examples and the WSAA homologation certificate DN
+    status: avoid
+    checks: [ar-cuit]
+    reason: AFIP/ARCA's own CUIT.
+    sources: *arca_manual
+  - id: ar-avoid-cuit-23000000004
+    category: organisation
+    type: CUIT
+    value: "23000000004"
+    label: Issuer CUIT in ARCA manual examples
+    status: avoid
+    fails_checks: [ar-cuit]
+    reason: Wrong check digit (correct would be 23000000000, which has a meaning).
+    sources: *arca_manual
+  - id: ar-avoid-cuit-33333333333
+    category: organisation
+    type: CUIT
+    value: "33333333333"
+    label: Example CUIT in ARCA manual
+    status: avoid
+    fails_checks: [ar-cuit]
+    reason: Wrong check digit.
+    sources: *arca_manual
+  - id: ar-avoid-cuit-33000000007
+    category: organisation
+    type: CUIT
+    value: "33000000007"
+    label: Example CUIT in ARCA manual
+    status: avoid
+    fails_checks: [ar-cuit]
+    reason: Wrong check digit.
+    sources: *arca_manual
+  - id: ar-avoid-cuit-20267565393
+    category: person
+    type: CUIT
+    value: "20267565393"
+    label: CUIT in PyAfipWs homologation examples
+    status: avoid
+    checks: [ar-cuit]
+    reason: A developer's own personal CUIT.
+    sources:
+      - title: PyAfipWs — Proyecto WSFEv1
+        url: https://www.sistemasagiles.com.ar/trac/wiki/ProyectoWSFEv1
+        publisher: Sistemas Ágiles
+        accessed: 2026-11-05
+  - id: ar-avoid-cbu-2850590940090418135201
+    category: banking
+    type: CBU
+    value: "2850590940090418135201"
+    label: '"Example CBU" on Wikipedia (es) and blogs'
+    status: avoid
+    reason: Both check digits are correct, but entity 285 is Banco Macro (possibly a real account) and the example is not from the BCRA.
+    sources:
+      - title: Clave Bancaria Uniforme (Wikipedia es)
+        url: https://es.wikipedia.org/wiki/Clave_Bancaria_Uniforme
+        publisher: Wikipedia
+        accessed: 2026-11-05
+      - title: Comunicación "A" 2622 (CBU)
+        url: https://www.bcra.gob.ar/archivos/Pdfs/comytexord/a2622.pdf
+        publisher: BCRA
+        accessed: 2026-11-05
+  - id: ar-avoid-cbu-0110599520000012345676
+    category: banking
+    type: CBU
+    value: "0110599520000012345676"
+    label: Third-party "example CBU"
+    status: avoid
+    reason: Block-2 check digit is wrong (should end …8), and entity 011 is Banco Nación.
+    sources:
+      - title: Comunicación "A" 2622 (CBU)
+        url: https://www.bcra.gob.ar/archivos/Pdfs/comytexord/a2622.pdf
+        publisher: BCRA
+        accessed: 2026-11-05
+  - id: ar-avoid-cpa-y5900fnf
+    category: address
+    type: CPA and locality
+    value: Y5900FNF VILLA MARIA
+    label: Address example on the UPU sheet
+    status: avoid
+    reason: Wrong province letter; Villa María is in Córdoba (X), Y is Jujuy.
+    sources: *upu_ar
+  - id: ar-avoid-domain-ejemplo-com-ar
+    category: contact
+    type: Email domain
+    value: ejemplo.com.ar
+    label: Tempting Spanish-language example domain
+    status: avoid
+    reason: Registered (it resolves). Use example.com or a .test domain.
+    sources: *rfc_domains
