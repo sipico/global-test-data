@@ -1,0 +1,394 @@
+code: CO
+name: Colombia
+native_name: Colombia
+region: Latin America
+languages: [es, en]
+updated: 2026-11-05
+research: research/example-identifiers-mexico-colombia.md
+summary: >
+  Colombia's electronic invoice is UBL 2.1. The DIAN toolkit ships 44 signed example XMLs
+  that are an excellent structural reference, but most party NITs in them are real
+  companies, including DIAN's own NIT. Only a handful of DIAN example NITs pass the check
+  digit and are not in the RUES chamber-of-commerce register; they were not checked in the
+  DIAN RUT (captcha), and RUES does not cover every taxpayer. The anonymous consumer has a
+  reserved ID (222222222222). There is no reserved telephone range, no official fictitious
+  address and no national bank-account check digit. Not included: the exógena seudo-NITs
+  444444xxx (source article not found) and the cédula numbers in the DIAN examples
+  (Registraduría not checked).
+
+identifiers:
+  - name: NIT (Número de Identificación Tributaria)
+    format: 9 digits for legal entities (blocks 800…, 830…, 860…, 890…, 900…, 901…) + 1 check digit (DV); individuals use their cédula as NIT
+    check: co-nit
+    authority: DIAN
+    notes: >
+      DV: weights from the right 3 7 13 17 19 23 29 37 41 43 47 53 59 67 71; r = sum mod 11;
+      DV = r if r is 0 or 1, else 11 − r. In the DIAN UBL 2.1 e-invoice the NIT goes without the DV,
+      with schemeName = identification type (31 = NIT), schemeID = DV and schemeAgencyID = 195 (DIAN).
+    ubl: ['cac:PartyTaxScheme/cbc:CompanyID @schemeName=31 @schemeID=<DV> @schemeAgencyID=195', 'cac:PartyLegalEntity/cbc:CompanyID @schemeName=31 @schemeID=<DV> @schemeAgencyID=195']
+  - name: Cédula de ciudadanía
+    format: 6–10 digits, no check digit
+    authority: Registraduría Nacional del Estado Civil
+    notes: Cannot be validated offline; do not invent one. DIAN identification type 13.
+    ubl: ['cac:PartyTaxScheme/cbc:CompanyID @schemeName=13']
+  - name: CUFE (Código Único de Factura Electrónica)
+    format: 96 hexadecimal characters (SHA-384 over invoice number, date, amounts, taxes, NITs, technical key and environment)
+    authority: DIAN
+    ubl: ['cbc:UUID @schemeName=CUFE-SHA384 @schemeID=<environment>']
+  - name: Código postal
+    format: 6 digits — DANE department (2) + routing zone (2; 00 = department capital) + postal district (2)
+    authority: 4-72 (Servicios Postales Nacionales)
+    notes: An unknown PostalZone only gives a warning in DIAN validation (rule FAJ73), not a rejection.
+    ubl: ['cac:Address/cbc:PostalZone']
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: co-nit-981223983-1
+    category: organisation
+    type: NIT
+    value: 981223983-1
+    label: DeliveryParty (Empresa de transporte) NIT in the DIAN example XMLs
+    status: published-example
+    checks: [co-nit]
+    verified: ["Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)"]
+    notes: Recommended supplier NIT. Not checked in the DIAN RUT (Consulta estado RUT needs a captcha); RUES only covers chamber-of-commerce registrations. Use with a name from your own party set, not with the DIAN example names.
+    ubl: ['cac:PartyTaxScheme/cbc:CompanyID @schemeName=31 @schemeID=1 @schemeAgencyID=195 (value 981223983)']
+    sources: &dian
+      - title: DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs
+        url: https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip
+        publisher: DIAN
+        accessed: 2026-11-05
+      - title: DIAN — Documentación técnica, sistema de facturación electrónica
+        url: https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/
+        publisher: DIAN
+        accessed: 2026-11-05
+      - title: RUES open data (datos.gov.co dataset c82u-588k)
+        url: https://www.datos.gov.co/resource/c82u-588k.json
+        publisher: Confecámaras / datos.gov.co
+        accessed: 2026-11-05
+  - id: co-nit-989123123-4
+    category: organisation
+    type: NIT
+    value: 989123123-4
+    label: TaxRepresentativeParty NIT in the DIAN example XMLs
+    status: published-example
+    checks: [co-nit]
+    verified: ["Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)"]
+    notes: Recommended customer NIT. Not checked in the DIAN RUT.
+    ubl: ['cac:PartyTaxScheme/cbc:CompanyID @schemeName=31 @schemeID=4 @schemeAgencyID=195 (value 989123123)']
+    sources: *dian
+  - id: co-nit-995201603-4
+    category: organisation
+    type: NIT
+    value: 995201603-4
+    label: AgentParty NIT (multiple-buyers example) in the DIAN example XMLs
+    status: published-example
+    checks: [co-nit]
+    verified: ["Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)"]
+    notes: Recommended third-party / agent / carrier NIT. Not checked in the DIAN RUT.
+    ubl: ['cac:PartyTaxScheme/cbc:CompanyID @schemeName=31 @schemeID=4 @schemeAgencyID=195 (value 995201603)']
+    sources: *dian
+  - id: co-nit-99998888-6
+    category: organisation
+    type: NIT
+    value: 99998888-6
+    label: Supplier NIT (A & M INTERNACIONAL DE COMERCIO SAS, Medellín) in a DIAN example
+    status: published-example
+    checks: [co-nit]
+    verified: ["Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)"]
+    notes: Less clean than the three above. 8 digits, looks like a NIT derived from a cédula. Not checked in the DIAN RUT.
+    sources: *dian
+  - id: co-nit-791098888-4
+    category: organisation
+    type: NIT
+    value: 791098888-4
+    label: Customer NIT (CLIENTEFACTURAPRUE1) in a DIAN example
+    status: published-example
+    checks: [co-nit]
+    verified: ["Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)"]
+    notes: Less clean (outside the usual legal-entity blocks). Not checked in the DIAN RUT.
+    sources: *dian
+  - id: co-nit-990000001-1
+    category: organisation
+    type: NIT
+    value: 990000001-1
+    label: Derived NIT with valid check digit
+    status: derived
+    checks: [co-nit]
+    verified: ["Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)"]
+    notes: Not checked in the DIAN RUT. RUES has scattered records even in unusual ranges, so check each value individually; prefer the DIAN-published NITs.
+    sources: &rues
+      - title: RUES open data (datos.gov.co dataset c82u-588k)
+        url: https://www.datos.gov.co/resource/c82u-588k.json
+        publisher: Confecámaras / datos.gov.co
+        accessed: 2026-11-05
+      - title: DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (DV rule)
+        url: https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf
+        publisher: DIAN
+        accessed: 2026-11-05
+  - id: co-nit-990000002-7
+    category: organisation
+    type: NIT
+    value: 990000002-7
+    label: Derived NIT with valid check digit
+    status: derived
+    checks: [co-nit]
+    verified: ["Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)"]
+    notes: Not checked in the DIAN RUT.
+    sources: *rues
+  - id: co-nit-990000003-4
+    category: organisation
+    type: NIT
+    value: 990000003-4
+    label: Derived NIT with valid check digit
+    status: derived
+    checks: [co-nit]
+    verified: ["Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)"]
+    notes: Not checked in the DIAN RUT.
+    sources: *rues
+  - id: co-name-facturador-de-ejemplo
+    category: organisation
+    type: Company name
+    value: FACTURADOR DE EJEMPLO
+    label: Supplier name in the DIAN example XMLs ("example invoicer")
+    status: published-example
+    notes: >
+      Generic and safe as a name, but NOT with the NIT it comes with (800197268 = DIAN). Other names:
+      ADQUIRIENTE DE EJEMPLO (… 1/2/3 for multiple buyers), Empresa de transporte, Nombre Tienda,
+      Establecimiento Principal.
+    ubl: ['cac:PartyLegalEntity/cbc:RegistrationName']
+    sources: *dian
+
+  # --- Address ----------------------------------------------------------------
+  - id: co-address-av-123-45-67
+    category: address
+    type: Street address
+    kind: placeholder
+    value: "AV 123 # 45 - 67"
+    label: Address placeholder used in the DIAN example XMLs
+    status: published-example
+    notes: Colombian style street type + number + # + cross-street number − house number. No official fictitious address exists (none at 4-72). Calle 000 is also used (consumer example).
+    ubl: ['cac:Address/cac:AddressLine/cbc:Line']
+    sources: *dian
+  - id: co-postcode-110111
+    category: address
+    type: Postcode
+    value: "110111"
+    label: Most frequent postcode in the DIAN examples (Usaquén, Bogotá)
+    status: published-example
+    notes: Real postcode; combine with an invented street. Bogotá is city code 11001, department 11.
+    ubl: ['cac:Address/cbc:PostalZone']
+    sources: &postal
+      - title: DIAN — Caja de herramientas FE V1.9 (v2026), table 13.4.4 postcodes
+        url: https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip
+        publisher: DIAN
+        accessed: 2026-11-05
+      - title: 4-72 — Código postal de Colombia
+        url: http://www.codigopostal.gov.co
+        publisher: 4-72 Servicios Postales Nacionales
+        accessed: 2026-11-05
+  - id: co-postcode-000000
+    category: address
+    type: Postcode
+    value: "000000"
+    label: Postcode used in a DIAN example, not in the postcode table
+    status: derived
+    verified: ["Not in the DIAN postcode table 13.4.4 (3,681 codes) (2026-11-05)"]
+    notes: Gives only a warning in DIAN validation (rule FAJ73), not a rejection.
+    sources: *postal
+  - id: co-postcode-unused-prefixes
+    category: address
+    type: Postcode range
+    kind: range
+    value: 00xxxx, 01xxxx–04xxxx, 06xxxx, 07xxxx, 09xxxx, 10xxxx, 12xxxx
+    label: Department prefixes not used by any postcode
+    status: derived
+    verified: ["Checked against the DIAN postcode table 13.4.4, 3,681 codes (2026-11-05)"]
+    notes: Pass a 6-digit format check; unknown PostalZone gives only a warning (rule FAJ73).
+    sources: *postal
+
+  # --- Contact -------------------------------------------------------------------
+  - id: co-email-role-alias-test
+    category: contact
+    type: Email address
+    kind: range
+    value: <role>@<alias>.test
+    label: Email pattern on the reserved .test top-level domain
+    status: reserved
+    checks: [reserved-domain]
+    notes: e.g. facturacion@<alias>.test. .CO reserves no name for examples.
+    sources: &rfcdomains
+      - title: RFC 2606 — Reserved Top Level DNS Names
+        url: https://www.rfc-editor.org/rfc/rfc2606
+        publisher: IETF
+        accessed: 2026-11-05
+      - title: RFC 6761 — Special-Use Domain Names
+        url: https://www.rfc-editor.org/rfc/rfc6761
+        publisher: IETF
+        accessed: 2026-11-05
+
+  # --- Person ------------------------------------------------------------------
+  - id: co-consumer-222222222222
+    category: person
+    type: Consumer ID (consumidor final)
+    value: "222222222222"
+    label: Reserved ID for the anonymous final consumer in e-invoices
+    status: reserved
+    notes: >
+      12 × 2, identification type 13, AdditionalAccountID 2, name "consumidor final", email optional
+      (Anexo Técnico rules FAK61/FAK62 and the CreditNote/DebitNote equivalents). Legal meaning, not a test value.
+    ubl: ['cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID @schemeName=13']
+    sources: &anexo
+      - title: DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (Resolución 000165 de 2023)
+        url: https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf
+        publisher: DIAN
+        accessed: 2026-11-05
+
+  # --- Document ------------------------------------------------------------------
+  - id: co-profile-execution-id-2
+    category: document
+    type: Environment code
+    value: "2"
+    label: Test environment (Pruebas) in DIAN code list 13.1.1
+    status: reserved
+    notes: 1 = Producción, 2 = Pruebas. Use 2 in samples.
+    ubl: ['cbc:ProfileExecutionID', 'cbc:UUID @schemeID']
+    sources: *anexo
+  - id: co-invoice-authorization-18760000001
+    category: document
+    type: Numbering resolution
+    value: "18760000001"
+    label: Test-set invoice numbering resolution used in 33 DIAN example files
+    status: published-example
+    notes: Use only with ProfileExecutionID 2. Authorisation period 2019-01-19 to 2030-01-19. Whether DIAN still issues it to new test sets is unverified.
+    ubl: ['sts:DianExtensions/sts:InvoiceControl/sts:InvoiceAuthorization']
+    sources: *dian
+  - id: co-invoice-prefix-setp
+    category: document
+    type: Invoice number range
+    kind: range
+    value: SETP990000000–SETP995000000
+    label: Test-set invoice prefix and number range in the DIAN examples
+    status: published-example
+    notes: e.g. invoice ID SETP990000002. A second range SETG980000000–SETG985000000 is also used. Use only with ProfileExecutionID 2.
+    ubl: ['sts:InvoiceControl/sts:AuthorizedInvoices/sts:Prefix', 'cbc:ID']
+    sources: *dian
+  - id: co-software-id-56f2ae4e
+    category: document
+    type: Software ID
+    value: 56f2ae4e-9812-4fad-9255-08fcfcd5ccb0
+    label: Software ID in the DIAN examples
+    status: published-example
+    notes: Also fa326ca7-c1f8-40d3-a6fc-24d7c1040607. ProviderID is 800197268 (DIAN). SoftwareSecurityCode is derived from SoftwareID + PIN, and the PIN is not published.
+    ubl: ['sts:DianExtensions/sts:SoftwareProvider/sts:SoftwareID']
+    sources: *dian
+  - id: co-qr-url-habilitacion
+    category: document
+    type: Validation URL
+    kind: placeholder
+    value: https://catalogo-vpfe-hab.dian.gov.co/Document/FindDocument?documentKey=<CUFE>
+    label: Test-environment (habilitación) document lookup URL used in the QR code
+    status: published-example
+    notes: The -hab host is the test environment.
+    sources: *anexo
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: co-avoid-nit-800197268
+    category: organisation
+    type: NIT
+    value: 800197268-4
+    label: FACTURADOR DE EJEMPLO supplier NIT in the DIAN examples
+    status: avoid
+    checks: [co-nit]
+    reason: DIAN's own NIT. Some example files also give the wrong DV 9.
+    sources: *dian
+  - id: co-avoid-nit-900108281
+    category: organisation
+    type: NIT
+    value: 900108281-3
+    label: ADQUIRIENTE DE EJEMPLO / OPTICAS GMO COLOMBIA customer NIT in the DIAN examples
+    status: avoid
+    checks: [co-nit]
+    reason: Real company (LUXOTTICA OF COLOMBIA SAS, active in RUES).
+    sources: *dian
+  - id: co-avoid-nit-real-companies
+    category: organisation
+    type: NIT
+    value: 900373981, 900374634, 900374635, 900374636, 900374637, 900373991, 900508908, 800242106, 860028580
+    label: Other party and software-provider NITs in the DIAN examples
+    status: avoid
+    reason: Real companies in RUES (e.g. SODIMAC COLOMBIA, DISPAPELES, SIGNATURE SOUTH CONSULTING COLOMBIA). 900374636 is not in RUES but sits in an actively assigned block whose neighbours are real.
+    sources: *dian
+  - id: co-avoid-nit-wrong-dv
+    category: organisation
+    type: NIT
+    value: 800197279, 800197213, 900373972, 900373979, 901781456, 900508918, 72659841521, 860003456
+    label: RADIAN and other example NITs in the DIAN examples
+    status: avoid
+    reason: The DV given in the examples is wrong, and several are real companies.
+    sources: *dian
+  - id: co-avoid-nit-placeholders
+    category: organisation
+    type: NIT
+    value: 999999999, 123456789, 1832, 2222222222222
+    label: Placeholder NITs
+    status: avoid
+    reason: 999999999 and 123456789 are in RUES (123456789 = MATRICULA PRUEBA SAS and a real person); 1832 is too short and has RUES hits; 2222222222222 is a placeholder.
+    sources: *rues
+  - id: co-avoid-consumer-short-2s
+    category: person
+    type: Consumer ID
+    value: 2222222222, 22222222222
+    label: Consumer IDs used in some DIAN examples
+    status: avoid
+    reason: Not the annex value (use 222222222222); 2222222222 is in RUES (a cancelled individual).
+    sources: *dian
+  - id: co-avoid-cedula-79907759
+    category: person
+    type: Cédula de ciudadanía
+    value: "79907759"
+    label: Consumer cédula in a DIAN example
+    status: avoid
+    reason: Belongs to a real person (RUES), shown with a real-looking personal email.
+    sources: *dian
+  - id: co-avoid-email-dian-examples
+    category: contact
+    type: Email address
+    value: "@dian.gov.co, @gosocket.net, @ket.co and @gmail.com addresses in the DIAN examples"
+    label: Emails in the DIAN example XMLs
+    status: avoid
+    reason: Real DIAN staff, vendor staff and apparently personal addresses.
+    sources: *dian
+  - id: co-avoid-domain-placeholders
+    category: contact
+    type: Email domain
+    value: empresa.org, empresa.net, empresa.co, servicios.com, sistemas.net, mail.co, mail.com, soluciones.com.co, prue.com, pruebas.com, sincorreo.com, example.co
+    label: Placeholder email domains in DIAN and other examples
+    status: avoid
+    reason: All registered (DNS checked 2026-11-05); pruebas.com and sincorreo.com are parked for sale. Use a .test domain.
+    sources: *dian
+  - id: co-avoid-domain-unregistered
+    category: contact
+    type: Email domain
+    value: ejemplo.co, ejemplo.com.co
+    label: Tempting Colombian example domains
+    status: avoid
+    reason: Not registered now (NXDOMAIN, 2026-11-05), but anyone could register them; .CO reserves nothing for examples.
+    sources: *rfcdomains
+  - id: co-avoid-address-dian-bogota
+    category: address
+    type: Street address
+    value: "Av. Jiménez #7 - 13; Carrera 8 Nº 6C-38"
+    label: Addresses in the DIAN examples
+    status: avoid
+    reason: Real DIAN / central Bogotá addresses.
+    sources: *dian
+  - id: co-avoid-gtin-dian-examples
+    category: trade
+    type: GTIN
+    value: "6543542313534"
+    label: Item code given under EAN13 in a DIAN example
+    status: avoid
+    checks: [gs1]
+    reason: Arbitrary value used as an EAN-13, not a GTIN assigned by a GS1 member (Colombia's GS1 prefixes are 770/771); the check digit happens to pass. Use a GS1 952 example prefix instead.
+    sources: *dian

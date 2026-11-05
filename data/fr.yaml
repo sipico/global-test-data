@@ -1,0 +1,332 @@
+code: FR
+name: France
+native_name: France
+region: Europe
+languages: [fr, en]
+updated: 2026-11-05
+research: research/example-identifiers-fr.md
+summary: >
+  France has the best official source of fictitious company identifiers found so far:
+  the FNFE-MPE example invoices for the national e-invoicing reform use SIRENs that pass
+  the check digit and are not in the company register. The telecoms regulator ARCEP
+  reserves six phone number blocks for fiction. There are no fictitious towns or
+  postcodes: La Poste's own examples put invented people and companies at real communes.
+
+identifiers:
+  - name: SIREN
+    format: 9 digits
+    check: fr-siren
+    authority: INSEE
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID @schemeID=0002", "cbc:EndpointID @schemeID=0002"]
+  - name: SIRET
+    format: SIREN + 5-digit establishment number (NIC), 14 digits
+    check: fr-siret
+    authority: INSEE
+    ubl: ["cac:PartyIdentification/cbc:ID @schemeID=0009"]
+  - name: VAT number (numéro de TVA intracommunautaire)
+    format: FR + 2-digit key + SIREN
+    check: fr-vat
+    authority: DGFiP
+    notes: Key = (12 + 3 × (SIREN mod 97)) mod 97. A made-up SIREN gives a VAT number that passes syntax checks but fails a live VIES lookup.
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+  - name: EORI number
+    format: FR + SIRET (or SIREN)
+    authority: Direction générale des douanes et droits indirects
+  - name: E-invoicing electronic address
+    format: SIREN, optionally with a suffix
+    authority: DGFiP (Annuaire)
+    ubl: ["cbc:EndpointID @schemeID=0225"]
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: fr-siren-100000009
+    category: organisation
+    type: SIREN
+    value: "100000009"
+    label: Seller company number in the official e-invoicing examples
+    status: published-example
+    checks: [fr-siren]
+    verified: ["Not in the national company register, recherche-entreprises.api.gouv.fr (2026-11-05)"]
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID @schemeID=0002"]
+    sources: &fnfe
+      - title: FNFE-MPE France_RFE — example invoices (Z.example/TEST)
+        url: https://github.com/fnfempe/France_RFE
+        publisher: FNFE-MPE
+        accessed: 2026-11-05
+  - id: fr-siren-200000008
+    category: organisation
+    type: SIREN
+    value: "200000008"
+    label: Buyer company number in the official e-invoicing examples
+    status: published-example
+    checks: [fr-siren]
+    verified: ["Not in the national company register, recherche-entreprises.api.gouv.fr (2026-11-05)"]
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID @schemeID=0002"]
+    sources: *fnfe
+  - id: fr-siren-111111118
+    category: organisation
+    type: SIREN
+    value: "111111118"
+    label: Third-party company number (multi-vendor case) in the official examples
+    status: published-example
+    checks: [fr-siren]
+    verified: ["Not in the national company register, recherche-entreprises.api.gouv.fr (2026-11-05)"]
+    sources: *fnfe
+  - id: fr-siret-11111111800019
+    category: organisation
+    type: SIRET
+    value: "11111111800019"
+    label: Establishment number belonging to SIREN 111111118
+    status: published-example
+    checks: [fr-siret]
+    ubl: ["cac:PartyIdentification/cbc:ID @schemeID=0009"]
+    sources: *fnfe
+  - id: fr-vat-fr88100000009
+    category: organisation
+    type: VAT number
+    value: FR88100000009
+    label: VAT number for SIREN 100000009
+    status: published-example
+    checks: [fr-vat]
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *fnfe
+  - id: fr-vat-fr37200000008
+    category: organisation
+    type: VAT number
+    value: FR37200000008
+    label: VAT number for SIREN 200000008
+    status: published-example
+    checks: [fr-vat]
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *fnfe
+  - id: fr-vat-fr44111111118
+    category: organisation
+    type: VAT number
+    value: FR44111111118
+    label: VAT number for SIREN 111111118
+    status: published-example
+    checks: [fr-vat]
+    ubl: ["cac:PartyTaxScheme/cbc:CompanyID"]
+    sources: *fnfe
+  - id: fr-endpoint-100000009-statuts
+    category: organisation
+    type: E-invoicing address
+    value: 100000009_STATUTS
+    label: Electronic address with suffix, used for lifecycle status messages
+    status: published-example
+    ubl: ["cbc:EndpointID @schemeID=0225"]
+    notes: The examples also use 100000009_AUTOFACT for self-billing and the plain SIREN as main address.
+    sources: *fnfe
+  - id: fr-name-le-vendeur
+    category: organisation
+    type: Company name
+    value: LE VENDEUR
+    label: Seller name in the official examples ("the seller")
+    status: published-example
+    ubl: ["cac:PartyLegalEntity/cbc:RegistrationName"]
+    notes: Other names used are LE CLIENT, AGRI1 and COOP1. La Poste's addressing examples use Société DUPONT.
+    sources: *fnfe
+
+  # --- Address ----------------------------------------------------------------
+  - id: fr-address-laposte-private
+    category: address
+    type: Address example (private person)
+    kind: placeholder
+    value: "Monsieur Jean DELORME / Appartement 2 / ENTREE A BATIMENT JONQUILLE / 25 RUE DE L'EGLISE / CAUDOS / 33380 MIOS"
+    label: La Poste's own example of a correctly formatted private address
+    status: published-example
+    notes: Invented person at a real commune (Mios, Gironde). Lines in AFNOR NF Z10-011 order, max. 38 characters each.
+    sources: &laposte
+      - title: La Poste SP 8855 vol. 2 v1.11 — Adressage des plis
+        url: https://lastation.laposte.fr/sites/p8_u1/files/2023-03/SP8855-Volume%202_V1.11%20-%20Adressage%20des%20plis.pdf
+        publisher: La Poste
+        accessed: 2026-11-05
+  - id: fr-address-laposte-company
+    category: address
+    type: Address example (company)
+    kind: placeholder
+    value: "Société DUPONT / Monsieur Martin Service Achats / ZONE INDUSTRIELLE OUEST / 35 IMPASSE DES GABARRES / BP 18 ARVEYRES / 33506 LIBOURNE CEDEX"
+    label: La Poste's own example of a company address with PO box and CEDEX
+    status: published-example
+    sources: *laposte
+  - id: fr-postcode-unused-00
+    category: address
+    type: Postcode range
+    kind: range
+    value: 00xxx, 96xxx, 99xxx
+    label: First two digits not used by any geographic postcode
+    status: derived
+    verified: ["Checked against La Poste's Base officielle des codes postaux, 6,328 postcodes (2026-11-05); CEDEX codes not checked"]
+    notes: Such postcodes pass a 5-digit format check but fail any check that the postcode exists. 75000 is also not a real postcode.
+    sources:
+      - title: Base officielle des codes postaux (laposte-hexasmal)
+        url: https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux
+        publisher: La Poste
+        accessed: 2026-11-05
+  - id: fr-town-ma-ville
+    category: address
+    type: Town name
+    value: MA VILLE
+    label: Invented town name used in the official e-invoicing examples
+    status: published-example
+    verified: ["Not a commune name in La Poste's postcode file (2026-11-05)"]
+    notes: Used with the real postcode 06000. TRIFOUILLIS LES OIES and PERPETTE LES OIES are also not communes and are recognisable French joke names.
+    sources: *fnfe
+
+  # --- Contact -------------------------------------------------------------------
+  - id: fr-phone-0199-00
+    category: contact
+    type: Phone range
+    kind: range
+    value: 01 99 00 xx xx
+    label: Île-de-France numbers reserved for audiovisual works
+    status: reserved
+    notes: Never assigned and cannot be called. International format +33 1 99 00 xx xx.
+    sources: &arcep
+      - title: ARCEP décision 2018-0881 (plan national de numérotation, art. 2.5.12)
+        url: https://www.arcep.fr/uploads/tx_gsavis/18-0881.pdf
+        publisher: ARCEP
+        accessed: 2026-11-05
+      - title: Décision n° 2021-0532 (Légifrance)
+        url: https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043910280
+        publisher: Légifrance
+        accessed: 2026-11-05
+  - id: fr-phone-0261-91
+    category: contact
+    type: Phone range
+    kind: range
+    value: 02 61 91 xx xx
+    label: North-West, La Réunion and Mayotte numbers reserved for audiovisual works
+    status: reserved
+    sources: *arcep
+  - id: fr-phone-0353-01
+    category: contact
+    type: Phone range
+    kind: range
+    value: 03 53 01 xx xx
+    label: North-East numbers reserved for audiovisual works
+    status: reserved
+    sources: *arcep
+  - id: fr-phone-0465-71
+    category: contact
+    type: Phone range
+    kind: range
+    value: 04 65 71 xx xx
+    label: South-East numbers reserved for audiovisual works
+    status: reserved
+    sources: *arcep
+  - id: fr-phone-0536-49
+    category: contact
+    type: Phone range
+    kind: range
+    value: 05 36 49 xx xx
+    label: South-West numbers reserved for audiovisual works
+    status: reserved
+    sources: *arcep
+  - id: fr-phone-0639-98
+    category: contact
+    type: Phone range
+    kind: range
+    value: 06 39 98 xx xx
+    label: Mobile numbers reserved for audiovisual works
+    status: reserved
+    notes: libphonenumber 9.0.37 reportedly rejects this range as invalid.
+    sources: *arcep
+  - id: fr-email-atelier-exemple-test
+    category: contact
+    type: Email address
+    value: facturation@atelier-exemple.test
+    label: Billing email on the reserved .test top-level domain
+    status: published-example
+    checks: [reserved-domain]
+    sources:
+      - title: Cabinet Digital — exemples de factures électroniques (CC BY 4.0)
+        url: https://www.cabinetdigital.fr/facture-electronique/exemples-de-factures/
+        publisher: Cabinet Digital
+        accessed: 2026-11-05
+
+  # --- Banking -------------------------------------------------------------------
+  - id: fr-iban-swift-registry
+    category: banking
+    type: IBAN
+    value: FR14 2004 1010 0505 0001 3M02 606
+    label: Official example IBAN for France in the SWIFT IBAN Registry
+    status: published-example
+    checks: [iban]
+    notes: Bank code 20041 is a real bank (La Banque Postale); the account part is fictitious.
+    ubl: ["cac:PayeeFinancialAccount/cbc:ID"]
+    sources:
+      - title: SWIFT IBAN Registry (ISO 13616 Registration Authority)
+        url: https://www.swift.com/resource/iban-registry-pdf
+        publisher: SWIFT
+        accessed: 2026-11-05
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: fr-avoid-siren-552100554
+    category: organisation
+    type: SIREN
+    value: "552100554"
+    label: Seen as an "example SIREN" on an e-invoicing website
+    status: avoid
+    checks: [fr-siren]
+    reason: Real company (PEUGEOT SA), confirmed in the national company register.
+    sources:
+      - title: Recherche d'entreprises API
+        url: https://recherche-entreprises.api.gouv.fr/search?q=552100554
+        publisher: DINUM
+        accessed: 2026-11-05
+  - id: fr-avoid-siren-123456789
+    category: organisation
+    type: SIREN
+    value: "123456789"
+    label: Used in the DGFiP e-invoicing specification text
+    status: avoid
+    fails_checks: [fr-siren]
+    reason: Fails the check digit (deliberately invalid).
+    sources:
+      - title: DGFiP — Spécifications externes B2B v3.2
+        url: https://www.impots.gouv.fr/specifications-externes-b2b
+        publisher: DGFiP
+        accessed: 2026-11-05
+  - id: fr-avoid-vat-fr37288100000008
+    category: organisation
+    type: VAT number
+    value: FR37288100000008
+    label: Typo in one FNFE-MPE example file
+    status: avoid
+    fails_checks: [fr-vat]
+    reason: Malformed (wrong length).
+    sources: *fnfe
+  - id: fr-avoid-iban-fr7630006
+    category: banking
+    type: IBAN
+    value: FR76 3000 6000 0112 3456 7890 189
+    label: Widely copied "example IBAN"
+    status: avoid
+    checks: [iban]
+    reason: Not from an authority; uses the real Crédit Agricole bank code 30006.
+    sources:
+      - title: Cabinet Digital — exemples de factures électroniques
+        url: https://www.cabinetdigital.fr/facture-electronique/exemples-de-factures/
+        publisher: Cabinet Digital
+        accessed: 2026-11-05
+  - id: fr-avoid-domain-vendeur-fr
+    category: contact
+    type: Email domain
+    value: vendeur.fr, acheteur.fr, exemple.fr, example.fr
+    label: Domains used in example emails
+    status: avoid
+    reason: All registered by private parties (DNS checked 2026-11-05). Use a .test domain.
+    sources: *fnfe
+  - id: fr-avoid-town-ville
+    category: address
+    type: Town name
+    value: VILLE
+    label: Tempting placeholder town name ("town")
+    status: avoid
+    reason: Real commune (Villé, Bas-Rhin).
+    sources:
+      - title: Base officielle des codes postaux (laposte-hexasmal)
+        url: https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux
+        publisher: La Poste
+        accessed: 2026-11-05

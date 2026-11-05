@@ -1,0 +1,239 @@
+code: CL
+name: Chile
+native_name: Chile
+region: Latin America
+languages: [es, en]
+updated: 2026-11-05
+research: research/example-identifiers-south-america.md
+summary: >
+  The Chilean tax authority SII defines generic RUTs with a real meaning: 66.666.666-6
+  for an anonymous boleta customer and 55.555.555-5 for a foreign receiver without a RUT.
+  Its certification manual uses the "fictitious company" 97975000-5 "RUT DE PRUEBA".
+  None of these can be checked against the register (the SII lookup needs a captcha).
+  Many other SII example RUTs fall in ranges assigned to real people and companies.
+  E-invoices are SII DTE XML, not UBL. Subtel reserves no telephone numbers for fiction,
+  and no official example bank account exists.
+
+identifiers:
+  - name: RUT / RUN (Rol Único Tributario / Nacional)
+    format: Body of up to 8 digits + hyphen + check digit (0–9 or K); written 12.345.678-5, or 12345678-5 in DTE XML
+    check: cl-rut
+    authority: Servicio de Impuestos Internos (SII)
+    notes: Mod 11 with weights 2–7 repeating from the right; 11 → 0, 10 → K. Natural persons roughly ≤ 30 million, legal entities ≈ 50–99 million (approximate, not officially verified).
+  - name: Código postal
+    format: 7 digits (3-digit sector + 4-digit block-face serial), left of the commune name; commune-wide codes end in 0000
+    authority: Correos de Chile
+    notes: DTE XML has no postcode field (DirRecep, CmnaRecep, CiudadRecep are free text).
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: cl-rut-97975000-5
+    category: organisation
+    type: RUT
+    value: 97975000-5
+    label: Issuer RUT of the "fictitious company" in the SII certification manual
+    status: published-example
+    checks: [cl-rut]
+    notes: Best Chilean company ID, but not checkable against the register. The same manual uses SII's own real address (Teatinos 120, Piso 4); do not copy it.
+    sources: &sii_cert
+      - title: Manual para empresas usuarias – ambiente de certificación (§5.1)
+        url: https://www.sii.cl/servicios_online/docs/manual_certificacion.pdf
+        publisher: Servicio de Impuestos Internos
+        accessed: 2026-11-05
+  - id: cl-name-rut-de-prueba
+    category: organisation
+    type: Company name
+    value: RUT DE PRUEBA
+    label: Name of the fictitious company 97975000-5 in the SII manual
+    status: published-example
+    sources: *sii_cert
+  - id: cl-rut-55555555-5
+    category: organisation
+    type: RUT (generic)
+    value: 55.555.555-5
+    label: Foreign receiver without a Chilean RUT (export DTEs)
+    status: reserved
+    checks: [cl-rut]
+    notes: Correct value for a non-Chilean buyer in an export DTE and the tourist invoice (TipoFactEsp = 1); the foreign ID then goes in CdgIntRecep + Nacionalidad.
+    sources:
+      - title: Formato Documentos Tributarios Electrónicos v2.5 (field 50)
+        url: https://www.sii.cl/factura_electronica/factura_mercado/formato_dte_202602.pdf
+        publisher: Servicio de Impuestos Internos
+        accessed: 2026-11-05
+      - title: Resolución Exenta SII 66/2022
+        url: https://www.sii.cl/normativa_legislacion/resoluciones/2022/reso66.pdf
+        publisher: Servicio de Impuestos Internos
+        accessed: 2026-11-05
+  - id: cl-rut-60803000-k
+    category: organisation
+    type: RUT (SII)
+    value: 60803000-K
+    label: RutReceptor in the EnvioDTE carátula (the SII itself)
+    status: reserved
+    checks: [cl-rut]
+    notes: The SII's own RUT, required as receiver of the envelope; never use it as a party.
+    sources: &sii_set
+      - title: Instrucciones set de pruebas
+        url: https://www.sii.cl/servicios_online/docs/inst_set_pruebas.pdf
+        publisher: Servicio de Impuestos Internos
+        accessed: 2026-11-05
+
+  # --- Address ----------------------------------------------------------------
+  - id: cl-address-upu-santiago
+    category: address
+    type: Address example
+    kind: placeholder
+    value: "Juan Pérez / Moneda 1152 / 8340648 SANTIAGO"
+    label: UPU / Correos Chile example of a street address in Santiago
+    status: published-example
+    notes: Fictitious person at a real street and commune.
+    sources: &upu_cl
+      - title: Postal addressing — Chile
+        url: https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/chlEn.pdf
+        publisher: Universal Postal Union
+        accessed: 2026-11-05
+  - id: cl-address-upu-estacion-central
+    category: address
+    type: Address example (apartment)
+    kind: placeholder
+    value: "Ester Avila / Avenida Palena 1084, Depto. 505, Piso 5 / 9180794 ESTACION CENTRAL"
+    label: UPU / Correos Chile example of an apartment address
+    status: published-example
+    sources: *upu_cl
+  - id: cl-address-upu-bulnes
+    category: address
+    type: Address example (company)
+    kind: placeholder
+    value: "Pedro López / Empresa Automotriz / Avenida Arturo Prat 567 / 3930000 BULNES"
+    label: UPU / Correos Chile example of a company address with a commune-wide code
+    status: published-example
+    sources: *upu_cl
+  - id: cl-address-upu-rural
+    category: address
+    type: Address example (rural)
+    kind: placeholder
+    value: "Panamericana Norte S/N Km. 15 / 8700000 QUILICURA"
+    label: UPU / Correos Chile example of a rural address without house number
+    status: published-example
+    sources: *upu_cl
+
+  # --- Contact -------------------------------------------------------------------
+  - id: cl-email-domain-example-com
+    category: contact
+    type: Email domain
+    value: example.com
+    label: Reserved domain for example e-mail addresses (also *.test)
+    status: reserved
+    checks: [reserved-domain]
+    notes: The registration status of ejemplo.cl could not be checked (NIC Chile RDAP unreachable), so do not use it.
+    sources:
+      - title: RFC 2606 — Reserved Top Level DNS Names
+        url: https://www.rfc-editor.org/rfc/rfc2606
+        publisher: IETF
+        accessed: 2026-11-05
+      - title: RFC 6761 — Special-Use Domain Names
+        url: https://www.rfc-editor.org/rfc/rfc6761
+        publisher: IETF
+        accessed: 2026-11-05
+
+  # --- Person --------------------------------------------------------------------
+  - id: cl-rut-66666666-6
+    category: person
+    type: RUT (generic)
+    value: 66.666.666-6
+    label: Generic boleta customer without RUT (RUTRecep)
+    status: reserved
+    checks: [cl-rut]
+    notes: Mandatory when the buyer has no RUT or internal code; not printed. For a consumer, not a business party.
+    sources:
+      - title: Formato Boletas Electrónicas v4.2
+        url: https://www.sii.cl/factura_electronica/factura_mercado/formato_boleta_electronica.pdf
+        publisher: Servicio de Impuestos Internos
+        accessed: 2026-11-05
+  - id: cl-run-7880442-4
+    category: person
+    type: RUN
+    value: 7880442-4
+    label: Authorised sender (person) in the SII certification manual
+    status: published-example
+    checks: [cl-rut]
+    notes: In the natural-person range, so possibly a real person; use with caution.
+    sources: *sii_cert
+
+  # --- Document ------------------------------------------------------------------
+  - id: cl-dte-referencia-set
+    category: document
+    type: Certification reference
+    kind: placeholder
+    value: TpoDocRef = SET / RazonRef = CASO nnnn-n
+    label: Mandatory first reference line of documents in an SII Set de Pruebas
+    status: reserved
+    notes: NroResol = 0 is fixed in certification (environment maullin.sii.cl). The SII asks for receiver RUTs of existing customers in the set; do not copy those.
+    sources: *sii_set
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: cl-avoid-rut-11111111-1
+    category: organisation
+    type: RUT
+    value: 11.111.111-1
+    label: '"Ejemplo S.A." in the SII Instructivo técnico (2021)'
+    status: avoid
+    checks: [cl-rut]
+    reason: In the natural-person range; likely assigned to a real taxpayer (not checkable).
+    sources: &sii_instructivo
+      - title: Instructivo técnico de emisión (2021-10-28)
+        url: https://www.sii.cl/factura_electronica/factura_mercado/instructivo_emision.pdf
+        publisher: Servicio de Impuestos Internos
+        accessed: 2026-11-05
+  - id: cl-avoid-rut-22222222-2
+    category: organisation
+    type: RUT
+    value: 22.222.222-2
+    label: Example RUT in the SII Instructivo técnico (2021)
+    status: avoid
+    checks: [cl-rut]
+    reason: In the natural-person range; likely assigned to a real taxpayer (not checkable).
+    sources: *sii_instructivo
+  - id: cl-avoid-rut-12345678-5
+    category: organisation
+    type: RUT
+    value: 12.345.678-5
+    label: '"Comprador S.A." in the SII Instructivo técnico (2021)'
+    status: avoid
+    checks: [cl-rut]
+    reason: In the natural-person range; likely assigned to a real taxpayer (not checkable).
+    sources: *sii_instructivo
+  - id: cl-avoid-rut-77777777-7
+    category: organisation
+    type: RUT
+    value: 77777777-7
+    label: Example RUT in the SII Instructivo técnico (2021)
+    status: avoid
+    checks: [cl-rut]
+    reason: In the active company range; likely assigned to a real company (not checkable).
+    sources: *sii_instructivo
+  - id: cl-avoid-rut-8414240-9
+    category: organisation
+    type: RUT
+    value: 8414240-9
+    label: Receiver "JORGE GONZALEZ LTDA, SAN DIEGO 2222" in the SII certification manual
+    status: avoid
+    checks: [cl-rut]
+    reason: Natural-person range with a person-like company name; possibly real.
+    sources: *sii_cert
+  - id: cl-avoid-address-teatinos-120
+    category: address
+    type: Address
+    value: Teatinos 120, Piso 4, Santiago
+    label: Address in the SII certification manual examples
+    status: avoid
+    reason: Real head office of the SII.
+    sources: *sii_cert
+  - id: cl-avoid-address-el-juncal-050
+    category: address
+    type: Address
+    value: El Juncal 050, 8720019 QUILICURA
+    label: Address in the Correos Chile / UPU examples
+    status: avoid
+    reason: Real head office of Correos de Chile.
+    sources: *upu_cl

@@ -1,0 +1,63 @@
+name: Validate and publish
+
+# Data and code live on main. On every push to main the site is built and the
+# generated files are committed to the gh-pages branch, which GitHub Pages serves
+# (Settings → Pages → Deploy from a branch → gh-pages, / (root)).
+# Pull requests are validated and built, but not published.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to push the generated site to gh-pages
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml==6.0.2 jsonschema==4.23.0
+
+      - name: Validate data (schema, ids, check digits)
+        run: python tools/validate.py
+
+      - name: Build site
+        run: python tools/build.py --out _site
+
+      - name: Publish to gh-pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null; then
+            git fetch --depth 1 origin gh-pages
+            git worktree add -B gh-pages ../pages origin/gh-pages
+          else
+            git worktree add --orphan -b gh-pages ../pages
+          fi
+          find ../pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a _site/. ../pages/
+          cd ../pages
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Site unchanged; nothing to publish."
+          else
+            git commit -m "Build site from ${GITHUB_SHA::7}"
+            git push origin gh-pages
+          fi

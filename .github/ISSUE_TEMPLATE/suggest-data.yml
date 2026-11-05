@@ -1,0 +1,56 @@
+name: Suggest a value
+description: Propose a test value (or a value to avoid) with its official source.
+title: "[XX] "
+labels: ["data suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! A value is only added with a source that shows it is **reserved** for examples or tests,
+        **published** by an authority in its own examples, or **checked** to be unassigned.
+        Values that turn out to belong to a real organisation or person are welcome too, as warnings.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Country name or ISO 3166-1 alpha-2 code (or "global").
+      placeholder: e.g. DE
+    validations:
+      required: true
+  - type: input
+    id: value
+    attributes:
+      label: Value
+      placeholder: e.g. +49 30 23125 000, DE123456789
+    validations:
+      required: true
+  - type: input
+    id: type
+    attributes:
+      label: What it is
+      placeholder: e.g. VAT number, phone range for fiction, postcode, IBAN
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Reserved by an authority
+        - Official example published by an authority
+        - Derived and checked to be unassigned
+        - Avoid (real entity or invalid)
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source(s)
+      description: Link to the authority's own page or document. Prefer official sources over blogs or generators.
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Checks done
+      description: Check digit, register lookup (which register, which date), anything else.

@@ -1,0 +1,305 @@
+code: TW
+name: Taiwan
+native_name: 臺灣
+region: Asia
+languages: [zh, en]
+updated: 2026-11-05
+research: research/example-identifiers-china-hk-taiwan.md
+summary: >
+  Taiwan reserves no identifiers or telephone numbers for fiction, but the Ministry of
+  Finance's worked examples for the 2023 Unified Business Number check rule give two
+  valid UBNs that are in none of the three official registers. Several obvious
+  placeholder UBNs (00000000, 99999997 …) and MOF's own first example belong to real
+  businesses. The Ministry of the Interior's specimen ID card number deliberately fails
+  the check digit, while the textbook A123456789 passes and is reportedly a real
+  person's number. The MOF e-invoice test platform (wwwtest.einvoice.nat.gov.tw) issues
+  test invoice tracks, but its official test UBNs could not be read (HTTP 403). No
+  unused postcodes could be checked (the 3+3 file needs registration).
+
+identifiers:
+  - name: Unified Business Number (營利事業統一編號, UBN, 統編)
+    format: 8 digits
+    check: tw-ubn
+    authority: Ministry of Finance
+    notes: >-
+      Weights 1 2 1 2 1 2 4 1; add the digits of each product. Since 2023-04-01 the sum
+      must be divisible by 5 (previously 10); if the 7th digit is 7, sum or sum + 1 may
+      be used. The old rule is a subset of the new one.
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID", "cac:PartyTaxScheme/cbc:CompanyID"]
+  - name: National ID (國民身分證統一編號)
+    format: Letter (household registration city/county) + sex digit (1 male, 2 female) + 7 digits + check digit
+    authority: Ministry of the Interior
+    notes: >-
+      Letter value A=10 … (I=34, O=35, W=32, X=30, Y=31, Z=33) split into two digits,
+      weights 1 9 8 7 6 5 4 3 2 1 1, total divisible by 10 (check rule from secondary
+      sources). No validator in tools/checks.py yet.
+  - name: E-invoice track and number (字軌號碼)
+    format: 2 capital letters + 8 digits, e.g. pattern AB12345678
+    authority: Ministry of Finance (e-invoice platform)
+    notes: >-
+      National XML format MIG 4.0 (F0401, F0501 …), not UBL. Test tracks are issued per
+      business on the test platform wwwtest.einvoice.nat.gov.tw; test data must not
+      contain real personal or business data. Mobile barcode carrier CarrierType 3J0002,
+      CarrierId 8 characters starting with /.
+    ubl: ["cbc:ID"]
+  - name: Postal code (郵遞區號)
+    format: 3+3 digits (district + delivery section) since 2020-03-03; 3+2 still seen
+    authority: Chunghwa Post
+    notes: Written on line 1 above the address, no separator.
+    ubl: ["cac:PostalAddress/cbc:PostalZone"]
+  - name: Bank code
+    format: 3-digit financial institution code + 4-digit branch code; no IBAN
+    authority: Financial institutions (real codes only)
+
+entries:
+  # --- Organisation ---------------------------------------------------------
+  - id: tw-ubn-10458575
+    category: organisation
+    type: UBN
+    value: "10458575"
+    label: Worked example (7th digit 7, sum 20) in MOF's check-rule explanation
+    status: published-example
+    checks: [tw-ubn]
+    verified: &tw-registers
+      - Not in the MOF tax registration dataset BGMOPEN1, 1,715,523 rows (2026-11-05)
+      - Not in the MOEA company register or business register (2026-11-05)
+    notes: Valid under both the old (÷10) and the 2023 (÷5) rule.
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID"]
+    sources: &mof-ubn
+      - title: 營利事業統一編號檢查碼邏輯修正說明（附件）
+        url: https://www.trust.org.tw/upload/1100002250002.pdf
+        publisher: Ministry of Finance (copy hosted by trust.org.tw)
+        accessed: 2026-11-05
+      - title: 統一編號檢查碼邏輯修正 (news)
+        url: https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=8d164b10f20042b9ab9864b51b20f0c2
+        publisher: Ministry of Finance
+        accessed: 2026-11-05
+  - id: tw-ubn-19312376
+    category: organisation
+    type: UBN
+    value: "19312376"
+    label: Worked example (7th digit 7, sum 30) in MOF's check-rule explanation
+    status: published-example
+    checks: [tw-ubn]
+    verified: *tw-registers
+    notes: Valid under both the old and the 2023 rule.
+    ubl: ["cac:PartyLegalEntity/cbc:CompanyID"]
+    sources: *mof-ubn
+  - id: tw-ubn-12345675
+    category: organisation
+    type: UBN
+    value: "12345675"
+    label: Sequential UBN, valid under both rules
+    status: derived
+    checks: [tw-ubn]
+    verified: *tw-registers
+    notes: >-
+      "Not found" is strong but not conclusive: UBNs are also assigned to withholding
+      units (schools, government bodies, associations) that are not in these registers.
+    sources: &tw-registers-src
+      - title: 全國營業(稅籍)登記資料集 BGMOPEN1
+        url: https://eip.fia.gov.tw/data/BGMOPEN1.zip
+        publisher: Ministry of Finance
+        accessed: 2026-11-05
+      - title: MOEA company register API
+        url: https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6
+        publisher: Ministry of Economic Affairs
+        accessed: 2026-11-05
+      - title: MOEA business register API (應用三)
+        url: https://data.gcis.nat.gov.tw/od/demo_cond/426D5542-5F05-43EB-83F9-F1300F14E1F1
+        publisher: Ministry of Economic Affairs
+        accessed: 2026-11-05
+  - id: tw-ubn-04595252
+    category: organisation
+    type: UBN
+    value: "04595252"
+    label: Test UBN valid only under the 2023 rule
+    status: derived
+    checks: [tw-ubn]
+    verified: *tw-registers
+    notes: Fails the pre-2023 ÷10 rule, so it tests new-rule support. Third-party test number, not in the MOF attachment.
+    sources: &tw-ubn-secondary
+      - title: toolmaple UBN tool (new-rule test numbers)
+        url: https://toolmaple.com/tools/tax-id
+        publisher: toolmaple.com
+        accessed: 2026-11-05
+      - title: 全國營業(稅籍)登記資料集 BGMOPEN1
+        url: https://eip.fia.gov.tw/data/BGMOPEN1.zip
+        publisher: Ministry of Finance
+        accessed: 2026-11-05
+      - title: MOEA company register API
+        url: https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6
+        publisher: Ministry of Economic Affairs
+        accessed: 2026-11-05
+  - id: tw-ubn-10458570
+    category: organisation
+    type: UBN
+    value: "10458570"
+    label: Test UBN valid only under the 2023 rule
+    status: derived
+    checks: [tw-ubn]
+    verified: *tw-registers
+    notes: Fails the pre-2023 ÷10 rule, so it tests new-rule support. Third-party test number, not in the MOF attachment.
+    sources: *tw-ubn-secondary
+
+  # --- Contact -------------------------------------------------------------------
+  - id: tw-email-placeholder-test
+    category: contact
+    type: Email address
+    kind: placeholder
+    value: invoice@<alias>.test
+    label: Invoice email pattern on the reserved .test domain
+    status: reserved
+    checks: [reserved-domain]
+    notes: Replace <alias> with a short alias for the party. No TWNIC-reserved example domain exists.
+    ubl: ["cac:Contact/cbc:ElectronicMail"]
+    sources: &rfc
+      - title: RFC 2606 — Reserved Top Level DNS Names
+        url: https://www.rfc-editor.org/rfc/rfc2606
+        publisher: IETF
+        accessed: 2026-11-05
+      - title: RFC 6761 — Special-Use Domain Names
+        url: https://www.rfc-editor.org/rfc/rfc6761
+        publisher: IETF
+        accessed: 2026-11-05
+
+  # --- Banking -------------------------------------------------------------------
+  - id: tw-bic-test-xxxxtwt0
+    category: banking
+    type: BIC
+    value: XXXXTWT0
+    label: Test BIC for Taiwan (8th character 0)
+    status: reserved
+    checks: [bic, bic-test]
+    notes: ISO 9362 convention — '0' as second character of the location code marks a test BIC. No fictitious Taiwanese bank code exists.
+    ubl: ["cac:FinancialInstitutionBranch/cbc:ID"]
+    sources:
+      - title: ISO 9362 (Wikipedia)
+        url: https://en.wikipedia.org/wiki/ISO_9362
+        publisher: Wikipedia
+        accessed: 2026-11-05
+
+  # --- Person --------------------------------------------------------------------
+  - id: tw-national-id-specimen-a234567890
+    category: person
+    type: National ID (specimen)
+    value: A234567890
+    label: Number on the official specimen ID card (樣本, 陳筱玲)
+    status: published-example
+    fails_checks: [tw-national-id]
+    notes: Fails the check digit (correct would be A234567893), apparently deliberately — official and obviously fake.
+    sources:
+      - title: 國民身分證真偽辨識資料 (specimen image)
+        url: https://www.ris.gov.tw/documents/html/apply-idCard/189.html
+        publisher: Ministry of the Interior, Department of Household Registration
+        accessed: 2026-11-05
+
+  # --- Avoid ---------------------------------------------------------------------
+  - id: tw-avoid-ubn-04595257
+    category: organisation
+    type: UBN
+    value: "04595257"
+    label: MOF's first worked example of the UBN check
+    status: avoid
+    checks: [tw-ubn]
+    reason: Real (revoked) company 擎天金屬股份有限公司 in the MOEA company register.
+    sources: *mof-ubn
+  - id: tw-avoid-ubn-00000000
+    category: organisation
+    type: UBN
+    value: "00000000"
+    label: Obvious placeholder UBN
+    status: avoid
+    checks: [tw-ubn]
+    reason: Checksum-valid but a real (closed) sole proprietorship in the MOEA business register.
+    sources: *tw-registers-src
+  - id: tw-avoid-ubn-99999997
+    category: organisation
+    type: UBN
+    value: "99999997"
+    label: Obvious placeholder UBN
+    status: avoid
+    checks: [tw-ubn]
+    reason: Checksum-valid but a real (closed) sole proprietorship in the MOEA business register.
+    sources: *tw-registers-src
+  - id: tw-avoid-ubn-88888880
+    category: organisation
+    type: UBN
+    value: "88888880"
+    label: Obvious placeholder UBN
+    status: avoid
+    checks: [tw-ubn]
+    reason: Checksum-valid but a real (closed) sole proprietorship in the MOEA business register.
+    sources: *tw-registers-src
+  - id: tw-avoid-ubn-00000005
+    category: organisation
+    type: UBN
+    value: "00000005"
+    label: Obvious placeholder UBN
+    status: avoid
+    checks: [tw-ubn]
+    reason: Real company (active or dissolved) in the MOEA company register.
+    sources: *tw-registers-src
+  - id: tw-avoid-ubn-00000016
+    category: organisation
+    type: UBN
+    value: "00000016"
+    label: Obvious placeholder UBN
+    status: avoid
+    checks: [tw-ubn]
+    reason: Real company in the MOEA company register, although missing from the MOF tax dataset.
+    sources: *tw-registers-src
+  - id: tw-avoid-ubn-00000022
+    category: organisation
+    type: UBN
+    value: "00000022"
+    label: Obvious placeholder UBN
+    status: avoid
+    checks: [tw-ubn]
+    reason: Real company (active or dissolved) in the MOEA company register.
+    sources: *tw-registers-src
+  - id: tw-avoid-national-id-a123456789
+    category: person
+    type: National ID
+    value: A123456789
+    label: Textbook "example" Taiwanese ID number
+    status: avoid
+    reason: Passes the check digit and is therefore widely misused; press reports say it belongs to a real person. Use the specimen A234567890.
+    sources:
+      - title: 中華民國國民身分證 (Wikipedia)
+        url: https://zh.wikipedia.org/zh-tw/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%B0%91%E8%BA%AB%E5%88%86%E8%AD%89
+        publisher: Wikipedia
+        accessed: 2026-11-05
+  - id: tw-avoid-address-chunghwa-post-hq
+    category: address
+    type: Address
+    value: 106409 臺北市大安區金山南路2段55號
+    label: Address used on Chunghwa Post's addressing page
+    status: avoid
+    reason: Real address of Chunghwa Post headquarters.
+    sources:
+      - title: 國內郵件橫式信封書寫方式
+        url: https://www.post.gov.tw/post/internet/Postal/index.jsp?ID=21002
+        publisher: Chunghwa Post
+        accessed: 2026-11-05
+  - id: tw-avoid-phone-invented
+    category: contact
+    type: Phone range
+    kind: range
+    value: +886 xxxx xxxx (invented)
+    label: Arbitrary invented Taiwanese numbers
+    status: avoid
+    reason: No range is reserved for fiction or documentation (MODA lends unassigned blocks only to operators or research bodies for tests); any invented number may be real.
+    sources:
+      - title: 電信網路編碼計畫
+        url: https://www.motc.gov.tw/uploaddowndoc?file=mlaw%2F201611221609390.pdf&filedisplay=%E9%9B%BB%E4%BF%A1%E7%B6%B2%E8%B7%AF%E7%B7%A8%E7%A2%BC%E8%A8%88%E7%95%AB.pdf&flag=doc
+        publisher: MOTC
+        accessed: 2026-11-05
+  - id: tw-avoid-domain-example-tw
+    category: contact
+    type: Email domain
+    value: example.tw, example.com.tw
+    label: Taiwanese-looking example domains
+    status: avoid
+    reason: Registered (NS records present, DNS checked 2026-11-05). Use a .test domain.
+    sources: *rfc
