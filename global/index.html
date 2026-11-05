@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Global / international — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Global</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🌐</span> Global / international</h1>
+<p class="lede">Identifiers that are not tied to one country. Truly reserved values exist for ISO 3166 user-assigned codes, ISO 4217 XTS, ICAO &quot;Utopia&quot; (UTO), GS1 prefix 952, SWIFT test-and-training BICs and the IETF/IANA documentation ranges (domains, IPv4/IPv6, AS numbers, MAC addresses). No reserved range exists for LEI, ISBN, ISSN, DOI, IMO numbers, ISO 6346 owner codes, VIN, IATA codes, ISO 6523 ICDs or E.164 country codes. Payment-card test numbers are published by the card schemes&#x27; acquiring/gateway businesses, not by ISO or EMVCo. Candidate container numbers (ZZZU/XXXU/QQQU), IMO 0000000 and VIN 11111111111111111 pass their check digits but were not checked against any register, so they are not listed. Note that Peppol / EN 16931 country code lists contain no user-assigned code except XI.</p>
+<p class="meta">Updated 2026-11-05 · searched in en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-global.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/global.yaml">Data file</a> ·
+<a href="../data/global.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>26</b> Reserved</span><span class="stat s-published-example"><b>33</b> Official example</span><span class="stat s-derived"><b>37</b> Derived</span><span class="stat s-avoid"><b>22</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">31</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-lei-00000000example00a87" data-status="derived">
+<td class="val"><div class="v"><code>00000000EXAMPLE00A87</code><button class="copy" type="button" data-copy="00000000EXAMPLE00A87" aria-label="Copy 00000000EXAMPLE00A87">Copy</button></div><div class="type">LEI</div></td>
+<td class="what"><p>Fictitious LEI with the word EXAMPLE</p><p class="note">Prefix 0000 is no known LOU prefix (not proven).</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ISO 17442 LEI mod-97">✓ lei</span><span class="chk ver">✓ GLEIF API returns 404, not issued (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12" rel="noopener">GLEIF API — LEI records</a> <span class="muted">— GLEIF</span></li><li><a href="https://cdn.standards.iteh.ai/samples/75998/2b77042cb3a346fda3b26dfd6bfd42ca/ISO-17442-2019.pdf" rel="noopener">ISO 17442:2019 preview</a> <span class="muted">— ISO</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="global-lei-00000000example00b84" data-status="derived">
+<td class="val"><div class="v"><code>00000000EXAMPLE00B84</code><button class="copy" type="button" data-copy="00000000EXAMPLE00B84" aria-label="Copy 00000000EXAMPLE00B84">Copy</button></div><div class="type">LEI</div></td>
+<td class="what"><p>Fictitious LEI with the word EXAMPLE (second party)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ISO 17442 LEI mod-97">✓ lei</span><span class="chk ver">✓ GLEIF API returns 404, not issued (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12" rel="noopener">GLEIF API — LEI records</a> <span class="muted">— GLEIF</span></li><li><a href="https://cdn.standards.iteh.ai/samples/75998/2b77042cb3a346fda3b26dfd6bfd42ca/ISO-17442-2019.pdf" rel="noopener">ISO 17442:2019 preview</a> <span class="muted">— ISO</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="global-lei-00000000example00c81" data-status="derived">
+<td class="val"><div class="v"><code>00000000EXAMPLE00C81</code><button class="copy" type="button" data-copy="00000000EXAMPLE00C81" aria-label="Copy 00000000EXAMPLE00C81">Copy</button></div><div class="type">LEI</div></td>
+<td class="what"><p>Fictitious LEI with the word EXAMPLE (third party)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ISO 17442 LEI mod-97">✓ lei</span><span class="chk ver">✓ GLEIF API returns 404, not issued (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12" rel="noopener">GLEIF API — LEI records</a> <span class="muted">— GLEIF</span></li><li><a href="https://cdn.standards.iteh.ai/samples/75998/2b77042cb3a346fda3b26dfd6bfd42ca/ISO-17442-2019.pdf" rel="noopener">ISO 17442:2019 preview</a> <span class="muted">— ISO</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="global-peppol-9915-test" data-status="published-example">
+<td class="val"><div class="v"><code>iso6523-actorid-upis::9915:test</code><button class="copy" type="button" data-copy="iso6523-actorid-upis::9915:test" aria-label="Copy iso6523-actorid-upis::9915:test">Copy</button></div><div class="type">Peppol participant identifier</div></td>
+<td class="what"><p>Test participant registered on the Peppol test network</p><p class="note">Registered in the Peppol test SML (SMK) with endpoint test.erechnung.gv.at (Austrian government test access point). 9915 = Austrian VKZ scheme. Not in production. For a party that must never be routable, use a 952 GLN with schemeID 0088 instead.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/edelivery/directory/PEPPOL-EDN-Directory-1.1.1-2020-10-15.pdf" rel="noopener">Peppol Directory specification 1.1.1</a> <span class="muted">— OpenPeppol</span></li><li><a href="https://peppol.helger.com/public/locale-en_US/menuitem-docs-doc-exchange" rel="noopener">Peppol Practical — document exchange</a> <span class="muted">— Philip Helger</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=9915</code></td>
+</tr>
+<tr id="global-gln-9520000000011" data-status="derived">
+<td class="val"><div class="v"><code>9520000000011</code><button class="copy" type="button" data-copy="9520000000011" aria-label="Copy 9520000000011">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 1 (company prefix 9520000, location reference 00001)</p><p class="note">One of 27 GLNs for a party set (9520000000011 to 9520000000271). Never registered in any Peppol SML, so recommended for cbc:EndpointID with schemeID 0088.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000028" data-status="derived">
+<td class="val"><div class="v"><code>9520000000028</code><button class="copy" type="button" data-copy="9520000000028" aria-label="Copy 9520000000028">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 2 (company prefix 9520000, location reference 00002)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000035" data-status="derived">
+<td class="val"><div class="v"><code>9520000000035</code><button class="copy" type="button" data-copy="9520000000035" aria-label="Copy 9520000000035">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 3 (company prefix 9520000, location reference 00003)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000042" data-status="derived">
+<td class="val"><div class="v"><code>9520000000042</code><button class="copy" type="button" data-copy="9520000000042" aria-label="Copy 9520000000042">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 4 (company prefix 9520000, location reference 00004)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000059" data-status="derived">
+<td class="val"><div class="v"><code>9520000000059</code><button class="copy" type="button" data-copy="9520000000059" aria-label="Copy 9520000000059">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 5 (company prefix 9520000, location reference 00005)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000066" data-status="derived">
+<td class="val"><div class="v"><code>9520000000066</code><button class="copy" type="button" data-copy="9520000000066" aria-label="Copy 9520000000066">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 6 (company prefix 9520000, location reference 00006)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000073" data-status="derived">
+<td class="val"><div class="v"><code>9520000000073</code><button class="copy" type="button" data-copy="9520000000073" aria-label="Copy 9520000000073">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 7 (company prefix 9520000, location reference 00007)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000080" data-status="derived">
+<td class="val"><div class="v"><code>9520000000080</code><button class="copy" type="button" data-copy="9520000000080" aria-label="Copy 9520000000080">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 8 (company prefix 9520000, location reference 00008)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000097" data-status="derived">
+<td class="val"><div class="v"><code>9520000000097</code><button class="copy" type="button" data-copy="9520000000097" aria-label="Copy 9520000000097">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 9 (company prefix 9520000, location reference 00009)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000103" data-status="derived">
+<td class="val"><div class="v"><code>9520000000103</code><button class="copy" type="button" data-copy="9520000000103" aria-label="Copy 9520000000103">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 10 (company prefix 9520000, location reference 00010)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000110" data-status="derived">
+<td class="val"><div class="v"><code>9520000000110</code><button class="copy" type="button" data-copy="9520000000110" aria-label="Copy 9520000000110">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 11 (company prefix 9520000, location reference 00011)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000127" data-status="derived">
+<td class="val"><div class="v"><code>9520000000127</code><button class="copy" type="button" data-copy="9520000000127" aria-label="Copy 9520000000127">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 12 (company prefix 9520000, location reference 00012)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000134" data-status="derived">
+<td class="val"><div class="v"><code>9520000000134</code><button class="copy" type="button" data-copy="9520000000134" aria-label="Copy 9520000000134">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 13 (company prefix 9520000, location reference 00013)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000141" data-status="derived">
+<td class="val"><div class="v"><code>9520000000141</code><button class="copy" type="button" data-copy="9520000000141" aria-label="Copy 9520000000141">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 14 (company prefix 9520000, location reference 00014)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000158" data-status="derived">
+<td class="val"><div class="v"><code>9520000000158</code><button class="copy" type="button" data-copy="9520000000158" aria-label="Copy 9520000000158">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 15 (company prefix 9520000, location reference 00015)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000165" data-status="derived">
+<td class="val"><div class="v"><code>9520000000165</code><button class="copy" type="button" data-copy="9520000000165" aria-label="Copy 9520000000165">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 16 (company prefix 9520000, location reference 00016)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000172" data-status="derived">
+<td class="val"><div class="v"><code>9520000000172</code><button class="copy" type="button" data-copy="9520000000172" aria-label="Copy 9520000000172">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 17 (company prefix 9520000, location reference 00017)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000189" data-status="derived">
+<td class="val"><div class="v"><code>9520000000189</code><button class="copy" type="button" data-copy="9520000000189" aria-label="Copy 9520000000189">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 18 (company prefix 9520000, location reference 00018)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000196" data-status="derived">
+<td class="val"><div class="v"><code>9520000000196</code><button class="copy" type="button" data-copy="9520000000196" aria-label="Copy 9520000000196">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 19 (company prefix 9520000, location reference 00019)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000202" data-status="derived">
+<td class="val"><div class="v"><code>9520000000202</code><button class="copy" type="button" data-copy="9520000000202" aria-label="Copy 9520000000202">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 20 (company prefix 9520000, location reference 00020)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000219" data-status="derived">
+<td class="val"><div class="v"><code>9520000000219</code><button class="copy" type="button" data-copy="9520000000219" aria-label="Copy 9520000000219">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 21 (company prefix 9520000, location reference 00021)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000226" data-status="derived">
+<td class="val"><div class="v"><code>9520000000226</code><button class="copy" type="button" data-copy="9520000000226" aria-label="Copy 9520000000226">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 22 (company prefix 9520000, location reference 00022)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000233" data-status="derived">
+<td class="val"><div class="v"><code>9520000000233</code><button class="copy" type="button" data-copy="9520000000233" aria-label="Copy 9520000000233">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 23 (company prefix 9520000, location reference 00023)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000240" data-status="derived">
+<td class="val"><div class="v"><code>9520000000240</code><button class="copy" type="button" data-copy="9520000000240" aria-label="Copy 9520000000240">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 24 (company prefix 9520000, location reference 00024)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000257" data-status="derived">
+<td class="val"><div class="v"><code>9520000000257</code><button class="copy" type="button" data-copy="9520000000257" aria-label="Copy 9520000000257">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 25 (company prefix 9520000, location reference 00025)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000264" data-status="derived">
+<td class="val"><div class="v"><code>9520000000264</code><button class="copy" type="button" data-copy="9520000000264" aria-label="Copy 9520000000264">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 26 (company prefix 9520000, location reference 00026)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gln-9520000000271" data-status="derived">
+<td class="val"><div class="v"><code>9520000000271</code><button class="copy" type="button" data-copy="9520000000271" aria-label="Copy 9520000000271">Copy</button></div><div class="type">GLN</div></td>
+<td class="what"><p>Fictitious party GLN no. 27 (company prefix 9520000, location reference 00027)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/" rel="noopener">Peppol code list — EAS</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">5</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-country-aa" data-status="derived">
+<td class="val"><div class="v"><code>AA / AAA / 900</code><button class="copy" type="button" data-copy="AA / AAA / 900" aria-label="Copy AA / AAA / 900">Copy</button></div><div class="type">Country code</div></td>
+<td class="what"><p>Recommended fictitious country (alpha-2 / alpha-3 / numeric)</p><p class="note">User-assigned, so ISO will never give it to a country. Fails Peppol BIS / EN 16931 Schematron, whose country list has no user-assigned codes except XI; use a real country where the document must pass those rules.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ No conflicting real-world use found in the Peppol, CLDR, WIPO ST.3, ICAO Doc 9303 and UN/LOCODE lists (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.iso.org/glossary-for-iso-3166.html" rel="noopener">ISO Glossary for ISO 3166</a> <span class="muted">— ISO</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/" rel="noopener">Peppol code list — ISO 3166</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cac:Country/cbc:IdentificationCode</code></td>
+</tr>
+<tr id="global-country-user-assigned-alpha2" data-status="reserved">
+<td class="val"><div class="v"><code>AA, QM–QZ, XA–XZ, ZZ</code></div><div class="type">Country code range (alpha-2) <span class="kind">range</span></div></td>
+<td class="what"><p>ISO 3166-1 user-assigned alpha-2 codes</p><p class="note">Many of these already have a de-facto meaning (see avoid entries). ISO asks users to inform the ISO 3166/MA of their use.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.iso.org/glossary-for-iso-3166.html" rel="noopener">ISO Glossary for ISO 3166</a> <span class="muted">— ISO</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/" rel="noopener">Peppol code list — ISO 3166</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-country-user-assigned-alpha3" data-status="reserved">
+<td class="val"><div class="v"><code>AAA–AAZ, QMA–QZZ, XAA–XZZ, ZZA–ZZZ</code></div><div class="type">Country code range (alpha-3) <span class="kind">range</span></div></td>
+<td class="what"><p>ISO 3166-1 user-assigned alpha-3 codes</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.iso.org/glossary-for-iso-3166.html" rel="noopener">ISO Glossary for ISO 3166</a> <span class="muted">— ISO</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/" rel="noopener">Peppol code list — ISO 3166</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-country-user-assigned-numeric" data-status="reserved">
+<td class="val"><div class="v"><code>900–999</code></div><div class="type">Country code range (numeric) <span class="kind">range</span></div></td>
+<td class="what"><p>ISO 3166-1 user-assigned numeric codes</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.iso.org/glossary-for-iso-3166.html" rel="noopener">ISO Glossary for ISO 3166</a> <span class="muted">— ISO</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/" rel="noopener">Peppol code list — ISO 3166</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-locode-aaxmp" data-status="derived">
+<td class="val"><div class="v"><code>AAXMP</code><button class="copy" type="button" data-copy="AAXMP" aria-label="Copy AAXMP">Copy</button></div><div class="type">UN/LOCODE</div></td>
+<td class="what"><p>Correctly formatted location code in the fictitious country AA</p><p class="note">UNECE defines no fictitious or test location.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ AA is not a country in UN/LOCODE, so no AA location exists; fails a code-list lookup (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://unlocode.unece.org/recommendation16/" rel="noopener">UNECE Recommendation 16 (UN/LOCODE)</a> <span class="muted">— UNECE</span></li><li><a href="https://unece.org/sites/default/files/2023-10/unlocode_manual.pdf" rel="noopener">UN/LOCODE Manual</a> <span class="muted">— UNECE</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">8</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-domain-example-com" data-status="reserved">
+<td class="val"><div class="v"><code>example.com</code><button class="copy" type="button" data-copy="example.com" aria-label="Copy example.com">Copy</button></div><div class="type">Domain</div></td>
+<td class="what"><p>Second-level domain reserved for documentation</p><p class="note">Also example.net and example.org, and any subdomain (e.g. brand.example.com, used by GS1 Digital Link).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml" rel="noopener">IANA Special-Use Domain Names registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-domain-example-net" data-status="reserved">
+<td class="val"><div class="v"><code>example.net</code><button class="copy" type="button" data-copy="example.net" aria-label="Copy example.net">Copy</button></div><div class="type">Domain</div></td>
+<td class="what"><p>Second-level domain reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml" rel="noopener">IANA Special-Use Domain Names registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-domain-example-org" data-status="reserved">
+<td class="val"><div class="v"><code>example.org</code><button class="copy" type="button" data-copy="example.org" aria-label="Copy example.org">Copy</button></div><div class="type">Domain</div></td>
+<td class="what"><p>Second-level domain reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml" rel="noopener">IANA Special-Use Domain Names registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-tld-example" data-status="reserved">
+<td class="val"><div class="v"><code>.example</code><button class="copy" type="button" data-copy=".example" aria-label="Copy .example">Copy</button></div><div class="type">Top-level domain</div></td>
+<td class="what"><p>Top-level domain reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml" rel="noopener">IANA Special-Use Domain Names registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-tld-test" data-status="reserved">
+<td class="val"><div class="v"><code>.test</code><button class="copy" type="button" data-copy=".test" aria-label="Copy .test">Copy</button></div><div class="type">Top-level domain</div></td>
+<td class="what"><p>Top-level domain reserved for testing</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml" rel="noopener">IANA Special-Use Domain Names registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-tld-invalid" data-status="reserved">
+<td class="val"><div class="v"><code>.invalid</code><button class="copy" type="button" data-copy=".invalid" aria-label="Copy .invalid">Copy</button></div><div class="type">Top-level domain</div></td>
+<td class="what"><p>Top-level domain reserved for names that must be invalid</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml" rel="noopener">IANA Special-Use Domain Names registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-tld-localhost" data-status="reserved">
+<td class="val"><div class="v"><code>.localhost</code><button class="copy" type="button" data-copy=".localhost" aria-label="Copy .localhost">Copy</button></div><div class="type">Top-level domain</div></td>
+<td class="what"><p>Top-level domain reserved for the local host</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml" rel="noopener">IANA Special-Use Domain Names registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-email-role-alias-example" data-status="reserved">
+<td class="val"><div class="v"><code>&lt;role&gt;@&lt;party-alias&gt;.example</code></div><div class="type">Email address pattern <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Email address pattern on the reserved .example domain</p><p class="note">Or &lt;role&gt;@example.com.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml" rel="noopener">IANA Special-Use Domain Names registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><code>cac:Contact/cbc:ElectronicMail</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">18</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-bic-test-deutdes0" data-status="reserved">
+<td class="val"><div class="v"><code>DEUTDES0</code><button class="copy" type="button" data-copy="DEUTDES0" aria-label="Copy DEUTDES0">Copy</button></div><div class="type">BIC (test)</div></td>
+<td class="what"><p>Test-and-training BIC derived from DEUTDESS (8th character 0)</p><p class="note">ISO 9362 convention of the Registration Authority. The institution DEUT is real; only the test location code is reserved.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="ISO 9362 test BIC (8th character &#x27;0&#x27;)">✓ bic-test</span></td>
+<td><ul class="src"><li><a href="https://www.swift.com/swift-resource/14256/download?language=en" rel="noopener">SWIFT white paper on ISO 9362:2014 (§4.5 Test &amp; Training BIC)</a> <span class="muted">— SWIFT</span></li><li><a href="https://en.wikipedia.org/wiki/ISO_9362" rel="noopener">Wikipedia — ISO 9362</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><code>cac:FinancialInstitutionBranch/cbc:ID</code></td>
+</tr>
+<tr id="global-iban-de89" data-status="published-example">
+<td class="val"><div class="v"><code>DE89 3704 0044 0532 0130 00</code><button class="copy" type="button" data-copy="DE89 3704 0044 0532 0130 00" aria-label="Copy DE89 3704 0044 0532 0130 00">Copy</button></div><div class="type">IBAN</div></td>
+<td class="what"><p>Example IBAN for Germany in the SWIFT IBAN Registry</p><p class="note">Bank code 37040044 is real (Commerzbank); the account part makes it fictitious.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="ISO 13616 IBAN mod-97">✓ iban</span></td>
+<td><ul class="src"><li><a href="https://www.swift.com/resource/iban-registry-pdf" rel="noopener">SWIFT IBAN Registry (ISO 13616 Registration Authority)</a> <span class="muted">— SWIFT</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+<tr id="global-iban-gb29" data-status="published-example">
+<td class="val"><div class="v"><code>GB29 NWBK 6016 1331 9268 19</code><button class="copy" type="button" data-copy="GB29 NWBK 6016 1331 9268 19" aria-label="Copy GB29 NWBK 6016 1331 9268 19">Copy</button></div><div class="type">IBAN</div></td>
+<td class="what"><p>Example IBAN for the United Kingdom in the SWIFT IBAN Registry</p><p class="note">Bank code NWBK is real (NatWest); the account part makes it fictitious.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="ISO 13616 IBAN mod-97">✓ iban</span></td>
+<td><ul class="src"><li><a href="https://www.swift.com/resource/iban-registry-pdf" rel="noopener">SWIFT IBAN Registry (ISO 13616 Registration Authority)</a> <span class="muted">— SWIFT</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+<tr id="global-card-visa-4111" data-status="published-example">
+<td class="val"><div class="v"><code>4111 1111 1111 1111</code><button class="copy" type="button" data-copy="4111 1111 1111 1111" aria-label="Copy 4111 1111 1111 1111">Copy</button></div><div class="type">Payment card number (Visa)</div></td>
+<td class="what"><p>Standard Visa test card number</p><p class="note">Also used by Braintree, PayPal, Spreedly and Adyen. Never authorises in production. In invoices mask it, e.g. ************1111 with cbc:NetworkID VISA.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-visa-4622" data-status="published-example">
+<td class="val"><div class="v"><code>4622 9431 2701 3705</code><button class="copy" type="button" data-copy="4622 9431 2701 3705" aria-label="Copy 4622 9431 2701 3705">Copy</button></div><div class="type">Payment card number (Visa)</div></td>
+<td class="what"><p>Visa test card number (CVV 838)</p><p class="note">Part of a series up to 4622 9431 2701 3747.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-visa-4012" data-status="published-example">
+<td class="val"><div class="v"><code>4012 8888 8888 1881</code><button class="copy" type="button" data-copy="4012 8888 8888 1881" aria-label="Copy 4012 8888 8888 1881">Copy</button></div><div class="type">Payment card number (Visa)</div></td>
+<td class="what"><p>Alternative Visa test card number used by payment providers</p><p class="note">Published by payment service providers only (PayPal Payflow, Spreedly).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.spreedly.com/docs/test-data" rel="noopener">Spreedly — test data</a> <span class="muted">— Spreedly</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-mc-5555" data-status="published-example">
+<td class="val"><div class="v"><code>5555 5555 5555 4444</code><button class="copy" type="button" data-copy="5555 5555 5555 4444" aria-label="Copy 5555 5555 5555 4444">Copy</button></div><div class="type">Payment card number (Mastercard)</div></td>
+<td class="what"><p>Standard Mastercard test card number</p><p class="note">Also used by Braintree, Adyen and Stripe.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-mc-2222-4200" data-status="published-example">
+<td class="val"><div class="v"><code>2222 4200 0000 1113</code><button class="copy" type="button" data-copy="2222 4200 0000 1113" aria-label="Copy 2222 4200 0000 1113">Copy</button></div><div class="type">Payment card number (Mastercard 2-series)</div></td>
+<td class="what"><p>Mastercard 2-series test card number</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-mc-2222-6300" data-status="published-example">
+<td class="val"><div class="v"><code>2222 6300 0000 1125</code><button class="copy" type="button" data-copy="2222 6300 0000 1125" aria-label="Copy 2222 6300 0000 1125">Copy</button></div><div class="type">Payment card number (Mastercard 2-series)</div></td>
+<td class="what"><p>Mastercard 2-series test card number</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-mc-5123" data-status="published-example">
+<td class="val"><div class="v"><code>5123 4500 0000 0008</code><button class="copy" type="button" data-copy="5123 4500 0000 0008" aria-label="Copy 5123 4500 0000 0008">Copy</button></div><div class="type">Payment card number (Mastercard)</div></td>
+<td class="what"><p>Mastercard Gateway standard test card</p><p class="note">Seen in the search index of the Mastercard Gateway test card page; the page itself could not be fetched.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.mastercard.com/mastercard-gateway/documentation/testing/test-cards/" rel="noopener">Mastercard Gateway — test cards</a> <span class="muted">— Mastercard</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-mc-2223-0000" data-status="published-example">
+<td class="val"><div class="v"><code>2223 0000 0000 0007</code><button class="copy" type="button" data-copy="2223 0000 0000 0007" aria-label="Copy 2223 0000 0000 0007">Copy</button></div><div class="type">Payment card number (Mastercard 2-series)</div></td>
+<td class="what"><p>Mastercard Gateway standard test card</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.mastercard.com/mastercard-gateway/documentation/testing/test-cards/" rel="noopener">Mastercard Gateway — test cards</a> <span class="muted">— Mastercard</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-mc-5111" data-status="published-example">
+<td class="val"><div class="v"><code>5111 1111 1111 1118</code><button class="copy" type="button" data-copy="5111 1111 1111 1118" aria-label="Copy 5111 1111 1111 1118">Copy</button></div><div class="type">Payment card number (Mastercard)</div></td>
+<td class="what"><p>Mastercard Gateway standard test card</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.mastercard.com/mastercard-gateway/documentation/testing/test-cards/" rel="noopener">Mastercard Gateway — test cards</a> <span class="muted">— Mastercard</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-mc-2223-4840" data-status="published-example">
+<td class="val"><div class="v"><code>2223 0000 4840 0011</code><button class="copy" type="button" data-copy="2223 0000 4840 0011" aria-label="Copy 2223 0000 4840 0011">Copy</button></div><div class="type">Payment card number (Mastercard 2-series)</div></td>
+<td class="what"><p>Mastercard 2-series test card used by payment providers</p><p class="note">Published by payment service providers only (Braintree, TabaPay).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.paypal.com/braintree/docs/guides/credit-cards/testing-go-live/php/" rel="noopener">Braintree — testing and going live</a> <span class="muted">— PayPal (Braintree)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-amex-3782" data-status="published-example">
+<td class="val"><div class="v"><code>3782 822463 10005</code><button class="copy" type="button" data-copy="3782 822463 10005" aria-label="Copy 3782 822463 10005">Copy</button></div><div class="type">Payment card number (American Express)</div></td>
+<td class="what"><p>Standard American Express test card number</p><p class="note">Also used by Braintree and Stripe. No americanexpress.com page found.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-discover-6011" data-status="published-example">
+<td class="val"><div class="v"><code>6011 1111 1111 1117</code><button class="copy" type="button" data-copy="6011 1111 1111 1117" aria-label="Copy 6011 1111 1111 1117">Copy</button></div><div class="type">Payment card number (Discover)</div></td>
+<td class="what"><p>Discover test card number</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-jcb-3566" data-status="published-example">
+<td class="val"><div class="v"><code>3566 1111 1111 1113</code><button class="copy" type="button" data-copy="3566 1111 1111 1113" aria-label="Copy 3566 1111 1111 1113">Copy</button></div><div class="type">Payment card number (JCB)</div></td>
+<td class="what"><p>JCB test card number</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-uatp-1354" data-status="published-example">
+<td class="val"><div class="v"><code>1354 1234 5678 911</code><button class="copy" type="button" data-copy="1354 1234 5678 911" aria-label="Copy 1354 1234 5678 911">Copy</button></div><div class="type">Payment card number (UATP)</div></td>
+<td class="what"><p>UATP (airline) test card number</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td>
+</tr>
+<tr id="global-card-invalid-luhn-4111" data-status="published-example">
+<td class="val"><div class="v"><code>4111 1111 1111 1112</code><button class="copy" type="button" data-copy="4111 1111 1111 1112" aria-label="Copy 4111 1111 1111 1112">Copy</button></div><div class="type">Payment card number (negative test)</div></td>
+<td class="what"><p>Test number that triggers &quot;Invalid Luhn Mod 10&quot;</p><p class="note">Deliberately invalid, for testing error handling only.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Luhn mod-10">✗ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.visaacceptance.com/hello-world/testing-guide.html" rel="noopener">Visa Acceptance — testing guide</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li><li><a href="https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655" rel="noopener">Visa Acceptance — knowledge base article 000001655</a> <span class="muted">— Visa Acceptance (Cybersource)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="trade"><h2>Trade &amp; logistics <span class="count">16</span></h2><p class="muted">Location numbers, customs, transport codes</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-gs1-prefix-952" data-status="reserved">
+<td class="val"><div class="v"><code>952</code></div><div class="type">GS1 prefix <span class="kind">range</span></div></td>
+<td class="what"><p>GS1 prefix for demonstrations and examples</p><p class="note">Both GS1 Prefix and GS1-8 Prefix. GS1 Style Guide §2.18 (v5.1, May 2021) — &quot;specifically allocated to demonstrations, examples, tests or any other usage&quot; and &quot;not subject to any central or decentralised governance&quot;.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:StandardItemIdentification/cbc:ID @schemeID=0160</code></td>
+</tr>
+<tr id="global-gtin13-9520123456788" data-status="published-example">
+<td class="val"><div class="v"><code>9520123456788</code><button class="copy" type="button" data-copy="9520123456788" aria-label="Copy 9520123456788">Copy</button></div><div class="type">GTIN-13 / GLN</div></td>
+<td class="what"><p>GTIN and GLN used in the GS1 Digital Link standard</p><p class="note">GS1&#x27;s canonical example URI is https://id.gs1.org/01/09520123456788 — id.gs1.org is GS1&#x27;s real resolver, not a documentation domain.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span></td>
+<td><ul class="src"><li><a href="https://ref.gs1.org/standards/digital-link/uri-syntax/" rel="noopener">GS1 Digital Link URI Syntax 1.7.0</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cac:StandardItemIdentification/cbc:ID @schemeID=0160</code><code>cbc:EndpointID @schemeID=0088</code></td>
+</tr>
+<tr id="global-gtin14-09520123456788" data-status="published-example">
+<td class="val"><div class="v"><code>09520123456788</code><button class="copy" type="button" data-copy="09520123456788" aria-label="Copy 09520123456788">Copy</button></div><div class="type">GTIN-14</div></td>
+<td class="what"><p>14-digit form of the GS1 Digital Link example GTIN</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span></td>
+<td><ul class="src"><li><a href="https://ref.gs1.org/standards/digital-link/uri-syntax/" rel="noopener">GS1 Digital Link URI Syntax 1.7.0</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cac:StandardItemIdentification/cbc:ID @schemeID=0160</code></td>
+</tr>
+<tr id="global-gtin14-09524000059109" data-status="published-example">
+<td class="val"><div class="v"><code>09524000059109</code><button class="copy" type="button" data-copy="09524000059109" aria-label="Copy 09524000059109">Copy</button></div><div class="type">GTIN-14</div></td>
+<td class="what"><p>Example GTIN in the GS1 General Specifications</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cac:StandardItemIdentification/cbc:ID @schemeID=0160</code></td>
+</tr>
+<tr id="global-sscc-195201234567891232" data-status="published-example">
+<td class="val"><div class="v"><code>195201234567891232</code><button class="copy" type="button" data-copy="195201234567891232" aria-label="Copy 195201234567891232">Copy</button></div><div class="type">SSCC</div></td>
+<td class="what"><p>Example shipping container code in the GS1 Digital Link standard</p><p class="note">Extension digit 1 followed by prefix 952.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GS1 mod-10 check digit">✓ gs1</span></td>
+<td><ul class="src"><li><a href="https://ref.gs1.org/standards/digital-link/uri-syntax/" rel="noopener">GS1 Digital Link URI Syntax 1.7.0</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cac:TransportHandlingUnit/cbc:ID</code></td>
+</tr>
+<tr id="global-giai-9520614141234567" data-status="published-example">
+<td class="val"><div class="v"><code>9520614141234567</code><button class="copy" type="button" data-copy="9520614141234567" aria-label="Copy 9520614141234567">Copy</button></div><div class="type">GIAI</div></td>
+<td class="what"><p>Example individual asset identifier in the GS1 Digital Link standard</p><p class="note">A GIAI has no check digit.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://ref.gs1.org/standards/digital-link/uri-syntax/" rel="noopener">GS1 Digital Link URI Syntax 1.7.0</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-gtin12-012345000058" data-status="published-example">
+<td class="val"><div class="v"><code>012345000058</code><button class="copy" type="button" data-copy="012345000058" aria-label="Copy 012345000058">Copy</button></div><div class="type">GTIN-12 (UPC)</div></td>
+<td class="what"><p>GS1 US example UPC quoted in the GS1 Style Guide</p><p class="note">Not under prefix 952.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GS1 mod-10 check digit">✓ gs1</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide (§2.18.1)</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-gtin13-9520000100018" data-status="derived">
+<td class="val"><div class="v"><code>9520000100018</code><button class="copy" type="button" data-copy="9520000100018" aria-label="Copy 9520000100018">Copy</button></div><div class="type">GTIN-13</div></td>
+<td class="what"><p>Fictitious trade item number under prefix 952</p><p class="note">GTIN-14 form 09520000100018.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cac:StandardItemIdentification/cbc:ID @schemeID=0160</code></td>
+</tr>
+<tr id="global-gtin14-09520000100018" data-status="derived">
+<td class="val"><div class="v"><code>09520000100018</code><button class="copy" type="button" data-copy="09520000100018" aria-label="Copy 09520000100018">Copy</button></div><div class="type">GTIN-14</div></td>
+<td class="what"><p>14-digit form of the fictitious GTIN 9520000100018</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cac:StandardItemIdentification/cbc:ID @schemeID=0160</code></td>
+</tr>
+<tr id="global-gtin8-95200002" data-status="derived">
+<td class="val"><div class="v"><code>95200002</code><button class="copy" type="button" data-copy="95200002" aria-label="Copy 95200002">Copy</button></div><div class="type">GTIN-8</div></td>
+<td class="what"><p>Fictitious 8-digit trade item number (GS1-8 prefix 952)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-sscc-095200000000000011" data-status="derived">
+<td class="val"><div class="v"><code>095200000000000011</code><button class="copy" type="button" data-copy="095200000000000011" aria-label="Copy 095200000000000011">Copy</button></div><div class="type">SSCC</div></td>
+<td class="what"><p>Fictitious shipping container code (extension 0 + 9520000 + serial)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cac:TransportHandlingUnit/cbc:ID</code></td>
+</tr>
+<tr id="global-grai-09520000200015" data-status="derived">
+<td class="val"><div class="v"><code>09520000200015</code><button class="copy" type="button" data-copy="09520000200015" aria-label="Copy 09520000200015">Copy</button></div><div class="type">GRAI (AI 8003) base</div></td>
+<td class="what"><p>Fictitious returnable asset identifier base, add an optional serial</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="GS1 key with prefix 952 (examples) and valid check digit">✓ gs1-952</span><span class="chk ver">✓ Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-currency-xts" data-status="reserved">
+<td class="val"><div class="v"><code>XTS</code><button class="copy" type="button" data-copy="XTS" aria-label="Copy XTS">Copy</button></div><div class="type">Currency code</div></td>
+<td class="what"><p>ISO 4217 code reserved for testing (numeric 963)</p><p class="note">Official name &quot;Codes specifically reserved for testing purposes&quot;; no minor units defined. In the Peppol ISO 4217 code list, so it passes the UBL XSD and Peppol rules. Use a real currency when the example must look realistic.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO4217/" rel="noopener">Peppol code list — ISO 4217</a> <span class="muted">— OpenPeppol</span></li><li><a href="https://en.wikipedia.org/wiki/ISO_4217" rel="noopener">Wikipedia — ISO 4217</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><code>@currencyID</code><code>cbc:DocumentCurrencyCode</code></td>
+</tr>
+<tr id="global-currency-xxx" data-status="reserved">
+<td class="val"><div class="v"><code>XXX</code><button class="copy" type="button" data-copy="XXX" aria-label="Copy XXX">Copy</button></div><div class="type">Currency code</div></td>
+<td class="what"><p>ISO 4217 code for transactions without a currency (numeric 999)</p><p class="note">Reserved for a different purpose — not a test code. Also in the Peppol list.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO4217/" rel="noopener">Peppol code list — ISO 4217</a> <span class="muted">— OpenPeppol</span></li><li><a href="https://en.wikipedia.org/wiki/ISO_4217" rel="noopener">Wikipedia — ISO 4217</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-container-bicu1234565" data-status="published-example">
+<td class="val"><div class="v"><code>BICU 123456 5</code><button class="copy" type="button" data-copy="BICU 123456 5" aria-label="Copy BICU 123456 5">Copy</button></div><div class="type">Container number</div></td>
+<td class="what"><p>BIC&#x27;s own &quot;theoretical&quot; container number</p><p class="note">Check digit 5 is correct (ISO 6346). BICU may be BIC&#x27;s own registered owner code (the register search could not be checked).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.bic-code.org/bic-codes/" rel="noopener">BIC — BIC codes</a> <span class="muted">— Bureau International des Containers</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-eori-gb123456789133" data-status="published-example">
+<td class="val"><div class="v"><code>GB123456789133</code><button class="copy" type="button" data-copy="GB123456789133" aria-label="Copy GB123456789133">Copy</button></div><div class="type">EORI number (HMRC sandbox)</div></td>
+<td class="what"><p>Test EORI number for the HMRC Check an EORI Number sandbox</p><p class="note">Sandbox only (test-api.service.hmrc.gov.uk). In the sandbox, GB + 12 digits ending 0–7 are valid and ending 8 or 9 invalid. No EU test EORI exists.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/check-eori-number-api/1.0/oas/resolved" rel="noopener">HMRC Check an EORI Number API</a> <span class="muted">— HMRC</span></li><li><a href="https://github.com/hmrc/check-eori-number-api/tree/master/public/api/conf/1.0/test-data" rel="noopener">HMRC check-eori-number-api test data</a> <span class="muted">— HMRC</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">1</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-person-eriksson-anna-maria" data-status="published-example">
+<td class="val"><div class="v"><code>ERIKSSON, ANNA MARIA</code></div><div class="type">Person (specimen holder) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Holder of the ICAO specimen passport (female, born 12 Aug 1974 in ZENITH)</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p3_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 3 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li><li><a href="https://smartid.com.vn/media/lib/30-03-2022/9303_p3_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 3 (mirror copy used for checking)</a> <span class="muted">— ICAO (mirror)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="document"><h2>Documents <span class="count">7</span></h2><p class="muted">Specimen documents, document numbers, test texts</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-icao-uto" data-status="reserved">
+<td class="val"><div class="v"><code>UTO</code><button class="copy" type="button" data-copy="UTO" aria-label="Copy UTO">Copy</button></div><div class="type">Issuing state / nationality</div></td>
+<td class="what"><p>ICAO &quot;Utopia&quot;, recommended nationality for specimen documents</p><p class="note">Two-letter form UT. Reserved by ICAO Doc 9303 Part 3 only; UT/UTO are not ISO 3166 user-assigned codes, so do not use them as an ISO country code.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p3_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 3 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li><li><a href="https://smartid.com.vn/media/lib/30-03-2022/9303_p3_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 3 (mirror copy used for checking)</a> <span class="muted">— ICAO (mirror)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-passport-l898902c3" data-status="published-example">
+<td class="val"><div class="v"><code>L898902C3</code><button class="copy" type="button" data-copy="L898902C3" aria-label="Copy L898902C3">Copy</button></div><div class="type">Passport number</div></td>
+<td class="what"><p>Document number of the ICAO specimen passport (check digit 6)</p><p class="note">Issued 16 Apr 2007, expired 15 Apr 2012, so a &quot;valid document&quot; check fails.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p4_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 4 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-personal-number-ze184226b" data-status="published-example">
+<td class="val"><div class="v"><code>ZE184226B</code><button class="copy" type="button" data-copy="ZE184226B" aria-label="Copy ZE184226B">Copy</button></div><div class="type">Personal number</div></td>
+<td class="what"><p>Optional personal number in the ICAO specimen passport (check digit 1)</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p4_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 4 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-mrz-td3-specimen" data-status="published-example">
+<td class="val"><div class="v"><code>P&lt;UTOERIKSSON&lt;&lt;ANNA&lt;MARIA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; / L898902C36UTO7408122F1204159ZE184226B&lt;&lt;&lt;&lt;&lt;10</code></div><div class="type">MRZ (TD3 passport) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Machine-readable zone of the ICAO specimen passport</p><p class="note">All five check digits verified, including composite 0.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p4_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 4 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-id-card-d23145890" data-status="published-example">
+<td class="val"><div class="v"><code>D23145890</code><button class="copy" type="button" data-copy="D23145890" aria-label="Copy D23145890">Copy</button></div><div class="type">ID card number</div></td>
+<td class="what"><p>Document number of the ICAO specimen ID card (check digit 7)</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p5_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 5 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-mrz-td1-specimen" data-status="published-example">
+<td class="val"><div class="v"><code>I&lt;UTOD231458907&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; / 7408122F1204159UTO&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;6 / ERIKSSON&lt;&lt;ANNA&lt;MARIA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code></div><div class="type">MRZ (TD1 ID card) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Machine-readable zone of the ICAO specimen ID card</p><p class="note">Check digits verified, including composite 6.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p5_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 5 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-mrz-td2-specimen" data-status="published-example">
+<td class="val"><div class="v"><code>I&lt;UTOERIKSSON&lt;&lt;ANNA&lt;MARIA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; / D231458907UTO7408122F1204159&lt;&lt;&lt;&lt;&lt;&lt;&lt;6</code></div><div class="type">MRZ (TD2) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Machine-readable zone of the ICAO specimen TD2 document</p><p class="note">Check digits verified, including composite 6.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p6_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 6 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="other"><h2>Other <span class="count">10</span></h2><p class="muted">Everything else</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-ipv4-test-net-1" data-status="reserved">
+<td class="val"><div class="v"><code>192.0.2.0/24</code></div><div class="type">IPv4 range <span class="kind">range</span></div></td>
+<td class="what"><p>TEST-NET-1, reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc5737" rel="noopener">RFC 5737 — IPv4 Address Blocks Reserved for Documentation</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml" rel="noopener">IANA IPv4 Special-Purpose Address Registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-ipv4-test-net-2" data-status="reserved">
+<td class="val"><div class="v"><code>198.51.100.0/24</code></div><div class="type">IPv4 range <span class="kind">range</span></div></td>
+<td class="what"><p>TEST-NET-2, reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc5737" rel="noopener">RFC 5737 — IPv4 Address Blocks Reserved for Documentation</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml" rel="noopener">IANA IPv4 Special-Purpose Address Registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-ipv4-test-net-3" data-status="reserved">
+<td class="val"><div class="v"><code>203.0.113.0/24</code></div><div class="type">IPv4 range <span class="kind">range</span></div></td>
+<td class="what"><p>TEST-NET-3, reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc5737" rel="noopener">RFC 5737 — IPv4 Address Blocks Reserved for Documentation</a> <span class="muted">— IETF</span></li><li><a href="https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml" rel="noopener">IANA IPv4 Special-Purpose Address Registry</a> <span class="muted">— IANA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-ipv6-2001-db8" data-status="reserved">
+<td class="val"><div class="v"><code>2001:db8::/32</code></div><div class="type">IPv6 range <span class="kind">range</span></div></td>
+<td class="what"><p>IPv6 prefix reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc3849" rel="noopener">RFC 3849 — IPv6 Address Prefix Reserved for Documentation</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-ipv6-3fff" data-status="reserved">
+<td class="val"><div class="v"><code>3fff::/20</code></div><div class="type">IPv6 range <span class="kind">range</span></div></td>
+<td class="what"><p>Larger IPv6 prefix reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc9637.html" rel="noopener">RFC 9637 — Expanding the IPv6 Documentation Space</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-asn-16bit" data-status="reserved">
+<td class="val"><div class="v"><code>64496–64511</code></div><div class="type">AS number range <span class="kind">range</span></div></td>
+<td class="what"><p>16-bit autonomous system numbers reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc5398.html" rel="noopener">RFC 5398 — AS Number Reservation for Documentation Use</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-asn-32bit" data-status="reserved">
+<td class="val"><div class="v"><code>65536–65551</code></div><div class="type">AS number range <span class="kind">range</span></div></td>
+<td class="what"><p>32-bit autonomous system numbers reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc5398.html" rel="noopener">RFC 5398 — AS Number Reservation for Documentation Use</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-mac-unicast" data-status="reserved">
+<td class="val"><div class="v"><code>00-00-5E-00-53-00 … 00-00-5E-00-53-FF</code></div><div class="type">MAC address range (EUI-48) <span class="kind">range</span></div></td>
+<td class="what"><p>Unicast MAC addresses reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc7042.html" rel="noopener">RFC 7042 — IANA Considerations for IEEE 802 Parameters</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-mac-multicast" data-status="reserved">
+<td class="val"><div class="v"><code>01-00-5E-90-10-00 … 01-00-5E-90-10-FF</code></div><div class="type">MAC address range (EUI-48) <span class="kind">range</span></div></td>
+<td class="what"><p>Multicast MAC addresses reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc7042.html" rel="noopener">RFC 7042 — IANA Considerations for IEEE 802 Parameters</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-eui64-unicast" data-status="reserved">
+<td class="val"><div class="v"><code>00-00-5E-EF-10-00-00-00 … 00-00-5E-EF-10-00-00-FF</code></div><div class="type">EUI-64 range <span class="kind">range</span></div></td>
+<td class="what"><p>Unicast EUI-64 identifiers reserved for documentation</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc7042.html" rel="noopener">RFC 7042 — IANA Considerations for IEEE 802 Parameters</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>LEI (Legal Entity Identifier)</b><p class="note">No test LEI or reserved LOU prefix exists.</p></td><td>20 characters = 18 alphanumeric + 2 check digits (ISO 7064 MOD 97-10)</td><td><code title="ISO 17442 LEI mod-97">lei</code></td><td>GLEIF / ISO 17442</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID</code></td></tr><tr><td><b>GLN (Global Location Number)</b><p class="note">Prefix 952 is reserved for demonstrations and examples (check gs1-952).</p></td><td>13 digits, GS1 mod-10 check digit</td><td><code title="GS1 mod-10 check digit">gs1</code></td><td>GS1</td><td class='ubl'><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td></tr><tr><td><b>GTIN</b></td><td>8, 12, 13 or 14 digits, GS1 mod-10 check digit</td><td><code title="GS1 mod-10 check digit">gs1</code></td><td>GS1</td><td class='ubl'><code>cac:StandardItemIdentification/cbc:ID @schemeID=0160</code></td></tr><tr><td><b>SSCC</b></td><td>18 digits = extension digit + GS1 company prefix + serial + mod-10 check digit</td><td><code title="GS1 mod-10 check digit">gs1</code></td><td>GS1</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>BIC</b><p class="note">A &#x27;0&#x27; as 8th character marks a test-and-training BIC (check bic-test); &#x27;1&#x27; a passive participant.</p></td><td>8 or 11 characters = 4 institution + 2 country + 2 location (+ 3 branch)</td><td><code title="ISO 9362 BIC format">bic</code></td><td>SWIFT (ISO 9362 Registration Authority)</td><td class='ubl'><code>cac:FinancialInstitutionBranch/cbc:ID</code></td></tr><tr><td><b>IBAN</b><p class="note">An IBAN for a fictitious country is impossible, because validators check the country against the registry.</p></td><td>Country code + 2 check digits + national account (BBAN), up to 34 characters</td><td><code title="ISO 13616 IBAN mod-97">iban</code></td><td>SWIFT (ISO 13616 Registration Authority)</td><td class='ubl'><code>cac:PayeeFinancialAccount/cbc:ID</code></td></tr><tr><td><b>Payment card number (PAN)</b><p class="note">Mask it in realistic invoices (Peppol BIS keeps only the last 4–6 digits).</p></td><td>8–19 digits, Luhn check digit</td><td><code title="Luhn mod-10">luhn</code></td><td>ISO/IEC 7812</td><td class='ubl'><code>cac:CardAccount/cbc:PrimaryAccountNumberID</code></td></tr><tr><td><b>ISO 3166-1 country code</b></td><td>alpha-2, alpha-3 or 3-digit numeric</td><td><span class="muted">—</span></td><td>ISO 3166/MA</td><td class='ubl'><code>cac:Country/cbc:IdentificationCode</code></td></tr><tr><td><b>ISO 4217 currency code</b></td><td>3 letters (numeric 3 digits)</td><td><span class="muted">—</span></td><td>SIX (ISO 4217 maintenance agency)</td><td class='ubl'><code>@currencyID</code><code>cbc:DocumentCurrencyCode</code></td></tr><tr><td><b>UN/LOCODE</b></td><td>2-letter country code + 3 characters</td><td><span class="muted">—</span></td><td>UNECE</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Machine-readable zone (MRZ)</b><p class="note">No validator yet.</p></td><td>TD1 3×30, TD2 2×36, TD3 2×44 characters; check digits with weights 7-3-1</td><td><span class="muted">—</span></td><td>ICAO Doc 9303</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Container number</b><p class="note">No validator yet.</p></td><td>3-letter owner code + equipment category (U/J/Z) + 6-digit serial + check digit</td><td><span class="muted">—</span></td><td>BIC (ISO 6346)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>IMO ship number</b><p class="note">No validator yet.</p></td><td>IMO + 7 digits, weighted check digit</td><td><span class="muted">—</span></td><td>IMO Res. A.1117(30)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>VIN</b><p class="note">No validator yet.</p></td><td>17 characters, check digit in position 9</td><td><span class="muted">—</span></td><td>ISO 3779 / 49 CFR 565</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Peppol participant identifier</b><p class="note">No test ICD or EAS code exists.</p></td><td>&lt;ICD or EAS scheme&gt;:&lt;identifier&gt;</td><td><span class="muted">—</span></td><td>OpenPeppol</td><td class='ubl'><code>cbc:EndpointID @schemeID</code></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">22</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="global-avoid-lei-5493001kjtiigc8y1r12" data-status="avoid">
+<td class="val"><div class="v"><code>5493001KJTIIGC8Y1R12</code></div><div class="type">LEI</div></td>
+<td class="what"><p>LEI used in the GLEIF API documentation</p><p class="note warn">Real entity — Bloomberg Finance L.P. (US, ISSUED), confirmed in the GLEIF API.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ISO 17442 LEI mod-97">✓ lei</span></td>
+<td><ul class="src"><li><a href="https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12" rel="noopener">GLEIF API — LEI records</a> <span class="muted">— GLEIF</span></li><li><a href="https://cdn.standards.iteh.ai/samples/75998/2b77042cb3a346fda3b26dfd6bfd42ca/ISO-17442-2019.pdf" rel="noopener">ISO 17442:2019 preview</a> <span class="muted">— ISO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-gtin-dal-giardino" data-status="avoid">
+<td class="val"><div class="v"><code>09506000134352, 9506000134369</code></div><div class="type">GTIN</div></td>
+<td class="what"><p>GTINs of GS1&#x27;s demo brand &quot;Dal Giardino&quot;</p><p class="note warn">The brand is fictitious, but the GTINs are genuinely registered under GS1 Global Office prefix 950 and resolve live.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.org/standards/gs1-style-guide/53" rel="noopener">GS1 Style Guide (§2.18.4)</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-country-xi" data-status="avoid">
+<td class="val"><div class="v"><code>XI</code></div><div class="type">Country code</div></td>
+<td class="what"><p>User-assigned code that looks fictitious</p><p class="note warn">United Kingdom (Northern Ireland) — EU VAT/EORI prefix, and in the Peppol / EN 16931 country list.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.iso.org/glossary-for-iso-3166.html" rel="noopener">ISO Glossary for ISO 3166</a> <span class="muted">— ISO</span></li><li><a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/" rel="noopener">Peppol code list — ISO 3166</a> <span class="muted">— OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-country-xk" data-status="avoid">
+<td class="val"><div class="v"><code>XK / XKX</code></div><div class="type">Country code</div></td>
+<td class="what"><p>User-assigned code that looks fictitious</p><p class="note warn">Kosovo in the EU and many registries (Peppol uses 1A instead).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://en.wikipedia.org/wiki/XK_(user_assigned_code)" rel="noopener">Wikipedia — XK (user assigned code)</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-country-xz" data-status="avoid">
+<td class="val"><div class="v"><code>XZ</code></div><div class="type">Country code / UN/LOCODE</div></td>
+<td class="what"><p>User-assigned code that looks fictitious</p><p class="note warn">UN/LOCODE uses XZ (+ 3 characters) for real installations in international waters, such as offshore platforms.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://unlocode.unece.org/recommendation16/" rel="noopener">UNECE Recommendation 16 (UN/LOCODE)</a> <span class="muted">— UNECE</span></li><li><a href="https://unece.org/sites/default/files/2023-10/unlocode_manual.pdf" rel="noopener">UN/LOCODE Manual</a> <span class="muted">— UNECE</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-country-zz" data-status="avoid">
+<td class="val"><div class="v"><code>ZZ / ZZZ / 999</code></div><div class="type">Country code</div></td>
+<td class="what"><p>User-assigned code that looks fictitious</p><p class="note warn">Unicode CLDR &quot;Unknown or Invalid Territory&quot;.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.unicode.org/reports/tr35/" rel="noopener">Unicode Technical Standard</a> <span class="muted">— Unicode Consortium</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-country-xx" data-status="avoid">
+<td class="val"><div class="v"><code>XX</code></div><div class="type">Country code</div></td>
+<td class="what"><p>User-assigned code that looks fictitious</p><p class="note warn">WIPO ST.3 &quot;unknown states, other entities or organizations&quot;.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.wipo.int/documents/d/standards/docs-en-03-03-01.pdf" rel="noopener">WIPO Standard ST.3</a> <span class="muted">— WIPO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-country-wipo-orgs" data-status="avoid">
+<td class="val"><div class="v"><code>QZ, XN, XU, XV</code></div><div class="type">Country code</div></td>
+<td class="what"><p>User-assigned codes that look fictitious</p><p class="note warn">WIPO ST.3 codes for CPVO (EU plant varieties), Nordic Patent Institute, UPOV and Visegrad Patent Institute.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.wipo.int/documents/d/standards/docs-en-03-03-01.pdf" rel="noopener">WIPO Standard ST.3</a> <span class="muted">— WIPO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-country-icao-x" data-status="avoid">
+<td class="val"><div class="v"><code>XBA, XCC, XCE, XEC, XOM, XPO, XXA–XXC, XXX</code></div><div class="type">Country code (alpha-3)</div></td>
+<td class="what"><p>User-assigned alpha-3 codes that look fictitious</p><p class="note warn">ICAO Doc 9303 Part 3 codes for organisations and for stateless persons and refugees.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p3_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 3 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li><li><a href="https://smartid.com.vn/media/lib/30-03-2022/9303_p3_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 3 (mirror copy used for checking)</a> <span class="muted">— ICAO (mirror)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-country-ut" data-status="avoid">
+<td class="val"><div class="v"><code>UT / UTO</code></div><div class="type">Country code</div></td>
+<td class="what"><p>ICAO specimen state used as an ISO country code</p><p class="note warn">Reserved only inside ICAO Doc 9303; not an ISO 3166 user-assigned code, so ISO could assign it to a country.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icao.int/sites/default/files/publications/DocSeries/9303_p3_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 3 (8th edition, 2021)</a> <span class="muted">— ICAO</span></li><li><a href="https://smartid.com.vn/media/lib/30-03-2022/9303_p3_cons_en.pdf" rel="noopener">ICAO Doc 9303 Part 3 (mirror copy used for checking)</a> <span class="muted">— ICAO (mirror)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-coordinates-null-island" data-status="avoid">
+<td class="val"><div class="v"><code>0, 0</code></div><div class="type">Geographic coordinates</div></td>
+<td class="what"><p>Placeholder location (&quot;Null Island&quot;)</p><p class="note warn">Not reserved; systems treat 0,0 as a geocoding error marker (Natural Earth added a 1 m² &quot;island&quot; there to catch such errors).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://blogs.loc.gov/maps/2016/04/the-geographical-oddity-of-null-island/" rel="noopener">Library of Congress — The geographical oddity of Null Island</a> <span class="muted">— Library of Congress</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-phone-991" data-status="avoid">
+<td class="val"><div class="v"><code>+991</code></div><div class="type">E.164 country code</div></td>
+<td class="what"><p>Seen as a &quot;fictitious&quot; international phone code</p><p class="note warn">ITU-T shared code assigned to real non-commercial trials (E.164.2, 03/2024). ITU reserves no country code for fiction; use a national drama range instead (see country files).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.itu.int/epublications/en/publication/itu-t-e-164-2-2024-03-itu-t-e-164-numbering-resources-for-trials/en" rel="noopener">ITU-T E.164.2 (03/2024) — numbering resources for trials</a> <span class="muted">— ITU</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-phone-999" data-status="avoid">
+<td class="val"><div class="v"><code>+999</code></div><div class="type">E.164 country code</div></td>
+<td class="what"><p>Seen as a &quot;fictitious&quot; international phone code</p><p class="note warn">Reserved by ITU for a future global service.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.itu.int/dms_pub/itu-t/opb/sp/t-sp-e.164d-2016-pdf-e.pdf" rel="noopener">ITU — List of E.164 assigned country codes (2016)</a> <span class="muted">— ITU</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-card-amex-3714" data-status="avoid">
+<td class="val"><div class="v"><code>3714 496353 98431</code></div><div class="type">Payment card number (American Express)</div></td>
+<td class="what"><p>American Express test card used by some providers</p><p class="note warn">Treated as a declined card by some providers (Spreedly), so it is not a reliable &quot;good&quot; test card.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://developer.spreedly.com/docs/test-data" rel="noopener">Spreedly — test data</a> <span class="muted">— Spreedly</span></li><li><a href="https://developer.paypal.com/braintree/docs/guides/credit-cards/testing-go-live/php/" rel="noopener">Braintree — testing and going live</a> <span class="muted">— PayPal (Braintree)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-container-csqu3054383" data-status="avoid">
+<td class="val"><div class="v"><code>CSQU 305438 3</code></div><div class="type">Container number</div></td>
+<td class="what"><p>Worked example of the ISO 6346 check digit</p><p class="note warn">CSQU is a registered owner code (real fleet).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://en.wikipedia.org/wiki/ISO_6346" rel="noopener">Wikipedia — ISO 6346</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-container-abzu0012343" data-status="avoid">
+<td class="val"><div class="v"><code>ABZU 001234 3</code></div><div class="type">Container number</div></td>
+<td class="what"><p>Worked example in ISO 6346:1984</p><p class="note warn">Described as a &quot;registered owner code&quot; in the standard; probably real.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://cdn.standards.iteh.ai/samples/12648/681ff881db114cce8e8054309a1dc438/ISO-6346-1984.pdf" rel="noopener">ISO 6346:1984 preview</a> <span class="muted">— ISO</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-imo-9074729" data-status="avoid">
+<td class="val"><div class="v"><code>IMO 9074729</code></div><div class="type">IMO ship number</div></td>
+<td class="what"><p>Check-digit example on Wikipedia</p><p class="note warn">A real ship number. IMO defines no example or test range.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://en.wikipedia.org/wiki/IMO_number" rel="noopener">Wikipedia — IMO number</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-vin-1m8gdm9axkp042788" data-status="avoid">
+<td class="val"><div class="v"><code>1M8GDM9AXKP042788</code></div><div class="type">VIN</div></td>
+<td class="what"><p>Check-digit example (49 CFR 565)</p><p class="note warn">WMI 1M8 is a real manufacturer (Motor Coach Industries); decodes to a 1989 bus.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Check_digit" rel="noopener">Wikibooks — VIN check digit</a> <span class="muted">— Wikibooks</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-isbn-9780306406157" data-status="avoid">
+<td class="val"><div class="v"><code>978-0-306-40615-7</code></div><div class="type">ISBN</div></td>
+<td class="what"><p>Wikipedia&#x27;s example ISBN (also 0-306-40615-2)</p><p class="note warn">Real book (Error-correction coding for digital communications, Clark, Plenum), found in Open Library.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://openlibrary.org/api/books?bibkeys=ISBN:9780306406157&amp;format=json&amp;jscmd=data" rel="noopener">Open Library API — ISBN 9780306406157</a> <span class="muted">— Internet Archive</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-isbn-9783161484100" data-status="avoid">
+<td class="val"><div class="v"><code>978-3-16-148410-0</code></div><div class="type">ISBN</div></td>
+<td class="what"><p>Wikipedia&#x27;s barcode example ISBN</p><p class="note warn">Registrant 3-16 is believed to be a real publisher. No ISBN range is reserved for examples.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://en.wikipedia.org/wiki/ISBN" rel="noopener">Wikipedia — ISBN</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-doi-10-5072" data-status="avoid">
+<td class="val"><div class="v"><code>10.5072</code></div><div class="type">DOI prefix</div></td>
+<td class="what"><p>Historical DataCite test prefix</p><p class="note warn">Retired by DataCite on 2019-06-01; no DOI-wide example prefix exists.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://datacite.org/blog/test-prefix-10-5072-retiring-june-1/" rel="noopener">DataCite — test prefix 10.5072 retiring June 1</a> <span class="muted">— DataCite</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="global-avoid-doi-10-1000-182" data-status="avoid">
+<td class="val"><div class="v"><code>10.1000/182</code></div><div class="type">DOI</div></td>
+<td class="what"><p>DOI used in the DOI Handbook</p><p class="note warn">A real DOI (the International DOI Foundation&#x27;s own handbook).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://pidforum.org/t/example-doi-prefix-best-practice-for-documentation-on-dois/1763" rel="noopener">PID Forum — example DOI prefix, best practice for documentation</a> <span class="muted">— PID Forum</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Global / international with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BGLOBAL%5D+&amp;country=GLOBAL">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

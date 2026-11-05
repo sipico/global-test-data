@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>South Korea — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Asia</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇰🇷</span> South Korea <span class="native">대한민국</span></h1>
+<p class="lede">South Korea has no officially reserved example values of any kind: no identifiers, phone numbers or example domains (example.kr and example.co.kr are registered). Its e-tax invoice uses the KEC XML standard, not UBL, and Korea has no Peppol authority. The common &quot;example&quot; business registration number 123-45-67890 fails the check digit. A checksum-valid party-set series (000-81-0nnnC) was derived, but Korean registers could not be queried, so it is not listed as usable. Also not listed because unverified: postcodes 00xxx and 64xxx-99xxx (outside the range Korea Post says it assigned, but not checked against the postcode database) and mobile numbers 010-0xxx/010-1xxx (reportedly not assignable; not confirmed in the MSIT rules). What remains usable are the UPU address examples, the placeholder name 홍길동 and RFC 2606/6761 domains.</p>
+<p class="meta">Updated 2026-11-05 · searched in ko, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-japan-korea.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/kr.yaml">Data file</a> ·
+<a href="../data/kr.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>1</b> Reserved</span><span class="stat s-published-example"><b>5</b> Official example</span><span class="stat s-avoid"><b>12</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label></div>
+<section class="cat" id="address"><h2>Address <span class="count">4</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="kr-address-upu-daegu" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. Hong, Gil Dong / 101-dong 103-ho / 2275-12, Dalgubeol-daero, Suseong-gu / DAEGU 42007 / REP. OF KOREA</code></div><div class="type">Address example (apartment complex) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a Korean address in a building complex</p><p class="note">-dong = building, -ho = unit. In Korean script the order is reversed: 대구광역시 수성구 달구벌대로 2275-12 101동 103호.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf" rel="noopener">UPU — Postal addressing systems, Korea (Rep.) (03/2016)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-address-upu-incheon" data-status="published-example">
+<td class="val"><div class="v"><code>Dr. Hong, Gil Dong / 24, Songnim-ro, Dong-gu / INCHEON 22554</code></div><div class="type">Address example (urban) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of an urban Korean address</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf" rel="noopener">UPU — Postal addressing systems, Korea (Rep.) (03/2016)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-address-upu-changnyeong" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. Hong, Gil Dong / 6, Jong-ro, Changnyeong-eup, Changnyeong-gun / GYEONGSANGNAM-DO 50329</code></div><div class="type">Address example (rural) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a rural Korean address</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf" rel="noopener">UPU — Postal addressing systems, Korea (Rep.) (03/2016)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-address-upu-po-box" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. Hong, Gil Dong / P.O. Box 00 / 51, Oncheon-ro, Yuseong-gu / DAEJEON 34186</code></div><div class="type">Address example (P.O. box) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a Korean P.O. box address</p><p class="note">Box number 00 is a placeholder.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf" rel="noopener">UPU — Postal addressing systems, Korea (Rep.) (03/2016)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="kr-domain-rfc-reserved" data-status="reserved">
+<td class="val"><div class="v"><code>&lt;alias&gt;.example, example.com</code></div><div class="type">Email domain <span class="kind">range</span></div></td>
+<td class="what"><p>RFC-reserved domains to use for Korean parties</p><p class="note">Korea has no reserved example domain like JPRS&#x27;s example.jp; KISA&#x27;s rules allow reservations but none for examples was found.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">1</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="kr-person-hong-gildong" data-status="published-example">
+<td class="val"><div class="v"><code>홍길동 (Hong Gil-dong)</code></div><div class="type">Person name <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Official placeholder name on government specimens and forms</p><p class="note">Used in MOIS ID-card specimens and the UPU Korea sheet. 김철수 and 이영희 are common textbook names but not from an official source.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf" rel="noopener">UPU — Postal addressing systems, Korea (Rep.) (03/2016)</a> <span class="muted">— Universal Postal Union</span></li><li><a href="https://www.mois.go.kr/frt/sub/a06/b06/IDCard/screen.do" rel="noopener">MOIS — ID card (주민등록증) page</a> <span class="muted">— Ministry of the Interior and Safety</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>Business registration number (사업자등록번호)</b><p class="note">Type digits 81 = for-profit corporation HQ, 85 = branch, 01–79 = individuals. Check digit = weights 1,3,7,1,3,7,1,3,5 on digits 1–9, plus floor(d₉ × 5 / 10), then (10 − sum mod 10) mod 10; algorithm from consistent secondary sources, no NTS primary document found.</p></td><td>10 digits, written XXX-XX-XXXXX (tax office, type, serial, check digit)</td><td><code title="Korean business registration number check digit">kr-brn</code></td><td>National Tax Service (국세청)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Corporate registration number (법인등록번호)</b><p class="note">Check digit commonly described as weights 1,2,1,2,… then (10 − sum mod 10) mod 10; unverified.</p></td><td>13 digits, written XXXXXX-XXXXXXX</td><td><span class="muted">—</span></td><td>Court registry (등기소)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Resident registration number (주민등록번호)</b><p class="note">Since 5 October 2020 the six digits after the gender digit are random, so a checksum proves nothing. Collection restricted by the Personal Information Protection Act. Do not use.</p></td><td>YYMMDD-GNNNNNN</td><td><span class="muted">—</span></td><td>Ministry of the Interior and Safety (행정안전부)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Postcode (우편번호, 국가기초구역번호)</b></td><td>5 digits; digits 1–2 province, 1–3 city/county/district, 4–5 serial</td><td><span class="muted">—</span></td><td>Korea Post (우정사업본부) / MOIS</td><td class='ubl'><code>cac:PostalAddress/cbc:PostalZone</code></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">12</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="kr-avoid-brn-1234567890" data-status="avoid">
+<td class="val"><div class="v"><code>123-45-67890</code></div><div class="type">Business registration number</div></td>
+<td class="what"><p>Common &quot;example&quot; BRN (KEPCO, KIPS, many blogs)</p><p class="note warn">Fails the check digit; no NTS source.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Korean business registration number check digit">✗ kr-brn</span></td>
+<td><ul class="src"><li><a href="https://hongpage.kr/96" rel="noopener">BRN checksum explanation (hongpage.kr)</a> <span class="muted">— hongpage.kr</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-brn-9876543210" data-status="avoid">
+<td class="val"><div class="v"><code>987-65-43210</code></div><div class="type">Business registration number</div></td>
+<td class="what"><p>BRN used in blog examples</p><p class="note warn">Fails the check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Korean business registration number check digit">✗ kr-brn</span></td>
+<td><ul class="src"><li><a href="https://hongpage.kr/96" rel="noopener">BRN checksum explanation (hongpage.kr)</a> <span class="muted">— hongpage.kr</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-brn-2048631263" data-status="avoid">
+<td class="val"><div class="v"><code>204-86-31263</code></div><div class="type">Business registration number</div></td>
+<td class="what"><p>BRN in a widely copied e-tax invoice sample on GitHub</p><p class="note warn">Passes the check digit, so probably a real business. The same sample uses 602-81-31841, the name (주)샘플사업자 and real-looking emails at klnet.co.kr and freechal.com.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Korean business registration number check digit">✓ kr-brn</span></td>
+<td><ul class="src"><li><a href="https://github.com/ruseel/kr-etax-sample" rel="noopener">ruseel/kr-etax-sample (unsigned KEC XML e-tax invoice sample)</a> <span class="muted">— GitHub (secondary)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-brn-6028131841" data-status="avoid">
+<td class="val"><div class="v"><code>602-81-31841</code></div><div class="type">Business registration number</div></td>
+<td class="what"><p>Second BRN in the GitHub e-tax invoice sample</p><p class="note warn">Passes the check digit, so probably a real business.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Korean business registration number check digit">✓ kr-brn</span></td>
+<td><ul class="src"><li><a href="https://github.com/ruseel/kr-etax-sample" rel="noopener">ruseel/kr-etax-sample (unsigned KEC XML e-tax invoice sample)</a> <span class="muted">— GitHub (secondary)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-brn-1248100998" data-status="avoid">
+<td class="val"><div class="v"><code>124-81-00998</code></div><div class="type">Business registration number</div></td>
+<td class="what"><p>Seen in BRN validator tutorials</p><p class="note warn">Passes the check digit; widely cited as Samsung Electronics (not verified on Hometax).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Korean business registration number check digit">✓ kr-brn</span></td>
+<td><ul class="src"><li><a href="https://hongpage.kr/96" rel="noopener">BRN checksum explanation (hongpage.kr)</a> <span class="muted">— hongpage.kr</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-brn-2208162517" data-status="avoid">
+<td class="val"><div class="v"><code>220-81-62517</code></div><div class="type">Business registration number</div></td>
+<td class="what"><p>Seen in BRN validator tutorials</p><p class="note warn">Passes the check digit; widely cited as Naver (not verified on Hometax).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Korean business registration number check digit">✓ kr-brn</span></td>
+<td><ul class="src"><li><a href="https://hongpage.kr/96" rel="noopener">BRN checksum explanation (hongpage.kr)</a> <span class="muted">— hongpage.kr</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-address-samsung-card" data-status="avoid">
+<td class="val"><div class="v"><code>Samsung Card Bldg. / 194, Yulgok-ro, Jongno-gu / SEOUL 03127</code></div><div class="type">Address example (company)</div></td>
+<td class="what"><p>Company address example in the UPU Korea sheet</p><p class="note warn">Real company building.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf" rel="noopener">UPU — Postal addressing systems, Korea (Rep.) (03/2016)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-address-teheran-ro-123" data-status="avoid">
+<td class="val"><div class="v"><code>서울특별시 강남구 테헤란로 123</code></div><div class="type">Address</div></td>
+<td class="what"><p>Address seen in blog invoice examples</p><p class="note warn">Real road; the building number very likely exists.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.epost.go.kr/search/zipcode/cmzcd003k01.jsp" rel="noopener">Korea Post — postcode structure</a> <span class="muted">— Korea Post</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-phone-02-0xxx" data-status="avoid">
+<td class="val"><div class="v"><code>02-0xxx-xxxx, 02-1xxx-xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Seoul numbers with an exchange starting 0 or 1</p><p class="note warn">Local exchanges start with 2–9; libphonenumber 9.0.42 rejects e.g. 02-0123-4567.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8_%EC%B2%B4%EA%B3%84" rel="noopener">Korean Wikipedia — 대한민국의 전화번호 체계</a> <span class="muted">— Wikipedia</span></li><li><a href="https://pypi.org/project/phonenumbers/" rel="noopener">phonenumbers (Python port of libphonenumber) 9.0.42</a> <span class="muted">— PyPI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-phone-kofic" data-status="avoid">
+<td class="val"><div class="v"><code>KOFIC screen phone numbers</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Numbers the Korean Film Council lends to film productions</p><p class="note warn">Real, unpublished subscriber lines, and not available for OTT or other media (Squid Game incident, 2021).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.huffingtonpost.kr/article/113673" rel="noopener">HuffPost Korea — KOFIC phone numbers for screen exposure</a> <span class="muted">— HuffPost Korea</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-domain-example-kr" data-status="avoid">
+<td class="val"><div class="v"><code>example.kr, example.co.kr, test.co.kr, sample.co.kr</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Tempting example domains</p><p class="note warn">All registered (DNS checked 2026-11-05). Use &lt;alias&gt;.example or example.com.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://krnic.kisa.or.kr/jsp/infoboard/law/domManRule.jsp" rel="noopener">KISA 도메인이름 관리준칙 (Domain Name Management Rules)</a> <span class="muted">— KISA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="kr-avoid-rrn" data-status="avoid">
+<td class="val"><div class="v"><code>YYMMDD-GNNNNNN</code></div><div class="type">Resident registration number <span class="kind">range</span></div></td>
+<td class="what"><p>Resident registration number (주민등록번호)</p><p class="note warn">Collection restricted by the Personal Information Protection Act; since October 2020 the digits are random, so no number can be shown to be fictitious. No official specimen number was found.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.korea.kr/news/policyNewsView.do?newsId=148872723" rel="noopener">korea.kr — resident registration number reform (2020)</a> <span class="muted">— Government of the Republic of Korea</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for South Korea with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BKR%5D+&amp;country=KR">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

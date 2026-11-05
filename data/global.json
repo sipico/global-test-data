@@ -1,0 +1,3125 @@
+{
+ "code": "GLOBAL",
+ "name": "Global / international",
+ "region": "Global",
+ "languages": [
+  "en"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-global.md",
+ "summary": "Identifiers that are not tied to one country. Truly reserved values exist for ISO 3166 user-assigned codes, ISO 4217 XTS, ICAO \"Utopia\" (UTO), GS1 prefix 952, SWIFT test-and-training BICs and the IETF/IANA documentation ranges (domains, IPv4/IPv6, AS numbers, MAC addresses). No reserved range exists for LEI, ISBN, ISSN, DOI, IMO numbers, ISO 6346 owner codes, VIN, IATA codes, ISO 6523 ICDs or E.164 country codes. Payment-card test numbers are published by the card schemes' acquiring/gateway businesses, not by ISO or EMVCo. Candidate container numbers (ZZZU/XXXU/QQQU), IMO 0000000 and VIN 11111111111111111 pass their check digits but were not checked against any register, so they are not listed. Note that Peppol / EN 16931 country code lists contain no user-assigned code except XI.\n",
+ "identifiers": [
+  {
+   "name": "LEI (Legal Entity Identifier)",
+   "format": "20 characters = 18 alphanumeric + 2 check digits (ISO 7064 MOD 97-10)",
+   "check": "lei",
+   "authority": "GLEIF / ISO 17442",
+   "notes": "No test LEI or reserved LOU prefix exists.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "GLN (Global Location Number)",
+   "format": "13 digits, GS1 mod-10 check digit",
+   "check": "gs1",
+   "authority": "GS1",
+   "notes": "Prefix 952 is reserved for demonstrations and examples (check gs1-952).",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ]
+  },
+  {
+   "name": "GTIN",
+   "format": "8, 12, 13 or 14 digits, GS1 mod-10 check digit",
+   "check": "gs1",
+   "authority": "GS1",
+   "ubl": [
+    "cac:StandardItemIdentification/cbc:ID @schemeID=0160"
+   ]
+  },
+  {
+   "name": "SSCC",
+   "format": "18 digits = extension digit + GS1 company prefix + serial + mod-10 check digit",
+   "check": "gs1",
+   "authority": "GS1"
+  },
+  {
+   "name": "BIC",
+   "format": "8 or 11 characters = 4 institution + 2 country + 2 location (+ 3 branch)",
+   "check": "bic",
+   "authority": "SWIFT (ISO 9362 Registration Authority)",
+   "notes": "A '0' as 8th character marks a test-and-training BIC (check bic-test); '1' a passive participant.",
+   "ubl": [
+    "cac:FinancialInstitutionBranch/cbc:ID"
+   ]
+  },
+  {
+   "name": "IBAN",
+   "format": "Country code + 2 check digits + national account (BBAN), up to 34 characters",
+   "check": "iban",
+   "authority": "SWIFT (ISO 13616 Registration Authority)",
+   "notes": "An IBAN for a fictitious country is impossible, because validators check the country against the registry.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ]
+  },
+  {
+   "name": "Payment card number (PAN)",
+   "format": "8–19 digits, Luhn check digit",
+   "check": "luhn",
+   "authority": "ISO/IEC 7812",
+   "notes": "Mask it in realistic invoices (Peppol BIS keeps only the last 4–6 digits).",
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ]
+  },
+  {
+   "name": "ISO 3166-1 country code",
+   "format": "alpha-2, alpha-3 or 3-digit numeric",
+   "authority": "ISO 3166/MA",
+   "ubl": [
+    "cac:Country/cbc:IdentificationCode"
+   ]
+  },
+  {
+   "name": "ISO 4217 currency code",
+   "format": "3 letters (numeric 3 digits)",
+   "authority": "SIX (ISO 4217 maintenance agency)",
+   "ubl": [
+    "@currencyID",
+    "cbc:DocumentCurrencyCode"
+   ]
+  },
+  {
+   "name": "UN/LOCODE",
+   "format": "2-letter country code + 3 characters",
+   "authority": "UNECE"
+  },
+  {
+   "name": "Machine-readable zone (MRZ)",
+   "format": "TD1 3×30, TD2 2×36, TD3 2×44 characters; check digits with weights 7-3-1",
+   "authority": "ICAO Doc 9303",
+   "notes": "No validator yet."
+  },
+  {
+   "name": "Container number",
+   "format": "3-letter owner code + equipment category (U/J/Z) + 6-digit serial + check digit",
+   "authority": "BIC (ISO 6346)",
+   "notes": "No validator yet."
+  },
+  {
+   "name": "IMO ship number",
+   "format": "IMO + 7 digits, weighted check digit",
+   "authority": "IMO Res. A.1117(30)",
+   "notes": "No validator yet."
+  },
+  {
+   "name": "VIN",
+   "format": "17 characters, check digit in position 9",
+   "authority": "ISO 3779 / 49 CFR 565",
+   "notes": "No validator yet."
+  },
+  {
+   "name": "Peppol participant identifier",
+   "format": "<ICD or EAS scheme>:<identifier>",
+   "authority": "OpenPeppol",
+   "notes": "No test ICD or EAS code exists.",
+   "ubl": [
+    "cbc:EndpointID @schemeID"
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "id": "global-lei-00000000example00a87",
+   "category": "organisation",
+   "type": "LEI",
+   "value": "00000000EXAMPLE00A87",
+   "label": "Fictitious LEI with the word EXAMPLE",
+   "status": "derived",
+   "checks": [
+    "lei"
+   ],
+   "verified": [
+    "GLEIF API returns 404, not issued (2026-11-05)"
+   ],
+   "notes": "Prefix 0000 is no known LOU prefix (not proven).",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "GLEIF API — LEI records",
+     "url": "https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
+     "publisher": "GLEIF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ISO 17442:2019 preview",
+     "url": "https://cdn.standards.iteh.ai/samples/75998/2b77042cb3a346fda3b26dfd6bfd42ca/ISO-17442-2019.pdf",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-lei-00000000example00b84",
+   "category": "organisation",
+   "type": "LEI",
+   "value": "00000000EXAMPLE00B84",
+   "label": "Fictitious LEI with the word EXAMPLE (second party)",
+   "status": "derived",
+   "checks": [
+    "lei"
+   ],
+   "verified": [
+    "GLEIF API returns 404, not issued (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "GLEIF API — LEI records",
+     "url": "https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
+     "publisher": "GLEIF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ISO 17442:2019 preview",
+     "url": "https://cdn.standards.iteh.ai/samples/75998/2b77042cb3a346fda3b26dfd6bfd42ca/ISO-17442-2019.pdf",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-lei-00000000example00c81",
+   "category": "organisation",
+   "type": "LEI",
+   "value": "00000000EXAMPLE00C81",
+   "label": "Fictitious LEI with the word EXAMPLE (third party)",
+   "status": "derived",
+   "checks": [
+    "lei"
+   ],
+   "verified": [
+    "GLEIF API returns 404, not issued (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "GLEIF API — LEI records",
+     "url": "https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
+     "publisher": "GLEIF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ISO 17442:2019 preview",
+     "url": "https://cdn.standards.iteh.ai/samples/75998/2b77042cb3a346fda3b26dfd6bfd42ca/ISO-17442-2019.pdf",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-peppol-9915-test",
+   "category": "organisation",
+   "type": "Peppol participant identifier",
+   "value": "iso6523-actorid-upis::9915:test",
+   "label": "Test participant registered on the Peppol test network",
+   "status": "published-example",
+   "notes": "Registered in the Peppol test SML (SMK) with endpoint test.erechnung.gv.at (Austrian government test access point). 9915 = Austrian VKZ scheme. Not in production. For a party that must never be routable, use a 952 GLN with schemeID 0088 instead.",
+   "ubl": [
+    "cbc:EndpointID @schemeID=9915"
+   ],
+   "sources": [
+    {
+     "title": "Peppol Directory specification 1.1.1",
+     "url": "https://docs.peppol.eu/edelivery/directory/PEPPOL-EDN-Directory-1.1.1-2020-10-15.pdf",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol Practical — document exchange",
+     "url": "https://peppol.helger.com/public/locale-en_US/menuitem-docs-doc-exchange",
+     "publisher": "Philip Helger",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000011",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000011",
+   "label": "Fictitious party GLN no. 1 (company prefix 9520000, location reference 00001)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "notes": "One of 27 GLNs for a party set (9520000000011 to 9520000000271). Never registered in any Peppol SML, so recommended for cbc:EndpointID with schemeID 0088.",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000028",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000028",
+   "label": "Fictitious party GLN no. 2 (company prefix 9520000, location reference 00002)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000035",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000035",
+   "label": "Fictitious party GLN no. 3 (company prefix 9520000, location reference 00003)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000042",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000042",
+   "label": "Fictitious party GLN no. 4 (company prefix 9520000, location reference 00004)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000059",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000059",
+   "label": "Fictitious party GLN no. 5 (company prefix 9520000, location reference 00005)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000066",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000066",
+   "label": "Fictitious party GLN no. 6 (company prefix 9520000, location reference 00006)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000073",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000073",
+   "label": "Fictitious party GLN no. 7 (company prefix 9520000, location reference 00007)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000080",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000080",
+   "label": "Fictitious party GLN no. 8 (company prefix 9520000, location reference 00008)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000097",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000097",
+   "label": "Fictitious party GLN no. 9 (company prefix 9520000, location reference 00009)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000103",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000103",
+   "label": "Fictitious party GLN no. 10 (company prefix 9520000, location reference 00010)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000110",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000110",
+   "label": "Fictitious party GLN no. 11 (company prefix 9520000, location reference 00011)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000127",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000127",
+   "label": "Fictitious party GLN no. 12 (company prefix 9520000, location reference 00012)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000134",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000134",
+   "label": "Fictitious party GLN no. 13 (company prefix 9520000, location reference 00013)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000141",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000141",
+   "label": "Fictitious party GLN no. 14 (company prefix 9520000, location reference 00014)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000158",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000158",
+   "label": "Fictitious party GLN no. 15 (company prefix 9520000, location reference 00015)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000165",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000165",
+   "label": "Fictitious party GLN no. 16 (company prefix 9520000, location reference 00016)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000172",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000172",
+   "label": "Fictitious party GLN no. 17 (company prefix 9520000, location reference 00017)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000189",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000189",
+   "label": "Fictitious party GLN no. 18 (company prefix 9520000, location reference 00018)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000196",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000196",
+   "label": "Fictitious party GLN no. 19 (company prefix 9520000, location reference 00019)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000202",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000202",
+   "label": "Fictitious party GLN no. 20 (company prefix 9520000, location reference 00020)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000219",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000219",
+   "label": "Fictitious party GLN no. 21 (company prefix 9520000, location reference 00021)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000226",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000226",
+   "label": "Fictitious party GLN no. 22 (company prefix 9520000, location reference 00022)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000233",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000233",
+   "label": "Fictitious party GLN no. 23 (company prefix 9520000, location reference 00023)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000240",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000240",
+   "label": "Fictitious party GLN no. 24 (company prefix 9520000, location reference 00024)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000257",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000257",
+   "label": "Fictitious party GLN no. 25 (company prefix 9520000, location reference 00025)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000264",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000264",
+   "label": "Fictitious party GLN no. 26 (company prefix 9520000, location reference 00026)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gln-9520000000271",
+   "category": "organisation",
+   "type": "GLN",
+   "value": "9520000000271",
+   "label": "Fictitious party GLN no. 27 (company prefix 9520000, location reference 00027)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — EAS",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-country-aa",
+   "category": "address",
+   "type": "Country code",
+   "value": "AA / AAA / 900",
+   "label": "Recommended fictitious country (alpha-2 / alpha-3 / numeric)",
+   "status": "derived",
+   "verified": [
+    "No conflicting real-world use found in the Peppol, CLDR, WIPO ST.3, ICAO Doc 9303 and UN/LOCODE lists (2026-11-05)"
+   ],
+   "notes": "User-assigned, so ISO will never give it to a country. Fails Peppol BIS / EN 16931 Schematron, whose country list has no user-assigned codes except XI; use a real country where the document must pass those rules.",
+   "ubl": [
+    "cac:Country/cbc:IdentificationCode"
+   ],
+   "sources": [
+    {
+     "title": "ISO Glossary for ISO 3166",
+     "url": "https://www.iso.org/glossary-for-iso-3166.html",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — ISO 3166",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-country-user-assigned-alpha2",
+   "category": "address",
+   "type": "Country code range (alpha-2)",
+   "kind": "range",
+   "value": "AA, QM–QZ, XA–XZ, ZZ",
+   "label": "ISO 3166-1 user-assigned alpha-2 codes",
+   "status": "reserved",
+   "notes": "Many of these already have a de-facto meaning (see avoid entries). ISO asks users to inform the ISO 3166/MA of their use.",
+   "sources": [
+    {
+     "title": "ISO Glossary for ISO 3166",
+     "url": "https://www.iso.org/glossary-for-iso-3166.html",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — ISO 3166",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-country-user-assigned-alpha3",
+   "category": "address",
+   "type": "Country code range (alpha-3)",
+   "kind": "range",
+   "value": "AAA–AAZ, QMA–QZZ, XAA–XZZ, ZZA–ZZZ",
+   "label": "ISO 3166-1 user-assigned alpha-3 codes",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ISO Glossary for ISO 3166",
+     "url": "https://www.iso.org/glossary-for-iso-3166.html",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — ISO 3166",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-country-user-assigned-numeric",
+   "category": "address",
+   "type": "Country code range (numeric)",
+   "kind": "range",
+   "value": "900–999",
+   "label": "ISO 3166-1 user-assigned numeric codes",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ISO Glossary for ISO 3166",
+     "url": "https://www.iso.org/glossary-for-iso-3166.html",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — ISO 3166",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-locode-aaxmp",
+   "category": "address",
+   "type": "UN/LOCODE",
+   "value": "AAXMP",
+   "label": "Correctly formatted location code in the fictitious country AA",
+   "status": "derived",
+   "verified": [
+    "AA is not a country in UN/LOCODE, so no AA location exists; fails a code-list lookup (2026-11-05)"
+   ],
+   "notes": "UNECE defines no fictitious or test location.",
+   "sources": [
+    {
+     "title": "UNECE Recommendation 16 (UN/LOCODE)",
+     "url": "https://unlocode.unece.org/recommendation16/",
+     "publisher": "UNECE",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "UN/LOCODE Manual",
+     "url": "https://unece.org/sites/default/files/2023-10/unlocode_manual.pdf",
+     "publisher": "UNECE",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-domain-example-com",
+   "category": "contact",
+   "type": "Domain",
+   "value": "example.com",
+   "label": "Second-level domain reserved for documentation",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "notes": "Also example.net and example.org, and any subdomain (e.g. brand.example.com, used by GS1 Digital Link).",
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA Special-Use Domain Names registry",
+     "url": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-domain-example-net",
+   "category": "contact",
+   "type": "Domain",
+   "value": "example.net",
+   "label": "Second-level domain reserved for documentation",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA Special-Use Domain Names registry",
+     "url": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-domain-example-org",
+   "category": "contact",
+   "type": "Domain",
+   "value": "example.org",
+   "label": "Second-level domain reserved for documentation",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA Special-Use Domain Names registry",
+     "url": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-tld-example",
+   "category": "contact",
+   "type": "Top-level domain",
+   "value": ".example",
+   "label": "Top-level domain reserved for documentation",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA Special-Use Domain Names registry",
+     "url": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-tld-test",
+   "category": "contact",
+   "type": "Top-level domain",
+   "value": ".test",
+   "label": "Top-level domain reserved for testing",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA Special-Use Domain Names registry",
+     "url": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-tld-invalid",
+   "category": "contact",
+   "type": "Top-level domain",
+   "value": ".invalid",
+   "label": "Top-level domain reserved for names that must be invalid",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA Special-Use Domain Names registry",
+     "url": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-tld-localhost",
+   "category": "contact",
+   "type": "Top-level domain",
+   "value": ".localhost",
+   "label": "Top-level domain reserved for the local host",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA Special-Use Domain Names registry",
+     "url": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-email-role-alias-example",
+   "category": "contact",
+   "type": "Email address pattern",
+   "kind": "placeholder",
+   "value": "<role>@<party-alias>.example",
+   "label": "Email address pattern on the reserved .example domain",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "notes": "Or <role>@example.com.",
+   "ubl": [
+    "cac:Contact/cbc:ElectronicMail"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA Special-Use Domain Names registry",
+     "url": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-bic-test-deutdes0",
+   "category": "banking",
+   "type": "BIC (test)",
+   "value": "DEUTDES0",
+   "label": "Test-and-training BIC derived from DEUTDESS (8th character 0)",
+   "status": "reserved",
+   "checks": [
+    "bic-test"
+   ],
+   "notes": "ISO 9362 convention of the Registration Authority. The institution DEUT is real; only the test location code is reserved.",
+   "ubl": [
+    "cac:FinancialInstitutionBranch/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "SWIFT white paper on ISO 9362:2014 (§4.5 Test & Training BIC)",
+     "url": "https://www.swift.com/swift-resource/14256/download?language=en",
+     "publisher": "SWIFT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Wikipedia — ISO 9362",
+     "url": "https://en.wikipedia.org/wiki/ISO_9362",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-iban-de89",
+   "category": "banking",
+   "type": "IBAN",
+   "value": "DE89 3704 0044 0532 0130 00",
+   "label": "Example IBAN for Germany in the SWIFT IBAN Registry",
+   "status": "published-example",
+   "checks": [
+    "iban"
+   ],
+   "notes": "Bank code 37040044 is real (Commerzbank); the account part makes it fictitious.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "SWIFT IBAN Registry (ISO 13616 Registration Authority)",
+     "url": "https://www.swift.com/resource/iban-registry-pdf",
+     "publisher": "SWIFT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-iban-gb29",
+   "category": "banking",
+   "type": "IBAN",
+   "value": "GB29 NWBK 6016 1331 9268 19",
+   "label": "Example IBAN for the United Kingdom in the SWIFT IBAN Registry",
+   "status": "published-example",
+   "checks": [
+    "iban"
+   ],
+   "notes": "Bank code NWBK is real (NatWest); the account part makes it fictitious.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "SWIFT IBAN Registry (ISO 13616 Registration Authority)",
+     "url": "https://www.swift.com/resource/iban-registry-pdf",
+     "publisher": "SWIFT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-visa-4111",
+   "category": "banking",
+   "type": "Payment card number (Visa)",
+   "value": "4111 1111 1111 1111",
+   "label": "Standard Visa test card number",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "notes": "Also used by Braintree, PayPal, Spreedly and Adyen. Never authorises in production. In invoices mask it, e.g. ************1111 with cbc:NetworkID VISA.",
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-visa-4622",
+   "category": "banking",
+   "type": "Payment card number (Visa)",
+   "value": "4622 9431 2701 3705",
+   "label": "Visa test card number (CVV 838)",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "notes": "Part of a series up to 4622 9431 2701 3747.",
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-visa-4012",
+   "category": "banking",
+   "type": "Payment card number (Visa)",
+   "value": "4012 8888 8888 1881",
+   "label": "Alternative Visa test card number used by payment providers",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "notes": "Published by payment service providers only (PayPal Payflow, Spreedly).",
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Spreedly — test data",
+     "url": "https://developer.spreedly.com/docs/test-data",
+     "publisher": "Spreedly",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-mc-5555",
+   "category": "banking",
+   "type": "Payment card number (Mastercard)",
+   "value": "5555 5555 5555 4444",
+   "label": "Standard Mastercard test card number",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "notes": "Also used by Braintree, Adyen and Stripe.",
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-mc-2222-4200",
+   "category": "banking",
+   "type": "Payment card number (Mastercard 2-series)",
+   "value": "2222 4200 0000 1113",
+   "label": "Mastercard 2-series test card number",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-mc-2222-6300",
+   "category": "banking",
+   "type": "Payment card number (Mastercard 2-series)",
+   "value": "2222 6300 0000 1125",
+   "label": "Mastercard 2-series test card number",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-mc-5123",
+   "category": "banking",
+   "type": "Payment card number (Mastercard)",
+   "value": "5123 4500 0000 0008",
+   "label": "Mastercard Gateway standard test card",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "notes": "Seen in the search index of the Mastercard Gateway test card page; the page itself could not be fetched.",
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Mastercard Gateway — test cards",
+     "url": "https://developer.mastercard.com/mastercard-gateway/documentation/testing/test-cards/",
+     "publisher": "Mastercard",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-mc-2223-0000",
+   "category": "banking",
+   "type": "Payment card number (Mastercard 2-series)",
+   "value": "2223 0000 0000 0007",
+   "label": "Mastercard Gateway standard test card",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Mastercard Gateway — test cards",
+     "url": "https://developer.mastercard.com/mastercard-gateway/documentation/testing/test-cards/",
+     "publisher": "Mastercard",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-mc-5111",
+   "category": "banking",
+   "type": "Payment card number (Mastercard)",
+   "value": "5111 1111 1111 1118",
+   "label": "Mastercard Gateway standard test card",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Mastercard Gateway — test cards",
+     "url": "https://developer.mastercard.com/mastercard-gateway/documentation/testing/test-cards/",
+     "publisher": "Mastercard",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-mc-2223-4840",
+   "category": "banking",
+   "type": "Payment card number (Mastercard 2-series)",
+   "value": "2223 0000 4840 0011",
+   "label": "Mastercard 2-series test card used by payment providers",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "notes": "Published by payment service providers only (Braintree, TabaPay).",
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Braintree — testing and going live",
+     "url": "https://developer.paypal.com/braintree/docs/guides/credit-cards/testing-go-live/php/",
+     "publisher": "PayPal (Braintree)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-amex-3782",
+   "category": "banking",
+   "type": "Payment card number (American Express)",
+   "value": "3782 822463 10005",
+   "label": "Standard American Express test card number",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "notes": "Also used by Braintree and Stripe. No americanexpress.com page found.",
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-discover-6011",
+   "category": "banking",
+   "type": "Payment card number (Discover)",
+   "value": "6011 1111 1111 1117",
+   "label": "Discover test card number",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-jcb-3566",
+   "category": "banking",
+   "type": "Payment card number (JCB)",
+   "value": "3566 1111 1111 1113",
+   "label": "JCB test card number",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-uatp-1354",
+   "category": "banking",
+   "type": "Payment card number (UATP)",
+   "value": "1354 1234 5678 911",
+   "label": "UATP (airline) test card number",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "ubl": [
+    "cac:CardAccount/cbc:PrimaryAccountNumberID"
+   ],
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-card-invalid-luhn-4111",
+   "category": "banking",
+   "type": "Payment card number (negative test)",
+   "value": "4111 1111 1111 1112",
+   "label": "Test number that triggers \"Invalid Luhn Mod 10\"",
+   "status": "published-example",
+   "fails_checks": [
+    "luhn"
+   ],
+   "notes": "Deliberately invalid, for testing error handling only.",
+   "sources": [
+    {
+     "title": "Visa Acceptance — testing guide",
+     "url": "https://developer.visaacceptance.com/hello-world/testing-guide.html",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Visa Acceptance — knowledge base article 000001655",
+     "url": "https://support.visaacceptance.com/knowledgebase/knowledgearticle/?code=000001655",
+     "publisher": "Visa Acceptance (Cybersource)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gs1-prefix-952",
+   "category": "trade",
+   "type": "GS1 prefix",
+   "kind": "range",
+   "value": "952",
+   "label": "GS1 prefix for demonstrations and examples",
+   "status": "reserved",
+   "notes": "Both GS1 Prefix and GS1-8 Prefix. GS1 Style Guide §2.18 (v5.1, May 2021) — \"specifically allocated to demonstrations, examples, tests or any other usage\" and \"not subject to any central or decentralised governance\".",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:StandardItemIdentification/cbc:ID @schemeID=0160"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "GS1 Style Guide",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gtin13-9520123456788",
+   "category": "trade",
+   "type": "GTIN-13 / GLN",
+   "value": "9520123456788",
+   "label": "GTIN and GLN used in the GS1 Digital Link standard",
+   "status": "published-example",
+   "checks": [
+    "gs1-952"
+   ],
+   "notes": "GS1's canonical example URI is https://id.gs1.org/01/09520123456788 — id.gs1.org is GS1's real resolver, not a documentation domain.",
+   "ubl": [
+    "cac:StandardItemIdentification/cbc:ID @schemeID=0160",
+    "cbc:EndpointID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 Digital Link URI Syntax 1.7.0",
+     "url": "https://ref.gs1.org/standards/digital-link/uri-syntax/",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gtin14-09520123456788",
+   "category": "trade",
+   "type": "GTIN-14",
+   "value": "09520123456788",
+   "label": "14-digit form of the GS1 Digital Link example GTIN",
+   "status": "published-example",
+   "checks": [
+    "gs1-952"
+   ],
+   "ubl": [
+    "cac:StandardItemIdentification/cbc:ID @schemeID=0160"
+   ],
+   "sources": [
+    {
+     "title": "GS1 Digital Link URI Syntax 1.7.0",
+     "url": "https://ref.gs1.org/standards/digital-link/uri-syntax/",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gtin14-09524000059109",
+   "category": "trade",
+   "type": "GTIN-14",
+   "value": "09524000059109",
+   "label": "Example GTIN in the GS1 General Specifications",
+   "status": "published-example",
+   "checks": [
+    "gs1-952"
+   ],
+   "ubl": [
+    "cac:StandardItemIdentification/cbc:ID @schemeID=0160"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "GS1 Style Guide",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-sscc-195201234567891232",
+   "category": "trade",
+   "type": "SSCC",
+   "value": "195201234567891232",
+   "label": "Example shipping container code in the GS1 Digital Link standard",
+   "status": "published-example",
+   "checks": [
+    "gs1"
+   ],
+   "notes": "Extension digit 1 followed by prefix 952.",
+   "ubl": [
+    "cac:TransportHandlingUnit/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "GS1 Digital Link URI Syntax 1.7.0",
+     "url": "https://ref.gs1.org/standards/digital-link/uri-syntax/",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-giai-9520614141234567",
+   "category": "trade",
+   "type": "GIAI",
+   "value": "9520614141234567",
+   "label": "Example individual asset identifier in the GS1 Digital Link standard",
+   "status": "published-example",
+   "notes": "A GIAI has no check digit.",
+   "sources": [
+    {
+     "title": "GS1 Digital Link URI Syntax 1.7.0",
+     "url": "https://ref.gs1.org/standards/digital-link/uri-syntax/",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gtin12-012345000058",
+   "category": "trade",
+   "type": "GTIN-12 (UPC)",
+   "value": "012345000058",
+   "label": "GS1 US example UPC quoted in the GS1 Style Guide",
+   "status": "published-example",
+   "checks": [
+    "gs1"
+   ],
+   "notes": "Not under prefix 952.",
+   "sources": [
+    {
+     "title": "GS1 Style Guide (§2.18.1)",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gtin13-9520000100018",
+   "category": "trade",
+   "type": "GTIN-13",
+   "value": "9520000100018",
+   "label": "Fictitious trade item number under prefix 952",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "notes": "GTIN-14 form 09520000100018.",
+   "ubl": [
+    "cac:StandardItemIdentification/cbc:ID @schemeID=0160"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "GS1 Style Guide",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gtin14-09520000100018",
+   "category": "trade",
+   "type": "GTIN-14",
+   "value": "09520000100018",
+   "label": "14-digit form of the fictitious GTIN 9520000100018",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:StandardItemIdentification/cbc:ID @schemeID=0160"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "GS1 Style Guide",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-gtin8-95200002",
+   "category": "trade",
+   "type": "GTIN-8",
+   "value": "95200002",
+   "label": "Fictitious 8-digit trade item number (GS1-8 prefix 952)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "GS1 Style Guide",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-sscc-095200000000000011",
+   "category": "trade",
+   "type": "SSCC",
+   "value": "095200000000000011",
+   "label": "Fictitious shipping container code (extension 0 + 9520000 + serial)",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:TransportHandlingUnit/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "GS1 Style Guide",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-grai-09520000200015",
+   "category": "trade",
+   "type": "GRAI (AI 8003) base",
+   "value": "09520000200015",
+   "label": "Fictitious returnable asset identifier base, add an optional serial",
+   "status": "derived",
+   "checks": [
+    "gs1-952"
+   ],
+   "verified": [
+    "Prefix 952 is reserved for examples and has no central register, so no registry lookup applies; check digit verified (2026-11-05)"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "GS1 Style Guide",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-currency-xts",
+   "category": "trade",
+   "type": "Currency code",
+   "value": "XTS",
+   "label": "ISO 4217 code reserved for testing (numeric 963)",
+   "status": "reserved",
+   "notes": "Official name \"Codes specifically reserved for testing purposes\"; no minor units defined. In the Peppol ISO 4217 code list, so it passes the UBL XSD and Peppol rules. Use a real currency when the example must look realistic.",
+   "ubl": [
+    "@currencyID",
+    "cbc:DocumentCurrencyCode"
+   ],
+   "sources": [
+    {
+     "title": "Peppol code list — ISO 4217",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO4217/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Wikipedia — ISO 4217",
+     "url": "https://en.wikipedia.org/wiki/ISO_4217",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-currency-xxx",
+   "category": "trade",
+   "type": "Currency code",
+   "value": "XXX",
+   "label": "ISO 4217 code for transactions without a currency (numeric 999)",
+   "status": "reserved",
+   "notes": "Reserved for a different purpose — not a test code. Also in the Peppol list.",
+   "sources": [
+    {
+     "title": "Peppol code list — ISO 4217",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO4217/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Wikipedia — ISO 4217",
+     "url": "https://en.wikipedia.org/wiki/ISO_4217",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-container-bicu1234565",
+   "category": "trade",
+   "type": "Container number",
+   "value": "BICU 123456 5",
+   "label": "BIC's own \"theoretical\" container number",
+   "status": "published-example",
+   "notes": "Check digit 5 is correct (ISO 6346). BICU may be BIC's own registered owner code (the register search could not be checked).",
+   "sources": [
+    {
+     "title": "BIC — BIC codes",
+     "url": "https://www.bic-code.org/bic-codes/",
+     "publisher": "Bureau International des Containers",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-eori-gb123456789133",
+   "category": "trade",
+   "type": "EORI number (HMRC sandbox)",
+   "value": "GB123456789133",
+   "label": "Test EORI number for the HMRC Check an EORI Number sandbox",
+   "status": "published-example",
+   "notes": "Sandbox only (test-api.service.hmrc.gov.uk). In the sandbox, GB + 12 digits ending 0–7 are valid and ending 8 or 9 invalid. No EU test EORI exists.",
+   "sources": [
+    {
+     "title": "HMRC Check an EORI Number API",
+     "url": "https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/check-eori-number-api/1.0/oas/resolved",
+     "publisher": "HMRC",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "HMRC check-eori-number-api test data",
+     "url": "https://github.com/hmrc/check-eori-number-api/tree/master/public/api/conf/1.0/test-data",
+     "publisher": "HMRC",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-person-eriksson-anna-maria",
+   "category": "person",
+   "type": "Person (specimen holder)",
+   "kind": "placeholder",
+   "value": "ERIKSSON, ANNA MARIA",
+   "label": "Holder of the ICAO specimen passport (female, born 12 Aug 1974 in ZENITH)",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 3 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p3_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ICAO Doc 9303 Part 3 (mirror copy used for checking)",
+     "url": "https://smartid.com.vn/media/lib/30-03-2022/9303_p3_cons_en.pdf",
+     "publisher": "ICAO (mirror)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-icao-uto",
+   "category": "document",
+   "type": "Issuing state / nationality",
+   "value": "UTO",
+   "label": "ICAO \"Utopia\", recommended nationality for specimen documents",
+   "status": "reserved",
+   "notes": "Two-letter form UT. Reserved by ICAO Doc 9303 Part 3 only; UT/UTO are not ISO 3166 user-assigned codes, so do not use them as an ISO country code.",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 3 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p3_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ICAO Doc 9303 Part 3 (mirror copy used for checking)",
+     "url": "https://smartid.com.vn/media/lib/30-03-2022/9303_p3_cons_en.pdf",
+     "publisher": "ICAO (mirror)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-passport-l898902c3",
+   "category": "document",
+   "type": "Passport number",
+   "value": "L898902C3",
+   "label": "Document number of the ICAO specimen passport (check digit 6)",
+   "status": "published-example",
+   "notes": "Issued 16 Apr 2007, expired 15 Apr 2012, so a \"valid document\" check fails.",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 4 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p4_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-personal-number-ze184226b",
+   "category": "document",
+   "type": "Personal number",
+   "value": "ZE184226B",
+   "label": "Optional personal number in the ICAO specimen passport (check digit 1)",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 4 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p4_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-mrz-td3-specimen",
+   "category": "document",
+   "type": "MRZ (TD3 passport)",
+   "kind": "placeholder",
+   "value": "P<UTOERIKSSON<<ANNA<MARIA<<<<<<<<<<<<<<<<<<< / L898902C36UTO7408122F1204159ZE184226B<<<<<10",
+   "label": "Machine-readable zone of the ICAO specimen passport",
+   "status": "published-example",
+   "notes": "All five check digits verified, including composite 0.",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 4 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p4_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-id-card-d23145890",
+   "category": "document",
+   "type": "ID card number",
+   "value": "D23145890",
+   "label": "Document number of the ICAO specimen ID card (check digit 7)",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 5 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p5_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-mrz-td1-specimen",
+   "category": "document",
+   "type": "MRZ (TD1 ID card)",
+   "kind": "placeholder",
+   "value": "I<UTOD231458907<<<<<<<<<<<<<<< / 7408122F1204159UTO<<<<<<<<<<<6 / ERIKSSON<<ANNA<MARIA<<<<<<<<<<",
+   "label": "Machine-readable zone of the ICAO specimen ID card",
+   "status": "published-example",
+   "notes": "Check digits verified, including composite 6.",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 5 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p5_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-mrz-td2-specimen",
+   "category": "document",
+   "type": "MRZ (TD2)",
+   "kind": "placeholder",
+   "value": "I<UTOERIKSSON<<ANNA<MARIA<<<<<<<<<<< / D231458907UTO7408122F1204159<<<<<<<6",
+   "label": "Machine-readable zone of the ICAO specimen TD2 document",
+   "status": "published-example",
+   "notes": "Check digits verified, including composite 6.",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 6 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p6_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-ipv4-test-net-1",
+   "category": "other",
+   "type": "IPv4 range",
+   "kind": "range",
+   "value": "192.0.2.0/24",
+   "label": "TEST-NET-1, reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 5737 — IPv4 Address Blocks Reserved for Documentation",
+     "url": "https://www.rfc-editor.org/rfc/rfc5737",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA IPv4 Special-Purpose Address Registry",
+     "url": "https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-ipv4-test-net-2",
+   "category": "other",
+   "type": "IPv4 range",
+   "kind": "range",
+   "value": "198.51.100.0/24",
+   "label": "TEST-NET-2, reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 5737 — IPv4 Address Blocks Reserved for Documentation",
+     "url": "https://www.rfc-editor.org/rfc/rfc5737",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA IPv4 Special-Purpose Address Registry",
+     "url": "https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-ipv4-test-net-3",
+   "category": "other",
+   "type": "IPv4 range",
+   "kind": "range",
+   "value": "203.0.113.0/24",
+   "label": "TEST-NET-3, reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 5737 — IPv4 Address Blocks Reserved for Documentation",
+     "url": "https://www.rfc-editor.org/rfc/rfc5737",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IANA IPv4 Special-Purpose Address Registry",
+     "url": "https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml",
+     "publisher": "IANA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-ipv6-2001-db8",
+   "category": "other",
+   "type": "IPv6 range",
+   "kind": "range",
+   "value": "2001:db8::/32",
+   "label": "IPv6 prefix reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 3849 — IPv6 Address Prefix Reserved for Documentation",
+     "url": "https://www.rfc-editor.org/rfc/rfc3849",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-ipv6-3fff",
+   "category": "other",
+   "type": "IPv6 range",
+   "kind": "range",
+   "value": "3fff::/20",
+   "label": "Larger IPv6 prefix reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 9637 — Expanding the IPv6 Documentation Space",
+     "url": "https://www.rfc-editor.org/rfc/rfc9637.html",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-asn-16bit",
+   "category": "other",
+   "type": "AS number range",
+   "kind": "range",
+   "value": "64496–64511",
+   "label": "16-bit autonomous system numbers reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 5398 — AS Number Reservation for Documentation Use",
+     "url": "https://www.rfc-editor.org/rfc/rfc5398.html",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-asn-32bit",
+   "category": "other",
+   "type": "AS number range",
+   "kind": "range",
+   "value": "65536–65551",
+   "label": "32-bit autonomous system numbers reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 5398 — AS Number Reservation for Documentation Use",
+     "url": "https://www.rfc-editor.org/rfc/rfc5398.html",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-mac-unicast",
+   "category": "other",
+   "type": "MAC address range (EUI-48)",
+   "kind": "range",
+   "value": "00-00-5E-00-53-00 … 00-00-5E-00-53-FF",
+   "label": "Unicast MAC addresses reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 7042 — IANA Considerations for IEEE 802 Parameters",
+     "url": "https://www.rfc-editor.org/rfc/rfc7042.html",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-mac-multicast",
+   "category": "other",
+   "type": "MAC address range (EUI-48)",
+   "kind": "range",
+   "value": "01-00-5E-90-10-00 … 01-00-5E-90-10-FF",
+   "label": "Multicast MAC addresses reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 7042 — IANA Considerations for IEEE 802 Parameters",
+     "url": "https://www.rfc-editor.org/rfc/rfc7042.html",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-eui64-unicast",
+   "category": "other",
+   "type": "EUI-64 range",
+   "kind": "range",
+   "value": "00-00-5E-EF-10-00-00-00 … 00-00-5E-EF-10-00-00-FF",
+   "label": "Unicast EUI-64 identifiers reserved for documentation",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "RFC 7042 — IANA Considerations for IEEE 802 Parameters",
+     "url": "https://www.rfc-editor.org/rfc/rfc7042.html",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-lei-5493001kjtiigc8y1r12",
+   "category": "organisation",
+   "type": "LEI",
+   "value": "5493001KJTIIGC8Y1R12",
+   "label": "LEI used in the GLEIF API documentation",
+   "status": "avoid",
+   "checks": [
+    "lei"
+   ],
+   "reason": "Real entity — Bloomberg Finance L.P. (US, ISSUED), confirmed in the GLEIF API.",
+   "sources": [
+    {
+     "title": "GLEIF API — LEI records",
+     "url": "https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
+     "publisher": "GLEIF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ISO 17442:2019 preview",
+     "url": "https://cdn.standards.iteh.ai/samples/75998/2b77042cb3a346fda3b26dfd6bfd42ca/ISO-17442-2019.pdf",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-gtin-dal-giardino",
+   "category": "trade",
+   "type": "GTIN",
+   "value": "09506000134352, 9506000134369",
+   "label": "GTINs of GS1's demo brand \"Dal Giardino\"",
+   "status": "avoid",
+   "reason": "The brand is fictitious, but the GTINs are genuinely registered under GS1 Global Office prefix 950 and resolve live.",
+   "sources": [
+    {
+     "title": "GS1 Style Guide (§2.18.4)",
+     "url": "https://www.gs1.org/standards/gs1-style-guide/53",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-country-xi",
+   "category": "address",
+   "type": "Country code",
+   "value": "XI",
+   "label": "User-assigned code that looks fictitious",
+   "status": "avoid",
+   "reason": "United Kingdom (Northern Ireland) — EU VAT/EORI prefix, and in the Peppol / EN 16931 country list.",
+   "sources": [
+    {
+     "title": "ISO Glossary for ISO 3166",
+     "url": "https://www.iso.org/glossary-for-iso-3166.html",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol code list — ISO 3166",
+     "url": "https://docs.peppol.eu/poacc/billing/3.0/codelist/ISO3166/",
+     "publisher": "OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-country-xk",
+   "category": "address",
+   "type": "Country code",
+   "value": "XK / XKX",
+   "label": "User-assigned code that looks fictitious",
+   "status": "avoid",
+   "reason": "Kosovo in the EU and many registries (Peppol uses 1A instead).",
+   "sources": [
+    {
+     "title": "Wikipedia — XK (user assigned code)",
+     "url": "https://en.wikipedia.org/wiki/XK_(user_assigned_code)",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-country-xz",
+   "category": "address",
+   "type": "Country code / UN/LOCODE",
+   "value": "XZ",
+   "label": "User-assigned code that looks fictitious",
+   "status": "avoid",
+   "reason": "UN/LOCODE uses XZ (+ 3 characters) for real installations in international waters, such as offshore platforms.",
+   "sources": [
+    {
+     "title": "UNECE Recommendation 16 (UN/LOCODE)",
+     "url": "https://unlocode.unece.org/recommendation16/",
+     "publisher": "UNECE",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "UN/LOCODE Manual",
+     "url": "https://unece.org/sites/default/files/2023-10/unlocode_manual.pdf",
+     "publisher": "UNECE",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-country-zz",
+   "category": "address",
+   "type": "Country code",
+   "value": "ZZ / ZZZ / 999",
+   "label": "User-assigned code that looks fictitious",
+   "status": "avoid",
+   "reason": "Unicode CLDR \"Unknown or Invalid Territory\".",
+   "sources": [
+    {
+     "title": "Unicode Technical Standard",
+     "url": "https://www.unicode.org/reports/tr35/",
+     "publisher": "Unicode Consortium",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-country-xx",
+   "category": "address",
+   "type": "Country code",
+   "value": "XX",
+   "label": "User-assigned code that looks fictitious",
+   "status": "avoid",
+   "reason": "WIPO ST.3 \"unknown states, other entities or organizations\".",
+   "sources": [
+    {
+     "title": "WIPO Standard ST.3",
+     "url": "https://www.wipo.int/documents/d/standards/docs-en-03-03-01.pdf",
+     "publisher": "WIPO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-country-wipo-orgs",
+   "category": "address",
+   "type": "Country code",
+   "value": "QZ, XN, XU, XV",
+   "label": "User-assigned codes that look fictitious",
+   "status": "avoid",
+   "reason": "WIPO ST.3 codes for CPVO (EU plant varieties), Nordic Patent Institute, UPOV and Visegrad Patent Institute.",
+   "sources": [
+    {
+     "title": "WIPO Standard ST.3",
+     "url": "https://www.wipo.int/documents/d/standards/docs-en-03-03-01.pdf",
+     "publisher": "WIPO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-country-icao-x",
+   "category": "address",
+   "type": "Country code (alpha-3)",
+   "value": "XBA, XCC, XCE, XEC, XOM, XPO, XXA–XXC, XXX",
+   "label": "User-assigned alpha-3 codes that look fictitious",
+   "status": "avoid",
+   "reason": "ICAO Doc 9303 Part 3 codes for organisations and for stateless persons and refugees.",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 3 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p3_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ICAO Doc 9303 Part 3 (mirror copy used for checking)",
+     "url": "https://smartid.com.vn/media/lib/30-03-2022/9303_p3_cons_en.pdf",
+     "publisher": "ICAO (mirror)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-country-ut",
+   "category": "address",
+   "type": "Country code",
+   "value": "UT / UTO",
+   "label": "ICAO specimen state used as an ISO country code",
+   "status": "avoid",
+   "reason": "Reserved only inside ICAO Doc 9303; not an ISO 3166 user-assigned code, so ISO could assign it to a country.",
+   "sources": [
+    {
+     "title": "ICAO Doc 9303 Part 3 (8th edition, 2021)",
+     "url": "https://www.icao.int/sites/default/files/publications/DocSeries/9303_p3_cons_en.pdf",
+     "publisher": "ICAO",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ICAO Doc 9303 Part 3 (mirror copy used for checking)",
+     "url": "https://smartid.com.vn/media/lib/30-03-2022/9303_p3_cons_en.pdf",
+     "publisher": "ICAO (mirror)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-coordinates-null-island",
+   "category": "address",
+   "type": "Geographic coordinates",
+   "value": "0, 0",
+   "label": "Placeholder location (\"Null Island\")",
+   "status": "avoid",
+   "reason": "Not reserved; systems treat 0,0 as a geocoding error marker (Natural Earth added a 1 m² \"island\" there to catch such errors).",
+   "sources": [
+    {
+     "title": "Library of Congress — The geographical oddity of Null Island",
+     "url": "https://blogs.loc.gov/maps/2016/04/the-geographical-oddity-of-null-island/",
+     "publisher": "Library of Congress",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-phone-991",
+   "category": "contact",
+   "type": "E.164 country code",
+   "value": "+991",
+   "label": "Seen as a \"fictitious\" international phone code",
+   "status": "avoid",
+   "reason": "ITU-T shared code assigned to real non-commercial trials (E.164.2, 03/2024). ITU reserves no country code for fiction; use a national drama range instead (see country files).",
+   "sources": [
+    {
+     "title": "ITU-T E.164.2 (03/2024) — numbering resources for trials",
+     "url": "https://www.itu.int/epublications/en/publication/itu-t-e-164-2-2024-03-itu-t-e-164-numbering-resources-for-trials/en",
+     "publisher": "ITU",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-phone-999",
+   "category": "contact",
+   "type": "E.164 country code",
+   "value": "+999",
+   "label": "Seen as a \"fictitious\" international phone code",
+   "status": "avoid",
+   "reason": "Reserved by ITU for a future global service.",
+   "sources": [
+    {
+     "title": "ITU — List of E.164 assigned country codes (2016)",
+     "url": "https://www.itu.int/dms_pub/itu-t/opb/sp/t-sp-e.164d-2016-pdf-e.pdf",
+     "publisher": "ITU",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-card-amex-3714",
+   "category": "banking",
+   "type": "Payment card number (American Express)",
+   "value": "3714 496353 98431",
+   "label": "American Express test card used by some providers",
+   "status": "avoid",
+   "checks": [
+    "luhn"
+   ],
+   "reason": "Treated as a declined card by some providers (Spreedly), so it is not a reliable \"good\" test card.",
+   "sources": [
+    {
+     "title": "Spreedly — test data",
+     "url": "https://developer.spreedly.com/docs/test-data",
+     "publisher": "Spreedly",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Braintree — testing and going live",
+     "url": "https://developer.paypal.com/braintree/docs/guides/credit-cards/testing-go-live/php/",
+     "publisher": "PayPal (Braintree)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-container-csqu3054383",
+   "category": "trade",
+   "type": "Container number",
+   "value": "CSQU 305438 3",
+   "label": "Worked example of the ISO 6346 check digit",
+   "status": "avoid",
+   "reason": "CSQU is a registered owner code (real fleet).",
+   "sources": [
+    {
+     "title": "Wikipedia — ISO 6346",
+     "url": "https://en.wikipedia.org/wiki/ISO_6346",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-container-abzu0012343",
+   "category": "trade",
+   "type": "Container number",
+   "value": "ABZU 001234 3",
+   "label": "Worked example in ISO 6346:1984",
+   "status": "avoid",
+   "reason": "Described as a \"registered owner code\" in the standard; probably real.",
+   "sources": [
+    {
+     "title": "ISO 6346:1984 preview",
+     "url": "https://cdn.standards.iteh.ai/samples/12648/681ff881db114cce8e8054309a1dc438/ISO-6346-1984.pdf",
+     "publisher": "ISO",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-imo-9074729",
+   "category": "trade",
+   "type": "IMO ship number",
+   "value": "IMO 9074729",
+   "label": "Check-digit example on Wikipedia",
+   "status": "avoid",
+   "reason": "A real ship number. IMO defines no example or test range.",
+   "sources": [
+    {
+     "title": "Wikipedia — IMO number",
+     "url": "https://en.wikipedia.org/wiki/IMO_number",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-vin-1m8gdm9axkp042788",
+   "category": "trade",
+   "type": "VIN",
+   "value": "1M8GDM9AXKP042788",
+   "label": "Check-digit example (49 CFR 565)",
+   "status": "avoid",
+   "reason": "WMI 1M8 is a real manufacturer (Motor Coach Industries); decodes to a 1989 bus.",
+   "sources": [
+    {
+     "title": "Wikibooks — VIN check digit",
+     "url": "https://en.wikibooks.org/wiki/Vehicle_Identification_Numbers_(VIN_codes)/Check_digit",
+     "publisher": "Wikibooks",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-isbn-9780306406157",
+   "category": "document",
+   "type": "ISBN",
+   "value": "978-0-306-40615-7",
+   "label": "Wikipedia's example ISBN (also 0-306-40615-2)",
+   "status": "avoid",
+   "reason": "Real book (Error-correction coding for digital communications, Clark, Plenum), found in Open Library.",
+   "sources": [
+    {
+     "title": "Open Library API — ISBN 9780306406157",
+     "url": "https://openlibrary.org/api/books?bibkeys=ISBN:9780306406157&format=json&jscmd=data",
+     "publisher": "Internet Archive",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-isbn-9783161484100",
+   "category": "document",
+   "type": "ISBN",
+   "value": "978-3-16-148410-0",
+   "label": "Wikipedia's barcode example ISBN",
+   "status": "avoid",
+   "reason": "Registrant 3-16 is believed to be a real publisher. No ISBN range is reserved for examples.",
+   "sources": [
+    {
+     "title": "Wikipedia — ISBN",
+     "url": "https://en.wikipedia.org/wiki/ISBN",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-doi-10-5072",
+   "category": "document",
+   "type": "DOI prefix",
+   "value": "10.5072",
+   "label": "Historical DataCite test prefix",
+   "status": "avoid",
+   "reason": "Retired by DataCite on 2019-06-01; no DOI-wide example prefix exists.",
+   "sources": [
+    {
+     "title": "DataCite — test prefix 10.5072 retiring June 1",
+     "url": "https://datacite.org/blog/test-prefix-10-5072-retiring-june-1/",
+     "publisher": "DataCite",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "global-avoid-doi-10-1000-182",
+   "category": "document",
+   "type": "DOI",
+   "value": "10.1000/182",
+   "label": "DOI used in the DOI Handbook",
+   "status": "avoid",
+   "reason": "A real DOI (the International DOI Foundation's own handbook).",
+   "sources": [
+    {
+     "title": "PID Forum — example DOI prefix, best practice for documentation",
+     "url": "https://pidforum.org/t/example-doi-prefix-best-practice-for-documentation-on-dois/1763",
+     "publisher": "PID Forum",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

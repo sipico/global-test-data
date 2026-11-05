@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Italy — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Europe</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇮🇹</span> Italy <span class="native">Italia</span></h1>
+<p class="lede">Unlike France, Italy has no official source of fictitious identifiers that also pass validation. The tax agency&#x27;s FatturaPA examples use VAT numbers that fail the check digit, and the Treasury&#x27;s NSO UBL order examples use real public bodies (MEF, Sogei, Consip). Partita IVA candidates built with a valid office code and check digit (e.g. 00000010587) were not found in VIES, but they have not yet been checked in the Agenzia delle Entrate &quot;Verifica partita IVA&quot; service, so they are not listed as usable values. No reserved fictional telephone range was found in AGCOM material: do not invent Italian numbers. There is no fictitious town or postcode (CAP), and no official open CAP dataset.</p>
+<p class="meta">Updated 2026-11-05 · searched in it, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-it.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/it.yaml">Data file</a> ·
+<a href="../data/it.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>5</b> Reserved</span><span class="stat s-published-example"><b>7</b> Official example</span><span class="stat s-derived"><b>7</b> Derived</span><span class="stat s-avoid"><b>14</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">5</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="it-name-societa-alpha-srl" data-status="published-example">
+<td class="val"><div class="v"><code>SOCIETA&#x27; ALPHA SRL</code><button class="copy" type="button" data-copy="SOCIETA&#x27; ALPHA SRL" aria-label="Copy SOCIETA&#x27; ALPHA SRL">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Supplier name in the official FatturaPA example invoices</p><p class="note">Other names used are ALPHA SRL, AMMINISTRAZIONE BETA, BETA GAMMA, DITTA BETA and Trasporto spa. Do not reuse the VAT numbers from the same files (see avoid entries).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+<tr id="it-codicedestinatario-aaaaaa" data-status="published-example">
+<td class="val"><div class="v"><code>AAAAAA</code><button class="copy" type="button" data-copy="AAAAAA" aria-label="Copy AAAAAA">Copy</button></div><div class="type">CodiceDestinatario (public office)</div></td>
+<td class="what"><p>Public-sector recipient code in the official FatturaPA examples</p><p class="note">Same 6-character format as an IPA office code (Peppol scheme 0201).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Not in the IndicePA e-invoicing office list, 56,383 office codes (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li><li><a href="https://indicepa.gov.it/ipa-dati/dataset/servizi-fatturazione-elettronica" rel="noopener">IndicePA open data — servizi di fatturazione elettronica</a> <span class="muted">— AgID</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-codicedestinatario-abc1234" data-status="published-example">
+<td class="val"><div class="v"><code>ABC1234</code><button class="copy" type="button" data-copy="ABC1234" aria-label="Copy ABC1234">Copy</button></div><div class="type">CodiceDestinatario (private recipient)</div></td>
+<td class="what"><p>Private-sector recipient code in the official FatturaPA examples</p><p class="note">Private recipient codes are not published in an open list, so this could not be checked.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-codicedestinatario-0000000" data-status="reserved">
+<td class="val"><div class="v"><code>0000000</code><button class="copy" type="button" data-copy="0000000" aria-label="Copy 0000000">Copy</button></div><div class="type">CodiceDestinatario (special value)</div></td>
+<td class="what"><p>Recipient receives via PEC or has no registered channel</p><p class="note">Defined in the FatturaPA technical specification with a real meaning (consumers, flat-rate taxpayers, PEC delivery). Not a test value, but the correct code for a consumer customer.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.4/Specifiche_tecniche_del_formato_FatturaPA_V1.4.pdf" rel="noopener">Specifiche tecniche del formato FatturaPA v1.4</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-codicedestinatario-xxxxxxx" data-status="reserved">
+<td class="val"><div class="v"><code>XXXXXXX</code><button class="copy" type="button" data-copy="XXXXXXX" aria-label="Copy XXXXXXX">Copy</button></div><div class="type">CodiceDestinatario (special value)</div></td>
+<td class="what"><p>Recipient not resident in Italy (cross-border invoice)</p><p class="note">Defined in the FatturaPA technical specification with a real meaning. Not a test value.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.4/Specifiche_tecniche_del_formato_FatturaPA_V1.4.pdf" rel="noopener">Specifiche tecniche del formato FatturaPA v1.4</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">9</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="it-address-poste-castelgerundo" data-status="published-example">
+<td class="val"><div class="v"><code>SIG. MARIO ROSSI / VIA ROMA CAMAIRAGO 8 / 26844 CASTELGERUNDO</code></div><div class="type">Address example (private person) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Poste Italiane&#x27;s example address in a merged municipality</p><p class="note">Invented person at a real municipality. The same page also uses SIG. GIUSEPPE BIANCHI / VIA ROMA CAVACURTA 8 / 26844 CASTELGERUNDO. Rules — 3 to 5 lines, last line CAP TOWN PROVINCE (2-letter code, no brackets), capitals, no comma or &quot;N.&quot; before the house number.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.poste.it/cap" rel="noopener">Poste Italiane — CAP</a> <span class="muted">— Poste Italiane</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-address-fatturapa-sassari" data-status="published-example">
+<td class="val"><div class="v"><code>VIALE ROMA 543 / 07100 SASSARI SS</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Address used in the official FatturaPA example invoices</p><p class="note">Real CAP, town and province combination. The examples also use VIA TORINO 38-B / 00145 ROMA RM.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-cap-unused-prefixes" data-status="derived">
+<td class="val"><div class="v"><code>49xxx, 68xxx, 69xxx, 77xxx, 78xxx, 79xxx, 99xxx</code></div><div class="type">Postcode range <span class="kind">range</span></div></td>
+<td class="what"><p>First two digits not used by any CAP in a community dataset</p><p class="note">Such postcodes pass a 5-digit format check but fail any check that the CAP exists. Poste Italiane does not publish an open CAP dataset.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Checked against matteocontrini/comuni-json (2020, 4,678 CAPs, 00010–98168); unofficial dataset, completeness not guaranteed (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://github.com/matteocontrini/comuni-json" rel="noopener">matteocontrini/comuni-json</a> <span class="muted">— Matteo Contrini (community dataset)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-cap-unused-values" data-status="derived">
+<td class="val"><div class="v"><code>00000, 12345, 99999</code></div><div class="type">Postcode <span class="kind">range</span></div></td>
+<td class="what"><p>Obviously fictitious CAPs not used in a community dataset</p><p class="note">00100 is also unused today but was the general Rome CAP before 1999 and is still often seen; do not use it.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Checked against matteocontrini/comuni-json (2020, 4,678 CAPs); unofficial dataset (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://github.com/matteocontrini/comuni-json" rel="noopener">matteocontrini/comuni-json</a> <span class="muted">— Matteo Contrini (community dataset)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-town-roccacannuccia" data-status="derived">
+<td class="val"><div class="v"><code>ROCCACANNUCCIA</code><button class="copy" type="button" data-copy="ROCCACANNUCCIA" aria-label="Copy ROCCACANNUCCIA">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Recognisable Italian joke placeholder town name</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names, updated 2026-02-21 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx" rel="noopener">ISTAT — Elenco comuni italiani (xlsx)</a> <span class="muted">— ISTAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-town-vattelapesca" data-status="derived">
+<td class="val"><div class="v"><code>VATTELAPESCA</code><button class="copy" type="button" data-copy="VATTELAPESCA" aria-label="Copy VATTELAPESCA">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Recognisable Italian joke placeholder town name (&quot;who knows where&quot;)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx" rel="noopener">ISTAT — Elenco comuni italiani (xlsx)</a> <span class="muted">— ISTAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-town-esempio" data-status="derived">
+<td class="val"><div class="v"><code>ESEMPIO</code><button class="copy" type="button" data-copy="ESEMPIO" aria-label="Copy ESEMPIO">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Placeholder town name (&quot;example&quot;)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx" rel="noopener">ISTAT — Elenco comuni italiani (xlsx)</a> <span class="muted">— ISTAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-town-citta" data-status="derived">
+<td class="val"><div class="v"><code>CITTÀ</code><button class="copy" type="button" data-copy="CITTÀ" aria-label="Copy CITTÀ">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Placeholder town name (&quot;town&quot;)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx" rel="noopener">ISTAT — Elenco comuni italiani (xlsx)</a> <span class="muted">— ISTAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-town-molto-lontano" data-status="derived">
+<td class="val"><div class="v"><code>MOLTO LONTANO</code><button class="copy" type="button" data-copy="MOLTO LONTANO" aria-label="Copy MOLTO LONTANO">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Placeholder town name (&quot;very far away&quot;)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx" rel="noopener">ISTAT — Elenco comuni italiani (xlsx)</a> <span class="muted">— ISTAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="it-email-pec-test" data-status="reserved">
+<td class="val"><div class="v"><code>fatture@&lt;alias&gt;.pec.test</code></div><div class="type">PEC address pattern <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Certified email (PEC) address on the reserved .test domain</p><p class="note">No reserved PEC test domain exists in Italy; use .test for PEC addresses in examples.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID</code><code>cac:Contact/cbc:ElectronicMail</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">2</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="it-iban-swift-registry" data-status="published-example">
+<td class="val"><div class="v"><code>IT60 X054 2811 1010 0000 0123 456</code><button class="copy" type="button" data-copy="IT60 X054 2811 1010 0000 0123 456" aria-label="Copy IT60 X054 2811 1010 0000 0123 456">Copy</button></div><div class="type">IBAN</div></td>
+<td class="what"><p>Official example IBAN for Italy in the SWIFT IBAN Registry</p><p class="note">Bank code (ABI) 05428 is a real bank code; the account part is fictitious.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="ISO 13616 IBAN mod-97">✓ iban</span></td>
+<td><ul class="src"><li><a href="https://www.swift.com/resource/iban-registry-pdf" rel="noopener">SWIFT IBAN Registry (ISO 13616 Registration Authority)</a> <span class="muted">— SWIFT</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+<tr id="it-bic-test" data-status="reserved">
+<td class="val"><div class="v"><code>XXXXITM0</code></div><div class="type">BIC (test) <span class="kind">range</span></div></td>
+<td class="what"><p>Test-and-training BIC pattern for Italy (8th character 0)</p><p class="note">ISO 9362 convention; replace XXXX with a bank code. A &#x27;0&#x27; as 2nd character of the location code marks a test BIC.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="ISO 9362 test BIC (8th character &#x27;0&#x27;)">✓ bic-test</span></td>
+<td><ul class="src"><li><a href="https://www.swift.com/swift-resource/14256/download?language=en" rel="noopener">SWIFT white paper on ISO 9362:2014 (§4.5 Test &amp; Training BIC)</a> <span class="muted">— SWIFT</span></li></ul></td>
+<td class="ubl"><code>cac:FinancialInstitutionBranch/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="trade"><h2>Trade &amp; logistics <span class="count">1</span></h2><p class="muted">Location numbers, customs, transport codes</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="it-gln-prefix-952" data-status="reserved">
+<td class="val"><div class="v"><code>952xxxxxxxxxx</code></div><div class="type">GLN / GTIN prefix <span class="kind">range</span></div></td>
+<td class="what"><p>GS1 prefix reserved for demonstrations and examples</p><p class="note">Prefer 952 over the GLNs 7400000001235 / 7560000012345 seen in the NSO examples, whose ownership is unverified. See the global file for ready-made 952 GLNs.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf" rel="noopener">GS1 General Specifications R24.0 (GS1 Switzerland copy)</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="document"><h2>Documents <span class="count">1</span></h2><p class="muted">Specimen documents, document numbers, test texts</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="it-nso-order-id-pattern" data-status="published-example">
+<td class="val"><div class="v"><code>&lt;ID&gt;#&lt;IssueDate&gt;#&lt;EndpointID&gt;[#Revised|#Cancelled]</code></div><div class="type">NSO order identifier <span class="kind">range</span></div></td>
+<td class="what"><p>Order ID convention of the national public-sector order hub (NSO)</p><p class="note">NSO accepts only UBL 2.1 Peppol BIS Ordering 3. The NSO example files are a useful structural reference, but their party data is real.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/" rel="noopener">MEF / RGS — Nodo di Smistamento degli Ordini (NSO)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li><li><a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip" rel="noopener">NSO – File di esempio (ZIP)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li></ul></td>
+<td class="ubl"><code>cac:OrderReference/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>Partita IVA</b><p class="note">Office code 001–100 (province, roughly the ISTAT province code, e.g. 058 Rome, 015 Milan, 001 Turin) or special codes 120, 121, 888, 999.</p></td><td>11 digits = 7-digit serial + 3-digit office code + Luhn check digit</td><td><code title="Partita IVA: 11 digits, Luhn">it-piva</code></td><td>Agenzia delle Entrate</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID</code><code>cbc:EndpointID @schemeID=0211</code></td></tr><tr><td><b>VAT number (EN 16931 / UBL)</b><p class="note">A number missing from VIES may still be a purely domestic Partita IVA; the national check is the Verifica partita IVA service.</p></td><td>IT + Partita IVA</td><td><code title="Partita IVA: 11 digits, Luhn">it-piva</code></td><td>Agenzia delle Entrate</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>Codice fiscale (company)</b></td><td>Same 11 digits as the Partita IVA</td><td><code title="Partita IVA: 11 digits, Luhn">it-piva</code></td><td>Agenzia delle Entrate</td><td class='ubl'><code>cbc:EndpointID @schemeID=0210</code></td></tr><tr><td><b>Codice fiscale (person)</b><p class="note">No validator yet. No official fictitious personal codice fiscale exists.</p></td><td>16 characters = surname + name + birth date/sex + birthplace code + check letter</td><td><span class="muted">—</span></td><td>Agenzia delle Entrate (D.M. 23/12/1976)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>IPA office code (Codice Univoco Ufficio)</b><p class="note">Public bodies only. Listed in the IndicePA open data.</p></td><td>6 alphanumeric characters</td><td><span class="muted">—</span></td><td>AgID (IndicePA)</td><td class='ubl'><code>cbc:EndpointID @schemeID=0201</code></td></tr><tr><td><b>CodiceDestinatario (SDI recipient code)</b><p class="note">Routing code of the national FatturaPA exchange system (not UBL).</p></td><td>6 characters (public-sector office) or 7 characters (private recipient)</td><td><span class="muted">—</span></td><td>Agenzia delle Entrate / SdI</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>REA number</b><p class="note">Chamber of Commerce economic and administrative register.</p></td><td>&lt;province&gt;-&lt;number&gt;, e.g. RM-1234567</td><td><span class="muted">—</span></td><td>Camere di Commercio</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">14</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="it-avoid-piva-01234567890" data-status="avoid">
+<td class="val"><div class="v"><code>01234567890</code></div><div class="type">Partita IVA</div></td>
+<td class="what"><p>Supplier VAT number in the official FatturaPA examples (IT01234567890)</p><p class="note warn">Fails the check digit and is not in VIES; the SDI exchange system would reject it. The most-copied Italian &quot;example VAT number&quot;.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Partita IVA: 11 digits, Luhn">✗ it-piva</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-piva-24681012141" data-status="avoid">
+<td class="val"><div class="v"><code>24681012141</code></div><div class="type">Partita IVA</div></td>
+<td class="what"><p>Other-party VAT number in the official FatturaPA examples</p><p class="note warn">Fails the check digit and is not in VIES.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Partita IVA: 11 digits, Luhn">✗ it-piva</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-cf-09876543210" data-status="avoid">
+<td class="val"><div class="v"><code>09876543210</code></div><div class="type">Codice fiscale (company)</div></td>
+<td class="what"><p>Customer tax code in the official FatturaPA examples</p><p class="note warn">Fails the check digit and is not in VIES.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Partita IVA: 11 digits, Luhn">✗ it-piva</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-vat-it80415740580" data-status="avoid">
+<td class="val"><div class="v"><code>IT80415740580</code></div><div class="type">VAT number</div></td>
+<td class="what"><p>Buyer VAT number in the NSO UBL examples</p><p class="note warn">Real organisation — Ministero dell&#x27;economia e delle finanze (tax code 80415740580).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Partita IVA: 11 digits, Luhn">✓ it-piva</span></td>
+<td><ul class="src"><li><a href="https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/" rel="noopener">MEF / RGS — Nodo di Smistamento degli Ordini (NSO)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li><li><a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip" rel="noopener">NSO – File di esempio (ZIP)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-vat-it01043931003" data-status="avoid">
+<td class="val"><div class="v"><code>IT01043931003</code></div><div class="type">VAT number</div></td>
+<td class="what"><p>Supplier VAT number in the NSO UBL examples</p><p class="note warn">Real company — Sogei S.p.A.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Partita IVA: 11 digits, Luhn">✓ it-piva</span></td>
+<td><ul class="src"><li><a href="https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/" rel="noopener">MEF / RGS — Nodo di Smistamento degli Ordini (NSO)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li><li><a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip" rel="noopener">NSO – File di esempio (ZIP)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-vat-it05359681003" data-status="avoid">
+<td class="val"><div class="v"><code>IT05359681003</code></div><div class="type">VAT number</div></td>
+<td class="what"><p>Other-party VAT number in the NSO UBL examples</p><p class="note warn">Real company — Consip.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Partita IVA: 11 digits, Luhn">✓ it-piva</span></td>
+<td><ul class="src"><li><a href="https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/" rel="noopener">MEF / RGS — Nodo di Smistamento degli Ordini (NSO)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li><li><a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip" rel="noopener">NSO – File di esempio (ZIP)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-ipa-m0e2ri" data-status="avoid">
+<td class="val"><div class="v"><code>M0E2RI</code></div><div class="type">IPA office code</div></td>
+<td class="what"><p>Office code (schemeID 0201) in the NSO UBL examples</p><p class="note warn">Real MEF office in IndicePA (Largo Santa Susanna 13, 00187 Roma), checked 2026-11-05.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://indicepa.gov.it/ipa-dati/dataset/servizi-fatturazione-elettronica" rel="noopener">IndicePA open data — servizi di fatturazione elettronica</a> <span class="muted">— AgID</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-email-nso" data-status="avoid">
+<td class="val"><div class="v"><code>paolo.trimarchi@mef.gov.it, francesco@sogei.it, hd@consip.it</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Contact emails in the NSO UBL examples</p><p class="note warn">Real-looking personal and organisational emails at real organisations&#x27; domains.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/" rel="noopener">MEF / RGS — Nodo di Smistamento degli Ordini (NSO)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li><li><a href="https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip" rel="noopener">NSO – File di esempio (ZIP)</a> <span class="muted">— Ragioneria Generale dello Stato</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-pec-betagamma" data-status="avoid">
+<td class="val"><div class="v"><code>betagamma@pec.it</code></div><div class="type">PEC address</div></td>
+<td class="what"><p>PEC address in the official FatturaPA examples</p><p class="note warn">pec.it is a real commercial PEC provider domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-domain-pec-providers" data-status="avoid">
+<td class="val"><div class="v"><code>pec.it, legalmail.it, pec.sogei.it</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Certified email (PEC) domains</p><p class="note warn">Real PEC provider domains. Use a .test domain such as &lt;alias&gt;.pec.test.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" rel="noopener">Formato FatturaPA — documentation and example files</a> <span class="muted">— Agenzia delle Entrate / SdI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-cap-vatican-san-marino" data-status="avoid">
+<td class="val"><div class="v"><code>00120, 47890–47899</code></div><div class="type">Postcode</div></td>
+<td class="what"><p>CAPs inside the Italian postcode system</p><p class="note warn">Not Italy — 00120 is Vatican City and 47890–47899 is San Marino.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://github.com/matteocontrini/comuni-json" rel="noopener">matteocontrini/comuni-json</a> <span class="muted">— Matteo Contrini (community dataset)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-town-paese" data-status="avoid">
+<td class="val"><div class="v"><code>PAESE</code></div><div class="type">Town name</div></td>
+<td class="what"><p>Tempting placeholder town name (&quot;village&quot;)</p><p class="note warn">Real municipality (Paese, province of Treviso), in the ISTAT list.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx" rel="noopener">ISTAT — Elenco comuni italiani (xlsx)</a> <span class="muted">— ISTAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-town-canicatti" data-status="avoid">
+<td class="val"><div class="v"><code>CANICATTÌ</code></div><div class="type">Town name</div></td>
+<td class="what"><p>Used jokingly as &quot;the middle of nowhere&quot;</p><p class="note warn">Real municipality. ROCCASECCA, CAPRACOTTA, PIZZO and FORTEZZA are also real.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx" rel="noopener">ISTAT — Elenco comuni italiani (xlsx)</a> <span class="muted">— ISTAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="it-avoid-town-paperopoli" data-status="avoid">
+<td class="val"><div class="v"><code>PAPEROPOLI, TOPOLINIA</code></div><div class="type">Town name</div></td>
+<td class="what"><p>Fictional towns used as placeholders</p><p class="note warn">Not municipalities, but they are Disney&#x27;s Duckburg and Mouseton (trademark).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx" rel="noopener">ISTAT — Elenco comuni italiani (xlsx)</a> <span class="muted">— ISTAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Italy with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BIT%5D+&amp;country=IT">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

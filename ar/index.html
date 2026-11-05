@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Argentina — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Latin America</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇦🇷</span> Argentina</h1>
+<p class="lede">Argentina has little official test data. ARCA (formerly AFIP) publishes no shared test CUIT; its e-invoicing developer manual only uses example CUITs such as 30000000007 and 20111111112, plus the meaningful &quot;No Categorizado&quot; value 23000000000. None of these can be checked against the tax register (no open padrón lookup). E-invoices are SOAP web service requests (WSFEv1), not UBL. The BCRA gives the CBU check-digit rule but no example number, the CBUs found online use real bank codes, and ENACOM reserves no telephone numbers for fiction. No official test DNI exists.</p>
+<p class="meta">Updated 2026-11-05 · searched in es, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-south-america.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/ar.yaml">Data file</a> ·
+<a href="../data/ar.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>3</b> Reserved</span><span class="stat s-published-example"><b>4</b> Official example</span><span class="stat s-avoid"><b>9</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">2</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ar-cuit-30000000007" data-status="published-example">
+<td class="val"><div class="v"><code>30000000007</code><button class="copy" type="button" data-copy="30000000007" aria-label="Copy 30000000007">Copy</button></div><div class="type">CUIT</div></td>
+<td class="what"><p>Legal-entity receiver CUIT in ARCA&#x27;s e-invoicing examples</p><p class="note">Best Argentine company ID. Serial 00000000 is very unlikely to be assigned, but there is no open register to confirm it.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Argentine CUIT/CUIL mod-11">✓ ar-cuit</span></td>
+<td><ul class="src"><li><a href="https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf" rel="noopener">Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0</a> <span class="muted">— ARCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-cuit-23000000000" data-status="reserved">
+<td class="val"><div class="v"><code>23000000000</code><button class="copy" type="button" data-copy="23000000000" aria-label="Copy 23000000000">Copy</button></div><div class="type">CUIT (No Categorizado)</div></td>
+<td class="what"><p>Receiver &quot;not categorised&quot;; ARCA skips the padrón check</p><p class="note">Used with DocTipo 80 (errors 10015, 1425 etc.). It has a meaning, so do not use it as a party identifier.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Argentine CUIT/CUIL mod-11">✓ ar-cuit</span></td>
+<td><ul class="src"><li><a href="https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf" rel="noopener">Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0</a> <span class="muted">— ARCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">2</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ar-address-upu-casilla" data-status="published-example">
+<td class="val"><div class="v"><code>SR. JUAN LOPEZ / CASILLA DE CORREOS 432 / CORREO CENTRAL / C1000WAE CAPITAL FEDERAL</code></div><div class="type">Address example (PO box) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a PO box address in Buenos Aires city</p><p class="note">Lines of at most 40 characters, no accents; CPA left of the locality.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/argEn.pdf" rel="noopener">Postal addressing — Argentina</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-cpa-x5187yab" data-status="published-example">
+<td class="val"><div class="v"><code>X5187YAB SAN CLEMENTE</code><button class="copy" type="button" data-copy="X5187YAB SAN CLEMENTE" aria-label="Copy X5187YAB SAN CLEMENTE">Copy</button></div><div class="type">CPA and locality</div></td>
+<td class="what"><p>UPU example of a CPA with locality</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/argEn.pdf" rel="noopener">Postal addressing — Argentina</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ar-email-domain-example-com" data-status="reserved">
+<td class="val"><div class="v"><code>example.com</code><button class="copy" type="button" data-copy="example.com" aria-label="Copy example.com">Copy</button></div><div class="type">Email domain</div></td>
+<td class="what"><p>Reserved domain for example e-mail addresses (also *.test)</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">2</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ar-cuit-20111111112" data-status="published-example">
+<td class="val"><div class="v"><code>20111111112</code><button class="copy" type="button" data-copy="20111111112" aria-label="Copy 20111111112">Copy</button></div><div class="type">CUIT / CUIL</div></td>
+<td class="what"><p>Person-type receiver CUIT (DocTipo 80) in ARCA&#x27;s examples</p><p class="note">Prefix 20 + DNI 11111111, so it could belong to a real person; not checkable (no open padrón lookup). Prefer 30000000007.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Argentine CUIT/CUIL mod-11">✓ ar-cuit</span></td>
+<td><ul class="src"><li><a href="https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf" rel="noopener">Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0</a> <span class="muted">— ARCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-consumidor-final" data-status="reserved">
+<td class="val"><div class="v"><code>DocTipo 99 / DocNro 0</code></div><div class="type">Final consumer document <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Anonymous final consumer on B/C invoices (consumidor final)</p><p class="note">Allowed below the RG 4444 threshold (errors 1415–1419).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf" rel="noopener">Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0</a> <span class="muted">— ARCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>CUIT / CUIL</b><p class="note">Prefixes 20/23/24/27 = persons, 30/33/34 = legal entities. Weights 5-4-3-2-7-6-5-4-3-2, DV = 11 − (sum mod 11), 11 → 0; a result of 10 switches the prefix to 23/33. No ARCA primary source for the algorithm was found.</p></td><td>11 digits, 2-digit type prefix + 8-digit DNI or serial + check digit; written NN-NNNNNNNN-N</td><td><code title="Argentine CUIT/CUIL mod-11">ar-cuit</code></td><td>ARCA (formerly AFIP)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>DNI</b></td><td>7–8 digits, no check digit</td><td><span class="muted">—</span></td><td>RENAPER</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>CBU / CVU</b><p class="note">Each DV is mod 10 with weights 9-7-1-3 (Com. &quot;A&quot; 2622). CVU (Com. &quot;A&quot; 6510) uses prefix 000 + 4-digit PSP code. No validator exists yet in tools/checks.py.</p></td><td>22 digits, entity (3) + branch (4) + DV, then account (13) + DV</td><td><span class="muted">—</span></td><td>Banco Central de la República Argentina</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>CPA (Código Postal Argentino)</b><p class="note">Province letter as in ISO 3166-2:AR (C = CABA, B = Buenos Aires province, X = Córdoba).</p></td><td>A9999AAA, province letter + 4-digit postcode + 3-letter block-face code, written left of the locality</td><td><span class="muted">—</span></td><td>Correo Argentino</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">9</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ar-avoid-cuit-33693450239" data-status="avoid">
+<td class="val"><div class="v"><code>33693450239</code></div><div class="type">CUIT</div></td>
+<td class="what"><p>Auth/Cuit in ARCA examples and the WSAA homologation certificate DN</p><p class="note warn">AFIP/ARCA&#x27;s own CUIT.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Argentine CUIT/CUIL mod-11">✓ ar-cuit</span></td>
+<td><ul class="src"><li><a href="https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf" rel="noopener">Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0</a> <span class="muted">— ARCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-avoid-cuit-23000000004" data-status="avoid">
+<td class="val"><div class="v"><code>23000000004</code></div><div class="type">CUIT</div></td>
+<td class="what"><p>Issuer CUIT in ARCA manual examples</p><p class="note warn">Wrong check digit (correct would be 23000000000, which has a meaning).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Argentine CUIT/CUIL mod-11">✗ ar-cuit</span></td>
+<td><ul class="src"><li><a href="https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf" rel="noopener">Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0</a> <span class="muted">— ARCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-avoid-cuit-33333333333" data-status="avoid">
+<td class="val"><div class="v"><code>33333333333</code></div><div class="type">CUIT</div></td>
+<td class="what"><p>Example CUIT in ARCA manual</p><p class="note warn">Wrong check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Argentine CUIT/CUIL mod-11">✗ ar-cuit</span></td>
+<td><ul class="src"><li><a href="https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf" rel="noopener">Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0</a> <span class="muted">— ARCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-avoid-cuit-33000000007" data-status="avoid">
+<td class="val"><div class="v"><code>33000000007</code></div><div class="type">CUIT</div></td>
+<td class="what"><p>Example CUIT in ARCA manual</p><p class="note warn">Wrong check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Argentine CUIT/CUIL mod-11">✗ ar-cuit</span></td>
+<td><ul class="src"><li><a href="https://www.afip.gov.ar/fe/documentos/manual-desarrollador-ARCA-COMPG-v4-0.pdf" rel="noopener">Manual para el desarrollador – Facturación Electrónica RG 4291, Proyecto FE v4.0</a> <span class="muted">— ARCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-avoid-cuit-20267565393" data-status="avoid">
+<td class="val"><div class="v"><code>20267565393</code></div><div class="type">CUIT</div></td>
+<td class="what"><p>CUIT in PyAfipWs homologation examples</p><p class="note warn">A developer&#x27;s own personal CUIT.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Argentine CUIT/CUIL mod-11">✓ ar-cuit</span></td>
+<td><ul class="src"><li><a href="https://www.sistemasagiles.com.ar/trac/wiki/ProyectoWSFEv1" rel="noopener">PyAfipWs — Proyecto WSFEv1</a> <span class="muted">— Sistemas Ágiles</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-avoid-cbu-2850590940090418135201" data-status="avoid">
+<td class="val"><div class="v"><code>2850590940090418135201</code></div><div class="type">CBU</div></td>
+<td class="what"><p>&quot;Example CBU&quot; on Wikipedia (es) and blogs</p><p class="note warn">Both check digits are correct, but entity 285 is Banco Macro (possibly a real account) and the example is not from the BCRA.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://es.wikipedia.org/wiki/Clave_Bancaria_Uniforme" rel="noopener">Clave Bancaria Uniforme (Wikipedia es)</a> <span class="muted">— Wikipedia</span></li><li><a href="https://www.bcra.gob.ar/archivos/Pdfs/comytexord/a2622.pdf" rel="noopener">Comunicación &quot;A&quot; 2622 (CBU)</a> <span class="muted">— BCRA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-avoid-cbu-0110599520000012345676" data-status="avoid">
+<td class="val"><div class="v"><code>0110599520000012345676</code></div><div class="type">CBU</div></td>
+<td class="what"><p>Third-party &quot;example CBU&quot;</p><p class="note warn">Block-2 check digit is wrong (should end …8), and entity 011 is Banco Nación.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.bcra.gob.ar/archivos/Pdfs/comytexord/a2622.pdf" rel="noopener">Comunicación &quot;A&quot; 2622 (CBU)</a> <span class="muted">— BCRA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-avoid-cpa-y5900fnf" data-status="avoid">
+<td class="val"><div class="v"><code>Y5900FNF VILLA MARIA</code></div><div class="type">CPA and locality</div></td>
+<td class="what"><p>Address example on the UPU sheet</p><p class="note warn">Wrong province letter; Villa María is in Córdoba (X), Y is Jujuy.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/argEn.pdf" rel="noopener">Postal addressing — Argentina</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ar-avoid-domain-ejemplo-com-ar" data-status="avoid">
+<td class="val"><div class="v"><code>ejemplo.com.ar</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Tempting Spanish-language example domain</p><p class="note warn">Registered (it resolves). Use example.com or a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Argentina with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BAR%5D+&amp;country=AR">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Singapore — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Asia</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇸🇬</span> Singapore <span class="native">Singapore / 新加坡 / Singapura / சிங்கப்பூர்</span></h1>
+<p class="lede">Singapore publishes official UBL 2.1 examples (PINT-SG, the InvoiceNow profile of Peppol) and 19 Myinfo sandbox NRIC/FINs. However, every UEN in IMDA&#x27;s examples fails its check letter, and some UENs in them, or their &quot;corrected&quot; forms, belong to real entities. The usable UENs here are therefore derived: they pass the check letter and were looked up in ACRA&#x27;s full open register (2.1 million rows). Local company numbers use a past year whose serial range is closed, so they can never be issued. No authority reserves phone numbers, domains, postcodes or company numbers for fiction. Not obtained: the IRAS Check GST Register sandbox test data and the Myinfo v5 test personas. Postal sector 74 looks unused but was not exhaustively verified.</p>
+<p class="meta">Updated 2026-11-05 · searched in en, zh, ms, ta ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-india-singapore.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/sg.yaml">Data file</a> ·
+<a href="../data/sg.json">JSON</a></p>
+<div class="stats"><span class="stat s-published-example"><b>30</b> Official example</span><span class="stat s-derived"><b>13</b> Derived</span><span class="stat s-avoid"><b>23</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">11</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="sg-uen-200212345e" data-status="derived">
+<td class="val"><div class="v"><code>200212345E</code><button class="copy" type="button" data-copy="200212345E" aria-label="Copy 200212345E">Copy</button></div><div class="type">UEN (local company)</div></td>
+<td class="what"><p>PINT-SG example seller UEN with the check letter corrected</p><p class="note">For most entities the GST registration number is the UEN, so this value also serves as the GST number. Peppol endpoint value SGUEN200212345E. The official example uses 200212345Z, which fails the check letter.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, Entities Registered with ACRA, 2,127,089 rows (2026-11-05)</span><span class="chk ver">✓ Serial above 2002&#x27;s highest issued serial 11246, so it can never be issued (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/" rel="noopener">OpenPeppol / IMDA PINT-SG specification and examples</a> <span class="muted">— OpenPeppol / IMDA</span></li><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="sg-uen-200254321c" data-status="derived">
+<td class="val"><div class="v"><code>200254321C</code><button class="copy" type="button" data-copy="200254321C" aria-label="Copy 200254321C">Copy</button></div><div class="type">UEN (local company)</div></td>
+<td class="what"><p>PINT-SG example buyer UEN with the check letter corrected</p><p class="note">The official example uses 200254321Z, which fails the check letter. Peppol endpoint value SGUEN200254321C; also usable as the GST number.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, Entities Registered with ACRA, 2,127,089 rows (2026-11-05)</span><span class="chk ver">✓ Serial above 2002&#x27;s highest issued serial 11246, so it can never be issued (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/" rel="noopener">OpenPeppol / IMDA PINT-SG specification and examples</a> <span class="muted">— OpenPeppol / IMDA</span></li><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="sg-uen-201054321z" data-status="derived">
+<td class="val"><div class="v"><code>201054321Z</code><button class="copy" type="button" data-copy="201054321Z" aria-label="Copy 201054321Z">Copy</button></div><div class="type">UEN (local company)</div></td>
+<td class="what"><p>Local company UEN from closed year 2010</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, 2,127,089 rows (2026-11-05)</span><span class="chk ver">✓ Serial 54321 above 2010&#x27;s highest issued serial 27553 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="sg-uen-200599999k" data-status="derived">
+<td class="val"><div class="v"><code>200599999K</code><button class="copy" type="button" data-copy="200599999K" aria-label="Copy 200599999K">Copy</button></div><div class="type">UEN (local company)</div></td>
+<td class="what"><p>Local company UEN from closed year 2005</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, 2,127,089 rows (2026-11-05)</span><span class="chk ver">✓ Serial 99999 above 2005&#x27;s highest issued serial (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="sg-uen-201799990e" data-status="derived">
+<td class="val"><div class="v"><code>201799990E</code><button class="copy" type="button" data-copy="201799990E" aria-label="Copy 201799990E">Copy</button></div><div class="type">UEN (local company)</div></td>
+<td class="what"><p>Local company UEN from closed year 2017</p><p class="note">Do not use years 2018 and later, where serials up to 99999 exist.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, 2,127,089 rows (2026-11-05)</span><span class="chk ver">✓ Serial 99990 above 2017&#x27;s highest issued serial 37283 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="sg-uen-99000001w" data-status="derived">
+<td class="val"><div class="v"><code>99000001W</code><button class="copy" type="button" data-copy="99000001W" aria-label="Copy 99000001W">Copy</button></div><div class="type">UEN (business)</div></td>
+<td class="what"><p>Business (ROB) UEN with unused prefix 99</p><p class="note">Prefixes 54–99 are unused and will stay free for decades, but they are not formally closed.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, 2,127,089 rows; highest issued ROB prefix is 53 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code></td>
+</tr>
+<tr id="sg-uen-99000002l" data-status="derived">
+<td class="val"><div class="v"><code>99000002L</code><button class="copy" type="button" data-copy="99000002L" aria-label="Copy 99000002L">Copy</button></div><div class="type">UEN (business)</div></td>
+<td class="what"><p>Business (ROB) UEN with unused prefix 99</p><p class="note">Prefixes 54–99 are unused and will stay free for decades, but they are not formally closed.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, 2,127,089 rows; highest issued ROB prefix is 53 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code></td>
+</tr>
+<tr id="sg-uen-99000003j" data-status="derived">
+<td class="val"><div class="v"><code>99000003J</code><button class="copy" type="button" data-copy="99000003J" aria-label="Copy 99000003J">Copy</button></div><div class="type">UEN (business)</div></td>
+<td class="what"><p>Business (ROB) UEN with unused prefix 99</p><p class="note">Prefixes 54–99 are unused and will stay free for decades, but they are not formally closed.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, 2,127,089 rows; highest issued ROB prefix is 53 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code></td>
+</tr>
+<tr id="sg-uen-t99ll0001j" data-status="derived">
+<td class="val"><div class="v"><code>T99LL0001J</code><button class="copy" type="button" data-copy="T99LL0001J" aria-label="Copy T99LL0001J">Copy</button></div><div class="type">UEN (others)</div></td>
+<td class="what"><p>LLP UEN in the &quot;others&quot; format for year 2099</p><p class="note">The open dataset holds ACRA-issued UENs only; &quot;others&quot; UENs from other agencies were not checked.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span><span class="chk ver">✓ Not in ACRA&#x27;s open register, 2,127,089 rows (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code></td>
+</tr>
+<tr id="sg-gst-m21234567k" data-status="published-example">
+<td class="val"><div class="v"><code>M21234567K</code><button class="copy" type="button" data-copy="M21234567K" aria-label="Copy M21234567K">Copy</button></div><div class="type">GST registration number</div></td>
+<td class="what"><p>IRAS&#x27;s own example of a separate GST registration number</p><p class="note">Also written M2-1234567-K; used in the PINT-SG examples too (with M2-7654321-K and MR85004322). There is no public check algorithm, so the value could not be validated.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/invoicing-price-display-and-record-keeping/invoicing-customers" rel="noopener">IRAS — Invoicing customers</a> <span class="muted">— IRAS</span></li><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/" rel="noopener">OpenPeppol / IMDA PINT-SG specification and examples</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="sg-name-gallery-photo-supplier" data-status="published-example">
+<td class="val"><div class="v"><code>Gallery Photo Supplier</code><button class="copy" type="button" data-copy="Gallery Photo Supplier" aria-label="Copy Gallery Photo Supplier">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Seller name in the official PINT-SG examples</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ No ACRA entity name contains it, open register of 2,127,089 rows (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">5</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="sg-address-upu-private-landed" data-status="published-example">
+<td class="val"><div class="v"><code>Ms. Tan Bee Soo / 16 Sandilands Road / SINGAPORE 546080</code></div><div class="type">Address example (private person) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU&#x27;s example of a Singapore house address</p><p class="note">Invented person at a real address, the same pattern as La Poste in France.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Real address, found in SLA OneMap (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/sgpEn.pdf" rel="noopener">UPU — Postal addressing systems, Singapore (07/2009)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-address-upu-private-unit" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. M. Rajendran / Blk 35 Mandalay Road / # 13–37 Mandalay Towers / SINGAPORE 308215</code></div><div class="type">Address example (private person, apartment) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU&#x27;s example of a Singapore block address with unit number</p><p class="note">#13-37 = floor 13, unit 37.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Real address, found in SLA OneMap (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/sgpEn.pdf" rel="noopener">UPU — Postal addressing systems, Singapore (07/2009)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-address-jalan-ang-teng" data-status="published-example">
+<td class="val"><div class="v"><code>888 Jalan Ang Teng / Singapore 560009</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Invented street and postcode from the official PINT-SG examples</p><p class="note">Passes a 6-digit format check only; fails any existence check.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Postcode 560009 not found in SLA OneMap (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-address-central-road" data-status="published-example">
+<td class="val"><div class="v"><code>Central road 56 / Singapore 321156</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Invented street and postcode from the official PINT-SG examples</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Postcode 321156 not found in SLA OneMap (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-postcode-unused-sectors" data-status="derived">
+<td class="val"><div class="v"><code>00xxxx, 83xxxx–99xxxx</code></div><div class="type">Postcode range <span class="kind">range</span></div></td>
+<td class="what"><p>Postal sectors beyond the defined range 01–82</p><p class="note">Pass a 6-digit format check but fail any existence check.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Sample codes 000000, 830000 and 990000 not found in SLA OneMap (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://en.wikipedia.org/wiki/Postal_codes_in_Singapore" rel="noopener">Wikipedia — Postal codes in Singapore</a> <span class="muted">— Wikipedia</span></li><li><a href="https://www.onemap.gov.sg/apidocs/" rel="noopener">SLA OneMap Search API</a> <span class="muted">— Singapore Land Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">3</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="sg-phone-4" data-status="derived">
+<td class="val"><div class="v"><code>+65 4xxx xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Numbers with an unassigned leading digit (4)</p><p class="note">Cannot be assigned under the current plan, but not formally reserved for fiction. libphonenumber flags them as invalid.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ IMDA National Numbering Plan Issue 2 (February 2026) §2.2.1: leading digits 2, 4 and 5 have no service type and cannot be used (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.imda.gov.sg/-/media/imda/files/regulation-licensing-and-consultations/frameworks-and-policies/numbering/national-numbering-plan-and-allocation-process/imda-national-numbering-plan.pdf" rel="noopener">IMDA National Numbering Plan</a> <span class="muted">— IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-phone-5" data-status="derived">
+<td class="val"><div class="v"><code>+65 5xxx xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Numbers with an unassigned leading digit (5)</p><p class="note">Cannot be assigned under the current plan, but not formally reserved for fiction. libphonenumber flags them as invalid.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ IMDA National Numbering Plan Issue 2 (February 2026) §2.2.1: leading digits 2, 4 and 5 have no service type and cannot be used (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.imda.gov.sg/-/media/imda/files/regulation-licensing-and-consultations/frameworks-and-policies/numbering/national-numbering-plan-and-allocation-process/imda-national-numbering-plan.pdf" rel="noopener">IMDA National Numbering Plan</a> <span class="muted">— IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-phone-2" data-status="derived">
+<td class="val"><div class="v"><code>+65 2xxx xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Numbers with an unassigned leading digit (2)</p><p class="note">Cannot be assigned under the current plan, but not formally reserved for fiction. libphonenumber flags them as invalid.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ IMDA National Numbering Plan Issue 2 (February 2026) §2.2.1: leading digits 2, 4 and 5 have no service type and cannot be used (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.imda.gov.sg/-/media/imda/files/regulation-licensing-and-consultations/frameworks-and-policies/numbering/national-numbering-plan-and-allocation-process/imda-national-numbering-plan.pdf" rel="noopener">IMDA National Numbering Plan</a> <span class="muted">— IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">5</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="sg-account-000166000001" data-status="published-example">
+<td class="val"><div class="v"><code>000166000001</code><button class="copy" type="button" data-copy="000166000001" aria-label="Copy 000166000001">Copy</button></div><div class="type">Bank account number</div></td>
+<td class="what"><p>Payee account number in the PINT-SG examples</p><p class="note">Singapore has no IBAN and no account checksum. Do not reuse the branch/BIC ICDLOG from the same examples.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+<tr id="sg-account-17173211234567890" data-status="published-example">
+<td class="val"><div class="v"><code>17173211234567890</code><button class="copy" type="button" data-copy="17173211234567890" aria-label="Copy 17173211234567890">Copy</button></div><div class="type">Bank account number</div></td>
+<td class="what"><p>Payee account number in the PINT-SG examples</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+<tr id="sg-account-93274234" data-status="published-example">
+<td class="val"><div class="v"><code>93274234</code><button class="copy" type="button" data-copy="93274234" aria-label="Copy 93274234">Copy</button></div><div class="type">Bank account number</div></td>
+<td class="what"><p>Payee account number in the PINT-SG examples</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+<tr id="sg-paymentmeans-z01" data-status="published-example">
+<td class="val"><div class="v"><code>Z01</code><button class="copy" type="button" data-copy="Z01" aria-label="Copy Z01">Copy</button></div><div class="type">Payment means code</div></td>
+<td class="what"><p>GIRO payment means code used in PINT-SG</p><p class="note">Other codes in the examples are 30 (bank transfer) and 54 (credit card).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><code>cac:PaymentMeans/cbc:PaymentMeansCode</code></td>
+</tr>
+<tr id="sg-paymentmeans-z02" data-status="published-example">
+<td class="val"><div class="v"><code>Z02</code><button class="copy" type="button" data-copy="Z02" aria-label="Copy Z02">Copy</button></div><div class="type">Payment means code</div></td>
+<td class="what"><p>PayNow payment means code used in PINT-SG</p><p class="note">No public PayNow test environment or test proxy exists.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><code>cac:PaymentMeans/cbc:PaymentMeansCode</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">19</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="sg-nric-s9812381d" data-status="published-example">
+<td class="val"><div class="v"><code>S9812381D</code><button class="copy" type="button" data-copy="S9812381D" aria-label="Copy S9812381D">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9812382b" data-status="published-example">
+<td class="val"><div class="v"><code>S9812382B</code><button class="copy" type="button" data-copy="S9812382B" aria-label="Copy S9812382B">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9812385g" data-status="published-example">
+<td class="val"><div class="v"><code>S9812385G</code><button class="copy" type="button" data-copy="S9812385G" aria-label="Copy S9812385G">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9812387c" data-status="published-example">
+<td class="val"><div class="v"><code>S9812387C</code><button class="copy" type="button" data-copy="S9812387C" aria-label="Copy S9812387C">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9812379b" data-status="published-example">
+<td class="val"><div class="v"><code>S9812379B</code><button class="copy" type="button" data-copy="S9812379B" aria-label="Copy S9812379B">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9912363z" data-status="published-example">
+<td class="val"><div class="v"><code>S9912363Z</code><button class="copy" type="button" data-copy="S9912363Z" aria-label="Copy S9912363Z">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9912366d" data-status="published-example">
+<td class="val"><div class="v"><code>S9912366D</code><button class="copy" type="button" data-copy="S9912366D" aria-label="Copy S9912366D">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9912369i" data-status="published-example">
+<td class="val"><div class="v"><code>S9912369I</code><button class="copy" type="button" data-copy="S9912369I" aria-label="Copy S9912369I">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9912370b" data-status="published-example">
+<td class="val"><div class="v"><code>S9912370B</code><button class="copy" type="button" data-copy="S9912370B" aria-label="Copy S9912370B">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9912372i" data-status="published-example">
+<td class="val"><div class="v"><code>S9912372I</code><button class="copy" type="button" data-copy="S9912372I" aria-label="Copy S9912372I">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s9912374e" data-status="published-example">
+<td class="val"><div class="v"><code>S9912374E</code><button class="copy" type="button" data-copy="S9912374E" aria-label="Copy S9912374E">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s6005053h" data-status="published-example">
+<td class="val"><div class="v"><code>S6005053H</code><button class="copy" type="button" data-copy="S6005053H" aria-label="Copy S6005053H">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-nric-s6005055d" data-status="published-example">
+<td class="val"><div class="v"><code>S6005055D</code><button class="copy" type="button" data-copy="S6005055D" aria-label="Copy S6005055D">Copy</button></div><div class="type">NRIC</div></td>
+<td class="what"><p>Myinfo sandbox persona NRIC</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-fin-f1612347k" data-status="published-example">
+<td class="val"><div class="v"><code>F1612347K</code><button class="copy" type="button" data-copy="F1612347K" aria-label="Copy F1612347K">Copy</button></div><div class="type">FIN</div></td>
+<td class="what"><p>Myinfo sandbox persona FIN</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-fin-g1612348q" data-status="published-example">
+<td class="val"><div class="v"><code>G1612348Q</code><button class="copy" type="button" data-copy="G1612348Q" aria-label="Copy G1612348Q">Copy</button></div><div class="type">FIN</div></td>
+<td class="what"><p>Myinfo sandbox persona FIN</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-fin-g1612349n" data-status="published-example">
+<td class="val"><div class="v"><code>G1612349N</code><button class="copy" type="button" data-copy="G1612349N" aria-label="Copy G1612349N">Copy</button></div><div class="type">FIN</div></td>
+<td class="what"><p>Myinfo sandbox persona FIN</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-fin-g1612350t" data-status="published-example">
+<td class="val"><div class="v"><code>G1612350T</code><button class="copy" type="button" data-copy="G1612350T" aria-label="Copy G1612350T">Copy</button></div><div class="type">FIN</div></td>
+<td class="what"><p>Myinfo sandbox persona FIN</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-fin-g1612352n" data-status="published-example">
+<td class="val"><div class="v"><code>G1612352N</code><button class="copy" type="button" data-copy="G1612352N" aria-label="Copy G1612352N">Copy</button></div><div class="type">FIN</div></td>
+<td class="what"><p>Myinfo sandbox persona FIN</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-fin-g1612353l" data-status="published-example">
+<td class="val"><div class="v"><code>G1612353L</code><button class="copy" type="button" data-copy="G1612353L" aria-label="Copy G1612353L">Copy</button></div><div class="type">FIN</div></td>
+<td class="what"><p>Myinfo sandbox persona FIN</p><p class="note">GovTech Myinfo sandbox persona. Sandbox NRIC/FINs are not formally reserved and could coincide with real people&#x27;s numbers. Use the number only: persona data includes real addresses, live-range mobiles and a gmail.com address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Singapore NRIC/FIN check letter">✓ sg-nric</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>UEN (Unique Entity Number)</b><p class="note">ACRA does not publish the check-letter algorithms; the python-stdnum rules were verified against all 2.1 M ACRA records. Peppol endpoint value is SGUEN + UEN.</p></td><td>Business (ROB) nnnnnnnnX; local company (ROC) yyyynnnnnX; others [TSR]yyPQnnnnX</td><td><code title="Singapore UEN check letter">sg-uen</code></td><td>ACRA (and other issuing agencies for the &quot;others&quot; format)</td><td class='ubl'><code>cbc:EndpointID @schemeID=0195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0195</code></td></tr><tr><td><b>GST registration number</b><p class="note">No public check algorithm for the M… format.</p></td><td>Usually the UEN; otherwise M + check character + 7 digits + check letter (10 characters, e.g. M2-1234567-K)</td><td><span class="muted">—</span></td><td>IRAS</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>NRIC / FIN</b><p class="note">ICA does not publish the rule. The M series (FINs from 2022) uses a different table that was not verified.</p></td><td>S/T (citizens, PRs) or F/G/M (foreigners) + 7 digits + check letter</td><td><code title="Singapore NRIC/FIN check letter">sg-nric</code></td><td>ICA</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Postal code</b></td><td>6 digits; first two = postal sector (01–82), last four = delivery point (one code per building)</td><td><span class="muted">—</span></td><td>SingPost</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Telephone number</b></td><td>+65 + 8 digits; leading 6 fixed, 8/9 mobile, 3 VoIP</td><td><span class="muted">—</span></td><td>IMDA (National Numbering Plan)</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">23</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="sg-avoid-uen-201012456c" data-status="avoid">
+<td class="val"><div class="v"><code>201012456C</code></div><div class="type">UEN</div></td>
+<td class="what"><p>Seller UEN in PINT-SG example 07 (foreign buyer)</p><p class="note warn">Real company, SINGTEL MOBILE SINGAPORE PTE. LTD. (ACRA register, registered 2010-06-10).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-t08ga0028a" data-status="avoid">
+<td class="val"><div class="v"><code>T08GA0028A</code></div><div class="type">UEN</div></td>
+<td class="what"><p>Government buyer UEN in PINT-SG example 05</p><p class="note warn">Real UEN of the Accountant-General&#x27;s Department, the government&#x27;s central e-invoice receiving point. Use only when a real government buyer is intended.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-202012345h" data-status="avoid">
+<td class="val"><div class="v"><code>202012345H</code></div><div class="type">UEN</div></td>
+<td class="what"><p>&quot;Corrected&quot; form of the IMDA TX2 annex UEN 202012345M</p><p class="note warn">Real ACRA entity (VMG TECH PTE. LTD.). Do not &quot;fix&quot; the check letter of official example UENs.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://www.imda.gov.sg/-/media/imda/files/programme/nationwide-e-invoicing-framework/invoicenow-technical-playbook/tx2---annex---data-specifications.pdf" rel="noopener">IMDA TX2 Annex — Data specifications</a> <span class="muted">— IMDA</span></li><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-202345678w" data-status="avoid">
+<td class="val"><div class="v"><code>202345678W</code></div><div class="type">UEN</div></td>
+<td class="what"><p>&quot;Corrected&quot; form of the IMDA TX2 annex UEN 202345678A</p><p class="note warn">Real ACRA entity. Do not &quot;fix&quot; the check letter of official example UENs.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Singapore UEN check letter">✓ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://www.imda.gov.sg/-/media/imda/files/programme/nationwide-e-invoicing-framework/invoicenow-technical-playbook/tx2---annex---data-specifications.pdf" rel="noopener">IMDA TX2 Annex — Data specifications</a> <span class="muted">— IMDA</span></li><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-200212345z" data-status="avoid">
+<td class="val"><div class="v"><code>200212345Z</code></div><div class="type">UEN</div></td>
+<td class="what"><p>Seller UEN in the official PINT-SG examples</p><p class="note warn">Wrong check letter (correct is E). Use 200212345E instead.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Singapore UEN check letter">✗ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-200254321z" data-status="avoid">
+<td class="val"><div class="v"><code>200254321Z</code></div><div class="type">UEN</div></td>
+<td class="what"><p>Buyer UEN in the official PINT-SG examples</p><p class="note warn">Wrong check letter (correct is C). Use 200254321C instead.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Singapore UEN check letter">✗ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-200212345y" data-status="avoid">
+<td class="val"><div class="v"><code>200212345Y</code></div><div class="type">UEN</div></td>
+<td class="what"><p>Payee ID in IMDA&#x27;s InvoiceNow Enterprise Best Practice Guide</p><p class="note warn">Wrong check letter.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Singapore UEN check letter">✗ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://file.go.gov.sg/invoicenow-enterprise-guide.pdf" rel="noopener">IMDA InvoiceNow Enterprise Best Practice Guide v1.1</a> <span class="muted">— IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-202012345m" data-status="avoid">
+<td class="val"><div class="v"><code>202012345M</code></div><div class="type">UEN</div></td>
+<td class="what"><p>UEN in IMDA&#x27;s TX2 annex</p><p class="note warn">Wrong check letter, and the corrected form 202012345H is a real company.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Singapore UEN check letter">✗ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://www.imda.gov.sg/-/media/imda/files/programme/nationwide-e-invoicing-framework/invoicenow-technical-playbook/tx2---annex---data-specifications.pdf" rel="noopener">IMDA TX2 Annex — Data specifications</a> <span class="muted">— IMDA</span></li><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-202345678a" data-status="avoid">
+<td class="val"><div class="v"><code>202345678A</code></div><div class="type">UEN</div></td>
+<td class="what"><p>UEN in IMDA&#x27;s TX2 annex (as SGUEN202345678A)</p><p class="note warn">Wrong check letter, and the corrected form 202345678W is a real entity.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Singapore UEN check letter">✗ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://www.imda.gov.sg/-/media/imda/files/programme/nationwide-e-invoicing-framework/invoicenow-technical-playbook/tx2---annex---data-specifications.pdf" rel="noopener">IMDA TX2 Annex — Data specifications</a> <span class="muted">— IMDA</span></li><li><a href="https://data.gov.sg/datasets/d_3f960c10fed6145404ca7b821f263b87/view" rel="noopener">Entities Registered with ACRA (data.gov.sg)</a> <span class="muted">— ACRA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-uen-123456789a" data-status="avoid">
+<td class="val"><div class="v"><code>123456789A</code></div><div class="type">UEN</div></td>
+<td class="what"><p>IRAS&#x27;s example &quot;UEN / GST Reg No. 123456789A&quot;</p><p class="note warn">Not a valid UEN (year 1234, wrong check letter).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Singapore UEN check letter">✗ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/invoicing-price-display-and-record-keeping/invoicing-customers" rel="noopener">IRAS — Invoicing customers</a> <span class="muted">— IRAS</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-paynow-uen123456879" data-status="avoid">
+<td class="val"><div class="v"><code>UEN123456879</code></div><div class="type">PayNow proxy</div></td>
+<td class="what"><p>PayNow proxy in the PINT-SG examples</p><p class="note warn">Not a valid UEN.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Singapore UEN check letter">✗ sg-uen</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-name-imda-agd" data-status="avoid">
+<td class="val"><div class="v"><code>IMDA, AGD</code></div><div class="type">Company name</div></td>
+<td class="what"><p>Buyer names in the PINT-SG examples</p><p class="note warn">Real government bodies.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-gln-5790000436071" data-status="avoid">
+<td class="val"><div class="v"><code>5790000436071</code></div><div class="type">GLN</div></td>
+<td class="what"><p>GLN in the PINT-SG examples (copied from EU Peppol examples)</p><p class="note warn">Prefix 579 is GS1 Denmark; owner unknown, possibly a real GLN. Use a GS1 952 demonstration prefix instead.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="GS1 mod-10 check digit">✓ gs1</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li><li><a href="https://www.gs1.org/standards/id-keys/company-prefix" rel="noopener">GS1 Company Prefix</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-gln-1234567890121" data-status="avoid">
+<td class="val"><div class="v"><code>1234567890121</code></div><div class="type">GLN</div></td>
+<td class="what"><p>GLN in the PINT-SG examples</p><p class="note warn">Wrong GS1 check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="GS1 mod-10 check digit">✗ gs1</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-gln-6754238987648" data-status="avoid">
+<td class="val"><div class="v"><code>6754238987648</code></div><div class="type">GLN</div></td>
+<td class="what"><p>GLN in the PINT-SG examples</p><p class="note warn">Wrong GS1 check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="GS1 mod-10 check digit">✗ gs1</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-bic-icdlog" data-status="avoid">
+<td class="val"><div class="v"><code>ICDLOG</code></div><div class="type">BIC</div></td>
+<td class="what"><p>Branch/BIC in the PINT-SG examples</p><p class="note warn">Not a valid BIC (6 characters).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="ISO 9362 BIC format">✗ bic</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-address-somerset-road" data-status="avoid">
+<td class="val"><div class="v"><code>111 Somerset Road 238164</code></div><div class="type">Address</div></td>
+<td class="what"><p>Address in the PINT-SG examples</p><p class="note warn">Real building (SLA OneMap, 2026-11-05). Acceptable only with clearly fictitious party names.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-address-bedok-north" data-status="avoid">
+<td class="val"><div class="v"><code>102 Bedok North Avenue 4, #09-128, Pearl Garden, 460102</code></div><div class="type">Address</div></td>
+<td class="what"><p>Address of Myinfo sandbox persona S9812381D</p><p class="note warn">Real residential address (SLA OneMap, 2026-11-05).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-phone-4621230" data-status="avoid">
+<td class="val"><div class="v"><code>4621230</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Telephone number in the PINT-SG examples (also 5121230)</p><p class="note warn">Not an 8-digit Singapore number (malformed).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-phone-97399245" data-status="avoid">
+<td class="val"><div class="v"><code>+65 97399245</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Mobile number of Myinfo sandbox persona S9812381D</p><p class="note warn">In the live mobile range; may belong to a real subscriber.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-email-myinfotesting" data-status="avoid">
+<td class="val"><div class="v"><code>myinfotesting@gmail.com</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Email of Myinfo sandbox persona S9812381D</p><p class="note warn">Real mail provider; the mailbox may exist.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://docs.developer.singpass.gov.sg/docs/singpass-developer-docs/legacy-myinfo-v3-v4/technical-specifications/myinfo-v4/tutorials/tutorial-1-myinfo-person-sample-data" rel="noopener">Singpass developer docs — Myinfo v4 Tutorial 1, person sample data</a> <span class="muted">— GovTech Singapore</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-email-pintsg" data-status="avoid">
+<td class="val"><div class="v"><code>peter@seller.org, bill@imda.sg, einvoice@imda.gov.sg, test_vendor@gmail.com</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Emails in the PINT-SG examples and IMDA guide</p><p class="note warn">Registered domains, a real IMDA mailbox and a real mail provider.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/sg/pint-sg/resources.zip" rel="noopener">OpenPeppol / IMDA PINT-SG — resources.zip (examples)</a> <span class="muted">— OpenPeppol / IMDA</span></li><li><a href="https://file.go.gov.sg/invoicenow-enterprise-guide.pdf" rel="noopener">IMDA InvoiceNow Enterprise Best Practice Guide v1.1</a> <span class="muted">— IMDA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="sg-avoid-domain-test-sg" data-status="avoid">
+<td class="val"><div class="v"><code>test.sg</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Tempting Singapore &quot;test&quot; domain</p><p class="note warn">Registered (DNS checked 2026-11-05). Use a .test domain or example.com.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Singapore with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BSG%5D+&amp;country=SG">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

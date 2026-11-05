@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colombia — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Latin America</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇨🇴</span> Colombia</h1>
+<p class="lede">Colombia&#x27;s electronic invoice is UBL 2.1. The DIAN toolkit ships 44 signed example XMLs that are an excellent structural reference, but most party NITs in them are real companies, including DIAN&#x27;s own NIT. Only a handful of DIAN example NITs pass the check digit and are not in the RUES chamber-of-commerce register; they were not checked in the DIAN RUT (captcha), and RUES does not cover every taxpayer. The anonymous consumer has a reserved ID (222222222222). There is no reserved telephone range, no official fictitious address and no national bank-account check digit. Not included: the exógena seudo-NITs 444444xxx (source article not found) and the cédula numbers in the DIAN examples (Registraduría not checked).</p>
+<p class="meta">Updated 2026-11-05 · searched in es, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-mexico-colombia.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/co.yaml">Data file</a> ·
+<a href="../data/co.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>3</b> Reserved</span><span class="stat s-published-example"><b>12</b> Official example</span><span class="stat s-derived"><b>5</b> Derived</span><span class="stat s-avoid"><b>12</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">9</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="co-nit-981223983-1" data-status="published-example">
+<td class="val"><div class="v"><code>981223983-1</code><button class="copy" type="button" data-copy="981223983-1" aria-label="Copy 981223983-1">Copy</button></div><div class="type">NIT</div></td>
+<td class="what"><p>DeliveryParty (Empresa de transporte) NIT in the DIAN example XMLs</p><p class="note">Recommended supplier NIT. Not checked in the DIAN RUT (Consulta estado RUT needs a captcha); RUES only covers chamber-of-commerce registrations. Use with a name from your own party set, not with the DIAN example names.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span><span class="chk ver">✓ Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID @schemeName=31 @schemeID=1 @schemeAgencyID=195 (value 981223983)</code></td>
+</tr>
+<tr id="co-nit-989123123-4" data-status="published-example">
+<td class="val"><div class="v"><code>989123123-4</code><button class="copy" type="button" data-copy="989123123-4" aria-label="Copy 989123123-4">Copy</button></div><div class="type">NIT</div></td>
+<td class="what"><p>TaxRepresentativeParty NIT in the DIAN example XMLs</p><p class="note">Recommended customer NIT. Not checked in the DIAN RUT.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span><span class="chk ver">✓ Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID @schemeName=31 @schemeID=4 @schemeAgencyID=195 (value 989123123)</code></td>
+</tr>
+<tr id="co-nit-995201603-4" data-status="published-example">
+<td class="val"><div class="v"><code>995201603-4</code><button class="copy" type="button" data-copy="995201603-4" aria-label="Copy 995201603-4">Copy</button></div><div class="type">NIT</div></td>
+<td class="what"><p>AgentParty NIT (multiple-buyers example) in the DIAN example XMLs</p><p class="note">Recommended third-party / agent / carrier NIT. Not checked in the DIAN RUT.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span><span class="chk ver">✓ Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID @schemeName=31 @schemeID=4 @schemeAgencyID=195 (value 995201603)</code></td>
+</tr>
+<tr id="co-nit-99998888-6" data-status="published-example">
+<td class="val"><div class="v"><code>99998888-6</code><button class="copy" type="button" data-copy="99998888-6" aria-label="Copy 99998888-6">Copy</button></div><div class="type">NIT</div></td>
+<td class="what"><p>Supplier NIT (A &amp; M INTERNACIONAL DE COMERCIO SAS, Medellín) in a DIAN example</p><p class="note">Less clean than the three above. 8 digits, looks like a NIT derived from a cédula. Not checked in the DIAN RUT.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span><span class="chk ver">✓ Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-nit-791098888-4" data-status="published-example">
+<td class="val"><div class="v"><code>791098888-4</code><button class="copy" type="button" data-copy="791098888-4" aria-label="Copy 791098888-4">Copy</button></div><div class="type">NIT</div></td>
+<td class="what"><p>Customer NIT (CLIENTEFACTURAPRUE1) in a DIAN example</p><p class="note">Less clean (outside the usual legal-entity blocks). Not checked in the DIAN RUT.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span><span class="chk ver">✓ Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-nit-990000001-1" data-status="derived">
+<td class="val"><div class="v"><code>990000001-1</code><button class="copy" type="button" data-copy="990000001-1" aria-label="Copy 990000001-1">Copy</button></div><div class="type">NIT</div></td>
+<td class="what"><p>Derived NIT with valid check digit</p><p class="note">Not checked in the DIAN RUT. RUES has scattered records even in unusual ranges, so check each value individually; prefer the DIAN-published NITs.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span><span class="chk ver">✓ Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf" rel="noopener">DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (DV rule)</a> <span class="muted">— DIAN</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-nit-990000002-7" data-status="derived">
+<td class="val"><div class="v"><code>990000002-7</code><button class="copy" type="button" data-copy="990000002-7" aria-label="Copy 990000002-7">Copy</button></div><div class="type">NIT</div></td>
+<td class="what"><p>Derived NIT with valid check digit</p><p class="note">Not checked in the DIAN RUT.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span><span class="chk ver">✓ Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf" rel="noopener">DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (DV rule)</a> <span class="muted">— DIAN</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-nit-990000003-4" data-status="derived">
+<td class="val"><div class="v"><code>990000003-4</code><button class="copy" type="button" data-copy="990000003-4" aria-label="Copy 990000003-4">Copy</button></div><div class="type">NIT</div></td>
+<td class="what"><p>Derived NIT with valid check digit</p><p class="note">Not checked in the DIAN RUT.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span><span class="chk ver">✓ Not found in RUES, datos.gov.co dataset c82u-588k (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf" rel="noopener">DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (DV rule)</a> <span class="muted">— DIAN</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-name-facturador-de-ejemplo" data-status="published-example">
+<td class="val"><div class="v"><code>FACTURADOR DE EJEMPLO</code><button class="copy" type="button" data-copy="FACTURADOR DE EJEMPLO" aria-label="Copy FACTURADOR DE EJEMPLO">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Supplier name in the DIAN example XMLs (&quot;example invoicer&quot;)</p><p class="note">Generic and safe as a name, but NOT with the NIT it comes with (800197268 = DIAN). Other names: ADQUIRIENTE DE EJEMPLO (… 1/2/3 for multiple buyers), Empresa de transporte, Nombre Tienda, Establecimiento Principal.
+</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">4</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="co-address-av-123-45-67" data-status="published-example">
+<td class="val"><div class="v"><code>AV 123 # 45 - 67</code></div><div class="type">Street address <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Address placeholder used in the DIAN example XMLs</p><p class="note">Colombian style street type + number +</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><code>cac:Address/cac:AddressLine/cbc:Line</code></td>
+</tr>
+<tr id="co-postcode-110111" data-status="published-example">
+<td class="val"><div class="v"><code>110111</code><button class="copy" type="button" data-copy="110111" aria-label="Copy 110111">Copy</button></div><div class="type">Postcode</div></td>
+<td class="what"><p>Most frequent postcode in the DIAN examples (Usaquén, Bogotá)</p><p class="note">Real postcode; combine with an invented street. Bogotá is city code 11001, department 11.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), table 13.4.4 postcodes</a> <span class="muted">— DIAN</span></li><li><a href="http://www.codigopostal.gov.co" rel="noopener">4-72 — Código postal de Colombia</a> <span class="muted">— 4-72 Servicios Postales Nacionales</span></li></ul></td>
+<td class="ubl"><code>cac:Address/cbc:PostalZone</code></td>
+</tr>
+<tr id="co-postcode-000000" data-status="derived">
+<td class="val"><div class="v"><code>000000</code><button class="copy" type="button" data-copy="000000" aria-label="Copy 000000">Copy</button></div><div class="type">Postcode</div></td>
+<td class="what"><p>Postcode used in a DIAN example, not in the postcode table</p><p class="note">Gives only a warning in DIAN validation (rule FAJ73), not a rejection.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not in the DIAN postcode table 13.4.4 (3,681 codes) (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), table 13.4.4 postcodes</a> <span class="muted">— DIAN</span></li><li><a href="http://www.codigopostal.gov.co" rel="noopener">4-72 — Código postal de Colombia</a> <span class="muted">— 4-72 Servicios Postales Nacionales</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-postcode-unused-prefixes" data-status="derived">
+<td class="val"><div class="v"><code>00xxxx, 01xxxx–04xxxx, 06xxxx, 07xxxx, 09xxxx, 10xxxx, 12xxxx</code></div><div class="type">Postcode range <span class="kind">range</span></div></td>
+<td class="what"><p>Department prefixes not used by any postcode</p><p class="note">Pass a 6-digit format check; unknown PostalZone gives only a warning (rule FAJ73).</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Checked against the DIAN postcode table 13.4.4, 3,681 codes (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), table 13.4.4 postcodes</a> <span class="muted">— DIAN</span></li><li><a href="http://www.codigopostal.gov.co" rel="noopener">4-72 — Código postal de Colombia</a> <span class="muted">— 4-72 Servicios Postales Nacionales</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="co-email-role-alias-test" data-status="reserved">
+<td class="val"><div class="v"><code>&lt;role&gt;@&lt;alias&gt;.test</code></div><div class="type">Email address <span class="kind">range</span></div></td>
+<td class="what"><p>Email pattern on the reserved .test top-level domain</p><p class="note">e.g. facturacion@&lt;alias&gt;.test. .CO reserves no name for examples.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">1</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="co-consumer-222222222222" data-status="reserved">
+<td class="val"><div class="v"><code>222222222222</code><button class="copy" type="button" data-copy="222222222222" aria-label="Copy 222222222222">Copy</button></div><div class="type">Consumer ID (consumidor final)</div></td>
+<td class="what"><p>Reserved ID for the anonymous final consumer in e-invoices</p><p class="note">12 × 2, identification type 13, AdditionalAccountID 2, name &quot;consumidor final&quot;, email optional (Anexo Técnico rules FAK61/FAK62 and the CreditNote/DebitNote equivalents). Legal meaning, not a test value.
+</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf" rel="noopener">DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (Resolución 000165 de 2023)</a> <span class="muted">— DIAN</span></li></ul></td>
+<td class="ubl"><code>cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID @schemeName=13</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="document"><h2>Documents <span class="count">5</span></h2><p class="muted">Specimen documents, document numbers, test texts</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="co-profile-execution-id-2" data-status="reserved">
+<td class="val"><div class="v"><code>2</code><button class="copy" type="button" data-copy="2" aria-label="Copy 2">Copy</button></div><div class="type">Environment code</div></td>
+<td class="what"><p>Test environment (Pruebas) in DIAN code list 13.1.1</p><p class="note">1 = Producción, 2 = Pruebas. Use 2 in samples.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf" rel="noopener">DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (Resolución 000165 de 2023)</a> <span class="muted">— DIAN</span></li></ul></td>
+<td class="ubl"><code>cbc:ProfileExecutionID</code><code>cbc:UUID @schemeID</code></td>
+</tr>
+<tr id="co-invoice-authorization-18760000001" data-status="published-example">
+<td class="val"><div class="v"><code>18760000001</code><button class="copy" type="button" data-copy="18760000001" aria-label="Copy 18760000001">Copy</button></div><div class="type">Numbering resolution</div></td>
+<td class="what"><p>Test-set invoice numbering resolution used in 33 DIAN example files</p><p class="note">Use only with ProfileExecutionID 2. Authorisation period 2019-01-19 to 2030-01-19. Whether DIAN still issues it to new test sets is unverified.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><code>sts:DianExtensions/sts:InvoiceControl/sts:InvoiceAuthorization</code></td>
+</tr>
+<tr id="co-invoice-prefix-setp" data-status="published-example">
+<td class="val"><div class="v"><code>SETP990000000–SETP995000000</code></div><div class="type">Invoice number range <span class="kind">range</span></div></td>
+<td class="what"><p>Test-set invoice prefix and number range in the DIAN examples</p><p class="note">e.g. invoice ID SETP990000002. A second range SETG980000000–SETG985000000 is also used. Use only with ProfileExecutionID 2.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><code>sts:InvoiceControl/sts:AuthorizedInvoices/sts:Prefix</code><code>cbc:ID</code></td>
+</tr>
+<tr id="co-software-id-56f2ae4e" data-status="published-example">
+<td class="val"><div class="v"><code>56f2ae4e-9812-4fad-9255-08fcfcd5ccb0</code><button class="copy" type="button" data-copy="56f2ae4e-9812-4fad-9255-08fcfcd5ccb0" aria-label="Copy 56f2ae4e-9812-4fad-9255-08fcfcd5ccb0">Copy</button></div><div class="type">Software ID</div></td>
+<td class="what"><p>Software ID in the DIAN examples</p><p class="note">Also fa326ca7-c1f8-40d3-a6fc-24d7c1040607. ProviderID is 800197268 (DIAN). SoftwareSecurityCode is derived from SoftwareID + PIN, and the PIN is not published.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><code>sts:DianExtensions/sts:SoftwareProvider/sts:SoftwareID</code></td>
+</tr>
+<tr id="co-qr-url-habilitacion" data-status="published-example">
+<td class="val"><div class="v"><code>https://catalogo-vpfe-hab.dian.gov.co/Document/FindDocument?documentKey=&lt;CUFE&gt;</code></div><div class="type">Validation URL <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Test-environment (habilitación) document lookup URL used in the QR code</p><p class="note">The -hab host is the test environment.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf" rel="noopener">DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (Resolución 000165 de 2023)</a> <span class="muted">— DIAN</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>NIT (Número de Identificación Tributaria)</b><p class="note">DV: weights from the right 3 7 13 17 19 23 29 37 41 43 47 53 59 67 71; r = sum mod 11; DV = r if r is 0 or 1, else 11 − r. In the DIAN UBL 2.1 e-invoice the NIT goes without the DV, with schemeName = identification type (31 = NIT), schemeID = DV and schemeAgencyID = 195 (DIAN).
+</p></td><td>9 digits for legal entities (blocks 800…, 830…, 860…, 890…, 900…, 901…) + 1 check digit (DV); individuals use their cédula as NIT</td><td><code title="Colombian NIT check digit (DIAN)">co-nit</code></td><td>DIAN</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID @schemeName=31 @schemeID=&lt;DV&gt; @schemeAgencyID=195</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeName=31 @schemeID=&lt;DV&gt; @schemeAgencyID=195</code></td></tr><tr><td><b>Cédula de ciudadanía</b><p class="note">Cannot be validated offline; do not invent one. DIAN identification type 13.</p></td><td>6–10 digits, no check digit</td><td><span class="muted">—</span></td><td>Registraduría Nacional del Estado Civil</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID @schemeName=13</code></td></tr><tr><td><b>CUFE (Código Único de Factura Electrónica)</b></td><td>96 hexadecimal characters (SHA-384 over invoice number, date, amounts, taxes, NITs, technical key and environment)</td><td><span class="muted">—</span></td><td>DIAN</td><td class='ubl'><code>cbc:UUID @schemeName=CUFE-SHA384 @schemeID=&lt;environment&gt;</code></td></tr><tr><td><b>Código postal</b><p class="note">An unknown PostalZone only gives a warning in DIAN validation (rule FAJ73), not a rejection.</p></td><td>6 digits — DANE department (2) + routing zone (2; 00 = department capital) + postal district (2)</td><td><span class="muted">—</span></td><td>4-72 (Servicios Postales Nacionales)</td><td class='ubl'><code>cac:Address/cbc:PostalZone</code></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">12</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="co-avoid-nit-800197268" data-status="avoid">
+<td class="val"><div class="v"><code>800197268-4</code></div><div class="type">NIT</div></td>
+<td class="what"><p>FACTURADOR DE EJEMPLO supplier NIT in the DIAN examples</p><p class="note warn">DIAN&#x27;s own NIT. Some example files also give the wrong DV 9.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-nit-900108281" data-status="avoid">
+<td class="val"><div class="v"><code>900108281-3</code></div><div class="type">NIT</div></td>
+<td class="what"><p>ADQUIRIENTE DE EJEMPLO / OPTICAS GMO COLOMBIA customer NIT in the DIAN examples</p><p class="note warn">Real company (LUXOTTICA OF COLOMBIA SAS, active in RUES).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Colombian NIT check digit (DIAN)">✓ co-nit</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-nit-real-companies" data-status="avoid">
+<td class="val"><div class="v"><code>900373981, 900374634, 900374635, 900374636, 900374637, 900373991, 900508908, 800242106, 860028580</code></div><div class="type">NIT</div></td>
+<td class="what"><p>Other party and software-provider NITs in the DIAN examples</p><p class="note warn">Real companies in RUES (e.g. SODIMAC COLOMBIA, DISPAPELES, SIGNATURE SOUTH CONSULTING COLOMBIA). 900374636 is not in RUES but sits in an actively assigned block whose neighbours are real.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-nit-wrong-dv" data-status="avoid">
+<td class="val"><div class="v"><code>800197279, 800197213, 900373972, 900373979, 901781456, 900508918, 72659841521, 860003456</code></div><div class="type">NIT</div></td>
+<td class="what"><p>RADIAN and other example NITs in the DIAN examples</p><p class="note warn">The DV given in the examples is wrong, and several are real companies.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-nit-placeholders" data-status="avoid">
+<td class="val"><div class="v"><code>999999999, 123456789, 1832, 2222222222222</code></div><div class="type">NIT</div></td>
+<td class="what"><p>Placeholder NITs</p><p class="note warn">999999999 and 123456789 are in RUES (123456789 = MATRICULA PRUEBA SAS and a real person); 1832 is too short and has RUES hits; 2222222222222 is a placeholder.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf" rel="noopener">DIAN — Anexo Técnico Factura Electrónica de Venta v1.9 (DV rule)</a> <span class="muted">— DIAN</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-consumer-short-2s" data-status="avoid">
+<td class="val"><div class="v"><code>2222222222, 22222222222</code></div><div class="type">Consumer ID</div></td>
+<td class="what"><p>Consumer IDs used in some DIAN examples</p><p class="note warn">Not the annex value (use 222222222222); 2222222222 is in RUES (a cancelled individual).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-cedula-79907759" data-status="avoid">
+<td class="val"><div class="v"><code>79907759</code></div><div class="type">Cédula de ciudadanía</div></td>
+<td class="what"><p>Consumer cédula in a DIAN example</p><p class="note warn">Belongs to a real person (RUES), shown with a real-looking personal email.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-email-dian-examples" data-status="avoid">
+<td class="val"><div class="v"><code>@dian.gov.co, @gosocket.net, @ket.co and @gmail.com addresses in the DIAN examples</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Emails in the DIAN example XMLs</p><p class="note warn">Real DIAN staff, vendor staff and apparently personal addresses.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-domain-placeholders" data-status="avoid">
+<td class="val"><div class="v"><code>empresa.org, empresa.net, empresa.co, servicios.com, sistemas.net, mail.co, mail.com, soluciones.com.co, prue.com, pruebas.com, sincorreo.com, example.co</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Placeholder email domains in DIAN and other examples</p><p class="note warn">All registered (DNS checked 2026-11-05); pruebas.com and sincorreo.com are parked for sale. Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-domain-unregistered" data-status="avoid">
+<td class="val"><div class="v"><code>ejemplo.co, ejemplo.com.co</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Tempting Colombian example domains</p><p class="note warn">Not registered now (NXDOMAIN, 2026-11-05), but anyone could register them; .CO reserves nothing for examples.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-address-dian-bogota" data-status="avoid">
+<td class="val"><div class="v"><code>Av. Jiménez #7 - 13; Carrera 8 Nº 6C-38</code></div><div class="type">Street address</div></td>
+<td class="what"><p>Addresses in the DIAN examples</p><p class="note warn">Real DIAN / central Bogotá addresses.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="co-avoid-gtin-dian-examples" data-status="avoid">
+<td class="val"><div class="v"><code>6543542313534</code></div><div class="type">GTIN</div></td>
+<td class="what"><p>Item code given under EAN13 in a DIAN example</p><p class="note warn">Arbitrary value used as an EAN-13, not a GTIN assigned by a GS1 member (Colombia&#x27;s GS1 prefixes are 770/771); the check digit happens to pass. Use a GS1 952 example prefix instead.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="GS1 mod-10 check digit">✓ gs1</span></td>
+<td><ul class="src"><li><a href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Caja-de-herramientas-FE_V19_v2026.zip" rel="noopener">DIAN — Caja de herramientas FE V1.9 (v2026), example XMLs</a> <span class="muted">— DIAN</span></li><li><a href="https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/documentacion-tecnica/" rel="noopener">DIAN — Documentación técnica, sistema de facturación electrónica</a> <span class="muted">— DIAN</span></li><li><a href="https://www.datos.gov.co/resource/c82u-588k.json" rel="noopener">RUES open data (datos.gov.co dataset c82u-588k)</a> <span class="muted">— Confecámaras / datos.gov.co</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Colombia with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BCO%5D+&amp;country=CO">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

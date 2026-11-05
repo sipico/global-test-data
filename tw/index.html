@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taiwan — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Asia</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇹🇼</span> Taiwan <span class="native">臺灣</span></h1>
+<p class="lede">Taiwan reserves no identifiers or telephone numbers for fiction, but the Ministry of Finance&#x27;s worked examples for the 2023 Unified Business Number check rule give two valid UBNs that are in none of the three official registers. Several obvious placeholder UBNs (00000000, 99999997 …) and MOF&#x27;s own first example belong to real businesses. The Ministry of the Interior&#x27;s specimen ID card number deliberately fails the check digit, while the textbook A123456789 passes and is reportedly a real person&#x27;s number. The MOF e-invoice test platform (wwwtest.einvoice.nat.gov.tw) issues test invoice tracks, but its official test UBNs could not be read (HTTP 403). No unused postcodes could be checked (the 3+3 file needs registration).</p>
+<p class="meta">Updated 2026-11-05 · searched in zh, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-china-hk-taiwan.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/tw.yaml">Data file</a> ·
+<a href="../data/tw.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>2</b> Reserved</span><span class="stat s-published-example"><b>3</b> Official example</span><span class="stat s-derived"><b>3</b> Derived</span><span class="stat s-avoid"><b>11</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">5</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="tw-ubn-10458575" data-status="published-example">
+<td class="val"><div class="v"><code>10458575</code><button class="copy" type="button" data-copy="10458575" aria-label="Copy 10458575">Copy</button></div><div class="type">UBN</div></td>
+<td class="what"><p>Worked example (7th digit 7, sum 20) in MOF&#x27;s check-rule explanation</p><p class="note">Valid under both the old (÷10) and the 2023 (÷5) rule.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span><span class="chk ver">✓ Not in the MOF tax registration dataset BGMOPEN1, 1,715,523 rows (2026-11-05)</span><span class="chk ver">✓ Not in the MOEA company register or business register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.trust.org.tw/upload/1100002250002.pdf" rel="noopener">營利事業統一編號檢查碼邏輯修正說明（附件）</a> <span class="muted">— Ministry of Finance (copy hosted by trust.org.tw)</span></li><li><a href="https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=8d164b10f20042b9ab9864b51b20f0c2" rel="noopener">統一編號檢查碼邏輯修正 (news)</a> <span class="muted">— Ministry of Finance</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="tw-ubn-19312376" data-status="published-example">
+<td class="val"><div class="v"><code>19312376</code><button class="copy" type="button" data-copy="19312376" aria-label="Copy 19312376">Copy</button></div><div class="type">UBN</div></td>
+<td class="what"><p>Worked example (7th digit 7, sum 30) in MOF&#x27;s check-rule explanation</p><p class="note">Valid under both the old and the 2023 rule.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span><span class="chk ver">✓ Not in the MOF tax registration dataset BGMOPEN1, 1,715,523 rows (2026-11-05)</span><span class="chk ver">✓ Not in the MOEA company register or business register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.trust.org.tw/upload/1100002250002.pdf" rel="noopener">營利事業統一編號檢查碼邏輯修正說明（附件）</a> <span class="muted">— Ministry of Finance (copy hosted by trust.org.tw)</span></li><li><a href="https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=8d164b10f20042b9ab9864b51b20f0c2" rel="noopener">統一編號檢查碼邏輯修正 (news)</a> <span class="muted">— Ministry of Finance</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="tw-ubn-12345675" data-status="derived">
+<td class="val"><div class="v"><code>12345675</code><button class="copy" type="button" data-copy="12345675" aria-label="Copy 12345675">Copy</button></div><div class="type">UBN</div></td>
+<td class="what"><p>Sequential UBN, valid under both rules</p><p class="note">&quot;Not found&quot; is strong but not conclusive: UBNs are also assigned to withholding units (schools, government bodies, associations) that are not in these registers.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span><span class="chk ver">✓ Not in the MOF tax registration dataset BGMOPEN1, 1,715,523 rows (2026-11-05)</span><span class="chk ver">✓ Not in the MOEA company register or business register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/426D5542-5F05-43EB-83F9-F1300F14E1F1" rel="noopener">MOEA business register API (應用三)</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-ubn-04595252" data-status="derived">
+<td class="val"><div class="v"><code>04595252</code><button class="copy" type="button" data-copy="04595252" aria-label="Copy 04595252">Copy</button></div><div class="type">UBN</div></td>
+<td class="what"><p>Test UBN valid only under the 2023 rule</p><p class="note">Fails the pre-2023 ÷10 rule, so it tests new-rule support. Third-party test number, not in the MOF attachment.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span><span class="chk ver">✓ Not in the MOF tax registration dataset BGMOPEN1, 1,715,523 rows (2026-11-05)</span><span class="chk ver">✓ Not in the MOEA company register or business register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://toolmaple.com/tools/tax-id" rel="noopener">toolmaple UBN tool (new-rule test numbers)</a> <span class="muted">— toolmaple.com</span></li><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-ubn-10458570" data-status="derived">
+<td class="val"><div class="v"><code>10458570</code><button class="copy" type="button" data-copy="10458570" aria-label="Copy 10458570">Copy</button></div><div class="type">UBN</div></td>
+<td class="what"><p>Test UBN valid only under the 2023 rule</p><p class="note">Fails the pre-2023 ÷10 rule, so it tests new-rule support. Third-party test number, not in the MOF attachment.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span><span class="chk ver">✓ Not in the MOF tax registration dataset BGMOPEN1, 1,715,523 rows (2026-11-05)</span><span class="chk ver">✓ Not in the MOEA company register or business register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://toolmaple.com/tools/tax-id" rel="noopener">toolmaple UBN tool (new-rule test numbers)</a> <span class="muted">— toolmaple.com</span></li><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="tw-email-placeholder-test" data-status="reserved">
+<td class="val"><div class="v"><code>invoice@&lt;alias&gt;.test</code></div><div class="type">Email address <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Invoice email pattern on the reserved .test domain</p><p class="note">Replace &lt;alias&gt; with a short alias for the party. No TWNIC-reserved example domain exists.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><code>cac:Contact/cbc:ElectronicMail</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">1</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="tw-bic-test-xxxxtwt0" data-status="reserved">
+<td class="val"><div class="v"><code>XXXXTWT0</code><button class="copy" type="button" data-copy="XXXXTWT0" aria-label="Copy XXXXTWT0">Copy</button></div><div class="type">BIC</div></td>
+<td class="what"><p>Test BIC for Taiwan (8th character 0)</p><p class="note">ISO 9362 convention — &#x27;0&#x27; as second character of the location code marks a test BIC. No fictitious Taiwanese bank code exists.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="ISO 9362 BIC format">✓ bic</span><span class="chk ok" title="ISO 9362 test BIC (8th character &#x27;0&#x27;)">✓ bic-test</span></td>
+<td><ul class="src"><li><a href="https://en.wikipedia.org/wiki/ISO_9362" rel="noopener">ISO 9362 (Wikipedia)</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><code>cac:FinancialInstitutionBranch/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">1</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="tw-national-id-specimen-a234567890" data-status="published-example">
+<td class="val"><div class="v"><code>A234567890</code><button class="copy" type="button" data-copy="A234567890" aria-label="Copy A234567890">Copy</button></div><div class="type">National ID (specimen)</div></td>
+<td class="what"><p>Number on the official specimen ID card (樣本, 陳筱玲)</p><p class="note">Fails the check digit (correct would be A234567893), apparently deliberately — official and obviously fake.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Taiwan national ID check digit">✗ tw-national-id</span></td>
+<td><ul class="src"><li><a href="https://www.ris.gov.tw/documents/html/apply-idCard/189.html" rel="noopener">國民身分證真偽辨識資料 (specimen image)</a> <span class="muted">— Ministry of the Interior, Department of Household Registration</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>Unified Business Number (營利事業統一編號, UBN, 統編)</b><p class="note">Weights 1 2 1 2 1 2 4 1; add the digits of each product. Since 2023-04-01 the sum must be divisible by 5 (previously 10); if the 7th digit is 7, sum or sum + 1 may be used. The old rule is a subset of the new one.</p></td><td>8 digits</td><td><code title="Taiwan Unified Business Number (2023 rule)">tw-ubn</code></td><td>Ministry of Finance</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID</code><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>National ID (國民身分證統一編號)</b><p class="note">Letter value A=10 … (I=34, O=35, W=32, X=30, Y=31, Z=33) split into two digits, weights 1 9 8 7 6 5 4 3 2 1 1, total divisible by 10 (check rule from secondary sources). No validator in tools/checks.py yet.</p></td><td>Letter (household registration city/county) + sex digit (1 male, 2 female) + 7 digits + check digit</td><td><span class="muted">—</span></td><td>Ministry of the Interior</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>E-invoice track and number (字軌號碼)</b><p class="note">National XML format MIG 4.0 (F0401, F0501 …), not UBL. Test tracks are issued per business on the test platform wwwtest.einvoice.nat.gov.tw; test data must not contain real personal or business data. Mobile barcode carrier CarrierType 3J0002, CarrierId 8 characters starting with /.</p></td><td>2 capital letters + 8 digits, e.g. pattern AB12345678</td><td><span class="muted">—</span></td><td>Ministry of Finance (e-invoice platform)</td><td class='ubl'><code>cbc:ID</code></td></tr><tr><td><b>Postal code (郵遞區號)</b><p class="note">Written on line 1 above the address, no separator.</p></td><td>3+3 digits (district + delivery section) since 2020-03-03; 3+2 still seen</td><td><span class="muted">—</span></td><td>Chunghwa Post</td><td class='ubl'><code>cac:PostalAddress/cbc:PostalZone</code></td></tr><tr><td><b>Bank code</b></td><td>3-digit financial institution code + 4-digit branch code; no IBAN</td><td><span class="muted">—</span></td><td>Financial institutions (real codes only)</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">11</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="tw-avoid-ubn-04595257" data-status="avoid">
+<td class="val"><div class="v"><code>04595257</code></div><div class="type">UBN</div></td>
+<td class="what"><p>MOF&#x27;s first worked example of the UBN check</p><p class="note warn">Real (revoked) company 擎天金屬股份有限公司 in the MOEA company register.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span></td>
+<td><ul class="src"><li><a href="https://www.trust.org.tw/upload/1100002250002.pdf" rel="noopener">營利事業統一編號檢查碼邏輯修正說明（附件）</a> <span class="muted">— Ministry of Finance (copy hosted by trust.org.tw)</span></li><li><a href="https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=8d164b10f20042b9ab9864b51b20f0c2" rel="noopener">統一編號檢查碼邏輯修正 (news)</a> <span class="muted">— Ministry of Finance</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-ubn-00000000" data-status="avoid">
+<td class="val"><div class="v"><code>00000000</code></div><div class="type">UBN</div></td>
+<td class="what"><p>Obvious placeholder UBN</p><p class="note warn">Checksum-valid but a real (closed) sole proprietorship in the MOEA business register.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span></td>
+<td><ul class="src"><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/426D5542-5F05-43EB-83F9-F1300F14E1F1" rel="noopener">MOEA business register API (應用三)</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-ubn-99999997" data-status="avoid">
+<td class="val"><div class="v"><code>99999997</code></div><div class="type">UBN</div></td>
+<td class="what"><p>Obvious placeholder UBN</p><p class="note warn">Checksum-valid but a real (closed) sole proprietorship in the MOEA business register.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span></td>
+<td><ul class="src"><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/426D5542-5F05-43EB-83F9-F1300F14E1F1" rel="noopener">MOEA business register API (應用三)</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-ubn-88888880" data-status="avoid">
+<td class="val"><div class="v"><code>88888880</code></div><div class="type">UBN</div></td>
+<td class="what"><p>Obvious placeholder UBN</p><p class="note warn">Checksum-valid but a real (closed) sole proprietorship in the MOEA business register.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span></td>
+<td><ul class="src"><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/426D5542-5F05-43EB-83F9-F1300F14E1F1" rel="noopener">MOEA business register API (應用三)</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-ubn-00000005" data-status="avoid">
+<td class="val"><div class="v"><code>00000005</code></div><div class="type">UBN</div></td>
+<td class="what"><p>Obvious placeholder UBN</p><p class="note warn">Real company (active or dissolved) in the MOEA company register.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span></td>
+<td><ul class="src"><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/426D5542-5F05-43EB-83F9-F1300F14E1F1" rel="noopener">MOEA business register API (應用三)</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-ubn-00000016" data-status="avoid">
+<td class="val"><div class="v"><code>00000016</code></div><div class="type">UBN</div></td>
+<td class="what"><p>Obvious placeholder UBN</p><p class="note warn">Real company in the MOEA company register, although missing from the MOF tax dataset.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span></td>
+<td><ul class="src"><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/426D5542-5F05-43EB-83F9-F1300F14E1F1" rel="noopener">MOEA business register API (應用三)</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-ubn-00000022" data-status="avoid">
+<td class="val"><div class="v"><code>00000022</code></div><div class="type">UBN</div></td>
+<td class="what"><p>Obvious placeholder UBN</p><p class="note warn">Real company (active or dissolved) in the MOEA company register.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Taiwan Unified Business Number (2023 rule)">✓ tw-ubn</span></td>
+<td><ul class="src"><li><a href="https://eip.fia.gov.tw/data/BGMOPEN1.zip" rel="noopener">全國營業(稅籍)登記資料集 BGMOPEN1</a> <span class="muted">— Ministry of Finance</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/5F64D864-61CB-4D0D-8AD9-492047CC1EA6" rel="noopener">MOEA company register API</a> <span class="muted">— Ministry of Economic Affairs</span></li><li><a href="https://data.gcis.nat.gov.tw/od/demo_cond/426D5542-5F05-43EB-83F9-F1300F14E1F1" rel="noopener">MOEA business register API (應用三)</a> <span class="muted">— Ministry of Economic Affairs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-national-id-a123456789" data-status="avoid">
+<td class="val"><div class="v"><code>A123456789</code></div><div class="type">National ID</div></td>
+<td class="what"><p>Textbook &quot;example&quot; Taiwanese ID number</p><p class="note warn">Passes the check digit and is therefore widely misused; press reports say it belongs to a real person. Use the specimen A234567890.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://zh.wikipedia.org/zh-tw/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%B0%91%E8%BA%AB%E5%88%86%E8%AD%89" rel="noopener">中華民國國民身分證 (Wikipedia)</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-address-chunghwa-post-hq" data-status="avoid">
+<td class="val"><div class="v"><code>106409 臺北市大安區金山南路2段55號</code></div><div class="type">Address</div></td>
+<td class="what"><p>Address used on Chunghwa Post&#x27;s addressing page</p><p class="note warn">Real address of Chunghwa Post headquarters.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.post.gov.tw/post/internet/Postal/index.jsp?ID=21002" rel="noopener">國內郵件橫式信封書寫方式</a> <span class="muted">— Chunghwa Post</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-phone-invented" data-status="avoid">
+<td class="val"><div class="v"><code>+886 xxxx xxxx (invented)</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Arbitrary invented Taiwanese numbers</p><p class="note warn">No range is reserved for fiction or documentation (MODA lends unassigned blocks only to operators or research bodies for tests); any invented number may be real.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.motc.gov.tw/uploaddowndoc?file=mlaw%2F201611221609390.pdf&amp;filedisplay=%E9%9B%BB%E4%BF%A1%E7%B6%B2%E8%B7%AF%E7%B7%A8%E7%A2%BC%E8%A8%88%E7%95%AB.pdf&amp;flag=doc" rel="noopener">電信網路編碼計畫</a> <span class="muted">— MOTC</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="tw-avoid-domain-example-tw" data-status="avoid">
+<td class="val"><div class="v"><code>example.tw, example.com.tw</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Taiwanese-looking example domains</p><p class="note warn">Registered (NS records present, DNS checked 2026-11-05). Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Taiwan with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BTW%5D+&amp;country=TW">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

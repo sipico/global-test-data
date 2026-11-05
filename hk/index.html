@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hong Kong — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Asia</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇭🇰</span> Hong Kong <span class="native">香港</span></h1>
+<p class="lede">Hong Kong reserves no identifiers or telephone numbers for fiction. There is no official valid Business Registration number: the Inland Revenue Department masks BR numbers in its specimen certificates (5XXXXXXX-000-04-17-A), and the BRN has no published check digit. All eight Immigration Department specimen ID cards deliberately fail the HKID check character, which makes them official, obviously fake values. The closest thing to a safe phone number is the unassigned 74–79 level, which OFCA holds for a future longer numbering plan. Hong Kong has no postcodes (Hongkong Post&#x27;s own guidance could not be read; secondary sources say to leave the field blank or use 000 or HKG where a form requires one). example.hk and example.com.hk are unregistered today but not reserved, so prefer .test.</p>
+<p class="meta">Updated 2026-11-05 · searched in zh, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-china-hk-taiwan.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/hk.yaml">Data file</a> ·
+<a href="../data/hk.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>2</b> Reserved</span><span class="stat s-published-example"><b>12</b> Official example</span><span class="stat s-derived"><b>2</b> Derived</span><span class="stat s-avoid"><b>3</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">3</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="hk-brc-masked-5xxxxxxx" data-status="published-example">
+<td class="val"><div class="v"><code>5XXXXXXX-000-04-17-A</code></div><div class="type">Business Registration certificate number <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Masked certificate number on the official specimen certificates</p><p class="note">Masked, so NOT a valid number. Other specimens use 7XXXXXXX-000-02-24-A (limited partnership fund) and 3XXXXXXX-000 (certified extract).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ird.gov.hk/eng/tax/bre_vbr.htm" rel="noopener">IRD — Valid business registration certificate (specimens)</a> <span class="muted">— Inland Revenue Department</span></li><li><a href="https://www.ird.gov.hk/eng/pdf/new_main_brc.pdf" rel="noopener">IRD — Specimen business registration certificate</a> <span class="muted">— Inland Revenue Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-name-kxx-dxx-transportation" data-status="published-example">
+<td class="val"><div class="v"><code>KXX DXX TRANSPORTATION COMPANY LIMITED</code><button class="copy" type="button" data-copy="KXX DXX TRANSPORTATION COMPANY LIMITED" aria-label="Copy KXX DXX TRANSPORTATION COMPANY LIMITED">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Masked company name on the specimen certificates</p><p class="note">Also KXX DXX LIMITED PARTNERSHIP FUND in the limited partnership fund specimen.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ird.gov.hk/eng/tax/bre_vbr.htm" rel="noopener">IRD — Valid business registration certificate (specimens)</a> <span class="muted">— Inland Revenue Department</span></li><li><a href="https://www.ird.gov.hk/eng/pdf/new_main_brc.pdf" rel="noopener">IRD — Specimen business registration certificate</a> <span class="muted">— Inland Revenue Department</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+<tr id="hk-name-xx-container-transport-zh" data-status="published-example">
+<td class="val"><div class="v"><code>ＸＸ貨櫃運輸公司</code><button class="copy" type="button" data-copy="ＸＸ貨櫃運輸公司" aria-label="Copy ＸＸ貨櫃運輸公司">Copy</button></div><div class="type">Company name (Chinese)</div></td>
+<td class="what"><p>Masked Chinese company name on the specimen certificates</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ird.gov.hk/eng/tax/bre_vbr.htm" rel="noopener">IRD — Valid business registration certificate (specimens)</a> <span class="muted">— Inland Revenue Department</span></li><li><a href="https://www.ird.gov.hk/eng/pdf/new_main_brc.pdf" rel="noopener">IRD — Specimen business registration certificate</a> <span class="muted">— Inland Revenue Department</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">1</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="hk-address-ird-gloucester-road" data-status="published-example">
+<td class="val"><div class="v"><code>X/F XXX GLOUCESTER ROAD, WANCHAI, HK</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Masked business address on the specimen certificates</p><p class="note">Masked floor and house number on a real street. Another specimen uses X/F XXX CONCORDE RD KAI TAK KL. No postcode: omit cbc:PostalZone.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ird.gov.hk/eng/tax/bre_vbr.htm" rel="noopener">IRD — Valid business registration certificate (specimens)</a> <span class="muted">— Inland Revenue Department</span></li><li><a href="https://www.ird.gov.hk/eng/pdf/new_main_brc.pdf" rel="noopener">IRD — Specimen business registration certificate</a> <span class="muted">— Inland Revenue Department</span></li></ul></td>
+<td class="ubl"><code>cac:PostalAddress</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">3</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="hk-phone-74-79" data-status="derived">
+<td class="val"><div class="v"><code>+852 74xx xxxx – 79xx xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Unassigned 7(4-9)X levels held for a future longer numbering plan</p><p class="note">Unassigned, so they cannot reach a real subscriber today, but this is not a formal example range.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Levels 74–79 marked Reserved for migration in OFCA&#x27;s Numbering Plan, issue 2026-11-02 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.ofca.gov.hk/filemanager/ofca/en/content_311/no_plan.pdf" rel="noopener">Numbering Plan for Telecommunications Services in Hong Kong</a> <span class="muted">— OFCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-phone-74000000" data-status="derived">
+<td class="val"><div class="v"><code>+852 7400 0000</code><button class="copy" type="button" data-copy="+852 7400 0000" aria-label="Copy +852 7400 0000">Copy</button></div><div class="type">Phone number</div></td>
+<td class="what"><p>Number on the unassigned 74 level</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Level 74 marked Reserved for migration in OFCA&#x27;s Numbering Plan, issue 2026-11-02 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.ofca.gov.hk/filemanager/ofca/en/content_311/no_plan.pdf" rel="noopener">Numbering Plan for Telecommunications Services in Hong Kong</a> <span class="muted">— OFCA</span></li></ul></td>
+<td class="ubl"><code>cac:Contact/cbc:Telephone</code></td>
+</tr>
+<tr id="hk-email-placeholder-test" data-status="reserved">
+<td class="val"><div class="v"><code>accounts@&lt;alias&gt;.test</code></div><div class="type">Email address <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Accounts email pattern on the reserved .test domain</p><p class="note">Replace &lt;alias&gt; with a short alias for the party. example.hk and example.com.hk are unregistered today (NXDOMAIN) but not reserved by HKIRC.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><code>cac:Contact/cbc:ElectronicMail</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">1</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="hk-bic-test-xxxxhkh0" data-status="reserved">
+<td class="val"><div class="v"><code>XXXXHKH0</code><button class="copy" type="button" data-copy="XXXXHKH0" aria-label="Copy XXXXHKH0">Copy</button></div><div class="type">BIC</div></td>
+<td class="what"><p>Test BIC for Hong Kong (8th character 0)</p><p class="note">ISO 9362 convention — &#x27;0&#x27; as second character of the location code marks a test BIC.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="ISO 9362 BIC format">✓ bic</span><span class="chk ok" title="ISO 9362 test BIC (8th character &#x27;0&#x27;)">✓ bic-test</span></td>
+<td><ul class="src"><li><a href="https://en.wikipedia.org/wiki/ISO_9362" rel="noopener">ISO 9362 (Wikipedia)</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><code>cac:FinancialInstitutionBranch/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">8</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="hk-hkid-specimen-d899336-6" data-status="published-example">
+<td class="val"><div class="v"><code>D899336(6)</code><button class="copy" type="button" data-copy="D899336(6)" aria-label="Copy D899336(6)">Copy</button></div><div class="type">HKID number (specimen)</div></td>
+<td class="what"><p>Number on the labelled permanent ID card diagram (齊煥正 CHAI, Wun Ching)</p><p class="note">Fails the widely used check character (correct would be (0)), apparently deliberately — official and obviously fake.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Hong Kong ID check character (unofficial algorithm)">✗ hk-hkid</span></td>
+<td><ul class="src"><li><a href="https://www.immd.gov.hk/pdforms/rop133.pdf" rel="noopener">ROP133 — Information on the front of the HKID card</a> <span class="muted">— Immigration Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-hkid-specimen-z683365-5" data-status="published-example">
+<td class="val"><div class="v"><code>Z683365(5)</code><button class="copy" type="button" data-copy="Z683365(5)" aria-label="Copy Z683365(5)">Copy</button></div><div class="type">HKID number (specimen)</div></td>
+<td class="what"><p>Adult permanent ID card specimen (樂永晴 LOK, Wing Ching)</p><p class="note">Fails the widely used check character (correct would be (A)).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Hong Kong ID check character (unofficial algorithm)">✗ hk-hkid</span></td>
+<td><ul class="src"><li><a href="https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf" rel="noopener">Sample of New Smart Identity Card (press release 2025-04-28, Annex II)</a> <span class="muted">— HKSAR Government</span></li><li><a href="https://www.immd.gov.hk/eng/services/hkid/smartid.html" rel="noopener">Smart Identity Card</a> <span class="muted">— Immigration Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-hkid-specimen-z691338-2" data-status="published-example">
+<td class="val"><div class="v"><code>Z691338(2)</code><button class="copy" type="button" data-copy="Z691338(2)" aria-label="Copy Z691338(2)">Copy</button></div><div class="type">HKID number (specimen)</div></td>
+<td class="what"><p>Juvenile permanent ID card specimen (林日朗 LAM, Yat Long)</p><p class="note">Fails the widely used check character (correct would be (6)).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Hong Kong ID check character (unofficial algorithm)">✗ hk-hkid</span></td>
+<td><ul class="src"><li><a href="https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf" rel="noopener">Sample of New Smart Identity Card (press release 2025-04-28, Annex II)</a> <span class="muted">— HKSAR Government</span></li><li><a href="https://www.immd.gov.hk/eng/services/hkid/smartid.html" rel="noopener">Smart Identity Card</a> <span class="muted">— Immigration Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-hkid-specimen-z982600-5" data-status="published-example">
+<td class="val"><div class="v"><code>Z982600(5)</code><button class="copy" type="button" data-copy="Z982600(5)" aria-label="Copy Z982600(5)">Copy</button></div><div class="type">HKID number (specimen)</div></td>
+<td class="what"><p>Minor permanent ID card specimen (余樂芯 YU, Lok Sum)</p><p class="note">Fails the widely used check character (correct would be (A)).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Hong Kong ID check character (unofficial algorithm)">✗ hk-hkid</span></td>
+<td><ul class="src"><li><a href="https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf" rel="noopener">Sample of New Smart Identity Card (press release 2025-04-28, Annex II)</a> <span class="muted">— HKSAR Government</span></li><li><a href="https://www.immd.gov.hk/eng/services/hkid/smartid.html" rel="noopener">Smart Identity Card</a> <span class="muted">— Immigration Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-hkid-specimen-g908833-1" data-status="published-example">
+<td class="val"><div class="v"><code>G908833(1)</code><button class="copy" type="button" data-copy="G908833(1)" aria-label="Copy G908833(1)">Copy</button></div><div class="type">HKID number (specimen)</div></td>
+<td class="what"><p>Adult non-permanent ID card specimen (WILLIAMS, Peter)</p><p class="note">Fails the widely used check character (correct would be (3)).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Hong Kong ID check character (unofficial algorithm)">✗ hk-hkid</span></td>
+<td><ul class="src"><li><a href="https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf" rel="noopener">Sample of New Smart Identity Card (press release 2025-04-28, Annex II)</a> <span class="muted">— HKSAR Government</span></li><li><a href="https://www.immd.gov.hk/eng/services/hkid/smartid.html" rel="noopener">Smart Identity Card</a> <span class="muted">— Immigration Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-hkid-specimen-z988132-8" data-status="published-example">
+<td class="val"><div class="v"><code>Z988132(8)</code><button class="copy" type="button" data-copy="Z988132(8)" aria-label="Copy Z988132(8)">Copy</button></div><div class="type">HKID number (specimen)</div></td>
+<td class="what"><p>Juvenile non-permanent ID card specimen (林日朗 LAM, Yat Long)</p><p class="note">Fails the widely used check character (correct would be (9)).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Hong Kong ID check character (unofficial algorithm)">✗ hk-hkid</span></td>
+<td><ul class="src"><li><a href="https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf" rel="noopener">Sample of New Smart Identity Card (press release 2025-04-28, Annex II)</a> <span class="muted">— HKSAR Government</span></li><li><a href="https://www.immd.gov.hk/eng/services/hkid/smartid.html" rel="noopener">Smart Identity Card</a> <span class="muted">— Immigration Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-hkid-specimen-z690266-6" data-status="published-example">
+<td class="val"><div class="v"><code>Z690266(6)</code><button class="copy" type="button" data-copy="Z690266(6)" aria-label="Copy Z690266(6)">Copy</button></div><div class="type">HKID number (specimen)</div></td>
+<td class="what"><p>Overseas-issued adult ID card specimen (LOK, Wing Ching)</p><p class="note">Fails the widely used check character (correct would be (A)).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Hong Kong ID check character (unofficial algorithm)">✗ hk-hkid</span></td>
+<td><ul class="src"><li><a href="https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf" rel="noopener">Sample of New Smart Identity Card (press release 2025-04-28, Annex II)</a> <span class="muted">— HKSAR Government</span></li><li><a href="https://www.immd.gov.hk/eng/services/hkid/smartid.html" rel="noopener">Smart Identity Card</a> <span class="muted">— Immigration Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-hkid-specimen-z988300-8" data-status="published-example">
+<td class="val"><div class="v"><code>Z988300(8)</code><button class="copy" type="button" data-copy="Z988300(8)" aria-label="Copy Z988300(8)">Copy</button></div><div class="type">HKID number (specimen)</div></td>
+<td class="what"><p>Overseas-issued minor ID card specimen (CHEUK, Chi Yin)</p><p class="note">Fails the widely used check character (correct would be (3)).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk bad" title="Hong Kong ID check character (unofficial algorithm)">✗ hk-hkid</span></td>
+<td><ul class="src"><li><a href="https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf" rel="noopener">Sample of New Smart Identity Card (press release 2025-04-28, Annex II)</a> <span class="muted">— HKSAR Government</span></li><li><a href="https://www.immd.gov.hk/eng/services/hkid/smartid.html" rel="noopener">Smart Identity Card</a> <span class="muted">— Immigration Department</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>Business Registration number (商業登記號碼, BRN)</b><p class="note">No check-digit algorithm is published for the 8-digit BRN; validate with ^\d{8}$ only. Since 2023-12-27 the BRN is also the Unique Business Identifier (replacing the company registration number) and Hong Kong&#x27;s entity TIN.</p></td><td>8 digits; full certificate number 99999999-&amp;&amp;&amp;-&amp;&amp;-&amp;&amp;-&amp; (branch, month, year, check character)</td><td><span class="muted">—</span></td><td>Inland Revenue Department</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID</code><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>Hong Kong Identity Card number (香港身份證號碼, HKID)</b><p class="note">The check algorithm is not published by ImmD (widely used algorithm: letters A=10…Z=35, a single letter padded with 36, weights 9…2, 11 − (sum mod 11), 10 → A, 11 → 0). No validator in tools/checks.py yet.</p></td><td>1–2 letters + 6 digits + check character (0-9 or A) in brackets, e.g. A123456(3)</td><td><span class="muted">—</span></td><td>Immigration Department</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Bank account</b></td><td>3-digit bank (clearing) code + 3-digit branch code + account number; no IBAN</td><td><span class="muted">—</span></td><td>HKICL</td><td class='ubl'><code>cac:PayeeFinancialAccount/cbc:ID</code></td></tr><tr><td><b>Postcode</b><p class="note">Omit cbc:PostalZone; use country code HK. Address order is name, flat/floor, building, number + street, district, region (HONG KONG / KOWLOON / NEW TERRITORIES).</p></td><td>None — Hong Kong has no postcodes</td><td><span class="muted">—</span></td><td></td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">3</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="hk-avoid-phone-special-blocks" data-status="avoid">
+<td class="val"><div class="v"><code>2020 xxxx, 2222 xxxx, 3456 xxxx, 4567 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Repeating or sequential &quot;golden number&quot; blocks</p><p class="note warn">Reserved by OFCA pending a special number arrangement (auction); may be assigned later.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ofca.gov.hk/filemanager/ofca/en/content_311/no_plan.pdf" rel="noopener">Numbering Plan for Telecommunications Services in Hong Kong</a> <span class="muted">— OFCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-avoid-phone-invented" data-status="avoid">
+<td class="val"><div class="v"><code>+852 xxxx xxxx (invented)</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Arbitrary invented Hong Kong numbers</p><p class="note warn">No range is reserved for fiction or examples; any invented number outside the 74–79 levels may be real.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ofca.gov.hk/filemanager/ofca/en/content_311/no_plan.pdf" rel="noopener">Numbering Plan for Telecommunications Services in Hong Kong</a> <span class="muted">— OFCA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="hk-avoid-bank-code-003-004-012" data-status="avoid">
+<td class="val"><div class="v"><code>003, 004, 012</code></div><div class="type">Bank code</div></td>
+<td class="what"><p>Bank codes seen in example account numbers</p><p class="note warn">Real banks (Standard Chartered, HSBC, Bank of China (Hong Kong)); every code on the HKICL list is a real bank and no fictitious code exists.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.hkicl.com.hk/files/page_file/118/12916/Clearing%20Code%20and%20Branch%20Code%20(3%20Oct%202026)%20with%20Tel%20No.pdf" rel="noopener">HKICL — Clearing Code and Branch Code (3 Oct 2026)</a> <span class="muted">— HKICL</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Hong Kong with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BHK%5D+&amp;country=HK">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

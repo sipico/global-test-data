@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>South Africa — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Africa</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇿🇦</span> South Africa <span class="native">Suid-Afrika</span></h1>
+<p class="lede">SARS publishes worked examples that pass its own modulus-10 (Luhn) check digit: an income tax reference, a PAYE/SDL/UIF reference and an ID number. ICASA reserves the geographic exchange codes 114 to 117 for network testing in every area code (test numbers, not a drama range). There is no official example VAT number or company registration number, and no fictitious town or postcode; the UPU addressing examples use real towns. Luhn-valid VAT numbers starting with 4 (e.g. 4000000002) were not checked against the SARS register (interactive lookup only) and are left out. South Africa does not use IBAN, and no e-invoicing standard has been chosen yet.</p>
+<p class="meta">Updated 2026-11-05 · searched in en, af ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-africa.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/za.yaml">Data file</a> ·
+<a href="../data/za.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>4</b> Reserved</span><span class="stat s-published-example"><b>9</b> Official example</span><span class="stat s-avoid"><b>2</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">4</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="za-taxref-0001339050" data-status="published-example">
+<td class="val"><div class="v"><code>0001339050</code><button class="copy" type="button" data-copy="0001339050" aria-label="Copy 0001339050">Copy</button></div><div class="type">Income tax reference number</div></td>
+<td class="what"><p>Worked example of the SARS modulus-10 check</p><p class="note">Existence not checked (SARS has no open lookup).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Luhn mod-10">✓ luhn</span></td>
+<td><ul class="src"><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)</a> <span class="muted">— SARS</span></li><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v23.0.0</a> <span class="muted">— SARS</span></li></ul></td>
+<td class="ubl"><code>cac:PartyIdentification/cbc:ID</code></td>
+</tr>
+<tr id="za-paye-7230767891" data-status="published-example">
+<td class="val"><div class="v"><code>7230767891</code><button class="copy" type="button" data-copy="7230767891" aria-label="Copy 7230767891">Copy</button></div><div class="type">PAYE reference number</div></td>
+<td class="what"><p>Worked example of an employer PAYE reference</p><p class="note">Passes modulus 10 after the first digit is replaced by 4 (4230767891).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="SARS PAYE/SDL/UIF reference (Luhn with leading 4)">✓ za-paye</span></td>
+<td><ul class="src"><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)</a> <span class="muted">— SARS</span></li><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v23.0.0</a> <span class="muted">— SARS</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-sdl-l230767891" data-status="published-example">
+<td class="val"><div class="v"><code>L230767891</code><button class="copy" type="button" data-copy="L230767891" aria-label="Copy L230767891">Copy</button></div><div class="type">SDL reference number</div></td>
+<td class="what"><p>Skills Development Levy reference matching the PAYE example</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="SARS PAYE/SDL/UIF reference (Luhn with leading 4)">✓ za-paye</span></td>
+<td><ul class="src"><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)</a> <span class="muted">— SARS</span></li><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v23.0.0</a> <span class="muted">— SARS</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-uif-u230767891" data-status="published-example">
+<td class="val"><div class="v"><code>U230767891</code><button class="copy" type="button" data-copy="U230767891" aria-label="Copy U230767891">Copy</button></div><div class="type">UIF reference number</div></td>
+<td class="what"><p>Unemployment Insurance Fund reference matching the PAYE example</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="SARS PAYE/SDL/UIF reference (Luhn with leading 4)">✓ za-paye</span></td>
+<td><ul class="src"><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)</a> <span class="muted">— SARS</span></li><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v23.0.0</a> <span class="muted">— SARS</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">4</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="za-address-upu-fish-hoek" data-status="published-example">
+<td class="val"><div class="v"><code>Mr P. Rossouw / 442 Thirteenth Avenue / FISH HOEK / 7975</code></div><div class="type">Address example (street) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a street address</p><p class="note">Real town and postcode. Postcode on its own last line, locality in upper case, no punctuation.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf" rel="noopener">UPU Postal addressing systems — South Africa (02/2010)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-address-upu-lyndhurst" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. Jimmy Jones / 1023 Collet Heights / 449 Collet Drive / LYNDHURST / 1852</code></div><div class="type">Address example (building) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of an address in a named building</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf" rel="noopener">UPU Postal addressing systems — South Africa (02/2010)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-address-upu-khayelitsha" data-status="published-example">
+<td class="val"><div class="v"><code>TV Matemala / 9285 Block E / KHAYELITSHA / 1982</code></div><div class="type">Address example (informal area) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of an address in an informal settlement</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf" rel="noopener">UPU Postal addressing systems — South Africa (02/2010)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-address-upu-ntabankulu" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. Joko Oxo / c/o Bamba Zonke primary school / 960401 Kwatsita Village / NTABANKULU / 5170</code></div><div class="type">Address example (rural) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a rural address</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf" rel="noopener">UPU Postal addressing systems — South Africa (02/2010)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">4</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="za-phone-0xx-114" data-status="reserved">
+<td class="val"><div class="v"><code>0XX 114 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Geographic numbers reserved for network testing (exchange code 114)</p><p class="note">Any geographic area code, e.g. 021 114 0000 = +27 21 114 0000 (Cape Town). Test numbers may reach operator test equipment; there is no drama range. libphonenumber accepts them as fixed-line.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icasa.org.za/uploads/files/NumberingPlanReg.pdf" rel="noopener">ICASA Numbering Plan Regulations 2016 (reg. 15(4))</a> <span class="muted">— ICASA</span></li><li><a href="https://www.icasa.org.za/uploads/files/Amendment-of-the-Numbering-Plan-Regulations-2016.pdf" rel="noopener">Amendment of the Numbering Plan Regulations 2016 (Gazette 48328, 2023)</a> <span class="muted">— ICASA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-phone-0xx-115" data-status="reserved">
+<td class="val"><div class="v"><code>0XX 115 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Geographic numbers reserved for network testing (exchange code 115)</p><p class="note">E.g. 011 115 0000 = +27 11 115 0000 (Johannesburg).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icasa.org.za/uploads/files/NumberingPlanReg.pdf" rel="noopener">ICASA Numbering Plan Regulations 2016 (reg. 15(4))</a> <span class="muted">— ICASA</span></li><li><a href="https://www.icasa.org.za/uploads/files/Amendment-of-the-Numbering-Plan-Regulations-2016.pdf" rel="noopener">Amendment of the Numbering Plan Regulations 2016 (Gazette 48328, 2023)</a> <span class="muted">— ICASA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-phone-0xx-116" data-status="reserved">
+<td class="val"><div class="v"><code>0XX 116 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Geographic numbers reserved for network testing (exchange code 116)</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icasa.org.za/uploads/files/NumberingPlanReg.pdf" rel="noopener">ICASA Numbering Plan Regulations 2016 (reg. 15(4))</a> <span class="muted">— ICASA</span></li><li><a href="https://www.icasa.org.za/uploads/files/Amendment-of-the-Numbering-Plan-Regulations-2016.pdf" rel="noopener">Amendment of the Numbering Plan Regulations 2016 (Gazette 48328, 2023)</a> <span class="muted">— ICASA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-phone-0xx-117" data-status="reserved">
+<td class="val"><div class="v"><code>0XX 117 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Geographic numbers reserved for network testing (exchange code 117)</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.icasa.org.za/uploads/files/NumberingPlanReg.pdf" rel="noopener">ICASA Numbering Plan Regulations 2016 (reg. 15(4))</a> <span class="muted">— ICASA</span></li><li><a href="https://www.icasa.org.za/uploads/files/Amendment-of-the-Numbering-Plan-Regulations-2016.pdf" rel="noopener">Amendment of the Numbering Plan Regulations 2016 (Gazette 48328, 2023)</a> <span class="muted">— ICASA</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">1</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="za-id-8001015009087" data-status="published-example">
+<td class="val"><div class="v"><code>8001015009087</code><button class="copy" type="button" data-copy="8001015009087" aria-label="Copy 8001015009087">Copy</button></div><div class="type">ID number</div></td>
+<td class="what"><p>Worked example of the ID number check digit (male, born 1980-01-01)</p><p class="note">SARS calls it a &quot;modulus 13&quot; check; it is Luhn. A real person could hold this number, and it is widely copied as an &quot;example ID&quot;; leave the personal ID out where you can.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="South African ID number, Luhn">✓ za-id</span></td>
+<td><ul class="src"><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)</a> <span class="muted">— SARS</span></li><li><a href="https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf" rel="noopener">SARS PAYE Employer Reconciliation BRS v23.0.0</a> <span class="muted">— SARS</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>Income tax reference number</b><p class="note">SARS &quot;modulus 10&quot; (PAYE Employer Reconciliation BRS, Appendix B) is Luhn on 10 digits. 9 = trusts and similar (Nature of Person E/G/H).</p></td><td>10 digits, starting with 0, 1, 2, 3 or 9</td><td><code title="Luhn mod-10">luhn</code></td><td>South African Revenue Service (SARS)</td><td class='ubl'><code>cac:PartyIdentification/cbc:ID</code></td></tr><tr><td><b>PAYE / SDL / UIF reference number</b><p class="note">Check digit = modulus 10 (Luhn) after replacing the first character with 4.</p></td><td>7, L or U + 9 digits (same last 9 digits for all three)</td><td><span class="muted">—</span></td><td>SARS</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>VAT registration number</b><p class="note">Check digit is probably the same modulus 10 rule; not confirmed for VAT in a SARS document.</p></td><td>10 digits starting with 4</td><td><span class="muted">—</span></td><td>SARS</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>Enterprise (company registration) number</b><p class="note">No check digit. Type codes (secondary sources, not verified) 06 public, 07 private (Pty) Ltd, 08 non-profit, 21 Inc, 23 close corporation.</p></td><td>YYYY/NNNNNN/TT (year / serial / type code)</td><td><span class="muted">—</span></td><td>Companies and Intellectual Property Commission (CIPC)</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID</code></td></tr><tr><td><b>ID number</b><p class="note">SSSS 5000-9999 = male; C 0 = citizen; Z = Luhn check digit.</p></td><td>13 digits, YYMMDD SSSS C A Z</td><td><code title="South African ID number, Luhn">za-id</code></td><td>Department of Home Affairs</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">2</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="za-avoid-vat-4734567892" data-status="avoid">
+<td class="val"><div class="v"><code>4734567892</code></div><div class="type">VAT registration number</div></td>
+<td class="what"><p>Seen as an &quot;example VAT number&quot; on a third-party site (taxid.pro)</p><p class="note warn">Fails the SARS modulus-10 check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Luhn mod-10">✗ luhn</span></td>
+<td><ul class="src"><li><a href="https://secure.sarsefiling.co.za/vatvendorsearch/application/HELP.html" rel="noopener">SARS VAT vendor search — help</a> <span class="muted">— SARS</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="za-avoid-address-dbsa" data-status="avoid">
+<td class="val"><div class="v"><code>Accounts / Development Bank of SA Limited / PO Box 92214 / PROTEA PARK / 0305</code></div><div class="type">Address example (PO box) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>PO box example in the UPU addressing sheet</p><p class="note warn">Real organisation (Development Bank of Southern Africa).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf" rel="noopener">UPU Postal addressing systems — South Africa (02/2010)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for South Africa with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BZA%5D+&amp;country=ZA">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

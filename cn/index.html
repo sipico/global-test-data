@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>China (mainland) — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Asia</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇨🇳</span> China (mainland) <span class="native">中国大陆</span></h1>
+<p class="lede">Mainland China reserves no identifiers, telephone numbers or postcodes for fiction or tests. The national standards publish worked examples instead: the Unified Social Credit Code example 91350100M000100Y43 from GB 32100-2015 (its existence could not be checked, because the national register needs a captcha) and two resident ID numbers from GB 11643-1999. Deriving more USCCs is easy, but without a register lookup they may belong to real entities, so none are listed. No fictitious bank (CNAPS) code, customs party code or postcode was found; China Post&#x27;s 999077/999078/999079 are internal sorting codes for Hong Kong, Macao and Taiwan. For GLN/GTIN use the GS1 prefix 952 (see the global file); GS1 China prefixes 690–699 are real.</p>
+<p class="meta">Updated 2026-11-05 · searched in zh, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-china-hk-taiwan.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/cn.yaml">Data file</a> ·
+<a href="../data/cn.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>1</b> Reserved</span><span class="stat s-published-example"><b>2</b> Official example</span><span class="stat s-avoid"><b>3</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">1</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cn-uscc-91350100m000100y43" data-status="published-example">
+<td class="val"><div class="v"><code>91350100M000100Y43</code><button class="copy" type="button" data-copy="91350100M000100Y43" aria-label="Copy 91350100M000100Y43">Copy</button></div><div class="type">USCC</div></td>
+<td class="what"><p>Worked example of an enterprise code (Fuzhou) in the national standard</p><p class="note">GB 32100-2015 Appendix B. The embedded organisation code M000100Y-4 also passes the GB 11714 check. Existence NOT verified: the national register (gsxt.gov.cn) needs a captcha. Widely reused as a test value; use it for one Chinese party at most. It is also the party&#x27;s taxpayer identification number.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Unified Social Credit Code (GB 32100) check character">✓ cn-uscc</span></td>
+<td><ul class="src"><li><a href="https://zh.wikisource.org/wiki/GB_32100-2015_%E6%B3%95%E4%BA%BA%E5%92%8C%E5%85%B6%E4%BB%96%E7%BB%84%E7%BB%87%E7%BB%9F%E4%B8%80%E7%A4%BE%E4%BC%9A%E4%BF%A1%E7%94%A8%E4%BB%A3%E7%A0%81%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99" rel="noopener">GB 32100-2015 法人和其他组织统一社会信用代码编码规则 (full text)</a> <span class="muted">— Wikisource</span></li><li><a href="https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=24691C25985C1073D3A7C85629378AC0" rel="noopener">GB 32100-2015 — national standard record</a> <span class="muted">— State Administration for Market Regulation</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID</code><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cn-email-placeholder-test" data-status="reserved">
+<td class="val"><div class="v"><code>fapiao@&lt;party-alias&gt;.test</code></div><div class="type">Email address <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Invoice email pattern on the reserved .test domain</p><p class="note">Replace &lt;party-alias&gt; with a short alias for the party (fapiao = invoice). No CNNIC-reserved example domain exists.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">1</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cn-resident-id-440524188001010014" data-status="published-example">
+<td class="val"><div class="v"><code>440524188001010014</code><button class="copy" type="button" data-copy="440524188001010014" aria-label="Copy 440524188001010014">Copy</button></div><div class="type">Resident identity number</div></td>
+<td class="what"><p>Worked example (male, born 1880-01-01) in the national standard</p><p class="note">GB 11643-1999 Appendix A. Safe choice: birth year 1880, and address code 440524 (Chaoyang county, Shantou) is no longer a current division code.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Resident ID (GB 11643) ISO 7064 MOD 11-2">✓ cn-resident-id</span></td>
+<td><ul class="src"><li><a href="https://zh.wikisource.org/wiki/GB_11643-1999_%E5%85%AC%E6%B0%91%E8%BA%AB%E4%BB%BD%E5%8F%B7%E7%A0%81" rel="noopener">GB 11643-1999 公民身份号码 (full text)</a> <span class="muted">— Wikisource</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>Unified Social Credit Code (统一社会信用代码, USCC)</b><p class="note">Check character = 31 − (Σ Ci·Wi mod 31) with Wi = 3^(i−1) mod 31; 31 → 0. No China-specific ISO 6523 ICD was found, so use cbc:CompanyID without schemeID.</p></td><td>18 characters from 0-9 and A-Y without I, O, S, V, Z: registration authority (9 = market regulation) + entity category (1 = enterprise) + 6-digit division code (GB/T 2260) + 9-character organisation code (GB 11714) + check character</td><td><code title="Unified Social Credit Code (GB 32100) check character">cn-uscc</code></td><td>State Administration for Market Regulation (GB 32100-2015)</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID</code></td></tr><tr><td><b>Taxpayer identification number (纳税人识别号)</b><p class="note">Since the 2015 &quot;three certificates in one&quot; reform; the e-invoice field is labelled 统一社会信用代码/纳税人识别号.</p></td><td>Same as the USCC for organisations</td><td><code title="Unified Social Credit Code (GB 32100) check character">cn-uscc</code></td><td>State Taxation Administration</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>Resident identity number (公民身份号码)</b><p class="note">ISO 7064 MOD 11-2.</p></td><td>6-digit address code + 8-digit birth date (YYYYMMDD) + 3-digit sequence (odd = male, even = female) + check character (0-9 or X)</td><td><code title="Resident ID (GB 11643) ISO 7064 MOD 11-2">cn-resident-id</code></td><td>Ministry of Public Security (GB 11643-1999)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Fully digitalised e-invoice number (数电发票号码)</b><p class="note">No example number is published; the official sample (票样) has blank layouts only. Mandatory face fields include 发票号码, 开票日期, 购买方信息, 销售方信息, 项目名称, 数量, 单价, 金额, 税率/征收率, 税额, 价税合计, 开票人.</p></td><td>20 digits — year (2) + provincial tax bureau area code (2) + issuing channel (1) + sequence (15)</td><td><span class="muted">—</span></td><td>State Taxation Administration (公告2024年第11号)</td><td class='ubl'><code>cbc:ID</code></td></tr><tr><td><b>Postal code (邮政编码)</b></td><td>6 digits (province, postal area, county, delivery office)</td><td><span class="muted">—</span></td><td>China Post (GB/T 7156)</td><td class='ubl'><code>cac:PostalAddress/cbc:PostalZone</code></td></tr><tr><td><b>Vehicle plate (机动车号牌)</b></td><td>Province abbreviation + authority letter + 5 serial characters (6 for new-energy vehicles); serials never use I or O</td><td><span class="muted">—</span></td><td>Ministry of Public Security (GA 36-2018)</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">3</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cn-avoid-resident-id-11010519491231002x" data-status="avoid">
+<td class="val"><div class="v"><code>11010519491231002X</code></div><div class="type">Resident identity number</div></td>
+<td class="what"><p>Other worked example (female, Beijing Chaoyang) in the national standard</p><p class="note warn">Valid and realistic (current address code 110105, plausible birth date); may belong to a real person. Use 440524188001010014.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Resident ID (GB 11643) ISO 7064 MOD 11-2">✓ cn-resident-id</span></td>
+<td><ul class="src"><li><a href="https://zh.wikisource.org/wiki/GB_11643-1999_%E5%85%AC%E6%B0%91%E8%BA%AB%E4%BB%BD%E5%8F%B7%E7%A0%81" rel="noopener">GB 11643-1999 公民身份号码 (full text)</a> <span class="muted">— Wikisource</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cn-avoid-phone-invented" data-status="avoid">
+<td class="val"><div class="v"><code>+86 1xx xxxx xxxx, +86 10 xxxx xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Invented mainland mobile or Beijing landline numbers</p><p class="note warn">MIIT reserves no range for fiction or documentation; any invented number may be real. The newest dedicated range, 700, is a real number-protection service.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.miit.gov.cn/jgsj/xgj/wjfb/art/2020/art_eb0adf5b6e7148cbb70802b264878b1e.html" rel="noopener">电信网编号计划（2017年版）</a> <span class="muted">— MIIT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cn-avoid-domain-example-com-cn" data-status="avoid">
+<td class="val"><div class="v"><code>example.com.cn, test.cn, ceshi.cn, shili.cn, example.cn</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Chinese-looking example domains</p><p class="note warn">Registered (NS records present, DNS checked 2026-11-05); example.cn returns SERVFAIL, so it is probably registered too. Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for China (mainland) with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BCN%5D+&amp;country=CN">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

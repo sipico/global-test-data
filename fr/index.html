@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>France — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Europe</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇫🇷</span> France</h1>
+<p class="lede">France has the best official source of fictitious company identifiers found so far: the FNFE-MPE example invoices for the national e-invoicing reform use SIRENs that pass the check digit and are not in the company register. The telecoms regulator ARCEP reserves six phone number blocks for fiction. There are no fictitious towns or postcodes: La Poste&#x27;s own examples put invented people and companies at real communes.</p>
+<p class="meta">Updated 2026-11-05 · searched in fr, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-fr.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/fr.yaml">Data file</a> ·
+<a href="../data/fr.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>6</b> Reserved</span><span class="stat s-published-example"><b>14</b> Official example</span><span class="stat s-derived"><b>1</b> Derived</span><span class="stat s-avoid"><b>6</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">9</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="fr-siren-100000009" data-status="published-example">
+<td class="val"><div class="v"><code>100000009</code><button class="copy" type="button" data-copy="100000009" aria-label="Copy 100000009">Copy</button></div><div class="type">SIREN</div></td>
+<td class="what"><p>Seller company number in the official e-invoicing examples</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="SIREN: 9 digits, Luhn">✓ fr-siren</span><span class="chk ver">✓ Not in the national company register, recherche-entreprises.api.gouv.fr (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0002</code></td>
+</tr>
+<tr id="fr-siren-200000008" data-status="published-example">
+<td class="val"><div class="v"><code>200000008</code><button class="copy" type="button" data-copy="200000008" aria-label="Copy 200000008">Copy</button></div><div class="type">SIREN</div></td>
+<td class="what"><p>Buyer company number in the official e-invoicing examples</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="SIREN: 9 digits, Luhn">✓ fr-siren</span><span class="chk ver">✓ Not in the national company register, recherche-entreprises.api.gouv.fr (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0002</code></td>
+</tr>
+<tr id="fr-siren-111111118" data-status="published-example">
+<td class="val"><div class="v"><code>111111118</code><button class="copy" type="button" data-copy="111111118" aria-label="Copy 111111118">Copy</button></div><div class="type">SIREN</div></td>
+<td class="what"><p>Third-party company number (multi-vendor case) in the official examples</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="SIREN: 9 digits, Luhn">✓ fr-siren</span><span class="chk ver">✓ Not in the national company register, recherche-entreprises.api.gouv.fr (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-siret-11111111800019" data-status="published-example">
+<td class="val"><div class="v"><code>11111111800019</code><button class="copy" type="button" data-copy="11111111800019" aria-label="Copy 11111111800019">Copy</button></div><div class="type">SIRET</div></td>
+<td class="what"><p>Establishment number belonging to SIREN 111111118</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="SIRET: 14 digits, Luhn">✓ fr-siret</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><code>cac:PartyIdentification/cbc:ID @schemeID=0009</code></td>
+</tr>
+<tr id="fr-vat-fr88100000009" data-status="published-example">
+<td class="val"><div class="v"><code>FR88100000009</code><button class="copy" type="button" data-copy="FR88100000009" aria-label="Copy FR88100000009">Copy</button></div><div class="type">VAT number</div></td>
+<td class="what"><p>VAT number for SIREN 100000009</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="French VAT key (12 + 3 × (SIREN mod 97)) mod 97">✓ fr-vat</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="fr-vat-fr37200000008" data-status="published-example">
+<td class="val"><div class="v"><code>FR37200000008</code><button class="copy" type="button" data-copy="FR37200000008" aria-label="Copy FR37200000008">Copy</button></div><div class="type">VAT number</div></td>
+<td class="what"><p>VAT number for SIREN 200000008</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="French VAT key (12 + 3 × (SIREN mod 97)) mod 97">✓ fr-vat</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="fr-vat-fr44111111118" data-status="published-example">
+<td class="val"><div class="v"><code>FR44111111118</code><button class="copy" type="button" data-copy="FR44111111118" aria-label="Copy FR44111111118">Copy</button></div><div class="type">VAT number</div></td>
+<td class="what"><p>VAT number for SIREN 111111118</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="French VAT key (12 + 3 × (SIREN mod 97)) mod 97">✓ fr-vat</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="fr-endpoint-100000009-statuts" data-status="published-example">
+<td class="val"><div class="v"><code>100000009_STATUTS</code><button class="copy" type="button" data-copy="100000009_STATUTS" aria-label="Copy 100000009_STATUTS">Copy</button></div><div class="type">E-invoicing address</div></td>
+<td class="what"><p>Electronic address with suffix, used for lifecycle status messages</p><p class="note">The examples also use 100000009_AUTOFACT for self-billing and the plain SIREN as main address.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0225</code></td>
+</tr>
+<tr id="fr-name-le-vendeur" data-status="published-example">
+<td class="val"><div class="v"><code>LE VENDEUR</code><button class="copy" type="button" data-copy="LE VENDEUR" aria-label="Copy LE VENDEUR">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Seller name in the official examples (&quot;the seller&quot;)</p><p class="note">Other names used are LE CLIENT, AGRI1 and COOP1. La Poste&#x27;s addressing examples use Société DUPONT.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">4</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="fr-address-laposte-private" data-status="published-example">
+<td class="val"><div class="v"><code>Monsieur Jean DELORME / Appartement 2 / ENTREE A BATIMENT JONQUILLE / 25 RUE DE L&#x27;EGLISE / CAUDOS / 33380 MIOS</code></div><div class="type">Address example (private person) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>La Poste&#x27;s own example of a correctly formatted private address</p><p class="note">Invented person at a real commune (Mios, Gironde). Lines in AFNOR NF Z10-011 order, max. 38 characters each.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://lastation.laposte.fr/sites/p8_u1/files/2023-03/SP8855-Volume%202_V1.11%20-%20Adressage%20des%20plis.pdf" rel="noopener">La Poste SP 8855 vol. 2 v1.11 — Adressage des plis</a> <span class="muted">— La Poste</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-address-laposte-company" data-status="published-example">
+<td class="val"><div class="v"><code>Société DUPONT / Monsieur Martin Service Achats / ZONE INDUSTRIELLE OUEST / 35 IMPASSE DES GABARRES / BP 18 ARVEYRES / 33506 LIBOURNE CEDEX</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>La Poste&#x27;s own example of a company address with PO box and CEDEX</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://lastation.laposte.fr/sites/p8_u1/files/2023-03/SP8855-Volume%202_V1.11%20-%20Adressage%20des%20plis.pdf" rel="noopener">La Poste SP 8855 vol. 2 v1.11 — Adressage des plis</a> <span class="muted">— La Poste</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-postcode-unused-00" data-status="derived">
+<td class="val"><div class="v"><code>00xxx, 96xxx, 99xxx</code></div><div class="type">Postcode range <span class="kind">range</span></div></td>
+<td class="what"><p>First two digits not used by any geographic postcode</p><p class="note">Such postcodes pass a 5-digit format check but fail any check that the postcode exists. 75000 is also not a real postcode.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Checked against La Poste&#x27;s Base officielle des codes postaux, 6,328 postcodes (2026-11-05); CEDEX codes not checked</span></td>
+<td><ul class="src"><li><a href="https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux" rel="noopener">Base officielle des codes postaux (laposte-hexasmal)</a> <span class="muted">— La Poste</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-town-ma-ville" data-status="published-example">
+<td class="val"><div class="v"><code>MA VILLE</code><button class="copy" type="button" data-copy="MA VILLE" aria-label="Copy MA VILLE">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Invented town name used in the official e-invoicing examples</p><p class="note">Used with the real postcode 06000. TRIFOUILLIS LES OIES and PERPETTE LES OIES are also not communes and are recognisable French joke names.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Not a commune name in La Poste&#x27;s postcode file (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">7</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="fr-phone-0199-00" data-status="reserved">
+<td class="val"><div class="v"><code>01 99 00 xx xx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Île-de-France numbers reserved for audiovisual works</p><p class="note">Never assigned and cannot be called. International format +33 1 99 00 xx xx.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.arcep.fr/uploads/tx_gsavis/18-0881.pdf" rel="noopener">ARCEP décision 2018-0881 (plan national de numérotation, art. 2.5.12)</a> <span class="muted">— ARCEP</span></li><li><a href="https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043910280" rel="noopener">Décision n° 2021-0532 (Légifrance)</a> <span class="muted">— Légifrance</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-phone-0261-91" data-status="reserved">
+<td class="val"><div class="v"><code>02 61 91 xx xx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>North-West, La Réunion and Mayotte numbers reserved for audiovisual works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.arcep.fr/uploads/tx_gsavis/18-0881.pdf" rel="noopener">ARCEP décision 2018-0881 (plan national de numérotation, art. 2.5.12)</a> <span class="muted">— ARCEP</span></li><li><a href="https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043910280" rel="noopener">Décision n° 2021-0532 (Légifrance)</a> <span class="muted">— Légifrance</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-phone-0353-01" data-status="reserved">
+<td class="val"><div class="v"><code>03 53 01 xx xx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>North-East numbers reserved for audiovisual works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.arcep.fr/uploads/tx_gsavis/18-0881.pdf" rel="noopener">ARCEP décision 2018-0881 (plan national de numérotation, art. 2.5.12)</a> <span class="muted">— ARCEP</span></li><li><a href="https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043910280" rel="noopener">Décision n° 2021-0532 (Légifrance)</a> <span class="muted">— Légifrance</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-phone-0465-71" data-status="reserved">
+<td class="val"><div class="v"><code>04 65 71 xx xx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>South-East numbers reserved for audiovisual works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.arcep.fr/uploads/tx_gsavis/18-0881.pdf" rel="noopener">ARCEP décision 2018-0881 (plan national de numérotation, art. 2.5.12)</a> <span class="muted">— ARCEP</span></li><li><a href="https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043910280" rel="noopener">Décision n° 2021-0532 (Légifrance)</a> <span class="muted">— Légifrance</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-phone-0536-49" data-status="reserved">
+<td class="val"><div class="v"><code>05 36 49 xx xx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>South-West numbers reserved for audiovisual works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.arcep.fr/uploads/tx_gsavis/18-0881.pdf" rel="noopener">ARCEP décision 2018-0881 (plan national de numérotation, art. 2.5.12)</a> <span class="muted">— ARCEP</span></li><li><a href="https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043910280" rel="noopener">Décision n° 2021-0532 (Légifrance)</a> <span class="muted">— Légifrance</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-phone-0639-98" data-status="reserved">
+<td class="val"><div class="v"><code>06 39 98 xx xx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Mobile numbers reserved for audiovisual works</p><p class="note">libphonenumber 9.0.37 reportedly rejects this range as invalid.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.arcep.fr/uploads/tx_gsavis/18-0881.pdf" rel="noopener">ARCEP décision 2018-0881 (plan national de numérotation, art. 2.5.12)</a> <span class="muted">— ARCEP</span></li><li><a href="https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043910280" rel="noopener">Décision n° 2021-0532 (Légifrance)</a> <span class="muted">— Légifrance</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-email-atelier-exemple-test" data-status="published-example">
+<td class="val"><div class="v"><code>facturation@atelier-exemple.test</code><button class="copy" type="button" data-copy="facturation@atelier-exemple.test" aria-label="Copy facturation@atelier-exemple.test">Copy</button></div><div class="type">Email address</div></td>
+<td class="what"><p>Billing email on the reserved .test top-level domain</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.cabinetdigital.fr/facture-electronique/exemples-de-factures/" rel="noopener">Cabinet Digital — exemples de factures électroniques (CC BY 4.0)</a> <span class="muted">— Cabinet Digital</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">1</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="fr-iban-swift-registry" data-status="published-example">
+<td class="val"><div class="v"><code>FR14 2004 1010 0505 0001 3M02 606</code><button class="copy" type="button" data-copy="FR14 2004 1010 0505 0001 3M02 606" aria-label="Copy FR14 2004 1010 0505 0001 3M02 606">Copy</button></div><div class="type">IBAN</div></td>
+<td class="what"><p>Official example IBAN for France in the SWIFT IBAN Registry</p><p class="note">Bank code 20041 is a real bank (La Banque Postale); the account part is fictitious.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="ISO 13616 IBAN mod-97">✓ iban</span></td>
+<td><ul class="src"><li><a href="https://www.swift.com/resource/iban-registry-pdf" rel="noopener">SWIFT IBAN Registry (ISO 13616 Registration Authority)</a> <span class="muted">— SWIFT</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>SIREN</b></td><td>9 digits</td><td><code title="SIREN: 9 digits, Luhn">fr-siren</code></td><td>INSEE</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0002</code><code>cbc:EndpointID @schemeID=0002</code></td></tr><tr><td><b>SIRET</b></td><td>SIREN + 5-digit establishment number (NIC), 14 digits</td><td><code title="SIRET: 14 digits, Luhn">fr-siret</code></td><td>INSEE</td><td class='ubl'><code>cac:PartyIdentification/cbc:ID @schemeID=0009</code></td></tr><tr><td><b>VAT number (numéro de TVA intracommunautaire)</b><p class="note">Key = (12 + 3 × (SIREN mod 97)) mod 97. A made-up SIREN gives a VAT number that passes syntax checks but fails a live VIES lookup.</p></td><td>FR + 2-digit key + SIREN</td><td><code title="French VAT key (12 + 3 × (SIREN mod 97)) mod 97">fr-vat</code></td><td>DGFiP</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>EORI number</b></td><td>FR + SIRET (or SIREN)</td><td><span class="muted">—</span></td><td>Direction générale des douanes et droits indirects</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>E-invoicing electronic address</b></td><td>SIREN, optionally with a suffix</td><td><span class="muted">—</span></td><td>DGFiP (Annuaire)</td><td class='ubl'><code>cbc:EndpointID @schemeID=0225</code></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">6</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="fr-avoid-siren-552100554" data-status="avoid">
+<td class="val"><div class="v"><code>552100554</code></div><div class="type">SIREN</div></td>
+<td class="what"><p>Seen as an &quot;example SIREN&quot; on an e-invoicing website</p><p class="note warn">Real company (PEUGEOT SA), confirmed in the national company register.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="SIREN: 9 digits, Luhn">✓ fr-siren</span></td>
+<td><ul class="src"><li><a href="https://recherche-entreprises.api.gouv.fr/search?q=552100554" rel="noopener">Recherche d&#x27;entreprises API</a> <span class="muted">— DINUM</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-avoid-siren-123456789" data-status="avoid">
+<td class="val"><div class="v"><code>123456789</code></div><div class="type">SIREN</div></td>
+<td class="what"><p>Used in the DGFiP e-invoicing specification text</p><p class="note warn">Fails the check digit (deliberately invalid).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="SIREN: 9 digits, Luhn">✗ fr-siren</span></td>
+<td><ul class="src"><li><a href="https://www.impots.gouv.fr/specifications-externes-b2b" rel="noopener">DGFiP — Spécifications externes B2B v3.2</a> <span class="muted">— DGFiP</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-avoid-vat-fr37288100000008" data-status="avoid">
+<td class="val"><div class="v"><code>FR37288100000008</code></div><div class="type">VAT number</div></td>
+<td class="what"><p>Typo in one FNFE-MPE example file</p><p class="note warn">Malformed (wrong length).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="French VAT key (12 + 3 × (SIREN mod 97)) mod 97">✗ fr-vat</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-avoid-iban-fr7630006" data-status="avoid">
+<td class="val"><div class="v"><code>FR76 3000 6000 0112 3456 7890 189</code></div><div class="type">IBAN</div></td>
+<td class="what"><p>Widely copied &quot;example IBAN&quot;</p><p class="note warn">Not from an authority; uses the real Crédit Agricole bank code 30006.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ISO 13616 IBAN mod-97">✓ iban</span></td>
+<td><ul class="src"><li><a href="https://www.cabinetdigital.fr/facture-electronique/exemples-de-factures/" rel="noopener">Cabinet Digital — exemples de factures électroniques</a> <span class="muted">— Cabinet Digital</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-avoid-domain-vendeur-fr" data-status="avoid">
+<td class="val"><div class="v"><code>vendeur.fr, acheteur.fr, exemple.fr, example.fr</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Domains used in example emails</p><p class="note warn">All registered by private parties (DNS checked 2026-11-05). Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://github.com/fnfempe/France_RFE" rel="noopener">FNFE-MPE France_RFE — example invoices (Z.example/TEST)</a> <span class="muted">— FNFE-MPE</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="fr-avoid-town-ville" data-status="avoid">
+<td class="val"><div class="v"><code>VILLE</code></div><div class="type">Town name</div></td>
+<td class="what"><p>Tempting placeholder town name (&quot;town&quot;)</p><p class="note warn">Real commune (Villé, Bas-Rhin).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux" rel="noopener">Base officielle des codes postaux (laposte-hexasmal)</a> <span class="muted">— La Poste</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for France with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BFR%5D+&amp;country=FR">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

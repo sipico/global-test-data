@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kenya — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Africa</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇰🇪</span> Kenya</h1>
+<p class="lede">The Kenya Revenue Authority uses the obviously fictitious PINs A123456789Z and P123456789Z throughout its eTIMS (OSCU/VSCU) specifications; the PIN check letter algorithm is not published, so only the format can be validated. The Communications Authority reserves the national destination code 199 for network testing, but libphonenumber rejects those numbers. eTIMS is a KRA-specific JSON API, not UBL. There is no fictitious town or postcode, no IBAN and no published bank account check digit. The M-Pesa test shortcode 174379 is widely documented but was not confirmed at the source, and the eTIMS customer name MTEJA LIMITED was not checked against the business register; both are left out.</p>
+<p class="meta">Updated 2026-11-05 · searched in en, sw ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-africa.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/ke.yaml">Data file</a> ·
+<a href="../data/ke.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>1</b> Reserved</span><span class="stat s-published-example"><b>12</b> Official example</span><span class="stat s-avoid"><b>7</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">6</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ke-pin-a123456789z" data-status="published-example">
+<td class="val"><div class="v"><code>A123456789Z</code><button class="copy" type="button" data-copy="A123456789Z" aria-label="Copy A123456789Z">Copy</button></div><div class="type">KRA PIN (individual)</div></td>
+<td class="what"><p>Taxpayer PIN used throughout the KRA eTIMS specifications</p><p class="note">Format only; the check letter cannot be validated offline.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="KRA PIN format (no public check algorithm)">✓ ke-kra-pin</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA OSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="ke-pin-p123456789z" data-status="published-example">
+<td class="val"><div class="v"><code>P123456789Z</code><button class="copy" type="button" data-copy="P123456789Z" aria-label="Copy P123456789Z">Copy</button></div><div class="type">KRA PIN (non-individual)</div></td>
+<td class="what"><p>Seller PIN in the KRA VSCU specification</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="KRA PIN format (no public check algorithm)">✓ ke-kra-pin</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="ke-pin-a987654321z" data-status="published-example">
+<td class="val"><div class="v"><code>A987654321Z</code><button class="copy" type="button" data-copy="A987654321Z" aria-label="Copy A987654321Z">Copy</button></div><div class="type">KRA PIN (individual)</div></td>
+<td class="what"><p>Second individual PIN in the KRA VSCU specification</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="ke-pin-p123456789a" data-status="published-example">
+<td class="val"><div class="v"><code>P123456789A</code><button class="copy" type="button" data-copy="P123456789A" aria-label="Copy P123456789A">Copy</button></div><div class="type">KRA PIN (non-individual)</div></td>
+<td class="what"><p>Second non-individual PIN in the KRA VSCU specification</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="ke-name-taxpayer1" data-status="published-example">
+<td class="val"><div class="v"><code>TAXPAYER1</code><button class="copy" type="button" data-copy="TAXPAYER1" aria-label="Copy TAXPAYER1">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Taxpayer name in the KRA eTIMS specifications</p><p class="note">Other names used are TAXPAYER2, Taxpayer1130 and TEST VSCU; the head-office branch is called &quot;Headquater&quot;.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA OSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+<tr id="ke-branch-00" data-status="published-example">
+<td class="val"><div class="v"><code>00</code><button class="copy" type="button" data-copy="00" aria-label="Copy 00">Copy</button></div><div class="type">eTIMS branch ID</div></td>
+<td class="what"><p>Head-office branch ID (bhfId) in the eTIMS specifications</p><p class="note">The first branch is &quot;01&quot;.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA OSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">1</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ke-address-upu-nakuru" data-status="published-example">
+<td class="val"><div class="v"><code>MR. JOHN BWANA / P O BOX 2784 – NAKURU GPO / 20100 / NAKURU / KENYA</code></div><div class="type">Address example (P.O. Box) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a P.O. Box address</p><p class="note">Real post office and postcode (20100 Nakuru; 00100 is Nairobi GPO). The postcode is that of the delivery post office.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/kenEn.pdf" rel="noopener">UPU Postal addressing systems — Kenya (09/2004)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ke-phone-199" data-status="reserved">
+<td class="val"><div class="v"><code>+254 199 xxx xxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>National destination code reserved for network testing</p><p class="note">&quot;Shared resource for internal use for purposes network testing, experimentations, and research.&quot; libphonenumber 9.0.42 rejects these numbers as invalid. There is no drama range; 021–029, 031–039 and 047–049 are only &quot;reserved for future growth&quot; and not safe.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ca.go.ke/sites/default/files/2025-10/Telecommunication%20Numbering%20Plan%20for%20Kenya%20October%202025[1].pdf" rel="noopener">Telecommunication Numbering Plan for Kenya (October 2025)</a> <span class="muted">— Communications Authority of Kenya</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">3</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ke-mpesa-msisdn-254708374149" data-status="published-example">
+<td class="val"><div class="v"><code>254708374149</code><button class="copy" type="button" data-copy="254708374149" aria-label="Copy 254708374149">Copy</button></div><div class="type">M-Pesa test MSISDN</div></td>
+<td class="what"><p>Example phone number in the Safaricom Daraja sandbox simulator</p><p class="note">A valid Safaricom mobile number format. Use only as M-Pesa payment data in sandbox tests, never as a contact phone number.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://developer.safaricom.co.ke/" rel="noopener">Safaricom Daraja developer portal (API simulator)</a> <span class="muted">— Safaricom</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ke-mpesa-shortcode-600978" data-status="published-example">
+<td class="val"><div class="v"><code>600978</code><button class="copy" type="button" data-copy="600978" aria-label="Copy 600978">Copy</button></div><div class="type">M-Pesa shortcode</div></td>
+<td class="what"><p>Reversal receiver shortcode, Daraja sandbox simulator default</p><p class="note">Another simulator default is 300584.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://developer.safaricom.co.ke/" rel="noopener">Safaricom Daraja developer portal (API simulator)</a> <span class="muted">— Safaricom</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ke-mpesa-till-1743791" data-status="published-example">
+<td class="val"><div class="v"><code>1743791</code><button class="copy" type="button" data-copy="1743791" aria-label="Copy 1743791">Copy</button></div><div class="type">M-Pesa till number</div></td>
+<td class="what"><p>Till number, Daraja sandbox simulator default</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://developer.safaricom.co.ke/" rel="noopener">Safaricom Daraja developer portal (API simulator)</a> <span class="muted">— Safaricom</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="trade"><h2>Trade &amp; logistics <span class="count">1</span></h2><p class="muted">Location numbers, customs, transport codes</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ke-itemcode-ke1ntxu0000001" data-status="published-example">
+<td class="val"><div class="v"><code>KE1NTXU0000001</code><button class="copy" type="button" data-copy="KE1NTXU0000001" aria-label="Copy KE1NTXU0000001">Copy</button></div><div class="type">eTIMS item code</div></td>
+<td class="what"><p>Item code in the KRA eTIMS specifications</p><p class="note">Structure country + item type + origin + unit + serial.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA OSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><code>cac:Item/cac:SellersItemIdentification/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="other"><h2>Other <span class="count">1</span></h2><p class="muted">Everything else</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ke-device-dvcv1130" data-status="published-example">
+<td class="val"><div class="v"><code>dvcv1130</code><button class="copy" type="button" data-copy="dvcv1130" aria-label="Copy dvcv1130">Copy</button></div><div class="type">eTIMS device serial number</div></td>
+<td class="what"><p>Device serial number in the KRA OSCU specification</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA OSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>KRA PIN</b><p class="note">The check letter algorithm is not published. A secondary source says issued PINs start with A0 or P0 (unverified).</p></td><td>A (individual) or P (non-individual) + 9 digits + check letter, 11 characters</td><td><span class="muted">—</span></td><td>Kenya Revenue Authority (KRA)</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>National ID number</b><p class="note">No published check digit and no official specimen.</p></td><td>7–8 digits (unverified)</td><td><span class="muted">—</span></td><td>National Registration Bureau</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Company registration number</b><p class="note">No known check digit; not researched further.</p></td><td>e.g. PVT-… (unverified)</td><td><span class="muted">—</span></td><td>Business Registration Service (BRS)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>eTIMS branch ID (bhfId)</b></td><td>2 digits, 00 = head office</td><td><span class="muted">—</span></td><td>KRA</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">7</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ke-avoid-pin-p000591096x" data-status="avoid">
+<td class="val"><div class="v"><code>P000591096X</code></div><div class="type">KRA PIN</div></td>
+<td class="what"><p>Seen as an &quot;example KRA PIN&quot; on third-party sites</p><p class="note warn">Real company (Kenya Power), per a secondary source.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://lookuptax.com/docs/tax-identification-number/kenya-tax-id-guide" rel="noopener">lookuptax.com — Kenya tax ID guide</a> <span class="muted">— lookuptax.com</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ke-avoid-name-oderich" data-status="avoid">
+<td class="val"><div class="v"><code>ODERICH CONSERVA QUALIDADE BRASIL</code></div><div class="type">Company name</div></td>
+<td class="what"><p>Exporter name in the VSCU import-item sample</p><p class="note warn">Real Brazilian company.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ke-avoid-phone-kra-specs" data-status="avoid">
+<td class="val"><div class="v"><code>0789001130, 0789011130</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Manager phone numbers in the KRA OSCU/VSCU specifications</p><p class="note warn">Valid numbers in a real Kenyan mobile range (libphonenumber 9.0.42).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA OSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ke-avoid-email-test-com" data-status="avoid">
+<td class="val"><div class="v"><code>manage113000@test.com</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Manager email in the KRA OSCU specification</p><p class="note warn">test.com is a registered domain. Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA OSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ke-avoid-email-gaoin-ke" data-status="avoid">
+<td class="val"><div class="v"><code>test@gaoin.ke</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Email in the KRA VSCU specification</p><p class="note warn">Not registered on 2026-11-05 (NXDOMAIN) but not reserved, so it could be registered later.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf" rel="noopener">KRA VSCU Specification v2.0</a> <span class="muted">— Kenya Revenue Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ke-avoid-phone-daraja" data-status="avoid">
+<td class="val"><div class="v"><code>254722001231, 254726304245, 254705912645</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Default phone numbers in the Daraja portal</p><p class="note warn">Valid Kenyan mobile numbers, possibly held by real people.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://developer.safaricom.co.ke/" rel="noopener">Safaricom Daraja developer portal (API simulator)</a> <span class="muted">— Safaricom</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ke-avoid-domain-mydomain-com" data-status="avoid">
+<td class="val"><div class="v"><code>https://mydomain.com/...</code></div><div class="type">Callback URL domain</div></td>
+<td class="what"><p>Callback URLs in the Daraja portal</p><p class="note warn">mydomain.com is a registered domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://developer.safaricom.co.ke/" rel="noopener">Safaricom Daraja developer portal (API simulator)</a> <span class="muted">— Safaricom</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Kenya with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BKE%5D+&amp;country=KE">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

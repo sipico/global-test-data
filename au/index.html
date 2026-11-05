@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Australia — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Oceania</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇦🇺</span> Australia</h1>
+<p class="lede">Australia has the best official fictitious company identifiers found in any country so far: the Peppol PINT A-NZ examples, maintained by the ATO and MBIE, use four ABNs that pass the mod-89 check and are not in ABN Lookup. The ACMA reserves telephone numbers for creative works (geographic blocks, 23 single mobile numbers confirmed, 1800 numbers); seven more mobile numbers and the 1300/1900 numbers come only from Wikipedia and are left out until re-checked against the ACMA page. No fictitious ACN, test BSB, locality or postcode is reserved: Australia Post&#x27;s own examples put invented people at real localities.</p>
+<p class="meta">Updated 2026-11-05 · searched in en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-australia-nz.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/au.yaml">Data file</a> ·
+<a href="../data/au.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>35</b> Reserved</span><span class="stat s-published-example"><b>18</b> Official example</span><span class="stat s-derived"><b>10</b> Derived</span><span class="stat s-avoid"><b>21</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">15</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="au-abn-47555222000" data-status="published-example">
+<td class="val"><div class="v"><code>47 555 222 000</code><button class="copy" type="button" data-copy="47 555 222 000" aria-label="Copy 47 555 222 000">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Seller ABN in the official PINT A-NZ example invoices</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0151</code><code>cbc:EndpointID @schemeID=0151</code></td>
+</tr>
+<tr id="au-abn-91888222000" data-status="published-example">
+<td class="val"><div class="v"><code>91 888 222 000</code><button class="copy" type="button" data-copy="91 888 222 000" aria-label="Copy 91 888 222 000">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Buyer ABN in the official PINT A-NZ example invoices</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0151</code><code>cbc:EndpointID @schemeID=0151</code></td>
+</tr>
+<tr id="au-abn-65631636556" data-status="published-example">
+<td class="val"><div class="v"><code>65 631 636 556</code><button class="copy" type="button" data-copy="65 631 636 556" aria-label="Copy 65 631 636 556">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Seller endpoint ABN in the PINT A-NZ BIS snippets</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/" rel="noopener">Peppol PINT A-NZ Billing (BIS)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0151</code></td>
+</tr>
+<tr id="au-abn-46610678455" data-status="published-example">
+<td class="val"><div class="v"><code>46 610 678 455</code><button class="copy" type="button" data-copy="46 610 678 455" aria-label="Copy 46 610 678 455">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Buyer endpoint ABN in the PINT A-NZ BIS snippets</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/" rel="noopener">Peppol PINT A-NZ Billing (BIS)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0151</code></td>
+</tr>
+<tr id="au-abn-28555222001" data-status="derived">
+<td class="val"><div class="v"><code>28 555 222 001</code><button class="copy" type="button" data-copy="28 555 222 001" aria-label="Copy 28 555 222 001">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Derived ABN on the pattern of the official seller example</p><p class="note">Not issued at the time of checking, but not reserved; it could be issued later.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://abr.business.gov.au/Help/AbnFormat" rel="noopener">ABR — ABN format (check digit algorithm)</a> <span class="muted">— Australian Business Register</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0151</code></td>
+</tr>
+<tr id="au-abn-98555222002" data-status="derived">
+<td class="val"><div class="v"><code>98 555 222 002</code><button class="copy" type="button" data-copy="98 555 222 002" aria-label="Copy 98 555 222 002">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Derived ABN on the pattern of the official seller example</p><p class="note">Not issued at the time of checking, but not reserved.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://abr.business.gov.au/Help/AbnFormat" rel="noopener">ABR — ABN format (check digit algorithm)</a> <span class="muted">— Australian Business Register</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-abn-79555222003" data-status="derived">
+<td class="val"><div class="v"><code>79 555 222 003</code><button class="copy" type="button" data-copy="79 555 222 003" aria-label="Copy 79 555 222 003">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Derived ABN on the pattern of the official seller example</p><p class="note">Not issued at the time of checking, but not reserved.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://abr.business.gov.au/Help/AbnFormat" rel="noopener">ABR — ABN format (check digit algorithm)</a> <span class="muted">— Australian Business Register</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-abn-72888222001" data-status="derived">
+<td class="val"><div class="v"><code>72 888 222 001</code><button class="copy" type="button" data-copy="72 888 222 001" aria-label="Copy 72 888 222 001">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Derived ABN on the pattern of the official buyer example</p><p class="note">Not issued at the time of checking, but not reserved.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://abr.business.gov.au/Help/AbnFormat" rel="noopener">ABR — ABN format (check digit algorithm)</a> <span class="muted">— Australian Business Register</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-abn-76999222000" data-status="derived">
+<td class="val"><div class="v"><code>76 999 222 000</code><button class="copy" type="button" data-copy="76 999 222 000" aria-label="Copy 76 999 222 000">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Derived ABN on the pattern of the official examples</p><p class="note">Not issued at the time of checking, but not reserved.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://abr.business.gov.au/Help/AbnFormat" rel="noopener">ABR — ABN format (check digit algorithm)</a> <span class="muted">— Australian Business Register</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-abn-18123456789" data-status="derived">
+<td class="val"><div class="v"><code>18 123 456 789</code><button class="copy" type="button" data-copy="18 123 456 789" aria-label="Copy 18 123 456 789">Copy</button></div><div class="type">ABN</div></td>
+<td class="what"><p>Derived ABN built on ASIC&#x27;s invalid example ACN 123 456 789</p><p class="note">Its last 9 digits are not a valid ACN, so it cannot be a company ABN; use it for a non-company party.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span><span class="chk bad" title="ACN mod-10">✗ au-acn</span><span class="chk ver">✓ No record in ABN Lookup, abr.business.gov.au (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://abr.business.gov.au/Help/AbnFormat" rel="noopener">ABR — ABN format (check digit algorithm)</a> <span class="muted">— Australian Business Register</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-gst-branch-47555222000001" data-status="published-example">
+<td class="val"><div class="v"><code>47555222000001</code><button class="copy" type="button" data-copy="47555222000001" aria-label="Copy 47555222000001">Copy</button></div><div class="type">GST branch number</div></td>
+<td class="what"><p>GST branch number for seller ABN 47 555 222 000</p><p class="note">ABN + 3-digit GST branch number.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="au-gst-branch-91888222000001" data-status="published-example">
+<td class="val"><div class="v"><code>91888222000001</code><button class="copy" type="button" data-copy="91888222000001" aria-label="Copy 91888222000001">Copy</button></div><div class="type">GST branch number</div></td>
+<td class="what"><p>GST branch number for buyer ABN 91 888 222 000</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="au-gst-branch-65631636556001" data-status="published-example">
+<td class="val"><div class="v"><code>65631636556001</code><button class="copy" type="button" data-copy="65631636556001" aria-label="Copy 65631636556001">Copy</button></div><div class="type">GST branch number</div></td>
+<td class="what"><p>GST branch number for ABN 65 631 636 556</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="au-name-supplier-abc" data-status="published-example">
+<td class="val"><div class="v"><code>Supplier ABC Pty Ltd</code><button class="copy" type="button" data-copy="Supplier ABC Pty Ltd" aria-label="Copy Supplier ABC Pty Ltd">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Generic seller name in the PINT A-NZ examples</p><p class="note">Other generic names used are Supplier Trading Name Ltd, Supplier Official Name Ltd and Trotters Trading Co Ltd. Elite Insurance and Grey Roo Energy were not checked against business-name registers.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+<tr id="au-name-buyer-cde" data-status="published-example">
+<td class="val"><div class="v"><code>Buyer CDE Pty Ltd</code><button class="copy" type="button" data-copy="Buyer CDE Pty Ltd" aria-label="Copy Buyer CDE Pty Ltd">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Generic buyer name in the PINT A-NZ examples</p><p class="note">The examples also use Buyer Official Name.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">8</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="au-address-auspost-private" data-status="published-example">
+<td class="val"><div class="v"><code>Ms A Citizen / 3 Example Street / PARKVILLE VIC 3052</code></div><div class="type">Address example (private person) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Australia Post&#x27;s own example of a private address</p><p class="note">Invented person at a real locality. Max. 40 characters per line, no punctuation, last line LOCALITY STATE POSTCODE in capitals (AS 4590-1999).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://auspost.com.au/content/dam/auspost_corp/media/documents/correct-addressing.pdf" rel="noopener">Australia Post — Correct addressing</a> <span class="muted">— Australia Post</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-address-auspost-company" data-status="published-example">
+<td class="val"><div class="v"><code>Mr C.R. MacDonald AO / Manager / Orbit Travel Co / Travel World House / Level 7 17 Jones St / NORTH SYDNEY NSW 2060</code></div><div class="type">Address example (company, floor) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Australia Post&#x27;s example of a company address in a building</p><p class="note">The same standard has Ms C. Fitzgerald / William Jones Pty Ltd / Level 6 51 Jacobson St / BRISBANE QLD 4000.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-addressing-standards-1999.pdf" rel="noopener">Australia Post — Address Presentation Standards (1999)</a> <span class="muted">— Australia Post</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-address-auspost-po-box" data-status="published-example">
+<td class="val"><div class="v"><code>SILKHOUSE TRAVEL CO / ATTN: MR A. BROWN / PO BOX 37 / SPRINGVALE VIC 3171</code></div><div class="type">Address example (PO Box) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Australia Post&#x27;s example of a company PO Box address</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-addressing-standards-1999.pdf" rel="noopener">Australia Post — Address Presentation Standards (1999)</a> <span class="muted">— Australia Post</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-address-auspost-locked-bag" data-status="published-example">
+<td class="val"><div class="v"><code>The Secretary / Broken Arrow Corporation / Locked Bag 801 / FORTITUDE VALLEY QLD 4006</code></div><div class="type">Address example (Locked Bag) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Australia Post&#x27;s example of a Locked Bag address</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-addressing-standards-1999.pdf" rel="noopener">Australia Post — Address Presentation Standards (1999)</a> <span class="muted">— Australia Post</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-postcode-unused" data-status="derived">
+<td class="val"><div class="v"><code>00xx, 01xx, 03xx-07xx, 19xx, 49xx, 75xx-79xx, 86xx, 88xx, 89xx, 91xx-93xx, 95xx, 96xx, 98xx; also 1000 and 0999</code></div><div class="type">Postcode range <span class="kind">range</span></div></td>
+<td class="what"><p>Postcodes not used by any locality (first two digits)</p><p class="note">Such postcodes pass a 4-digit format check but fail any check that the postcode exists. Never use 9999 (North Pole VIC).</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Checked against the community dataset matthewproctor/australianpostcodes, 3,175 postcodes (2026-11-05); not an official Australia Post file</span></td>
+<td><ul class="src"><li><a href="https://github.com/matthewproctor/australianpostcodes" rel="noopener">matthewproctor/australianpostcodes (community dataset)</a> <span class="muted">— Matthew Proctor</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-town-eastmead" data-status="published-example">
+<td class="val"><div class="v"><code>EASTMEAD</code><button class="copy" type="button" data-copy="EASTMEAD" aria-label="Copy EASTMEAD">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Invented locality used in the PINT A-NZ examples (with 2443 NSW)</p><p class="note">Fails a postcode/locality check by design.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Not a locality in the community postcode dataset (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li><li><a href="https://github.com/matthewproctor/australianpostcodes" rel="noopener">matthewproctor/australianpostcodes (community dataset)</a> <span class="muted">— Matthew Proctor</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-town-sampleville" data-status="derived">
+<td class="val"><div class="v"><code>SAMPLEVILLE</code><button class="copy" type="button" data-copy="SAMPLEVILLE" aria-label="Copy SAMPLEVILLE">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Obvious placeholder town name that is not a locality</p><p class="note">EXAMPLE, SAMPLE and ANYTOWN are also not localities.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not a locality in the community postcode dataset (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://github.com/matthewproctor/australianpostcodes" rel="noopener">matthewproctor/australianpostcodes (community dataset)</a> <span class="muted">— Matthew Proctor</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-town-bullamakanka" data-status="derived">
+<td class="val"><div class="v"><code>BULLAMAKANKA</code><button class="copy" type="button" data-copy="BULLAMAKANKA" aria-label="Copy BULLAMAKANKA">Copy</button></div><div class="type">Town name</div></td>
+<td class="what"><p>Australian joke &quot;middle of nowhere&quot; name, not a locality</p><p class="note">WOOP WOOP is another recognisable joke name that is not a locality.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not a locality in the community postcode dataset (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://github.com/matthewproctor/australianpostcodes" rel="noopener">matthewproctor/australianpostcodes (community dataset)</a> <span class="muted">— Matthew Proctor</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">34</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="au-phone-02-5550" data-status="reserved">
+<td class="val"><div class="v"><code>(02) 5550 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Central East (NSW, ACT) numbers reserved for creative works</p><p class="note">International format +61 2 5550 xxxx.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-02-7010" data-status="reserved">
+<td class="val"><div class="v"><code>(02) 7010 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Central East (NSW, ACT) numbers reserved for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-03-5550" data-status="reserved">
+<td class="val"><div class="v"><code>(03) 5550 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>South East (VIC, TAS) numbers reserved for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-03-7010" data-status="reserved">
+<td class="val"><div class="v"><code>(03) 7010 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>South East (VIC, TAS) numbers reserved for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-07-5550" data-status="reserved">
+<td class="val"><div class="v"><code>(07) 5550 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>North East (QLD) numbers reserved for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-07-7010" data-status="reserved">
+<td class="val"><div class="v"><code>(07) 7010 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>North East (QLD) numbers reserved for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-08-5550" data-status="reserved">
+<td class="val"><div class="v"><code>(08) 5550 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Central West (SA, WA, NT) numbers reserved for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-08-7010" data-status="reserved">
+<td class="val"><div class="v"><code>(08) 7010 xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Central West (SA, WA, NT) numbers reserved for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491570006" data-status="reserved">
+<td class="val"><div class="v"><code>0491 570 006</code><button class="copy" type="button" data-copy="0491 570 006" aria-label="Copy 0491 570 006">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 570 006.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491570156" data-status="reserved">
+<td class="val"><div class="v"><code>0491 570 156</code><button class="copy" type="button" data-copy="0491 570 156" aria-label="Copy 0491 570 156">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 570 156.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491570157" data-status="reserved">
+<td class="val"><div class="v"><code>0491 570 157</code><button class="copy" type="button" data-copy="0491 570 157" aria-label="Copy 0491 570 157">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 570 157.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491570158" data-status="reserved">
+<td class="val"><div class="v"><code>0491 570 158</code><button class="copy" type="button" data-copy="0491 570 158" aria-label="Copy 0491 570 158">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 570 158.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491570159" data-status="reserved">
+<td class="val"><div class="v"><code>0491 570 159</code><button class="copy" type="button" data-copy="0491 570 159" aria-label="Copy 0491 570 159">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 570 159.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491570110" data-status="reserved">
+<td class="val"><div class="v"><code>0491 570 110</code><button class="copy" type="button" data-copy="0491 570 110" aria-label="Copy 0491 570 110">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 570 110.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491570313" data-status="reserved">
+<td class="val"><div class="v"><code>0491 570 313</code><button class="copy" type="button" data-copy="0491 570 313" aria-label="Copy 0491 570 313">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 570 313.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491570737" data-status="reserved">
+<td class="val"><div class="v"><code>0491 570 737</code><button class="copy" type="button" data-copy="0491 570 737" aria-label="Copy 0491 570 737">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 570 737.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491571266" data-status="reserved">
+<td class="val"><div class="v"><code>0491 571 266</code><button class="copy" type="button" data-copy="0491 571 266" aria-label="Copy 0491 571 266">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 571 266.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491571491" data-status="reserved">
+<td class="val"><div class="v"><code>0491 571 491</code><button class="copy" type="button" data-copy="0491 571 491" aria-label="Copy 0491 571 491">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 571 491.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491571804" data-status="reserved">
+<td class="val"><div class="v"><code>0491 571 804</code><button class="copy" type="button" data-copy="0491 571 804" aria-label="Copy 0491 571 804">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 571 804.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491572549" data-status="reserved">
+<td class="val"><div class="v"><code>0491 572 549</code><button class="copy" type="button" data-copy="0491 572 549" aria-label="Copy 0491 572 549">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 572 549.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491572665" data-status="reserved">
+<td class="val"><div class="v"><code>0491 572 665</code><button class="copy" type="button" data-copy="0491 572 665" aria-label="Copy 0491 572 665">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 572 665.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491572983" data-status="reserved">
+<td class="val"><div class="v"><code>0491 572 983</code><button class="copy" type="button" data-copy="0491 572 983" aria-label="Copy 0491 572 983">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 572 983.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491573770" data-status="reserved">
+<td class="val"><div class="v"><code>0491 573 770</code><button class="copy" type="button" data-copy="0491 573 770" aria-label="Copy 0491 573 770">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 573 770.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491573087" data-status="reserved">
+<td class="val"><div class="v"><code>0491 573 087</code><button class="copy" type="button" data-copy="0491 573 087" aria-label="Copy 0491 573 087">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 573 087.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491574118" data-status="reserved">
+<td class="val"><div class="v"><code>0491 574 118</code><button class="copy" type="button" data-copy="0491 574 118" aria-label="Copy 0491 574 118">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 574 118.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491574632" data-status="reserved">
+<td class="val"><div class="v"><code>0491 574 632</code><button class="copy" type="button" data-copy="0491 574 632" aria-label="Copy 0491 574 632">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 574 632.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491575254" data-status="reserved">
+<td class="val"><div class="v"><code>0491 575 254</code><button class="copy" type="button" data-copy="0491 575 254" aria-label="Copy 0491 575 254">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 575 254.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491575789" data-status="reserved">
+<td class="val"><div class="v"><code>0491 575 789</code><button class="copy" type="button" data-copy="0491 575 789" aria-label="Copy 0491 575 789">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 575 789.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491576398" data-status="reserved">
+<td class="val"><div class="v"><code>0491 576 398</code><button class="copy" type="button" data-copy="0491 576 398" aria-label="Copy 0491 576 398">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 576 398.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491576801" data-status="reserved">
+<td class="val"><div class="v"><code>0491 576 801</code><button class="copy" type="button" data-copy="0491 576 801" aria-label="Copy 0491 576 801">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 576 801.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-0491577426" data-status="reserved">
+<td class="val"><div class="v"><code>0491 577 426</code><button class="copy" type="button" data-copy="0491 577 426" aria-label="Copy 0491 577 426">Copy</button></div><div class="type">Mobile number</div></td>
+<td class="what"><p>Mobile number reserved by ACMA for creative works</p><p class="note">International format +61 491 577 426.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-1800160401" data-status="reserved">
+<td class="val"><div class="v"><code>1800 160 401</code><button class="copy" type="button" data-copy="1800 160 401" aria-label="Copy 1800 160 401">Copy</button></div><div class="type">Freephone number</div></td>
+<td class="what"><p>Freephone number reserved by ACMA for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-phone-1800-975707-975711" data-status="reserved">
+<td class="val"><div class="v"><code>1800 975 707 - 1800 975 711</code></div><div class="type">Freephone range <span class="kind">range</span></div></td>
+<td class="what"><p>Five freephone numbers reserved by ACMA for creative works</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works" rel="noopener">ACMA — Phone numbers for use in TV shows, films and creative works</a> <span class="muted">— Australian Communications and Media Authority</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-email-alias-test" data-status="reserved">
+<td class="val"><div class="v"><code>accounts@&lt;alias&gt;.test</code></div><div class="type">Email address <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Pattern for example emails on the reserved .test top-level domain</p><p class="note">auDA has no reserved example name in .au, so use .test (or .example, example.com/.net/.org).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">4</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="au-bsb-123-456" data-status="published-example">
+<td class="val"><div class="v"><code>123-456</code><button class="copy" type="button" data-copy="123-456" aria-label="Copy 123-456">Copy</button></div><div class="type">BSB</div></td>
+<td class="what"><p>Example BSB used by PINT A-NZ and AusPayNet&#x27;s own BSB file guide</p><p class="note">Prefix 12 is allocated to Bank of Queensland. A fictitious BSB fails a directory check by design; no reserved test BSB exists.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Not in the AusPayNet BSB directory, BSBDirectoryFull.csv, 17,306 rows (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://auspaynet.com.au/sites/default/files/2023-10/Downloading_BSB_Files_from_AusPayNet_via_FTP.pdf" rel="noopener">AusPayNet — Downloading BSB files via FTP (example record 123-456)</a> <span class="muted">— AusPayNet</span></li><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID</code></td>
+</tr>
+<tr id="au-bsb-205-536" data-status="published-example">
+<td class="val"><div class="v"><code>205-536</code><button class="copy" type="button" data-copy="205-536" aria-label="Copy 205-536">Copy</button></div><div class="type">BSB</div></td>
+<td class="what"><p>Example BSB in the PINT A-NZ BIS</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Not in the AusPayNet BSB directory; no BSB starts with 20 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/" rel="noopener">Peppol PINT A-NZ Billing (BIS)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID</code></td>
+</tr>
+<tr id="au-bsb-unused-prefixes" data-status="derived">
+<td class="val"><div class="v"><code>00, 05, 07, 13, 16, 17, 20, 27, 28, 38, 44, 50, 54, 60, 62, 66, 69, 71, 74, 75, 78, 79, 86, 87, 97, 99 (first two digits)</code></div><div class="type">BSB range <span class="kind">range</span></div></td>
+<td class="what"><p>BSB prefixes with no branch in the AusPayNet directory</p><p class="note">Some may be allocated to an institution in the Key to Abbreviations without branches. Avoid 000-000.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ No row with these first two digits in BSBDirectoryFull.csv, 17,306 rows (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://auspaynetbsbpublic.blob.core.windows.net/bsb-reports/BSBDirectoryFull.csv" rel="noopener">AusPayNet — BSBDirectoryFull.csv</a> <span class="muted">— AusPayNet</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-account-324875423" data-status="published-example">
+<td class="val"><div class="v"><code>324875423</code><button class="copy" type="button" data-copy="324875423" aria-label="Copy 324875423">Copy</button></div><div class="type">Account number</div></td>
+<td class="what"><p>Bank account number in the PINT A-NZ examples</p><p class="note">Australian account numbers have no check digit. The examples also use 12345 and 56477787743. Australia does not use IBAN.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="trade"><h2>Trade &amp; logistics <span class="count">1</span></h2><p class="muted">Location numbers, customs, transport codes</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="au-gln-prefix-952" data-status="reserved">
+<td class="val"><div class="v"><code>952xxxxxxxxxC</code></div><div class="type">GLN / GTIN range <span class="kind">range</span></div></td>
+<td class="what"><p>GS1 prefix 952 for demonstrations and examples</p><p class="note">Use instead of the GS1 US range 123… seen in PINT A-NZ. GS1 Australia&#x27;s own prefix 93 belongs to real companies.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.gs1.org/standards/id-keys/company-prefix" rel="noopener">GS1 Company Prefix</a> <span class="muted">— GS1</span></li><li><a href="https://ref.gs1.org/standards/genspecs/" rel="noopener">GS1 General Specifications</a> <span class="muted">— GS1</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0088</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">1</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="au-tfn-exemption-codes" data-status="published-example">
+<td class="val"><div class="v"><code>000 000 000 (not quoted), 111 111 111 (declaration pending), 333 333 333 (under 18), 444 444 444 (pensioner)</code></div><div class="type">TFN exemption code <span class="kind">placeholder</span></div></td>
+<td class="what"><p>ATO codes used in place of a TFN</p><p class="note">Placeholders with a legal meaning, not test values; use only with that meaning. Only 000000000 passes the TFN check.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ato.gov.au/forms-and-instructions/payg-payment-summary-individual-non-business/section-a-payee-details" rel="noopener">ATO — PAYG payment summary, section A payee details (TFN codes)</a> <span class="muted">— Australian Taxation Office</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>ABN (Australian Business Number)</b><p class="note">Subtract 1 from the first digit, weights 10 1 3 5 7 9 11 13 15 17 19, sum mod 89 = 0. A company&#x27;s ABN is 2 check digits + its ACN. &quot;Not in ABN Lookup&quot; means not issued now, not reserved.</p></td><td>11 digits, shown nn nnn nnn nnn</td><td><code title="ABN mod-89">au-abn</code></td><td>Australian Business Register (ATO)</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0151</code><code>cbc:EndpointID @schemeID=0151</code></td></tr><tr><td><b>ACN / ARBN (Australian Company Number)</b><p class="note">Weights 8 7 6 5 4 3 2 1 on digits 1-8, check = (10 - sum mod 10) mod 10. ASIC&#x27;s current page no longer shows the algorithm. No official fictitious ACN exists.</p></td><td>9 digits, shown nnn nnn nnn</td><td><code title="ACN mod-10">au-acn</code></td><td>ASIC</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>GST registration / GST branch number</b><p class="note">There is no separate GST number; GST is registered against the ABN.</p></td><td>ABN (11 digits), branches ABN + 3 digits</td><td><span class="muted">—</span></td><td>ATO</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>TFN (Tax File Number)</b><p class="note">Mod-11 with weights 1 4 3 7 5 8 6 9 10 (secondary sources only; not published by the ATO). Use is restricted by the Privacy (Tax File Number) Rule 2015; never put a TFN in a business document.</p></td><td>8 or 9 digits</td><td><span class="muted">—</span></td><td>ATO</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>BSB (Bank-State-Branch)</b><p class="note">No check digit; valid means present in the AusPayNet BSB directory. Australia does not use IBAN.</p></td><td>6 digits, shown nnn-nnn</td><td><span class="muted">—</span></td><td>AusPayNet</td><td class='ubl'><code>cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID</code></td></tr><tr><td><b>GLN / GTIN</b></td><td>13 digits (GLN), GS1 mod-10 check digit</td><td><code title="GS1 mod-10 check digit">gs1</code></td><td>GS1 Australia (prefix 93)</td><td class='ubl'><code>cbc:EndpointID @schemeID=0088</code><code>cac:PartyIdentification/cbc:ID @schemeID=0088</code></td></tr><tr><td><b>Medicare card number</b><p class="note">Weights 1 3 7 9 1 3 7 9 on digits 1-8, digit 9 = sum mod 10, digit 10 = issue number (secondary sources only). Not needed in UBL.</p></td><td>10 digits + IRN (first digit 2-6)</td><td><span class="muted">—</span></td><td>Services Australia</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">21</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="au-avoid-abn-51824753556" data-status="avoid">
+<td class="val"><div class="v"><code>51 824 753 556</code></div><div class="type">ABN</div></td>
+<td class="what"><p>ABR worked example; base of the PINT GST branch example 51824753556001</p><p class="note warn">Real organisation (Australian Taxation Office), listed in ABN Lookup.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span></td>
+<td><ul class="src"><li><a href="https://abr.business.gov.au/Help/AbnFormat" rel="noopener">ABR — ABN format (check digit algorithm)</a> <span class="muted">— Australian Business Register</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-abn-57946356658" data-status="avoid">
+<td class="val"><div class="v"><code>57 946 356 658</code></div><div class="type">ABN</div></td>
+<td class="what"><p>Buyer ABN in five PINT A-NZ freight/GST example files</p><p class="note warn">Real organisation (Mid North Coast Local Health District, NSW), listed in ABN Lookup.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-abn-53004085616" data-status="avoid">
+<td class="val"><div class="v"><code>53 004 085 616</code></div><div class="type">ABN</div></td>
+<td class="what"><p>ABN of ASIC&#x27;s worked example ACN 004 085 616</p><p class="note warn">Real company (B P Australia Pty Ltd), listed in ABN Lookup.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span></td>
+<td><ul class="src"><li><a href="https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/" rel="noopener">ASIC — Australian company numbers (digit check)</a> <span class="muted">— ASIC</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-acn-004085616" data-status="avoid">
+<td class="val"><div class="v"><code>004 085 616</code></div><div class="type">ACN</div></td>
+<td class="what"><p>ASIC&#x27;s worked ACN example</p><p class="note warn">Real company (B P Australia Pty Ltd).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ACN mod-10">✓ au-acn</span></td>
+<td><ul class="src"><li><a href="https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/" rel="noopener">ASIC — Australian company numbers (digit check)</a> <span class="muted">— ASIC</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-acn-000000019" data-status="avoid">
+<td class="val"><div class="v"><code>000 000 019</code></div><div class="type">ACN</div></td>
+<td class="what"><p>From a &quot;valid ACN&quot; test list copied from an old ASIC page</p><p class="note warn">Real company (MONAKA PTY LTD, ABN 89 000 000 019).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ACN mod-10">✓ au-acn</span></td>
+<td><ul class="src"><li><a href="https://www.drupal.org/project/abn/issues/1878530" rel="noopener">Drupal ABN module issue</a> <span class="muted">— Drupal.org</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-acn-000250000" data-status="avoid">
+<td class="val"><div class="v"><code>000 250 000</code></div><div class="type">ACN</div></td>
+<td class="what"><p>From a &quot;valid ACN&quot; test list copied from an old ASIC page</p><p class="note warn">Real company (WAM PTY LTD).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ACN mod-10">✓ au-acn</span></td>
+<td><ul class="src"><li><a href="https://www.drupal.org/project/abn/issues/1878530" rel="noopener">Drupal ABN module issue</a> <span class="muted">— Drupal.org</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-acn-000500005" data-status="avoid">
+<td class="val"><div class="v"><code>000 500 005</code></div><div class="type">ACN</div></td>
+<td class="what"><p>From a &quot;valid ACN&quot; test list copied from an old ASIC page</p><p class="note warn">Real company (A.C.N. 000 500 005 PTY LTD).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ACN mod-10">✓ au-acn</span></td>
+<td><ul class="src"><li><a href="https://www.drupal.org/project/abn/issues/1878530" rel="noopener">Drupal ABN module issue</a> <span class="muted">— Drupal.org</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-acn-000750005" data-status="avoid">
+<td class="val"><div class="v"><code>000 750 005</code></div><div class="type">ACN</div></td>
+<td class="what"><p>From a &quot;valid ACN&quot; test list copied from an old ASIC page</p><p class="note warn">Real company (ELECTROMEC INDUSTRIES PTY LTD).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ACN mod-10">✓ au-acn</span></td>
+<td><ul class="src"><li><a href="https://www.drupal.org/project/abn/issues/1878530" rel="noopener">Drupal ABN module issue</a> <span class="muted">— Drupal.org</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-acn-test-list-others" data-status="avoid">
+<td class="val"><div class="v"><code>001 000 004, 001 250 004, 001 500 009, 001 749 999</code></div><div class="type">ACN</div></td>
+<td class="what"><p>Rest of the &quot;valid ACN&quot; test list from an old ASIC page</p><p class="note warn">Same list as several real companies; 001 000 004 has no ABN record but may still be a registered company. Not checked in ASIC Connect.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.drupal.org/project/abn/issues/1878530" rel="noopener">Drupal ABN module issue</a> <span class="muted">— Drupal.org</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-abn-83914571673" data-status="avoid">
+<td class="val"><div class="v"><code>83 914 571 673</code></div><div class="type">ABN</div></td>
+<td class="what"><p>Sample ABN seen in third-party validator code</p><p class="note warn">Real entity (The Trustee for Carpenter Family Trust), listed in ABN Lookup.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="ABN mod-89">✓ au-abn</span></td>
+<td><ul class="src"><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-acn-123456789" data-status="avoid">
+<td class="val"><div class="v"><code>123 456 789</code></div><div class="type">ACN</div></td>
+<td class="what"><p>Example on ASIC&#x27;s current ACN page</p><p class="note warn">Fails the ACN check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="ACN mod-10">✗ au-acn</span></td>
+<td><ul class="src"><li><a href="https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/" rel="noopener">ASIC — Australian company numbers (digit check)</a> <span class="muted">— ASIC</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-abn-36123456789" data-status="avoid">
+<td class="val"><div class="v"><code>36 123 456 789</code></div><div class="type">ABN</div></td>
+<td class="what"><p>ABN form of ASIC&#x27;s example ACN 123 456 789</p><p class="note warn">Fails the ABN check.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="ABN mod-89">✗ au-abn</span></td>
+<td><ul class="src"><li><a href="https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/" rel="noopener">ASIC — Australian company numbers (digit check)</a> <span class="muted">— ASIC</span></li><li><a href="https://abr.business.gov.au/" rel="noopener">ABN Lookup</a> <span class="muted">— Australian Business Register</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-tfn-samples" data-status="avoid">
+<td class="val"><div class="v"><code>123 456 782, 876 543 210</code></div><div class="type">TFN</div></td>
+<td class="what"><p>Common &quot;valid TFN&quot; samples</p><p class="note warn">Not official, and TFN use is restricted by the Privacy (Tax File Number) Rule 2015. Never put a TFN in a business document.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.ato.gov.au/forms-and-instructions/payg-payment-summary-individual-non-business/section-a-payee-details" rel="noopener">ATO — PAYG payment summary, section A payee details (TFN codes)</a> <span class="muted">— Australian Taxation Office</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-gln-1234567890128" data-status="avoid">
+<td class="val"><div class="v"><code>1234567890128</code></div><div class="type">GLN</div></td>
+<td class="what"><p>GLN in the PINT A-NZ examples (also 1234567890135)</p><p class="note warn">Prefix 123 is in a GS1 US range, not the GS1 example prefix 952.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="GS1 mod-10 check digit">✓ gs1</span><span class="chk bad" title="GS1 key with prefix 952 (examples) and valid check digit">✗ gs1-952</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-bsb-000-000" data-status="avoid">
+<td class="val"><div class="v"><code>000-000</code></div><div class="type">BSB</div></td>
+<td class="what"><p>Tempting &quot;dummy&quot; BSB</p><p class="note warn">AusPayNet uses it as a format template and in &quot;Merged — Refer to BSB 000-000&quot; records.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://auspaynetbsbpublic.blob.core.windows.net/bsb-reports/BSBDirectoryFull.csv" rel="noopener">AusPayNet — BSBDirectoryFull.csv</a> <span class="muted">— AusPayNet</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-phone-pint" data-status="avoid">
+<td class="val"><div class="v"><code>02 6123 4567, 07 6123 4567, 0430 123 456, 0450 000 001</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Phone numbers in the PINT A-NZ examples</p><p class="note warn">In live number ranges, not reserved by ACMA.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-postcode-9999" data-status="avoid">
+<td class="val"><div class="v"><code>9999</code></div><div class="type">Postcode</div></td>
+<td class="what"><p>Tempting &quot;dummy&quot; postcode</p><p class="note warn">Real postcode (NORTH POLE VIC, Australia Post&#x27;s letters-to-Santa postcode).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://github.com/matthewproctor/australianpostcodes" rel="noopener">matthewproctor/australianpostcodes (community dataset)</a> <span class="muted">— Matthew Proctor</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-address-harrison-2912" data-status="avoid">
+<td class="val"><div class="v"><code>Harrison 2912 NSW</code></div><div class="type">Locality / postcode</div></td>
+<td class="what"><p>Buyer locality in the PINT A-NZ examples</p><p class="note warn">Harrison is in the ACT (postcode 2914); 2912 is Gungahlin ACT. The examples also pair Sydney with 2310 (Hunter Region MC) and 2758 (Kurrajong area).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-address-auspost-real" data-status="avoid">
+<td class="val"><div class="v"><code>Compass Airlines Pty Ltd; AUSTRALIA POST / 219-241 CLEVELAND ST / STRAWBERRY HILLS NSW 1427</code></div><div class="type">Address / company name</div></td>
+<td class="what"><p>Names and addresses in Australia Post&#x27;s 1999 addressing standard</p><p class="note warn">Compass Airlines is a real former airline; the Strawberry Hills address is Australia Post&#x27;s real address.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-addressing-standards-1999.pdf" rel="noopener">Australia Post — Address Presentation Standards (1999)</a> <span class="muted">— Australia Post</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-domain-registered" data-status="avoid">
+<td class="val"><div class="v"><code>example.com.au, test.com.au, qualitygoods.com.au, buyer.com.au, business1.com.au, blackhouse.com</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Domains used or tempting in example emails</p><p class="note warn">All registered (example.com.au by a private brand agency); DNS checked 2026-11-05. Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="au-avoid-domain-unregistered" data-status="avoid">
+<td class="val"><div class="v"><code>eliteinsure.com.au, yourpaymentwebsite.com.au, yourwebsiteexample.com.au, example.net.au</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Domains in the PINT A-NZ examples that are not registered today</p><p class="note warn">NXDOMAIN (example.net.au SERVFAIL) on 2026-11-05, but they could be registered at any time. Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip" rel="noopener">Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)</a> <span class="muted">— Australian &amp; New Zealand Peppol Authorities (ATO, MBIE)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Australia with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BAU%5D+&amp;country=AU">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

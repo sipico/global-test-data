@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>India — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Asia</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇮🇳</span> India <span class="native">भारत (Bhārat)</span></h1>
+<p class="lede">India&#x27;s best official test data are sandbox values: GSTINs listed for testing on NIC&#x27;s e-invoice API developer portal, and test Aadhaar numbers that UIDAI publishes for its staging environment. The NIC portal could not be fetched directly, so the GSTINs were confirmed through search-engine extracts and a GSP&#x27;s documentation. No authority reserves phone numbers, domains, PIN codes or company numbers for fiction, and no open API exists to check that a PAN or GSTIN is unused. India has no UBL: its e-invoice is a GSTN JSON schema, so only the identifiers carry over. Left out as unverified: the e-Way Bill sandbox GSTIN 05AAACG2140A1ZL (secondary sources only, PAN owner unknown), GSTINs derived from made-up PANs (no collision check possible), and the unregistered but unreserved domain example.in.</p>
+<p class="meta">Updated 2026-11-05 · searched in en, hi ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-india-singapore.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/in.yaml">Data file</a> ·
+<a href="../data/in.json">JSON</a></p>
+<div class="stats"><span class="stat s-published-example"><b>17</b> Official example</span><span class="stat s-derived"><b>1</b> Derived</span><span class="stat s-avoid"><b>12</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">7</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="in-gstin-33gsptn1882g1z3" data-status="published-example">
+<td class="val"><div class="v"><code>33GSPTN1882G1Z3</code><button class="copy" type="button" data-copy="33GSPTN1882G1Z3" aria-label="Copy 33GSPTN1882G1Z3">Copy</button></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Tamil Nadu sandbox GSTIN on NIC&#x27;s e-invoice API portal</p><p class="note">Test GSTIN listed on the NIC e-invoice API sandbox page &quot;Sync GSTIN Details from CP&quot;. The NIC site could not be fetched during research; the value was confirmed via search-engine extracts of the page and Masters India&#x27;s API documentation. No live GST lookup was possible (captcha). Recommended: it also passes PAN shape and state-code checks.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GSTIN mod-36 check character">✓ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/Sync-GSTIN-Details-from-CP.html" rel="noopener">NIC e-Invoice API sandbox — Sync GSTIN Details from CP (v1.03)</a> <span class="muted">— National Informatics Centre</span></li><li><a href="https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp" rel="noopener">Masters India — Sync GSTIN details from CP</a> <span class="muted">— Masters India</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="in-gstin-33gsptn3381g1z5" data-status="published-example">
+<td class="val"><div class="v"><code>33GSPTN3381G1Z5</code><button class="copy" type="button" data-copy="33GSPTN3381G1Z5" aria-label="Copy 33GSPTN3381G1Z5">Copy</button></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Tamil Nadu sandbox GSTIN on NIC&#x27;s e-invoice API portal</p><p class="note">Test GSTIN listed on the NIC e-invoice API sandbox page &quot;Sync GSTIN Details from CP&quot;. The NIC site could not be fetched during research; the value was confirmed via search-engine extracts of the page and Masters India&#x27;s API documentation. No live GST lookup was possible (captcha). Recommended: it also passes PAN shape and state-code checks.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GSTIN mod-36 check character">✓ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/Sync-GSTIN-Details-from-CP.html" rel="noopener">NIC e-Invoice API sandbox — Sync GSTIN Details from CP (v1.03)</a> <span class="muted">— National Informatics Centre</span></li><li><a href="https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp" rel="noopener">Masters India — Sync GSTIN details from CP</a> <span class="muted">— Masters India</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="in-gstin-33gsptn3382g1z4" data-status="published-example">
+<td class="val"><div class="v"><code>33GSPTN3382G1Z4</code><button class="copy" type="button" data-copy="33GSPTN3382G1Z4" aria-label="Copy 33GSPTN3382G1Z4">Copy</button></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Tamil Nadu sandbox GSTIN on NIC&#x27;s e-invoice API portal</p><p class="note">Test GSTIN listed on the NIC e-invoice API sandbox page &quot;Sync GSTIN Details from CP&quot;. The NIC site could not be fetched during research; the value was confirmed via search-engine extracts of the page and Masters India&#x27;s API documentation. No live GST lookup was possible (captcha). Recommended: it also passes PAN shape and state-code checks.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GSTIN mod-36 check character">✓ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/Sync-GSTIN-Details-from-CP.html" rel="noopener">NIC e-Invoice API sandbox — Sync GSTIN Details from CP (v1.03)</a> <span class="muted">— National Informatics Centre</span></li><li><a href="https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp" rel="noopener">Masters India — Sync GSTIN details from CP</a> <span class="muted">— Masters India</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="in-gstin-27gspmh1881g1zh" data-status="published-example">
+<td class="val"><div class="v"><code>27GSPMH1881G1ZH</code><button class="copy" type="button" data-copy="27GSPMH1881G1ZH" aria-label="Copy 27GSPMH1881G1ZH">Copy</button></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Maharashtra sandbox GSTIN on NIC&#x27;s e-invoice API portal</p><p class="note">Same source and caveat as the Tamil Nadu sandbox GSTINs (confirmed via secondary sources only). Passes the check character, but the 4th PAN character M is not a PAN holder type, so strict validators such as python-stdnum reject it. Prefer the 33GSPTN… values.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GSTIN mod-36 check character">✓ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/Sync-GSTIN-Details-from-CP.html" rel="noopener">NIC e-Invoice API sandbox — Sync GSTIN Details from CP (v1.03)</a> <span class="muted">— National Informatics Centre</span></li><li><a href="https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp" rel="noopener">Masters India — Sync GSTIN details from CP</a> <span class="muted">— Masters India</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="in-gstin-27gspmh1882g1zg" data-status="published-example">
+<td class="val"><div class="v"><code>27GSPMH1882G1ZG</code><button class="copy" type="button" data-copy="27GSPMH1882G1ZG" aria-label="Copy 27GSPMH1882G1ZG">Copy</button></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Maharashtra sandbox GSTIN on NIC&#x27;s e-invoice API portal</p><p class="note">Same source and caveat as the Tamil Nadu sandbox GSTINs (confirmed via secondary sources only). Passes the check character, but the 4th PAN character M is not a PAN holder type, so strict validators such as python-stdnum reject it. Prefer the 33GSPTN… values.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GSTIN mod-36 check character">✓ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/Sync-GSTIN-Details-from-CP.html" rel="noopener">NIC e-Invoice API sandbox — Sync GSTIN Details from CP (v1.03)</a> <span class="muted">— National Informatics Centre</span></li><li><a href="https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp" rel="noopener">Masters India — Sync GSTIN details from CP</a> <span class="muted">— Masters India</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="in-gstin-27gspmh3381g1zi" data-status="published-example">
+<td class="val"><div class="v"><code>27GSPMH3381G1ZI</code><button class="copy" type="button" data-copy="27GSPMH3381G1ZI" aria-label="Copy 27GSPMH3381G1ZI">Copy</button></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Maharashtra sandbox GSTIN on NIC&#x27;s e-invoice API portal</p><p class="note">Same source and caveat as the Tamil Nadu sandbox GSTINs (confirmed via secondary sources only). Passes the check character, but the 4th PAN character M is not a PAN holder type, so strict validators such as python-stdnum reject it. Prefer the 33GSPTN… values.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GSTIN mod-36 check character">✓ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/Sync-GSTIN-Details-from-CP.html" rel="noopener">NIC e-Invoice API sandbox — Sync GSTIN Details from CP (v1.03)</a> <span class="muted">— National Informatics Centre</span></li><li><a href="https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp" rel="noopener">Masters India — Sync GSTIN details from CP</a> <span class="muted">— Masters India</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="in-name-gstn2-mh-taxpayer-1" data-status="published-example">
+<td class="val"><div class="v"><code>GSTN2 MH TaxPayer 1 Ltd</code><button class="copy" type="button" data-copy="GSTN2 MH TaxPayer 1 Ltd" aria-label="Copy GSTN2 MH TaxPayer 1 Ltd">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Legal name returned by the sandbox for GSTIN 27GSPMH1881G1ZH</p><p class="note">Obviously fictitious. Returned by Masters India&#x27;s sandbox documentation with an empty address and PIN 0.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.mastersindia.co/e-invoicing-api/sync-gstin-details-from-cp" rel="noopener">Masters India — Sync GSTIN details from CP</a> <span class="muted">— Masters India</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">5</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="in-address-upu-private-delhi" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. Rajiv Rattan / 4, Amrita Shergill Road / New Delhi 110003</code></div><div class="type">Address example (private person) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU&#x27;s example of an Indian private address</p><p class="note">Invented person at a real street and PIN (Amrita Shergill Road is a real New Delhi street).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/indEn.pdf" rel="noopener">UPU — Postal addressing systems, India (01/2013)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-address-upu-private-bangalore" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. N Gopalarathnam / 32/1, 2nd Main Road, 8th Block / Jayanagar / Bangalore, Karnataka 560082</code></div><div class="type">Address example (private person) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU&#x27;s example of an Indian address with block and locality</p><p class="note">Real street and PIN, fictitious-looking name.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/indEn.pdf" rel="noopener">UPU — Postal addressing systems, India (01/2013)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-address-upu-company-ranchi" data-status="published-example">
+<td class="val"><div class="v"><code>Popular Electronics / Astro High Complex / Near Old Taxi Stand, Main Road / Ranchi, Jharkhand 834001-34</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU&#x27;s example of an Indian business address with landmark</p><p class="note">The &quot;-34&quot; suffix after the PIN is as printed by the UPU.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/indEn.pdf" rel="noopener">UPU — Postal addressing systems, India (01/2013)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-address-upu-po-box" data-status="published-example">
+<td class="val"><div class="v"><code>Post Box No. 4380 / Kalkaji Post Office / New Delhi 110019</code></div><div class="type">Address example (PO box) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU&#x27;s example of an Indian post box address</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/indEn.pdf" rel="noopener">UPU — Postal addressing systems, India (01/2013)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-pin-unused-0" data-status="derived">
+<td class="val"><div class="v"><code>0xxxxx</code></div><div class="type">PIN code range <span class="kind">range</span></div></td>
+<td class="what"><p>PIN codes with first digit 0, not used by any postal region</p><p class="note">Passes a 6-digit format check but fails any check that the PIN exists.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Checked against the PIN structure documented by the UPU and Wikipedia (regions 1–8 geographic, 9 Army Postal Service); no PIN-directory lookup was possible (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/indEn.pdf" rel="noopener">UPU — Postal addressing systems, India (01/2013)</a> <span class="muted">— Universal Postal Union</span></li><li><a href="https://en.wikipedia.org/wiki/Postal_Index_Number" rel="noopener">Wikipedia — Postal Index Number</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">1</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="in-account-5697389713210" data-status="published-example">
+<td class="val"><div class="v"><code>5697389713210</code><button class="copy" type="button" data-copy="5697389713210" aria-label="Copy 5697389713210">Copy</button></div><div class="type">Bank account number</div></td>
+<td class="what"><p>Payee account number in NIC&#x27;s Generate IRN sample</p><p class="note">Indian account numbers have no checksum. Do not reuse the IFSC from the same sample (see avoid list).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/generate-irn.html" rel="noopener">NIC e-Invoice API sandbox — Generate IRN (v1.03)</a> <span class="muted">— National Informatics Centre</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="trade"><h2>Trade &amp; logistics <span class="count">1</span></h2><p class="muted">Location numbers, customs, transport codes</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="in-hsn-1006" data-status="published-example">
+<td class="val"><div class="v"><code>1006</code><button class="copy" type="button" data-copy="1006" aria-label="Copy 1006">Copy</button></div><div class="type">HSN code</div></td>
+<td class="what"><p>HSN heading for rice (HS 2022 chapter 10)</p><p class="note">NIC&#x27;s Generate IRN sample describes the item as &quot;Rice&quot; but uses HsnCd 1001 (wheat and meslin); 1006 is the correct heading for rice.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/generate-irn.html" rel="noopener">NIC e-Invoice API sandbox — Generate IRN (v1.03)</a> <span class="muted">— National Informatics Centre</span></li></ul></td>
+<td class="ubl"><code>cac:CommodityClassification/cbc:ItemClassificationCode</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">4</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="in-aadhaar-999941057058" data-status="published-example">
+<td class="val"><div class="v"><code>999941057058</code><button class="copy" type="button" data-copy="999941057058" aria-label="Copy 999941057058">Copy</button></div><div class="type">Aadhaar number</div></td>
+<td class="what"><p>UIDAI staging test UID (test resident Shivshankar Choudhury, New Delhi)</p><p class="note">Test UID for UIDAI&#x27;s staging/pre-production authentication environment; the 9999 prefix marks the test series. Use the number only: the test records&#x27; emails (dummyemail.com, mailserver.com) are registered domains and the phone values look like real landlines. UBL rarely carries Aadhaar.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Aadhaar Verhoeff check digit">✓ in-aadhaar</span></td>
+<td><ul class="src"><li><a href="https://uidai.gov.in/en/data-and-download" rel="noopener">UIDAI — Data and Downloads (Testing Data and License Keys)</a> <span class="muted">— UIDAI</span></li><li><a href="https://uidai.gov.in/en/developer-section" rel="noopener">UIDAI — Developer Section</a> <span class="muted">— UIDAI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-aadhaar-999971658847" data-status="published-example">
+<td class="val"><div class="v"><code>999971658847</code><button class="copy" type="button" data-copy="999971658847" aria-label="Copy 999971658847">Copy</button></div><div class="type">Aadhaar number</div></td>
+<td class="what"><p>UIDAI staging test UID (test resident Kumar Agarwal, Udaipur)</p><p class="note">Test UID for UIDAI&#x27;s staging/pre-production authentication environment; the 9999 prefix marks the test series. Use the number only: the test records&#x27; emails (dummyemail.com, mailserver.com) are registered domains and the phone values look like real landlines. UBL rarely carries Aadhaar.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Aadhaar Verhoeff check digit">✓ in-aadhaar</span></td>
+<td><ul class="src"><li><a href="https://uidai.gov.in/en/data-and-download" rel="noopener">UIDAI — Data and Downloads (Testing Data and License Keys)</a> <span class="muted">— UIDAI</span></li><li><a href="https://uidai.gov.in/en/developer-section" rel="noopener">UIDAI — Developer Section</a> <span class="muted">— UIDAI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-aadhaar-999933119405" data-status="published-example">
+<td class="val"><div class="v"><code>999933119405</code><button class="copy" type="button" data-copy="999933119405" aria-label="Copy 999933119405">Copy</button></div><div class="type">Aadhaar number</div></td>
+<td class="what"><p>UIDAI staging test UID (test resident Fatima Bedi, Bareilly)</p><p class="note">Test UID for UIDAI&#x27;s staging/pre-production authentication environment; the 9999 prefix marks the test series. Use the number only: the test records&#x27; emails (dummyemail.com, mailserver.com) are registered domains and the phone values look like real landlines. UBL rarely carries Aadhaar.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Aadhaar Verhoeff check digit">✓ in-aadhaar</span></td>
+<td><ul class="src"><li><a href="https://uidai.gov.in/en/data-and-download" rel="noopener">UIDAI — Data and Downloads (Testing Data and License Keys)</a> <span class="muted">— UIDAI</span></li><li><a href="https://uidai.gov.in/en/developer-section" rel="noopener">UIDAI — Developer Section</a> <span class="muted">— UIDAI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-aadhaar-999990501894" data-status="published-example">
+<td class="val"><div class="v"><code>999990501894</code><button class="copy" type="button" data-copy="999990501894" aria-label="Copy 999990501894">Copy</button></div><div class="type">Aadhaar number</div></td>
+<td class="what"><p>UIDAI staging test UID (test resident Anisha Jay Kapoor, Bangalore)</p><p class="note">Test UID for UIDAI&#x27;s staging/pre-production authentication environment; the 9999 prefix marks the test series. Use the number only: the test records&#x27; emails (dummyemail.com, mailserver.com) are registered domains and the phone values look like real landlines. UBL rarely carries Aadhaar.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Aadhaar Verhoeff check digit">✓ in-aadhaar</span></td>
+<td><ul class="src"><li><a href="https://uidai.gov.in/en/data-and-download" rel="noopener">UIDAI — Data and Downloads (Testing Data and License Keys)</a> <span class="muted">— UIDAI</span></li><li><a href="https://uidai.gov.in/en/developer-section" rel="noopener">UIDAI — Developer Section</a> <span class="muted">— UIDAI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>GSTIN (GST identification number)</b><p class="note">Check character is Luhn mod-36 over the first 14 characters. GSTN has not published the algorithm; the rule used is python-stdnum&#x27;s.</p></td><td>15 characters = 2-digit state code + PAN + entity number (1–9, A–Z) + Z + check character</td><td><code title="GSTIN mod-36 check character">in-gstin</code></td><td>GSTN / CBIC</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>PAN (Permanent Account Number)</b><p class="note">The check-letter algorithm is undocumented; validators check shape and holder type only. Since DGFT Trade Notice 09/2017 the importer-exporter code (IEC) equals the PAN.</p></td><td>AAAAA9999A: 3 letters, holder-type letter (A B C F G H J L P T), initial of name, 4-digit serial, check letter</td><td><span class="muted">—</span></td><td>Income Tax Department</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Aadhaar (UID)</b></td><td>12 digits, first digit not 0 or 1, Verhoeff check digit</td><td><code title="Aadhaar Verhoeff check digit">in-aadhaar</code></td><td>UIDAI</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>CIN (Corporate Identity Number)</b><p class="note">No checksum. No MCA-published example was found.</p></td><td>21 characters: L/U + 5-digit NIC 2008 activity code + 2-letter state + 4-digit year + 3-letter class (PTC, PLC, OPC…) + 6-digit ROC number</td><td><span class="muted">—</span></td><td>Ministry of Corporate Affairs (MCA)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>LLPIN</b></td><td>AAA-9999</td><td><span class="muted">—</span></td><td>Ministry of Corporate Affairs (MCA)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>IFSC (bank branch code)</b><p class="note">No official test IFSC exists.</p></td><td>4-letter bank code + 0 + 6-character branch code (11 characters)</td><td><span class="muted">—</span></td><td>Reserve Bank of India</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>PIN code</b></td><td>6 digits; 1st digit = region (1–8 geographic, 9 Army Postal Service), first 3 = sorting district</td><td><span class="muted">—</span></td><td>India Post</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>HSN code</b></td><td>4–8 digits based on the Harmonized System</td><td><span class="muted">—</span></td><td>CBIC</td><td class='ubl'><code>cac:CommodityClassification/cbc:ItemClassificationCode</code></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">12</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="in-avoid-gstin-37arzpt4384q1mt" data-status="avoid">
+<td class="val"><div class="v"><code>37ARZPT4384Q1MT</code></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Seller GSTIN in NIC&#x27;s Generate IRN sample</p><p class="note warn">Malformed (14th character M instead of Z) and wrong check character.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="GSTIN mod-36 check character">✗ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/generate-irn.html" rel="noopener">NIC e-Invoice API sandbox — Generate IRN (v1.03)</a> <span class="muted">— National Informatics Centre</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-gstin-29awgpv7107b1z1" data-status="avoid">
+<td class="val"><div class="v"><code>29AWGPV7107B1Z1</code></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Buyer / ship-to GSTIN in NIC&#x27;s Generate IRN sample</p><p class="note warn">Wrong check character (correct would be F), and a ClearTax IRP document links this PAN to &quot;VIKAS EXPORTS&quot;, so it may be a real taxpayer.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="GSTIN mod-36 check character">✗ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/generate-irn.html" rel="noopener">NIC e-Invoice API sandbox — Generate IRN (v1.03)</a> <span class="muted">— National Informatics Centre</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-gstin-12awgpv7107b1z1" data-status="avoid">
+<td class="val"><div class="v"><code>12AWGPV7107B1Z1</code></div><div class="type">GSTIN</div></td>
+<td class="what"><p>Transporter ID in NIC&#x27;s Generate IRN sample</p><p class="note warn">Wrong check character; same possibly real PAN as 29AWGPV7107B1Z1.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="GSTIN mod-36 check character">✗ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/generate-irn.html" rel="noopener">NIC e-Invoice API sandbox — Generate IRN (v1.03)</a> <span class="muted">— National Informatics Centre</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-gstin-29aafcd5862r000" data-status="avoid">
+<td class="val"><div class="v"><code>29AAFCD5862R000</code></div><div class="type">GSTIN</div></td>
+<td class="what"><p>ClearTax GSP sandbox &quot;GSTIN&quot; (one of a list, e.g. also 27AAFCD5862R013)</p><p class="note warn">Not a valid GSTIN (13th character 0, 14th character not Z); private GSP sandbox value.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="GSTIN mod-36 check character">✗ in-gstin</span></td>
+<td><ul class="src"><li><a href="https://docs.cleartax.in/cleartax-docs/e-invoicing-gsp-api/getting-started-with-einv-gsp-api/sandbox-gstin-for-einv-gsp" rel="noopener">ClearTax — Sandbox GSTIN for e-invoicing GSP API</a> <span class="muted">— ClearTax</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-pan-abcde1234f" data-status="avoid">
+<td class="val"><div class="v"><code>ABCDE1234F</code></div><div class="type">PAN</div></td>
+<td class="what"><p>Common textbook placeholder PAN</p><p class="note warn">4th character D is not a PAN holder type, so the value is invalid.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://pypi.org/project/python-stdnum/" rel="noopener">python-stdnum 2.2 (in_.pan)</a> <span class="muted">— Arthur de Jong</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-pin-9" data-status="avoid">
+<td class="val"><div class="v"><code>9xxxxx</code></div><div class="type">PIN code range <span class="kind">range</span></div></td>
+<td class="what"><p>PIN codes starting with 9</p><p class="note warn">Used by the Army Postal Service / Field Post Offices (real military routing).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://en.wikipedia.org/wiki/Postal_Index_Number" rel="noopener">Wikipedia — Postal Index Number</a> <span class="muted">— Wikipedia</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-address-mumbai-243001" data-status="avoid">
+<td class="val"><div class="v"><code>603/4 Vindyachal, 7th Road Raja Wadi, Ghatkopar (East), Mumbai 243001</code></div><div class="type">Address example (private person) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UIDAI test resident address (Rohit Pandey)</p><p class="note warn">PIN 243001 is Bareilly, not Mumbai (data error in the UIDAI test data).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://uidai.gov.in/en/data-and-download" rel="noopener">UIDAI — Data and Downloads (Testing Data and License Keys)</a> <span class="muted">— UIDAI</span></li><li><a href="https://uidai.gov.in/en/developer-section" rel="noopener">UIDAI — Developer Section</a> <span class="muted">— UIDAI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-email-gmail-yahoo" data-status="avoid">
+<td class="val"><div class="v"><code>abc@gmail.com, xyz@yahoo.com</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Emails in NIC&#x27;s Generate IRN sample</p><p class="note warn">Real mail providers; the mailboxes may exist. Use a .test or example.com domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/generate-irn.html" rel="noopener">NIC e-Invoice API sandbox — Generate IRN (v1.03)</a> <span class="muted">— National Informatics Centre</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-domain-uidai-test" data-status="avoid">
+<td class="val"><div class="v"><code>dummyemail.com, mailserver.com</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Email domains in UIDAI&#x27;s test resident data</p><p class="note warn">Registered (parked) domains (DNS checked 2026-11-05).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://uidai.gov.in/en/data-and-download" rel="noopener">UIDAI — Data and Downloads (Testing Data and License Keys)</a> <span class="muted">— UIDAI</span></li><li><a href="https://uidai.gov.in/en/developer-section" rel="noopener">UIDAI — Developer Section</a> <span class="muted">— UIDAI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-domain-example-co-in" data-status="avoid">
+<td class="val"><div class="v"><code>example.co.in</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Tempting Indian &quot;example&quot; domain</p><p class="note warn">Registered (DNS NS records present, 2026-11-05). Not reserved; use example.com or a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-ifsc-sbin11000" data-status="avoid">
+<td class="val"><div class="v"><code>SBIN11000</code></div><div class="type">IFSC</div></td>
+<td class="what"><p>IFSC in NIC&#x27;s Generate IRN sample</p><p class="note warn">Malformed (9 characters instead of 11) and uses the real State Bank of India prefix SBIN.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/generate-irn.html" rel="noopener">NIC e-Invoice API sandbox — Generate IRN (v1.03)</a> <span class="muted">— National Informatics Centre</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="in-avoid-hsn-1001-rice" data-status="avoid">
+<td class="val"><div class="v"><code>1001</code></div><div class="type">HSN code</div></td>
+<td class="what"><p>HSN code paired with &quot;Rice&quot; in NIC&#x27;s Generate IRN sample</p><p class="note warn">1001 is wheat and meslin, not rice; use 1006 for rice.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einv-apisandbox.nic.in/version1.03/generate-irn.html" rel="noopener">NIC e-Invoice API sandbox — Generate IRN (v1.03)</a> <span class="muted">— National Informatics Centre</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for India with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BIN%5D+&amp;country=IN">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

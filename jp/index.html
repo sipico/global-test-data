@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Japan — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Asia</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇯🇵</span> Japan <span class="native">日本</span></h1>
+<p class="lede">Japan has an official UBL source, the JP PINT example invoices published by the Digital Agency through OpenPeppol, but their Corporate Numbers and invoice registration numbers (T-numbers) fail the NTA check digit, apparently on purpose, as does the NTA&#x27;s own T1234567890123. The usable numbers here are those values with the check digit corrected, plus a 999900 series for larger party sets, all confirmed absent from both NTA registers. JPRS reserves example.jp, example.co.jp and example.ne.jp for examples. No phone numbers are reserved for fiction; unassigned MIC blocks are listed instead and may be allocated later. Not included because unverified: the check digit for sole-trader T-numbers, and Tokyo 03-1xxx/2xxx/7xxx-9xxx numbers (not in MIC&#x27;s list, but the rule was not confirmed). The My Number (individual number) must not be used in samples.</p>
+<p class="meta">Updated 2026-11-05 · searched in ja, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-japan-korea.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/jp.yaml">Data file</a> ·
+<a href="../data/jp.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>2</b> Reserved</span><span class="stat s-published-example"><b>12</b> Official example</span><span class="stat s-derived"><b>17</b> Derived</span><span class="stat s-avoid"><b>16</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">17</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="jp-corporate-8700110005901" data-status="published-example">
+<td class="val"><div class="v"><code>8700110005901</code><button class="copy" type="button" data-copy="8700110005901" aria-label="Copy 8700110005901">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Worked example in the NTA&#x27;s check-digit document</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf" rel="noopener">NTA — Corporate Number check-digit method (checkdigit.pdf)</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0188</code></td>
+</tr>
+<tr id="jp-corporate-9234567890123" data-status="derived">
+<td class="val"><div class="v"><code>9234567890123</code><button class="copy" type="button" data-copy="9234567890123" aria-label="Copy 9234567890123">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>JP PINT supplier number with the check digit corrected</p><p class="note">JP PINT uses 1234567890123, which fails the check digit.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0188</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0188</code></td>
+</tr>
+<tr id="jp-corporate-2210987654321" data-status="derived">
+<td class="val"><div class="v"><code>2210987654321</code><button class="copy" type="button" data-copy="2210987654321" aria-label="Copy 2210987654321">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>JP PINT customer number with the check digit corrected</p><p class="note">JP PINT uses 3210987654321, which fails the check digit.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0188</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0188</code></td>
+</tr>
+<tr id="jp-corporate-8654321098765" data-status="derived">
+<td class="val"><div class="v"><code>8654321098765</code><button class="copy" type="button" data-copy="8654321098765" aria-label="Copy 8654321098765">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>JP PINT tax representative number with the check digit corrected</p><p class="note">JP PINT uses T7654321098765, which fails the check digit.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-corporate-series-999900" data-status="derived">
+<td class="val"><div class="v"><code>C999900nnnnnn (n = 000001…000027)</code></div><div class="type">Corporate Number range <span class="kind">range</span></div></td>
+<td class="what"><p>Series of 27 check-digit-valid numbers for a party set</p><p class="note">C is the check digit, e.g. 8999900000001, 7999900000002, … 7999900000027 (full list in the research note). Only n = 1…27 were checked; other numbers in the series were not. Prefix T for the invoice registration number.
+</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ All 27 values pass the check digit and are absent from both NTA registers (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf" rel="noopener">NTA — Corporate Number check-digit method (checkdigit.pdf)</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-corporate-8999900000001" data-status="derived">
+<td class="val"><div class="v"><code>8999900000001</code><button class="copy" type="button" data-copy="8999900000001" aria-label="Copy 8999900000001">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Party-set series, party 1</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf" rel="noopener">NTA — Corporate Number check-digit method (checkdigit.pdf)</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0188</code></td>
+</tr>
+<tr id="jp-corporate-7999900000002" data-status="derived">
+<td class="val"><div class="v"><code>7999900000002</code><button class="copy" type="button" data-copy="7999900000002" aria-label="Copy 7999900000002">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Party-set series, party 2</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf" rel="noopener">NTA — Corporate Number check-digit method (checkdigit.pdf)</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0188</code></td>
+</tr>
+<tr id="jp-corporate-6999900000003" data-status="derived">
+<td class="val"><div class="v"><code>6999900000003</code><button class="copy" type="button" data-copy="6999900000003" aria-label="Copy 6999900000003">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Party-set series, party 3</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf" rel="noopener">NTA — Corporate Number check-digit method (checkdigit.pdf)</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0188</code></td>
+</tr>
+<tr id="jp-corporate-5999900000004" data-status="derived">
+<td class="val"><div class="v"><code>5999900000004</code><button class="copy" type="button" data-copy="5999900000004" aria-label="Copy 5999900000004">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Party-set series, party 4</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf" rel="noopener">NTA — Corporate Number check-digit method (checkdigit.pdf)</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0188</code></td>
+</tr>
+<tr id="jp-corporate-4999900000005" data-status="derived">
+<td class="val"><div class="v"><code>4999900000005</code><button class="copy" type="button" data-copy="4999900000005" aria-label="Copy 4999900000005">Copy</button></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Party-set series, party 5</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Corporate Number register (2026-11-05)</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf" rel="noopener">NTA — Corporate Number check-digit method (checkdigit.pdf)</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cbc:EndpointID @schemeID=0188</code></td>
+</tr>
+<tr id="jp-tnumber-t9234567890123" data-status="derived">
+<td class="val"><div class="v"><code>T9234567890123</code><button class="copy" type="button" data-copy="T9234567890123" aria-label="Copy T9234567890123">Copy</button></div><div class="type">Invoice registration number</div></td>
+<td class="what"><p>T-number for Corporate Number 9234567890123 (JP PINT supplier, corrected)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/18.pdf" rel="noopener">NTA インボイス制度 Q&amp;A 問18 — registration number structure</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="jp-tnumber-t2210987654321" data-status="derived">
+<td class="val"><div class="v"><code>T2210987654321</code><button class="copy" type="button" data-copy="T2210987654321" aria-label="Copy T2210987654321">Copy</button></div><div class="type">Invoice registration number</div></td>
+<td class="what"><p>T-number for Corporate Number 2210987654321 (JP PINT customer, corrected)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/18.pdf" rel="noopener">NTA インボイス制度 Q&amp;A 問18 — registration number structure</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="jp-tnumber-t8654321098765" data-status="derived">
+<td class="val"><div class="v"><code>T8654321098765</code><button class="copy" type="button" data-copy="T8654321098765" aria-label="Copy T8654321098765">Copy</button></div><div class="type">Invoice registration number</div></td>
+<td class="what"><p>T-number for the JP PINT tax representative (corrected)</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span><span class="chk ver">✓ Not in the NTA Qualified Invoice Issuer register (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/18.pdf" rel="noopener">NTA インボイス制度 Q&amp;A 問18 — registration number structure</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><code>cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="jp-name-marumaru-shoji" data-status="published-example">
+<td class="val"><div class="v"><code>株式会社 〇〇商事</code><button class="copy" type="button" data-copy="株式会社 〇〇商事" aria-label="Copy 株式会社 〇〇商事">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Supplier name in all JP PINT examples (Marumaru Shōji)</p><p class="note">〇〇 is the Japanese &quot;blank&quot; placeholder. Romanised in some files as 〇〇 Shoji / Marumaru Shoji.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp-sb/" rel="noopener">JP BIS Self-Billing 1.1.3</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp-ntr/" rel="noopener">JP BIS Non-tax Registered Businesses 1.1.3</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+<tr id="jp-name-marumaru-bussan" data-status="published-example">
+<td class="val"><div class="v"><code>株式会社 〇〇物産</code><button class="copy" type="button" data-copy="株式会社 〇〇物産" aria-label="Copy 株式会社 〇〇物産">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Customer name in all JP PINT examples (Marumaru Bussan)</p><p class="note">Its delivery party is 株式会社 〇〇物産 札幌支社 (Sapporo branch).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp-sb/" rel="noopener">JP BIS Self-Billing 1.1.3</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp-ntr/" rel="noopener">JP BIS Non-tax Registered Businesses 1.1.3</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><code>cac:PartyLegalEntity/cbc:RegistrationName</code></td>
+</tr>
+<tr id="jp-name-nta-placeholders" data-status="published-example">
+<td class="val"><div class="v"><code>A株式会社, B株式会社, △△商事㈱, ▲▲㈱, ■■建設, スーパー○○, ○○旅館</code></div><div class="type">Company name placeholders <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Placeholder party names used in NTA invoice-system material</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/01-09.pdf" rel="noopener">NTA インボイス制度 Q&amp;A 01-09 — invoice items</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0024002-057_a.pdf" rel="noopener">NTA invoice leaflet 0024002-057_a</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-sccode-123456-000123" data-status="published-example">
+<td class="val"><div class="v"><code>123456:000123:0147:1</code><button class="copy" type="button" data-copy="123456:000123:0147:1" aria-label="Copy 123456:000123:0147:1">Copy</button></div><div class="type">Standard Company Code (ICD 0147)</div></td>
+<td class="what"><p>Supplier Standard Company Code in the JP PINT examples</p><p class="note">Customer uses 654321:000321:0147:1, payee 123456:000124:0147:1. Not checked against a register (no open register exists).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp-sb/" rel="noopener">JP BIS Self-Billing 1.1.3</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp-ntr/" rel="noopener">JP BIS Non-tax Registered Businesses 1.1.3</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">3</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="jp-address-pint-sapporo" data-status="published-example">
+<td class="val"><div class="v"><code>株式会社 〇〇物産 / 北十二条西76-X / 北区 / 札幌市 / 北海道 / 0010012</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>JP PINT customer address with an impossible block number</p><p class="note">Pattern to reuse - real postcode and district, chōme beyond the real range. Passes a postcode/town lookup but cannot match a real building.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Postcode 001-0012 = 札幌市北区北十二条西 in Japan Post KEN_ALL; the real chōme are 1–4 only (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://www.post.japanpost.jp/zipcode/download.html" rel="noopener">Japan Post — postcode data download (KEN_ALL, JIGYOSYO)</a> <span class="muted">— Japan Post (日本郵便)</span></li></ul></td>
+<td class="ubl"><code>cac:PostalAddress</code></td>
+</tr>
+<tr id="jp-address-upu-niigata" data-status="published-example">
+<td class="val"><div class="v"><code>Mr Taro Tanaka / 10-23, Kotobukicho / Chuo-ku, NIIGATA / 951-8073 JAPAN</code></div><div class="type">Address example (private person) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a Japanese address in Latin script</p><p class="note">Invented person at a real address area. Other UPU examples - 2-17-10, Aioicho, Naka-ku, YOKOHAMA 231-0012; 4-3-2, Hakusan, Bunkyo-ku, TOKYO 112-0001.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ Postcode/town pair is real in KEN_ALL (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/jpnEn.pdf" rel="noopener">UPU — Postal addressing systems, Japan (06/2019)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-postcode-unused-prefixes" data-status="derived">
+<td class="val"><div class="v"><code>000-xxxx, 008-xxxx, 009-xxxx, 032-xxxx, 908-xxxx, 909-xxxx, 977-xxxx, 978-xxxx</code></div><div class="type">Postcode range <span class="kind">range</span></div></td>
+<td class="what"><p>Three-digit prefixes used by no postcode</p><p class="note">Passes a 7-digit format check but fails any postcode-existence check. 000-0000 and 999-9999 are also unassigned; codes in use run from 001-0000 to 999-8531.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ In neither KEN_ALL (120,721 area postcodes) nor JIGYOSYO (22,196 business postcodes) (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.post.japanpost.jp/zipcode/download.html" rel="noopener">Japan Post — postcode data download (KEN_ALL, JIGYOSYO)</a> <span class="muted">— Japan Post (日本郵便)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">5</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="jp-phone-03-31xx" data-status="derived">
+<td class="val"><div class="v"><code>03-3102-xxxx … 03-3199-xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Tokyo local codes unassigned in the MIC allocation file</p><p class="note">Japan reserves no numbers for fiction, so these could be allocated later; re-check before freezing. Suggested form 03-3150-00nn (+81 3 3150 00nn).</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Marked 未使用 (unassigned) in MIC&#x27;s 03 area file dated 2024-03-01; valid fixed line in libphonenumber 9.0.42 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/number_shitei.html" rel="noopener">MIC 電気通信番号指定状況 (number allocation status)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li><li><a href="https://www.soumu.go.jp/main_content/000697545.xls" rel="noopener">MIC allocation file — area codes starting with 3 (xls)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-phone-070-98" data-status="derived">
+<td class="val"><div class="v"><code>070-98xx-xxxx, 070-99xx-xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Mobile blocks unassigned in the MIC 070 file</p><p class="note">Could be allocated later. Suggested form 070-9800-00nn (+81 70 9800 00nn).</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Unassigned in MIC&#x27;s 070 file dated 2026-09-01; valid mobile in libphonenumber 9.0.42 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/number_shitei.html" rel="noopener">MIC 電気通信番号指定状況 (number allocation status)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li><li><a href="https://www.soumu.go.jp/main_content/001090878.xlsx" rel="noopener">MIC allocation file — 070 (xlsx)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-phone-060-15" data-status="derived">
+<td class="val"><div class="v"><code>060-15xx-xxxx … 060-99xx-xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Mobile blocks unassigned in the recently opened 060 range</p><p class="note">060 was opened recently, so blocks are being allocated; prefer 070-98xx.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Unassigned in MIC&#x27;s 060 file dated 2025-07-01; valid mobile in libphonenumber 9.0.42 (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/number_shitei.html" rel="noopener">MIC 電気通信番号指定状況 (number allocation status)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li><li><a href="https://www.soumu.go.jp/main_content/001019693.xlsx" rel="noopener">MIC allocation file — 060 (xlsx)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-domain-example-jp" data-status="reserved">
+<td class="val"><div class="v"><code>example.jp, example.co.jp, example.ne.jp (and example0–example9 under these), ドメイン名例.jp</code></div><div class="type">Email domain <span class="kind">range</span></div></td>
+<td class="what"><p>Domains reserved by JPRS for use in examples</p><p class="note">ドメイン名例.jp is xn--eckwd4c7cu47r2wf.jp. RFC 2606/6761 names (.example, .test, example.com) can also be used.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ver">✓ All NXDOMAIN (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://jprs.jp/faq/use/" rel="noopener">JPRS FAQ — 例示に使用可能なドメイン名 (domain names usable for examples)</a> <span class="muted">— JPRS</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-email-seikyu-marumaru-shoji" data-status="reserved">
+<td class="val"><div class="v"><code>seikyu@marumaru-shoji.example.co.jp</code><button class="copy" type="button" data-copy="seikyu@marumaru-shoji.example.co.jp" aria-label="Copy seikyu@marumaru-shoji.example.co.jp">Copy</button></div><div class="type">Email address</div></td>
+<td class="what"><p>Billing email for 〇〇商事 on a JPRS-reserved domain</p><p class="note">Recommended form in the research. Pattern for other parties - &lt;alias&gt;.example.co.jp or &lt;alias&gt;1.example.jp.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://jprs.jp/faq/use/" rel="noopener">JPRS FAQ — 例示に使用可能なドメイン名 (domain names usable for examples)</a> <span class="muted">— JPRS</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">1</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="jp-bank-pint-1234-567" data-status="published-example">
+<td class="val"><div class="v"><code>1234:567:1:3242394</code><button class="copy" type="button" data-copy="1234:567:1:3242394" aria-label="Copy 1234:567:1:3242394">Copy</button></div><div class="type">Bank account</div></td>
+<td class="what"><p>JP PINT payee account (bank:branch:type:account)</p><p class="note">No reserved test bank code exists. Bank code 1234 is absent from the community zengin-code list (1,146 codes; not official). Account holder in the examples is ｶ)ﾏﾙﾏﾙｼﾖｳｼﾞ.
+</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://github.com/zengin-code/source-data" rel="noopener">zengin-code/source-data (community bank code list)</a> <span class="muted">— zengin-code (community)</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="trade"><h2>Trade &amp; logistics <span class="count">3</span></h2><p class="muted">Location numbers, customs, transport codes</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="jp-gtin-4512345000035" data-status="published-example">
+<td class="val"><div class="v"><code>4512345000035</code><button class="copy" type="button" data-copy="4512345000035" aria-label="Copy 4512345000035">Copy</button></div><div class="type">GTIN-13 (JAN)</div></td>
+<td class="what"><p>Example JAN code in a GS1 Japan presentation</p><p class="note">Not checked against GEPIR - company prefix 4512345 may belong to a real company. GS1 prefix 952 (demo) is safer. The same deck shows ITF/GTIN-14 14512345000032.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="GS1 mod-10 check digit">✓ gs1</span></td>
+<td><ul class="src"><li><a href="https://www.mlit.go.jp/common/001347058.pdf" rel="noopener">GS1の仕組み (GS1 Japan, 2019, hosted by MLIT)</a> <span class="muted">— GS1 Japan / MLIT</span></li></ul></td>
+<td class="ubl"><code>cac:Item/cac:StandardItemIdentification/cbc:ID @schemeID=0160</code></td>
+</tr>
+<tr id="jp-naccs-9234567890123-0000" data-status="derived">
+<td class="val"><div class="v"><code>9234567890123-0000</code><button class="copy" type="button" data-copy="9234567890123-0000" aria-label="Copy 9234567890123-0000">Copy</button></div><div class="type">NACCS importer/exporter code</div></td>
+<td class="what"><p>Importer/exporter code built from a corrected Corporate Number</p><p class="note">Corporate Number + 4-digit branch number, following the Japan Customs example 1234567890123-0000 (whose Corporate Number fails the check digit).</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Corporate Number 9234567890123 not in the NTA registers (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.customs.go.jp/zeikan/seido/zeikancode/upload/naccsriyou.pdf" rel="noopener">Japan Customs — NACCS importer/exporter codes using the Corporate Number</a> <span class="muted">— Japan Customs</span></li><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-naccs-customs-10000abc0000" data-status="published-example">
+<td class="val"><div class="v"><code>10000ABC0000</code><button class="copy" type="button" data-copy="10000ABC0000" aria-label="Copy 10000ABC0000">Copy</button></div><div class="type">NACCS customs-assigned code</div></td>
+<td class="what"><p>Example code assigned by Customs in the Japan Customs guide</p><p class="note">The same guide shows the JASTPRO code P06543210000.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.customs.go.jp/zeikan/seido/zeikancode/upload/naccsriyou.pdf" rel="noopener">Japan Customs — NACCS importer/exporter codes using the Corporate Number</a> <span class="muted">— Japan Customs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">2</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="jp-person-bango-hanako" data-status="published-example">
+<td class="val"><div class="v"><code>番号 花子</code></div><div class="type">Person name <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Name on the official My Number card specimen (Bangō Hanako)</p><p class="note">Specimen date of birth 平成元年3月31日 (31 March 1989). Use the name, not the specimen number.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.soumu.go.jp/main_content/001039529.pdf" rel="noopener">MIC My Number card leaflet (specimen)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-person-tanaka-taro" data-status="published-example">
+<td class="val"><div class="v"><code>田中 太郎 (Taro Tanaka)</code></div><div class="type">Person name <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Person name in the UPU Japan addressing examples</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/jpnEn.pdf" rel="noopener">UPU — Postal addressing systems, Japan (06/2019)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>Corporate Number (法人番号)</b><p class="note">Check digit = 9 − (Σ Pₙ × Qₙ mod 9), Pₙ = n-th base digit from the right, Qₙ = 1 (odd n) or 2 (even n). Bases starting 0000 belong to government bodies. The NTA publication site lists every number ever assigned, closed entities included.</p></td><td>13 digits; check digit first, then a 12-digit base</td><td><code title="Japanese Corporate Number check digit (optional T prefix)">jp-corporate</code></td><td>National Tax Agency (国税庁)</td><td class='ubl'><code>cbc:EndpointID @schemeID=0188</code><code>cac:PartyLegalEntity/cbc:CompanyID @schemeID=0188</code></td></tr><tr><td><b>Qualified Invoice Issuer registration number (適格請求書発行事業者登録番号)</b><p class="note">Sole traders get T + 13 digits that are neither a My Number nor a Corporate Number; whether the same check digit applies to these is unverified.</p></td><td>T + 13 digits (T + Corporate Number for corporations)</td><td><code title="Japanese Corporate Number check digit (optional T prefix)">jp-corporate</code></td><td>National Tax Agency (国税庁)</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cbc:EndpointID @schemeID=0221</code></td></tr><tr><td><b>Standard Company Code (標準企業コード)</b></td><td>6 + 6 digits with ICD 0147, as used in JP PINT (e.g. 123456:000123:0147:1)</td><td><span class="muted">—</span></td><td>JIPDEC</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>My Number (個人番号)</b><p class="note">Use is strictly limited by the My Number Act; no business document needs one. Do not use in samples.</p></td><td>12 digits, last digit a mod-11 check digit</td><td><span class="muted">—</span></td><td>Ministry of Internal Affairs and Communications (総務省)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>NACCS importer/exporter code (輸出入者符号)</b></td><td>Corporate Number + 4-digit branch number (17 digits)</td><td><span class="muted">—</span></td><td>Japan Customs</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Postcode (郵便番号)</b></td><td>7 digits, written NNN-NNNN</td><td><span class="muted">—</span></td><td>Japan Post (日本郵便)</td><td class='ubl'><code>cac:PostalAddress/cbc:PostalZone</code></td></tr><tr><td><b>Bank account (全銀 bank code + branch + type + account)</b><p class="note">Japan does not use IBAN.</p></td><td>4-digit bank code, 3-digit branch, account type (1 ordinary, 2 current), 7-digit account</td><td><span class="muted">—</span></td><td>Zengin-kyō (全国銀行協会)</td><td class='ubl'><code>cac:PayeeFinancialAccount/cbc:ID</code></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">16</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="jp-avoid-corporate-1234567890123" data-status="avoid">
+<td class="val"><div class="v"><code>1234567890123</code></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>JP PINT supplier Corporate Number</p><p class="note warn">Fails the check digit (apparently deliberate). Use 9234567890123.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Japanese Corporate Number check digit (optional T prefix)">✗ jp-corporate</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-corporate-3210987654321" data-status="avoid">
+<td class="val"><div class="v"><code>3210987654321</code></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>JP PINT customer Corporate Number</p><p class="note warn">Fails the check digit. Use 2210987654321.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Japanese Corporate Number check digit (optional T prefix)">✗ jp-corporate</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-tnumber-t1234567890123" data-status="avoid">
+<td class="val"><div class="v"><code>T1234567890123</code></div><div class="type">Invoice registration number</div></td>
+<td class="what"><p>NTA&#x27;s own example T-number, also used in JP PINT</p><p class="note warn">Fails the check digit. Use T9234567890123.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Japanese Corporate Number check digit (optional T prefix)">✗ jp-corporate</span></td>
+<td><ul class="src"><li><a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/18.pdf" rel="noopener">NTA インボイス制度 Q&amp;A 問18 — registration number structure</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-tnumber-t7654321098765" data-status="avoid">
+<td class="val"><div class="v"><code>T7654321098765</code></div><div class="type">Invoice registration number</div></td>
+<td class="what"><p>JP PINT tax representative T-number</p><p class="note warn">Fails the check digit. Use T8654321098765.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Japanese Corporate Number check digit (optional T prefix)">✗ jp-corporate</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-tnumber-typo" data-status="avoid">
+<td class="val"><div class="v"><code>&gt;T3210987654321</code></div><div class="type">Invoice registration number</div></td>
+<td class="what"><p>Customer T-number in six JP PINT/Self-Billing files</p><p class="note warn">Typo (stray &#x27;&gt;&#x27;) and the check digit is wrong anyway.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Japanese Corporate Number check digit (optional T prefix)">✗ jp-corporate</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp-sb/" rel="noopener">JP BIS Self-Billing 1.1.3</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://docs.peppol.eu/poac/jp/pint-jp-ntr/" rel="noopener">JP BIS Non-tax Registered Businesses 1.1.3</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-corporate-5001234567890" data-status="avoid">
+<td class="val"><div class="v"><code>5001234567890</code></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Corporate Number in the Japan Customs NACCS guide</p><p class="note warn">Fails the check digit (as does 2345678901234 in the same guide).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Japanese Corporate Number check digit (optional T prefix)">✗ jp-corporate</span></td>
+<td><ul class="src"><li><a href="https://www.customs.go.jp/zeikan/seido/zeikancode/upload/naccsriyou.pdf" rel="noopener">Japan Customs — NACCS importer/exporter codes using the Corporate Number</a> <span class="muted">— Japan Customs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-corporate-7000012050002" data-status="avoid">
+<td class="val"><div class="v"><code>7000012050002</code></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Seen in check-digit tutorials</p><p class="note warn">Real - the National Tax Agency (国税庁) itself.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-corporate-1180301018771" data-status="avoid">
+<td class="val"><div class="v"><code>1180301018771</code></div><div class="type">Corporate Number</div></td>
+<td class="what"><p>Real company number used as a positive control</p><p class="note warn">Real - Toyota Motor Corporation, in both NTA registers.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Japanese Corporate Number check digit (optional T prefix)">✓ jp-corporate</span></td>
+<td><ul class="src"><li><a href="https://www.houjin-bangou.nta.go.jp/" rel="noopener">NTA Corporate Number publication site</a> <span class="muted">— National Tax Agency</span></li><li><a href="https://www.invoice-kohyo.nta.go.jp/" rel="noopener">NTA Qualified Invoice Issuer publication site</a> <span class="muted">— National Tax Agency</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-gln-pint" data-status="avoid">
+<td class="val"><div class="v"><code>9482348239847239874</code></div><div class="type">GLN endpoint</div></td>
+<td class="what"><p>GLN endpoint (schemeID 0088) in JP PINT Example2</p><p class="note warn">Placeholder of 19 digits, not a valid GLN (13 digits).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-postcode-160-0044" data-status="avoid">
+<td class="val"><div class="v"><code>160-0044</code></div><div class="type">Postcode</div></td>
+<td class="what"><p>JP PINT supplier postcode (Yotsuya, Shinjuku)</p><p class="note warn">Not an assigned postcode (Yotsuya is 160-0004), so the address fails lookups. Checked in KEN_ALL 2026-11-05.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li><li><a href="https://www.post.japanpost.jp/zipcode/download.html" rel="noopener">Japan Post — postcode data download (KEN_ALL, JIGYOSYO)</a> <span class="muted">— Japan Post (日本郵便)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-postcode-100-8792" data-status="avoid">
+<td class="val"><div class="v"><code>100-8792</code></div><div class="type">Postcode</div></td>
+<td class="what"><p>Business postcode seen in UPU contact data</p><p class="note warn">Real business postcode of Japan Post Co., Ltd. HQ. Do not use business postcodes (個別番号) for fictional parties.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.post.japanpost.jp/zipcode/download.html" rel="noopener">Japan Post — postcode data download (KEN_ALL, JIGYOSYO)</a> <span class="muted">— Japan Post (日本郵便)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-phone-pint-masked" data-status="avoid">
+<td class="val"><div class="v"><code>03-3xxx-0001, 011-757-1xxx</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Masked contact phone numbers in JP PINT</p><p class="note warn">Digits masked with x; fail any phone parser.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-phone-090-080" data-status="avoid">
+<td class="val"><div class="v"><code>090-xxxx-xxxx, 080-xxxx-xxxx</code></div><div class="type">Phone range <span class="kind">range</span></div></td>
+<td class="what"><p>Common mobile ranges</p><p class="note warn">Fully allocated to subscribers (MIC files dated 2024-09-01). 090-0000-0000 and 03-0xxx are also structurally invalid.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/number_shitei.html" rel="noopener">MIC 電気通信番号指定状況 (number allocation status)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li><li><a href="https://www.soumu.go.jp/main_content/000697567.xlsx" rel="noopener">MIC allocation file — 090 (xlsx)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-email-pint" data-status="avoid">
+<td class="val"><div class="v"><code>shirou_aoki@〇〇co.jp, purchaser@oobussan.co.jp</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Contact emails in JP PINT</p><p class="note warn">The first is malformed; oobussan.co.jp is unregistered (NXDOMAIN 2026-11-05) but not reserved, so anyone could register it. Use example.co.jp.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://docs.peppol.eu/poac/jp/pint-jp/resources.zip" rel="noopener">JP PINT 1.1.3 — example invoices (resources.zip)</a> <span class="muted">— Digital Agency (デジタル庁) / OpenPeppol</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-bank-codes" data-status="avoid">
+<td class="val"><div class="v"><code>0001, 0005, 9900</code></div><div class="type">Bank code</div></td>
+<td class="what"><p>Bank codes commonly used in examples</p><p class="note warn">Real banks - Mizuho (0001), MUFG (0005), Japan Post Bank (9900).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://github.com/zengin-code/source-data" rel="noopener">zengin-code/source-data (community bank code list)</a> <span class="muted">— zengin-code (community)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="jp-avoid-mynumber-123456789012" data-status="avoid">
+<td class="val"><div class="v"><code>1234 5678 9012</code></div><div class="type">My Number</div></td>
+<td class="what"><p>Number on the official My Number card specimen</p><p class="note warn">Fails the check digit (a valid one would be 123456789018), and My Numbers must not be used in samples at all.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.soumu.go.jp/main_content/001039529.pdf" rel="noopener">MIC My Number card leaflet (specimen)</a> <span class="muted">— Ministry of Internal Affairs and Communications (総務省)</span></li><li><a href="https://laws.e-gov.go.jp/law/426M60000008085" rel="noopener">MIC ordinance No. 85 of 2014 (check digit, art. 5)</a> <span class="muted">— e-Gov</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Japan with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BJP%5D+&amp;country=JP">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

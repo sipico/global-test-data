@@ -1,0 +1,390 @@
+{
+ "code": "ZA",
+ "name": "South Africa",
+ "native_name": "Suid-Afrika",
+ "region": "Africa",
+ "languages": [
+  "en",
+  "af"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-africa.md",
+ "summary": "SARS publishes worked examples that pass its own modulus-10 (Luhn) check digit: an income tax reference, a PAYE/SDL/UIF reference and an ID number. ICASA reserves the geographic exchange codes 114 to 117 for network testing in every area code (test numbers, not a drama range). There is no official example VAT number or company registration number, and no fictitious town or postcode; the UPU addressing examples use real towns. Luhn-valid VAT numbers starting with 4 (e.g. 4000000002) were not checked against the SARS register (interactive lookup only) and are left out. South Africa does not use IBAN, and no e-invoicing standard has been chosen yet.\n",
+ "identifiers": [
+  {
+   "name": "Income tax reference number",
+   "format": "10 digits, starting with 0, 1, 2, 3 or 9",
+   "check": "luhn",
+   "authority": "South African Revenue Service (SARS)",
+   "notes": "SARS \"modulus 10\" (PAYE Employer Reconciliation BRS, Appendix B) is Luhn on 10 digits. 9 = trusts and similar (Nature of Person E/G/H).",
+   "ubl": [
+    "cac:PartyIdentification/cbc:ID"
+   ]
+  },
+  {
+   "name": "PAYE / SDL / UIF reference number",
+   "format": "7, L or U + 9 digits (same last 9 digits for all three)",
+   "authority": "SARS",
+   "notes": "Check digit = modulus 10 (Luhn) after replacing the first character with 4."
+  },
+  {
+   "name": "VAT registration number",
+   "format": "10 digits starting with 4",
+   "authority": "SARS",
+   "notes": "Check digit is probably the same modulus 10 rule; not confirmed for VAT in a SARS document.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "Enterprise (company registration) number",
+   "format": "YYYY/NNNNNN/TT (year / serial / type code)",
+   "authority": "Companies and Intellectual Property Commission (CIPC)",
+   "notes": "No check digit. Type codes (secondary sources, not verified) 06 public, 07 private (Pty) Ltd, 08 non-profit, 21 Inc, 23 close corporation.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "ID number",
+   "format": "13 digits, YYMMDD SSSS C A Z",
+   "check": "za-id",
+   "authority": "Department of Home Affairs",
+   "notes": "SSSS 5000-9999 = male; C 0 = citizen; Z = Luhn check digit."
+  }
+ ],
+ "entries": [
+  {
+   "id": "za-taxref-0001339050",
+   "category": "organisation",
+   "type": "Income tax reference number",
+   "value": "0001339050",
+   "label": "Worked example of the SARS modulus-10 check",
+   "status": "published-example",
+   "checks": [
+    "luhn"
+   ],
+   "notes": "Existence not checked (SARS has no open lookup).",
+   "ubl": [
+    "cac:PartyIdentification/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v23.0.0",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-paye-7230767891",
+   "category": "organisation",
+   "type": "PAYE reference number",
+   "value": "7230767891",
+   "label": "Worked example of an employer PAYE reference",
+   "status": "published-example",
+   "checks": [
+    "za-paye"
+   ],
+   "notes": "Passes modulus 10 after the first digit is replaced by 4 (4230767891).",
+   "sources": [
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v23.0.0",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-sdl-l230767891",
+   "category": "organisation",
+   "type": "SDL reference number",
+   "value": "L230767891",
+   "label": "Skills Development Levy reference matching the PAYE example",
+   "status": "published-example",
+   "checks": [
+    "za-paye"
+   ],
+   "sources": [
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v23.0.0",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-uif-u230767891",
+   "category": "organisation",
+   "type": "UIF reference number",
+   "value": "U230767891",
+   "label": "Unemployment Insurance Fund reference matching the PAYE example",
+   "status": "published-example",
+   "checks": [
+    "za-paye"
+   ],
+   "sources": [
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v23.0.0",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-address-upu-fish-hoek",
+   "category": "address",
+   "type": "Address example (street)",
+   "kind": "placeholder",
+   "value": "Mr P. Rossouw / 442 Thirteenth Avenue / FISH HOEK / 7975",
+   "label": "UPU example of a street address",
+   "status": "published-example",
+   "notes": "Real town and postcode. Postcode on its own last line, locality in upper case, no punctuation.",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — South Africa (02/2010)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-address-upu-lyndhurst",
+   "category": "address",
+   "type": "Address example (building)",
+   "kind": "placeholder",
+   "value": "Mr. Jimmy Jones / 1023 Collet Heights / 449 Collet Drive / LYNDHURST / 1852",
+   "label": "UPU example of an address in a named building",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — South Africa (02/2010)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-address-upu-khayelitsha",
+   "category": "address",
+   "type": "Address example (informal area)",
+   "kind": "placeholder",
+   "value": "TV Matemala / 9285 Block E / KHAYELITSHA / 1982",
+   "label": "UPU example of an address in an informal settlement",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — South Africa (02/2010)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-address-upu-ntabankulu",
+   "category": "address",
+   "type": "Address example (rural)",
+   "kind": "placeholder",
+   "value": "Mr. Joko Oxo / c/o Bamba Zonke primary school / 960401 Kwatsita Village / NTABANKULU / 5170",
+   "label": "UPU example of a rural address",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — South Africa (02/2010)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-phone-0xx-114",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "0XX 114 xxxx",
+   "label": "Geographic numbers reserved for network testing (exchange code 114)",
+   "status": "reserved",
+   "notes": "Any geographic area code, e.g. 021 114 0000 = +27 21 114 0000 (Cape Town). Test numbers may reach operator test equipment; there is no drama range. libphonenumber accepts them as fixed-line.",
+   "sources": [
+    {
+     "title": "ICASA Numbering Plan Regulations 2016 (reg. 15(4))",
+     "url": "https://www.icasa.org.za/uploads/files/NumberingPlanReg.pdf",
+     "publisher": "ICASA",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Amendment of the Numbering Plan Regulations 2016 (Gazette 48328, 2023)",
+     "url": "https://www.icasa.org.za/uploads/files/Amendment-of-the-Numbering-Plan-Regulations-2016.pdf",
+     "publisher": "ICASA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-phone-0xx-115",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "0XX 115 xxxx",
+   "label": "Geographic numbers reserved for network testing (exchange code 115)",
+   "status": "reserved",
+   "notes": "E.g. 011 115 0000 = +27 11 115 0000 (Johannesburg).",
+   "sources": [
+    {
+     "title": "ICASA Numbering Plan Regulations 2016 (reg. 15(4))",
+     "url": "https://www.icasa.org.za/uploads/files/NumberingPlanReg.pdf",
+     "publisher": "ICASA",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Amendment of the Numbering Plan Regulations 2016 (Gazette 48328, 2023)",
+     "url": "https://www.icasa.org.za/uploads/files/Amendment-of-the-Numbering-Plan-Regulations-2016.pdf",
+     "publisher": "ICASA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-phone-0xx-116",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "0XX 116 xxxx",
+   "label": "Geographic numbers reserved for network testing (exchange code 116)",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ICASA Numbering Plan Regulations 2016 (reg. 15(4))",
+     "url": "https://www.icasa.org.za/uploads/files/NumberingPlanReg.pdf",
+     "publisher": "ICASA",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Amendment of the Numbering Plan Regulations 2016 (Gazette 48328, 2023)",
+     "url": "https://www.icasa.org.za/uploads/files/Amendment-of-the-Numbering-Plan-Regulations-2016.pdf",
+     "publisher": "ICASA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-phone-0xx-117",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "0XX 117 xxxx",
+   "label": "Geographic numbers reserved for network testing (exchange code 117)",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ICASA Numbering Plan Regulations 2016 (reg. 15(4))",
+     "url": "https://www.icasa.org.za/uploads/files/NumberingPlanReg.pdf",
+     "publisher": "ICASA",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Amendment of the Numbering Plan Regulations 2016 (Gazette 48328, 2023)",
+     "url": "https://www.icasa.org.za/uploads/files/Amendment-of-the-Numbering-Plan-Regulations-2016.pdf",
+     "publisher": "ICASA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-id-8001015009087",
+   "category": "person",
+   "type": "ID number",
+   "value": "8001015009087",
+   "label": "Worked example of the ID number check digit (male, born 1980-01-01)",
+   "status": "published-example",
+   "checks": [
+    "za-id"
+   ],
+   "notes": "SARS calls it a \"modulus 13\" check; it is Luhn. A real person could hold this number, and it is widely copied as an \"example ID\"; leave the personal ID out where you can.",
+   "sources": [
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v15.0.0 (Appendix B, number validations)",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V15-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SARS PAYE Employer Reconciliation BRS v23.0.0",
+     "url": "https://www.sars.gov.za/wp-content/uploads/Docs/PAYE/BRS/SARS_PAYE_BRS-PAYE-Employer-Reconciliation_V23-0-0.pdf",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-avoid-vat-4734567892",
+   "category": "organisation",
+   "type": "VAT registration number",
+   "value": "4734567892",
+   "label": "Seen as an \"example VAT number\" on a third-party site (taxid.pro)",
+   "status": "avoid",
+   "fails_checks": [
+    "luhn"
+   ],
+   "reason": "Fails the SARS modulus-10 check digit.",
+   "sources": [
+    {
+     "title": "SARS VAT vendor search — help",
+     "url": "https://secure.sarsefiling.co.za/vatvendorsearch/application/HELP.html",
+     "publisher": "SARS",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "za-avoid-address-dbsa",
+   "category": "address",
+   "type": "Address example (PO box)",
+   "kind": "placeholder",
+   "value": "Accounts / Development Bank of SA Limited / PO Box 92214 / PROTEA PARK / 0305",
+   "label": "PO box example in the UPU addressing sheet",
+   "status": "avoid",
+   "reason": "Real organisation (Development Bank of Southern Africa).",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — South Africa (02/2010)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zafEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

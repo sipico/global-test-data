@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brazil — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Latin America</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇧🇷</span> Brazil <span class="native">Brasil</span></h1>
+<p class="lede">Brazil has strong official material: Receita Federal&#x27;s worked example for the new alphanumeric CNPJ (12.ABC.345/01DE-35) passes the check digits and is not in the register, Serpro publishes 22 &quot;CPF fictícios&quot; for its API trial, and the NF-e homologação environment reserves a CNPJ (99.999.999/0001-91) and mandatory test texts. Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs, however, belong to real companies. Brazil does not use UBL or Peppol (national NF-e/CT-e/NFS-e XML). Anatel reserves no telephone numbers for fiction, so leave phones out. State IE (Inscrição Estadual) examples from SINTEGRA were not checked against state registers and are not listed.</p>
+<p class="meta">Updated 2026-11-05 · searched in pt, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-south-america.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/br.yaml">Data file</a> ·
+<a href="../data/br.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>5</b> Reserved</span><span class="stat s-published-example"><b>38</b> Official example</span><span class="stat s-derived"><b>1</b> Derived</span><span class="stat s-avoid"><b>10</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">7</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="br-cnpj-12abc34501de35" data-status="published-example">
+<td class="val"><div class="v"><code>12.ABC.345/01DE-35</code><button class="copy" type="button" data-copy="12.ABC.345/01DE-35" aria-label="Copy 12.ABC.345/01DE-35">Copy</button></div><div class="type">CNPJ (alphanumeric)</div></td>
+<td class="what"><p>Receita Federal&#x27;s worked example of the alphanumeric CNPJ</p><p class="note">Best choice for a Brazilian company. Unformatted 12ABC34501DE35. Also used in the Serpro DV paper, the RFB normative annex and the BCB Pix manual.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span><span class="chk ver">✓ Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf" rel="noopener">CNPJ alfanumérico – Perguntas e Respostas (question 14)</a> <span class="muted">— Receita Federal do Brasil</span></li><li><a href="https://www.serpro.gov.br/menu/noticias/videos/calculodvcnpjalfanaumerico.pdf" rel="noopener">Cálculo dos DV do CNPJ alfanumérico</a> <span class="muted">— Serpro</span></li><li><a href="https://normas.receita.fazenda.gov.br/sijut2consulta/anexoOutros.action?idArquivoBinario=76204" rel="noopener">Anexo normativo (cálculo DV)</a> <span class="muted">— Receita Federal do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cnpj-aa345678000a29" data-status="published-example">
+<td class="val"><div class="v"><code>AA.345.678/000A-29</code><button class="copy" type="button" data-copy="AA.345.678/000A-29" aria-label="Copy AA.345.678/000A-29">Copy</button></div><div class="type">CNPJ (alphanumeric)</div></td>
+<td class="what"><p>Alphanumeric branch example in the Receita Federal FAQ (question 23, Ex2)</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span><span class="chk ver">✓ Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf" rel="noopener">CNPJ alfanumérico – Perguntas e Respostas</a> <span class="muted">— Receita Federal do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cnpj-l9j5byrt000101" data-status="published-example">
+<td class="val"><div class="v"><code>L9J5BYRT000101</code><button class="copy" type="button" data-copy="L9J5BYRT000101" aria-label="Copy L9J5BYRT000101">Copy</button></div><div class="type">CNPJ (alphanumeric)</div></td>
+<td class="what"><p>Fictitious CNPJ with status &quot;active&quot; in the Serpro Consulta CNPJ trial</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span><span class="chk ver">✓ Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cnpj/pt/quick_start/" rel="noopener">API Consulta CNPJ – guia rápido (dados para testes)</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cnpj-l9j5byrtd90r79" data-status="published-example">
+<td class="val"><div class="v"><code>L9J5BYRTD90R79</code><button class="copy" type="button" data-copy="L9J5BYRTD90R79" aria-label="Copy L9J5BYRTD90R79">Copy</button></div><div class="type">CNPJ (alphanumeric)</div></td>
+<td class="what"><p>Fictitious branch CNPJ with status &quot;active&quot; in the Serpro trial</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span><span class="chk ver">✓ Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cnpj/pt/quick_start/" rel="noopener">API Consulta CNPJ – guia rápido (dados para testes)</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cnpj-10y7g69e000163" data-status="published-example">
+<td class="val"><div class="v"><code>10Y7G69E000163</code><button class="copy" type="button" data-copy="10Y7G69E000163" aria-label="Copy 10Y7G69E000163">Copy</button></div><div class="type">CNPJ (alphanumeric)</div></td>
+<td class="what"><p>Fictitious CNPJ with status &quot;closed&quot; in the Serpro trial</p><p class="note">Useful for negative tests (closed company).</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span><span class="chk ver">✓ Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cnpj/pt/quick_start/" rel="noopener">API Consulta CNPJ – guia rápido (dados para testes)</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cnpj-99999999000191" data-status="reserved">
+<td class="val"><div class="v"><code>99.999.999/0001-91</code><button class="copy" type="button" data-copy="99.999.999/0001-91" aria-label="Copy 99.999.999/0001-91">Copy</button></div><div class="type">CNPJ (homologação)</div></td>
+<td class="what"><p>Receiver CNPJ required in NF-e test environment (tpAmb = 2)</p><p class="note">Rejection 597 in NT 2011/002 if different. Since layout 3.10 (NT 2015.003) states may require a valid receiver instead; with this CNPJ use indIEDest = 9 (non-contributor). Enforcement varies by state.
+</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span><span class="chk ver">✓ Not in the Receita Federal open CNPJ data, via BrasilAPI (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Ll7tbBdZPyE%3D" rel="noopener">NF-e Nota Técnica 2011/002</a> <span class="muted">— Portal Nacional da NF-e</span></li><li><a href="https://flexdocs.net/suporte/knowledgebase.php?article=97" rel="noopener">FlexDocs — Rejeição 597</a> <span class="muted">— FlexDocs</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cnpj-simulador-rfb" data-status="published-example">
+<td class="val"><div class="v"><code>https://servicos.receitafederal.gov.br/servico/cnpj-alfa/simular</code></div><div class="type">CNPJ generator <span class="kind">range</span></div></td>
+<td class="what"><p>Official Simulador Nacional de CNPJ for tests with fictitious data</p><p class="note">Generates and validates up to 1,000 fictitious CNPJs per user (RFB FAQ questions 47–51). Output is random, so check each number against the register before use.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://servicos.receitafederal.gov.br/servico/cnpj-alfa/simular" rel="noopener">Simulador Nacional de CNPJ</a> <span class="muted">— Receita Federal do Brasil</span></li><li><a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf" rel="noopener">CNPJ alfanumérico – Perguntas e Respostas (questions 47–51)</a> <span class="muted">— Receita Federal do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">5</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="br-address-correios-example" data-status="published-example">
+<td class="val"><div class="v"><code>João da Silva / Avenida Paulista 123, Loja B / Paraíso / 01311-000 São Paulo/SP</code></div><div class="type">Address example <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Correios&#x27; own example of a correctly formatted address</p><p class="note">Fictitious person at a real street and CEP. The Correios lookup gives bairro Bela Vista for 01311-000, so the example&#x27;s bairro (Paraíso) is inconsistent.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.correios.com.br/enviar/correspondencia/arquivos/nacional/guia-tecnico-de-enderecamento-de-correspondencias.pdf" rel="noopener">Guia Técnico de Endereçamento de Correspondências v1.4</a> <span class="muted">— Correios</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-address-upu-guarapuava" data-status="published-example">
+<td class="val"><div class="v"><code>Marina Costa e Silva / Rua Afonso Camargo, 805 / Santana / GUARAPUAVA – PR / 85070-200</code></div><div class="type">Address example <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a Brazilian street address</p><p class="note">Fictitious person at a real street. The UPU sheet&#x27;s Brasília example (SBN – Quadra 13 – Bloco B, 70002-900) is the real Correios head office.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf" rel="noopener">Postal addressing — Brazil</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-address-upu-caixa-postal" data-status="published-example">
+<td class="val"><div class="v"><code>Caixa Postal 443 / 85100-970</code></div><div class="type">Address example (PO box) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a PO box address</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf" rel="noopener">Postal addressing — Brazil</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cep-unused-00" data-status="derived">
+<td class="val"><div class="v"><code>00000-000 – 00999-999</code></div><div class="type">Postcode range <span class="kind">range</span></div></td>
+<td class="what"><p>CEPs below the lowest assigned range (01000-000, São Paulo)</p><p class="note">Pass a format check but fail any lookup. Use only where failing a lookup is acceptable.</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ 00000000 and 00999999 rejected as &quot;CEP INVÁLIDO&quot; by the Correios service, via BrasilAPI (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://brasilapi.com.br/docs" rel="noopener">BrasilAPI — CEP and CNPJ lookups</a> <span class="muted">— BrasilAPI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cep-suffix-conventions" data-status="published-example">
+<td class="val"><div class="v"><code>-900…-959 large users; -960 and above PO boxes / community boxes (e.g. -970, -994)</code></div><div class="type">Postcode suffix range <span class="kind">range</span></div></td>
+<td class="what"><p>CEP suffix conventions seen in the UPU examples</p><p class="note">Derived from the UPU examples; the full Correios suffix table was not read.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf" rel="noopener">Postal addressing — Brazil</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="br-email-domain-example-com" data-status="reserved">
+<td class="val"><div class="v"><code>example.com</code><button class="copy" type="button" data-copy="example.com" aria-label="Copy example.com">Copy</button></div><div class="type">Email domain</div></td>
+<td class="what"><p>Reserved domain for example e-mail addresses (also *.test)</p><p class="note">The registration status of exemplo.com.br could not be checked (registro.br RDAP returned 403), so do not use it.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">5</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="br-pix-evp-123e4567" data-status="published-example">
+<td class="val"><div class="v"><code>123e4567-e12b-12d1-a456-426655440000</code><button class="copy" type="button" data-copy="123e4567-e12b-12d1-a456-426655440000" aria-label="Copy 123e4567-e12b-12d1-a456-426655440000">Copy</button></div><div class="type">Pix random key (EVP)</div></td>
+<td class="what"><p>Random Pix key used in all static BR Code examples of the BCB manual</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf" rel="noopener">Manual de Padrões para Iniciação do Pix v2.10.0 (§2.5.1, §2.6)</a> <span class="muted">— Banco Central do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-pix-email-fulano" data-status="published-example">
+<td class="val"><div class="v"><code>fulano_da_silva.recebedor@example.com</code><button class="copy" type="button" data-copy="fulano_da_silva.recebedor@example.com" aria-label="Copy fulano_da_silva.recebedor@example.com">Copy</button></div><div class="type">Pix e-mail key</div></td>
+<td class="what"><p>E-mail Pix key example on a reserved domain</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf" rel="noopener">Manual de Padrões para Iniciação do Pix v2.10.0 (§2.5.1, §2.6)</a> <span class="muted">— Banco Central do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-pix-cnpj-12abc34501de35" data-status="published-example">
+<td class="val"><div class="v"><code>12ABC34501DE35</code><button class="copy" type="button" data-copy="12ABC34501DE35" aria-label="Copy 12ABC34501DE35">Copy</button></div><div class="type">Pix CNPJ key</div></td>
+<td class="what"><p>CNPJ Pix key example (same as the RFB alphanumeric example)</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span></td>
+<td><ul class="src"><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf" rel="noopener">Manual de Padrões para Iniciação do Pix v2.10.0 (§2.5.1, §2.6)</a> <span class="muted">— Banco Central do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-pix-brcode-static" data-status="published-example">
+<td class="val"><div class="v"><code>00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913Fulano de Tal6008BRASILIA62070503***63041D3D</code><button class="copy" type="button" data-copy="00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913Fulano de Tal6008BRASILIA62070503***63041D3D" aria-label="Copy 00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913Fulano de Tal6008BRASILIA62070503***63041D3D">Copy</button></div><div class="type">Pix static BR Code (EMV QR)</div></td>
+<td class="what"><p>Static BR Code example for merchant &quot;Fulano de Tal&quot; in Brasília</p><p class="note">CRC16-CCITT 1D3D recomputed during research. &quot;Fulano de Tal&quot; is the Portuguese &quot;John Doe&quot;.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf" rel="noopener">Manual de Padrões para Iniciação do Pix v2.10.0 (§2.6)</a> <span class="muted">— Banco Central do Brasil</span></li><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/spb_docs/ManualBRCode.pdf" rel="noopener">Manual do BR Code</a> <span class="muted">— Banco Central do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-pix-dynamic-url" data-status="published-example">
+<td class="val"><div class="v"><code>pix.example.com/…</code></div><div class="type">Pix dynamic BR Code URL <span class="kind">range</span></div></td>
+<td class="what"><p>Payload location of dynamic BR Codes in the BCB manual</p><p class="note">Uses the reserved example.com domain.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf" rel="noopener">Manual de Padrões para Iniciação do Pix v2.10.0 (§2.5.1, §2.6)</a> <span class="muted">— Banco Central do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">22</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="br-cpf-40442820135" data-status="published-example">
+<td class="val"><div class="v"><code>404.428.201-35</code><button class="copy" type="button" data-copy="404.428.201-35" aria-label="Copy 404.428.201-35">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Regular&quot;, born 14/11/1970 (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-63017285995" data-status="published-example">
+<td class="val"><div class="v"><code>630.172.859-95</code><button class="copy" type="button" data-copy="630.172.859-95" aria-label="Copy 630.172.859-95">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Regular&quot;, born 26/12/1964 (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-91708635203" data-status="published-example">
+<td class="val"><div class="v"><code>917.086.352-03</code><button class="copy" type="button" data-copy="917.086.352-03" aria-label="Copy 917.086.352-03">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Regular&quot;, born 03/01/1943 (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-58136053391" data-status="published-example">
+<td class="val"><div class="v"><code>581.360.533-91</code><button class="copy" type="button" data-copy="581.360.533-91" aria-label="Copy 581.360.533-91">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Regular&quot;, born 20/11/1972 (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-40532176871" data-status="published-example">
+<td class="val"><div class="v"><code>40532176871</code><button class="copy" type="button" data-copy="40532176871" aria-label="Copy 40532176871">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Suspensa&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-47123586964" data-status="published-example">
+<td class="val"><div class="v"><code>47123586964</code><button class="copy" type="button" data-copy="47123586964" aria-label="Copy 47123586964">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Suspensa&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-07691852312" data-status="published-example">
+<td class="val"><div class="v"><code>07691852312</code><button class="copy" type="button" data-copy="07691852312" aria-label="Copy 07691852312">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Pendente de regularização&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-10975384600" data-status="published-example">
+<td class="val"><div class="v"><code>10975384600</code><button class="copy" type="button" data-copy="10975384600" aria-label="Copy 10975384600">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Pendente de regularização&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-01648527949" data-status="published-example">
+<td class="val"><div class="v"><code>01648527949</code><button class="copy" type="button" data-copy="01648527949" aria-label="Copy 01648527949">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Cancelada por multiplicidade&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-47893062592" data-status="published-example">
+<td class="val"><div class="v"><code>47893062592</code><button class="copy" type="button" data-copy="47893062592" aria-label="Copy 47893062592">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Cancelada por multiplicidade&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-98302514705" data-status="published-example">
+<td class="val"><div class="v"><code>98302514705</code><button class="copy" type="button" data-copy="98302514705" aria-label="Copy 98302514705">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Nula&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-18025346790" data-status="published-example">
+<td class="val"><div class="v"><code>18025346790</code><button class="copy" type="button" data-copy="18025346790" aria-label="Copy 18025346790">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Nula&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-64913872591" data-status="published-example">
+<td class="val"><div class="v"><code>64913872591</code><button class="copy" type="button" data-copy="64913872591" aria-label="Copy 64913872591">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Cancelada de ofício&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-52389071686" data-status="published-example">
+<td class="val"><div class="v"><code>52389071686</code><button class="copy" type="button" data-copy="52389071686" aria-label="Copy 52389071686">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Cancelada de ofício&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-05137518743" data-status="published-example">
+<td class="val"><div class="v"><code>05137518743</code><button class="copy" type="button" data-copy="05137518743" aria-label="Copy 05137518743">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Titular falecido&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-08849979878" data-status="published-example">
+<td class="val"><div class="v"><code>08849979878</code><button class="copy" type="button" data-copy="08849979878" aria-label="Copy 08849979878">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF, status &quot;Titular falecido&quot; (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-30272095079" data-status="published-example">
+<td class="val"><div class="v"><code>30272095079</code><button class="copy" type="button" data-copy="30272095079" aria-label="Copy 30272095079">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF of a minor (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-14898746071" data-status="published-example">
+<td class="val"><div class="v"><code>14898746071</code><button class="copy" type="button" data-copy="14898746071" aria-label="Copy 14898746071">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF of a minor (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-20803407009" data-status="published-example">
+<td class="val"><div class="v"><code>20803407009</code><button class="copy" type="button" data-copy="20803407009" aria-label="Copy 20803407009">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF of a minor (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-78411139000" data-status="published-example">
+<td class="val"><div class="v"><code>78411139000</code><button class="copy" type="button" data-copy="78411139000" aria-label="Copy 78411139000">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF of a minor (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-88373571094" data-status="published-example">
+<td class="val"><div class="v"><code>88373571094</code><button class="copy" type="button" data-copy="88373571094" aria-label="Copy 88373571094">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF with partial data (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cpf-47460609080" data-status="published-example">
+<td class="val"><div class="v"><code>47460609080</code><button class="copy" type="button" data-copy="47460609080" aria-label="Copy 47460609080">Copy</button></div><div class="type">CPF</div></td>
+<td class="what"><p>Fictitious CPF with partial data (Serpro trial)</p><p class="note">Serpro labels these &quot;CPF fictícios&quot;, but they cannot be checked against the CPF register, and Serpro&#x27;s numeric &quot;fictitious&quot; CNPJs turned out to be real. Use only where a CPF is unavoidable, such as a consumer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CPF mod-11">✓ br-cpf</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cpf/pt/quick_start/" rel="noopener">API Consulta CPF – guia rápido / dados para testes</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="document"><h2>Documents <span class="count">3</span></h2><p class="muted">Specimen documents, document numbers, test texts</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="br-nfe-homologacao-xnome" data-status="reserved">
+<td class="val"><div class="v"><code>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</code></div><div class="type">Test environment text (NF-e) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Mandatory receiver name (dest/xNome) in NF-e homologação (tpAmb = 2)</p><p class="note">Rejection 598 if different. Capitals, no accents, ASCII hyphen.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Ll7tbBdZPyE%3D" rel="noopener">NF-e Nota Técnica 2011/002</a> <span class="muted">— Portal Nacional da NF-e</span></li><li><a href="https://www.sefaz.pe.gov.br/Servicos/nota-fiscal-eletronica/Guias%20e%20Procedimentos/NF-e%20%20Guia%20De%20Procedimentos%20(05-08-2015).pdf" rel="noopener">SEFAZ-PE Guia de Procedimentos NF-e</a> <span class="muted">— SEFAZ Pernambuco</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-nfce-homologacao-xprod" data-status="reserved">
+<td class="val"><div class="v"><code>NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</code></div><div class="type">Test environment text (NFC-e) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Mandatory description of the first item (det/prod/xProd) in NFC-e homologação</p><p class="note">Rejection 373. Different wording from NF-e (&quot;NOTA FISCAL&quot;, not &quot;NF-E&quot;). Attributed to NT 2015/002; only vendor knowledge-base pages were read.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360010301653" rel="noopener">TecnoSpeed — Rejeição 373</a> <span class="muted">— TecnoSpeed</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-cte-homologacao-xnome" data-status="reserved">
+<td class="val"><div class="v"><code>CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</code></div><div class="type">Test environment text (CT-e) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Mandatory party names (remetente, expedidor, recebedor, destinatário) in CT-e homologação</p><p class="note">Rejections 646–649. Only vendor knowledge bases were read; some states reportedly want CTE without the hyphen.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://oobj.com.br/bc/rejeicao-649-como-resolver/" rel="noopener">Oobj — Rejeição 649 (CT-e)</a> <span class="muted">— Oobj</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="other"><h2>Other <span class="count">1</span></h2><p class="muted">Everything else</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="br-plate-abc1c34" data-status="published-example">
+<td class="val"><div class="v"><code>ABC1C34</code><button class="copy" type="button" data-copy="ABC1C34" aria-label="Copy ABC1C34">Copy</button></div><div class="type">Vehicle plate (Mercosur)</div></td>
+<td class="what"><p>Example plate (converted from old ABC1234) in CONTRAN Res. 780/2019</p><p class="note">Format LLLNLNN; Res. 780/2019 was replaced by Res. 969/2022 with the same format. Combinations are assigned at random, so the example may exist on a real vehicle.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.legisweb.com.br/legislacao/?id=424984" rel="noopener">Resolução CONTRAN 780/2019, Anexo II (LegisWeb)</a> <span class="muted">— LegisWeb</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>CNPJ (Cadastro Nacional da Pessoa Jurídica)</b><p class="note">Mod 11 (weights 5-4-3-2-9-8-7-6-5-4-3-2, then 6-5-4-3-2-9-8-7-6-5-4-3-2; remainder &lt; 2 → 0). From July 2026 the first 12 positions may be A–Z (value = ASCII − 48), IN RFB 2.229/2024; numeric CNPJs stay valid.</p></td><td>14 characters, 8-character root + 4-character branch (0001 = head office) + 2 numeric check digits; written NN.NNN.NNN/NNNN-NN</td><td><code title="CNPJ mod-11 (numeric and alphanumeric)">br-cnpj</code></td><td>Receita Federal do Brasil</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>CPF (Cadastro de Pessoas Físicas)</b><p class="note">The 9th digit is the fiscal region. There is no open CPF register lookup.</p></td><td>11 digits, 9 base digits + 2 mod-11 check digits; written NNN.NNN.NNN-NN</td><td><code title="CPF mod-11">br-cpf</code></td><td>Receita Federal do Brasil</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Inscrição Estadual (IE)</b><p class="note">Empty for non-contributors (indIEDest = 9); the literal ISENTO is used for IE-exempt contributors.</p></td><td>Varies by state (length and check-digit routine published on SINTEGRA)</td><td><span class="muted">—</span></td><td>State tax administrations (SEFAZ)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>CEP (postcode)</b></td><td>NNNNN-NNN, alone on the last address line, without the word &quot;CEP&quot; and without dots</td><td><span class="muted">—</span></td><td>Correios</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Pix key</b></td><td>CPF, CNPJ, e-mail, phone (+55…) or random key (EVP, UUID)</td><td><span class="muted">—</span></td><td>Banco Central do Brasil</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">10</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="br-avoid-cnpj-11222333000181" data-status="avoid">
+<td class="val"><div class="v"><code>11.222.333/0001-81</code></div><div class="type">CNPJ</div></td>
+<td class="what"><p>Ubiquitous &quot;valid example CNPJ&quot; in validator documentation</p><p class="note warn">Real and active (a school fund in São Sebastião do Caí/RS), BrasilAPI (2026-11-05).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span></td>
+<td><ul class="src"><li><a href="https://brasilapi.com.br/docs" rel="noopener">BrasilAPI — CNPJ and CEP lookups</a> <span class="muted">— BrasilAPI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-cnpj-12345678000195" data-status="avoid">
+<td class="val"><div class="v"><code>12.345.678/0001-95</code></div><div class="type">CNPJ</div></td>
+<td class="what"><p>Prose example in the Receita Federal FAQ</p><p class="note warn">Real taxpayer (closed), BrasilAPI (2026-11-05).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span></td>
+<td><ul class="src"><li><a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf" rel="noopener">CNPJ alfanumérico – Perguntas e Respostas</a> <span class="muted">— Receita Federal do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-cnpj-12345678000a08" data-status="avoid">
+<td class="val"><div class="v"><code>12.345.678/000A-08</code></div><div class="type">CNPJ (alphanumeric branch)</div></td>
+<td class="what"><p>Receita Federal FAQ question 23, Ex3</p><p class="note warn">The branch is not registered, but the root 12345678 belongs to a real (closed) taxpayer.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span></td>
+<td><ul class="src"><li><a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf" rel="noopener">CNPJ alfanumérico – Perguntas e Respostas</a> <span class="muted">— Receita Federal do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-cnpj-aa345678000329" data-status="avoid">
+<td class="val"><div class="v"><code>AA.345.678/0003-29</code></div><div class="type">CNPJ</div></td>
+<td class="what"><p>Receita Federal FAQ question 23, Ex1</p><p class="note warn">Wrong check digits (BrasilAPI also returns &quot;inválido&quot;).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="CNPJ mod-11 (numeric and alphanumeric)">✗ br-cnpj</span></td>
+<td><ul class="src"><li><a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/cnpj/cnpj-alfanumerico.pdf" rel="noopener">CNPJ alfanumérico – Perguntas e Respostas</a> <span class="muted">— Receita Federal do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-cnpj-00000000000191" data-status="avoid">
+<td class="val"><div class="v"><code>00.000.000/0001-91</code></div><div class="type">CNPJ</div></td>
+<td class="what"><p>The &quot;first&quot; numeric CNPJ</p><p class="note warn">Real company (Banco do Brasil), BrasilAPI (2026-11-05).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span></td>
+<td><ul class="src"><li><a href="https://brasilapi.com.br/docs" rel="noopener">BrasilAPI — CNPJ and CEP lookups</a> <span class="muted">— BrasilAPI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-cnpj-00000000e08g12" data-status="avoid">
+<td class="val"><div class="v"><code>00.000.000/E08G-12</code></div><div class="type">CNPJ (alphanumeric)</div></td>
+<td class="what"><p>The first alphanumeric CNPJ issued</p><p class="note warn">Real Banco do Brasil branch.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span></td>
+<td><ul class="src"><li><a href="https://brasilapi.com.br/docs" rel="noopener">BrasilAPI — CNPJ and CEP lookups</a> <span class="muted">— BrasilAPI</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-cnpj-00038166000105" data-status="avoid">
+<td class="val"><div class="v"><code>00.038.166/0001-05</code></div><div class="type">CNPJ</div></td>
+<td class="what"><p>CNPJ Pix key in the BCB Pix manual</p><p class="note warn">Banco Central do Brasil itself (BrasilAPI, 2026-11-05).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="CNPJ mod-11 (numeric and alphanumeric)">✓ br-cnpj</span></td>
+<td><ul class="src"><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf" rel="noopener">Manual de Padrões para Iniciação do Pix v2.10.0 (§2.5.1, §2.6)</a> <span class="muted">— Banco Central do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-cnpj-serpro-numeric" data-status="avoid">
+<td class="val"><div class="v"><code>34238864000168, 54447820000155, 46768703000165, 31151791000184, 34428654000132, 06115832000130, 52293473000128, 07781066000105, 60367129000164</code></div><div class="type">CNPJ</div></td>
+<td class="what"><p>Numeric &quot;CNPJ fictícios&quot; in the Serpro Consulta CNPJ trial data</p><p class="note warn">All registered to real businesses (several are MEIs named after real people), BrasilAPI (2026-11-05).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://apicenter.estaleiro.serpro.gov.br/documentacao/consulta-cnpj/pt/quick_start/" rel="noopener">API Consulta CNPJ – guia rápido (dados para testes)</a> <span class="muted">— Serpro</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-cpf-12345678900" data-status="avoid">
+<td class="val"><div class="v"><code>123.456.789-00</code></div><div class="type">CPF</div></td>
+<td class="what"><p>CPF Pix key example in the BCB Pix manual</p><p class="note warn">Fails the check digits (correct would be -09).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="CPF mod-11">✗ br-cpf</span></td>
+<td><ul class="src"><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf" rel="noopener">Manual de Padrões para Iniciação do Pix v2.10.0 (§2.5.1, §2.6)</a> <span class="muted">— Banco Central do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="br-avoid-phone-5561912345678" data-status="avoid">
+<td class="val"><div class="v"><code>+5561912345678</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Phone Pix key example in the BCB Pix manual</p><p class="note warn">A plausible real Brasília mobile number; no range is reserved for fiction in Brazil.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II_ManualdePadroesparaIniciacaodoPix.pdf" rel="noopener">Manual de Padrões para Iniciação do Pix v2.10.0 (§2.5.1, §2.6)</a> <span class="muted">— Banco Central do Brasil</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Brazil with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BBR%5D+&amp;country=BR">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

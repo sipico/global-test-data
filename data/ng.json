@@ -1,0 +1,324 @@
+{
+ "code": "NG",
+ "name": "Nigeria",
+ "native_name": "Nigeria",
+ "region": "Africa",
+ "languages": [
+  "en"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-africa.md",
+ "summary": "The Central Bank of Nigeria's NUBAN documents contain worked examples of the account number check digit, which are the safest Nigerian values found (the bank codes are real). The national e-invoicing system (NRS, formerly FIRS) calls itself UBL- and Peppol-based, but its API takes a JSON derived from UBL, not UBL XML. Its samples use real or invalid data in many places; the TINs in its field documentation (e.g. 89487982-0001) and the generic names (ABC Cement Ltd …) were not checked against the registers and are left out. No reserved phone range, test NIN/BVN or fictitious postcode exists; do not invent Nigerian phone numbers.\n",
+ "identifiers": [
+  {
+   "name": "Tax Identification Number (TIN)",
+   "format": "8 digits + hyphen + 4 digits (NNNNNNNN-NNNN)",
+   "authority": "Nigeria Revenue Service (NRS, formerly FIRS) / Joint Tax Board",
+   "notes": "No published check digit. From January 2026 the NIN (individuals) and the CAC RC number (companies) serve as tax ID.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "CAC registration number",
+   "format": "RC + digits (companies), BN + digits (business names), IT + digits (incorporated trustees)",
+   "authority": "Corporate Affairs Commission (CAC)",
+   "notes": "No check digit.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "National Identification Number (NIN)",
+   "format": "11 digits",
+   "authority": "National Identity Management Commission (NIMC)",
+   "notes": "No published check digit and no official test value."
+  },
+  {
+   "name": "Bank Verification Number (BVN)",
+   "format": "11 digits",
+   "authority": "Nigeria Inter-Bank Settlement System (NIBSS)",
+   "notes": "No official test value."
+  },
+  {
+   "name": "NUBAN account number",
+   "format": "10 digits (9-digit serial + check digit), tied to a 3-digit bank code or 6-digit institution code",
+   "check": "ng-nuban",
+   "authority": "Central Bank of Nigeria (CBN)",
+   "notes": "Weights 3,7,3,3,7,3,… over the 6-digit institution code (bank 011 → 000011) + serial; check = (10 − sum mod 10) mod 10. The ng-nuban validator takes '<3-digit bank code>:<account>'.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ]
+  },
+  {
+   "name": "Invoice Reference Number (IRN)",
+   "format": "<invoice number>-<8-character service ID>-<YYYYMMDD>",
+   "authority": "NRS"
+  }
+ ],
+ "entries": [
+  {
+   "id": "ng-address-upu-ibadan",
+   "category": "address",
+   "type": "Address example (company)",
+   "kind": "placeholder",
+   "value": "Mr. Bukwa Okoro / Okukwo Nigeria Ltd / 34 Alayande Cl / Mokola 200212 / Ibadan / OYO STATE",
+   "label": "UPU example of a company street address",
+   "status": "published-example",
+   "notes": "Real locality and postcode; postcode follows the locality on the same line. The company name was not checked against CAC, so replace it with a fictitious name.",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — Nigeria (10/2022)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/ngaEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-address-upu-abuja",
+   "category": "address",
+   "type": "Address example (P.O. Box)",
+   "kind": "placeholder",
+   "value": "Mr Bukwa Okoro Kola / Adelboden Ltd / P.O.Box. 125 / Garki 900001 / ABUJA",
+   "label": "UPU example of a P.O. Box address",
+   "status": "published-example",
+   "notes": "Real locality and postcode; company name not checked against CAC.",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — Nigeria (10/2022)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/ngaEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-nuban-011-0000014579",
+   "category": "banking",
+   "type": "NUBAN account number",
+   "value": "011:0000014579",
+   "label": "CBN worked example of a bank account number (bank 011)",
+   "status": "published-example",
+   "checks": [
+    "ng-nuban"
+   ],
+   "notes": "Account number 0000014579 at bank code 011 (First Bank, a real bank); check-digit sum 81 → 9. A real account with this number could exist.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "CBN Exposure circular on NUBAN (2018)",
+     "url": "https://www.cbn.gov.ng/out/2018/psmd/exposure%20circular%20for%20nuban.pdf",
+     "publisher": "Central Bank of Nigeria",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-nuban-950547-0000214579",
+   "category": "banking",
+   "type": "NUBAN account number (other financial institution)",
+   "value": "950547:0000214579",
+   "label": "CBN worked example of an account at an other financial institution",
+   "status": "published-example",
+   "notes": "Account number 0000214579 at institution code 950547; check-digit sum 211 → 9 per CBN. The ng-nuban validator handles only 3-digit bank codes, so this value is not machine-checked.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "CBN Exposure circular on NUBAN (2018)",
+     "url": "https://www.cbn.gov.ng/out/2018/psmd/exposure%20circular%20for%20nuban.pdf",
+     "publisher": "Central Bank of Nigeria",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-nuban-011-0000000220",
+   "category": "banking",
+   "type": "NUBAN account number",
+   "value": "011:0000000220",
+   "label": "Example account number in the 2010 NUBAN proposals (bank 011)",
+   "status": "published-example",
+   "checks": [
+    "ng-nuban"
+   ],
+   "notes": "Account number 0000000220, check digit 0. Bank code 011 is real.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "CBN NUBAN proposals v0.4 (2010)",
+     "url": "https://www.cbn.gov.ng/OUT/2011/CIRCULARS/BSPD/NUBAN%20PROPOSALS%20V%200%204-%2003%2009%202010.PDF",
+     "publisher": "Central Bank of Nigeria",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-irn-itw001-e9e0c0d3-20240619",
+   "category": "document",
+   "type": "Invoice Reference Number (IRN)",
+   "value": "ITW001-E9E0C0D3-20240619",
+   "label": "IRN in the NRS e-invoicing API documentation",
+   "status": "published-example",
+   "ubl": [
+    "cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "NRS e-Invoicing developer documentation",
+     "url": "https://einvoice.nrs.gov.ng/docs/introduction",
+     "publisher": "Nigeria Revenue Service",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-irn-inv001-e9e0c0d3-20240619",
+   "category": "document",
+   "type": "Invoice Reference Number (IRN)",
+   "value": "INV001-E9E0C0D3-20240619",
+   "label": "Second IRN in the NRS e-invoicing API documentation",
+   "status": "published-example",
+   "ubl": [
+    "cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "NRS e-Invoicing developer documentation",
+     "url": "https://einvoice.nrs.gov.ng/docs/introduction",
+     "publisher": "Nigeria Revenue Service",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-avoid-name-dangote",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "Dangote Group",
+   "label": "Party name in the NRS API samples",
+   "status": "avoid",
+   "reason": "Real conglomerate.",
+   "sources": [
+    {
+     "title": "NRS e-Invoicing developer documentation",
+     "url": "https://einvoice.nrs.gov.ng/docs/introduction",
+     "publisher": "Nigeria Revenue Service",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-avoid-tin-placeholder",
+   "category": "organisation",
+   "type": "TIN",
+   "value": "TIN-0099990001, TIN-000001",
+   "label": "Supplier and customer TINs in the NRS API samples",
+   "status": "avoid",
+   "reason": "Placeholders that do not match the Nigerian TIN format (8 + 4 digits).",
+   "sources": [
+    {
+     "title": "NRS e-Invoicing developer documentation",
+     "url": "https://einvoice.nrs.gov.ng/docs/introduction",
+     "publisher": "Nigeria Revenue Service",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-avoid-email-email-com",
+   "category": "contact",
+   "type": "Email address",
+   "value": "supplier_business@email.com, business@email.com, paytest@email.com",
+   "label": "Email addresses in the NRS API samples",
+   "status": "avoid",
+   "fails_checks": [
+    "reserved-domain"
+   ],
+   "reason": "email.com is a real mail provider. Use a .test domain.",
+   "sources": [
+    {
+     "title": "NRS e-Invoicing developer documentation",
+     "url": "https://einvoice.nrs.gov.ng/docs/introduction",
+     "publisher": "Nigeria Revenue Service",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-avoid-phone-nrs",
+   "category": "contact",
+   "type": "Phone number",
+   "value": "+23480254099000, +23480254000000",
+   "label": "Phone numbers in the NRS API samples",
+   "status": "avoid",
+   "reason": "Wrong length (libphonenumber invalid). Nigeria has no reserved fictional range.",
+   "sources": [
+    {
+     "title": "NRS e-Invoicing developer documentation",
+     "url": "https://einvoice.nrs.gov.ng/docs/introduction",
+     "publisher": "Nigeria Revenue Service",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-avoid-city-gwarikpa",
+   "category": "address",
+   "type": "Town and postcode",
+   "value": "Gwarikpa, 023401",
+   "label": "City and postcode in the NRS API samples",
+   "status": "avoid",
+   "reason": "Misspelling of Gwarinpa (Abuja); 023401 is not a known NIPOST postcode.",
+   "sources": [
+    {
+     "title": "NRS e-Invoicing developer documentation",
+     "url": "https://einvoice.nrs.gov.ng/docs/introduction",
+     "publisher": "Nigeria Revenue Service",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-avoid-address-nicon",
+   "category": "address",
+   "type": "Address example (company)",
+   "kind": "placeholder",
+   "value": "NICON Insurance Corp. Plc, PMB 246 Garki",
+   "label": "Company address in the UPU addressing sheet",
+   "status": "avoid",
+   "reason": "Real company.",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — Nigeria (10/2022)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/ngaEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ng-avoid-bvn-nin-sandbox",
+   "category": "person",
+   "type": "BVN / NIN",
+   "value": "22222222222, 70123456789",
+   "label": "\"Test BVN/NIN\" values in a third-party KYC sandbox",
+   "status": "avoid",
+   "reason": "Provider-specific sandbox values (Dojah), not issued by NIBSS or NIMC; other systems may treat them as real numbers.",
+   "sources": [
+    {
+     "title": "Dojah — sandbox test data",
+     "url": "https://guides.dojah.io/user-manual/identity-verification/sandbox-test-data",
+     "publisher": "Dojah",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

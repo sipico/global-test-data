@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nigeria — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Africa</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇳🇬</span> Nigeria</h1>
+<p class="lede">The Central Bank of Nigeria&#x27;s NUBAN documents contain worked examples of the account number check digit, which are the safest Nigerian values found (the bank codes are real). The national e-invoicing system (NRS, formerly FIRS) calls itself UBL- and Peppol-based, but its API takes a JSON derived from UBL, not UBL XML. Its samples use real or invalid data in many places; the TINs in its field documentation (e.g. 89487982-0001) and the generic names (ABC Cement Ltd …) were not checked against the registers and are left out. No reserved phone range, test NIN/BVN or fictitious postcode exists; do not invent Nigerian phone numbers.</p>
+<p class="meta">Updated 2026-11-05 · searched in en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-africa.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/ng.yaml">Data file</a> ·
+<a href="../data/ng.json">JSON</a></p>
+<div class="stats"><span class="stat s-published-example"><b>7</b> Official example</span><span class="stat s-avoid"><b>7</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label></div>
+<section class="cat" id="address"><h2>Address <span class="count">2</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ng-address-upu-ibadan" data-status="published-example">
+<td class="val"><div class="v"><code>Mr. Bukwa Okoro / Okukwo Nigeria Ltd / 34 Alayande Cl / Mokola 200212 / Ibadan / OYO STATE</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a company street address</p><p class="note">Real locality and postcode; postcode follows the locality on the same line. The company name was not checked against CAC, so replace it with a fictitious name.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/ngaEn.pdf" rel="noopener">UPU Postal addressing systems — Nigeria (10/2022)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ng-address-upu-abuja" data-status="published-example">
+<td class="val"><div class="v"><code>Mr Bukwa Okoro Kola / Adelboden Ltd / P.O.Box. 125 / Garki 900001 / ABUJA</code></div><div class="type">Address example (P.O. Box) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU example of a P.O. Box address</p><p class="note">Real locality and postcode; company name not checked against CAC.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/ngaEn.pdf" rel="noopener">UPU Postal addressing systems — Nigeria (10/2022)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">3</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ng-nuban-011-0000014579" data-status="published-example">
+<td class="val"><div class="v"><code>011:0000014579</code><button class="copy" type="button" data-copy="011:0000014579" aria-label="Copy 011:0000014579">Copy</button></div><div class="type">NUBAN account number</div></td>
+<td class="what"><p>CBN worked example of a bank account number (bank 011)</p><p class="note">Account number 0000014579 at bank code 011 (First Bank, a real bank); check-digit sum 81 → 9. A real account with this number could exist.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="NUBAN check digit, value as &#x27;bank:account&#x27;">✓ ng-nuban</span></td>
+<td><ul class="src"><li><a href="https://www.cbn.gov.ng/out/2018/psmd/exposure%20circular%20for%20nuban.pdf" rel="noopener">CBN Exposure circular on NUBAN (2018)</a> <span class="muted">— Central Bank of Nigeria</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+<tr id="ng-nuban-950547-0000214579" data-status="published-example">
+<td class="val"><div class="v"><code>950547:0000214579</code><button class="copy" type="button" data-copy="950547:0000214579" aria-label="Copy 950547:0000214579">Copy</button></div><div class="type">NUBAN account number (other financial institution)</div></td>
+<td class="what"><p>CBN worked example of an account at an other financial institution</p><p class="note">Account number 0000214579 at institution code 950547; check-digit sum 211 → 9 per CBN. The ng-nuban validator handles only 3-digit bank codes, so this value is not machine-checked.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.cbn.gov.ng/out/2018/psmd/exposure%20circular%20for%20nuban.pdf" rel="noopener">CBN Exposure circular on NUBAN (2018)</a> <span class="muted">— Central Bank of Nigeria</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+<tr id="ng-nuban-011-0000000220" data-status="published-example">
+<td class="val"><div class="v"><code>011:0000000220</code><button class="copy" type="button" data-copy="011:0000000220" aria-label="Copy 011:0000000220">Copy</button></div><div class="type">NUBAN account number</div></td>
+<td class="what"><p>Example account number in the 2010 NUBAN proposals (bank 011)</p><p class="note">Account number 0000000220, check digit 0. Bank code 011 is real.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="NUBAN check digit, value as &#x27;bank:account&#x27;">✓ ng-nuban</span></td>
+<td><ul class="src"><li><a href="https://www.cbn.gov.ng/OUT/2011/CIRCULARS/BSPD/NUBAN%20PROPOSALS%20V%200%204-%2003%2009%202010.PDF" rel="noopener">CBN NUBAN proposals v0.4 (2010)</a> <span class="muted">— Central Bank of Nigeria</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="document"><h2>Documents <span class="count">2</span></h2><p class="muted">Specimen documents, document numbers, test texts</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ng-irn-itw001-e9e0c0d3-20240619" data-status="published-example">
+<td class="val"><div class="v"><code>ITW001-E9E0C0D3-20240619</code><button class="copy" type="button" data-copy="ITW001-E9E0C0D3-20240619" aria-label="Copy ITW001-E9E0C0D3-20240619">Copy</button></div><div class="type">Invoice Reference Number (IRN)</div></td>
+<td class="what"><p>IRN in the NRS e-invoicing API documentation</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einvoice.nrs.gov.ng/docs/introduction" rel="noopener">NRS e-Invoicing developer documentation</a> <span class="muted">— Nigeria Revenue Service</span></li></ul></td>
+<td class="ubl"><code>cbc:ID</code></td>
+</tr>
+<tr id="ng-irn-inv001-e9e0c0d3-20240619" data-status="published-example">
+<td class="val"><div class="v"><code>INV001-E9E0C0D3-20240619</code><button class="copy" type="button" data-copy="INV001-E9E0C0D3-20240619" aria-label="Copy INV001-E9E0C0D3-20240619">Copy</button></div><div class="type">Invoice Reference Number (IRN)</div></td>
+<td class="what"><p>Second IRN in the NRS e-invoicing API documentation</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einvoice.nrs.gov.ng/docs/introduction" rel="noopener">NRS e-Invoicing developer documentation</a> <span class="muted">— Nigeria Revenue Service</span></li></ul></td>
+<td class="ubl"><code>cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>Tax Identification Number (TIN)</b><p class="note">No published check digit. From January 2026 the NIN (individuals) and the CAC RC number (companies) serve as tax ID.</p></td><td>8 digits + hyphen + 4 digits (NNNNNNNN-NNNN)</td><td><span class="muted">—</span></td><td>Nigeria Revenue Service (NRS, formerly FIRS) / Joint Tax Board</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>CAC registration number</b><p class="note">No check digit.</p></td><td>RC + digits (companies), BN + digits (business names), IT + digits (incorporated trustees)</td><td><span class="muted">—</span></td><td>Corporate Affairs Commission (CAC)</td><td class='ubl'><code>cac:PartyLegalEntity/cbc:CompanyID</code></td></tr><tr><td><b>National Identification Number (NIN)</b><p class="note">No published check digit and no official test value.</p></td><td>11 digits</td><td><span class="muted">—</span></td><td>National Identity Management Commission (NIMC)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Bank Verification Number (BVN)</b><p class="note">No official test value.</p></td><td>11 digits</td><td><span class="muted">—</span></td><td>Nigeria Inter-Bank Settlement System (NIBSS)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>NUBAN account number</b><p class="note">Weights 3,7,3,3,7,3,… over the 6-digit institution code (bank 011 → 000011) + serial; check = (10 − sum mod 10) mod 10. The ng-nuban validator takes &#x27;&lt;3-digit bank code&gt;:&lt;account&gt;&#x27;.</p></td><td>10 digits (9-digit serial + check digit), tied to a 3-digit bank code or 6-digit institution code</td><td><code title="NUBAN check digit, value as &#x27;bank:account&#x27;">ng-nuban</code></td><td>Central Bank of Nigeria (CBN)</td><td class='ubl'><code>cac:PayeeFinancialAccount/cbc:ID</code></td></tr><tr><td><b>Invoice Reference Number (IRN)</b></td><td>&lt;invoice number&gt;-&lt;8-character service ID&gt;-&lt;YYYYMMDD&gt;</td><td><span class="muted">—</span></td><td>NRS</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">7</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="ng-avoid-name-dangote" data-status="avoid">
+<td class="val"><div class="v"><code>Dangote Group</code></div><div class="type">Company name</div></td>
+<td class="what"><p>Party name in the NRS API samples</p><p class="note warn">Real conglomerate.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einvoice.nrs.gov.ng/docs/introduction" rel="noopener">NRS e-Invoicing developer documentation</a> <span class="muted">— Nigeria Revenue Service</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ng-avoid-tin-placeholder" data-status="avoid">
+<td class="val"><div class="v"><code>TIN-0099990001, TIN-000001</code></div><div class="type">TIN</div></td>
+<td class="what"><p>Supplier and customer TINs in the NRS API samples</p><p class="note warn">Placeholders that do not match the Nigerian TIN format (8 + 4 digits).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einvoice.nrs.gov.ng/docs/introduction" rel="noopener">NRS e-Invoicing developer documentation</a> <span class="muted">— Nigeria Revenue Service</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ng-avoid-email-email-com" data-status="avoid">
+<td class="val"><div class="v"><code>supplier_business@email.com, business@email.com, paytest@email.com</code></div><div class="type">Email address</div></td>
+<td class="what"><p>Email addresses in the NRS API samples</p><p class="note warn">email.com is a real mail provider. Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="Reserved example domain (RFC 2606/6761, JPRS)">✗ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://einvoice.nrs.gov.ng/docs/introduction" rel="noopener">NRS e-Invoicing developer documentation</a> <span class="muted">— Nigeria Revenue Service</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ng-avoid-phone-nrs" data-status="avoid">
+<td class="val"><div class="v"><code>+23480254099000, +23480254000000</code></div><div class="type">Phone number</div></td>
+<td class="what"><p>Phone numbers in the NRS API samples</p><p class="note warn">Wrong length (libphonenumber invalid). Nigeria has no reserved fictional range.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einvoice.nrs.gov.ng/docs/introduction" rel="noopener">NRS e-Invoicing developer documentation</a> <span class="muted">— Nigeria Revenue Service</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ng-avoid-city-gwarikpa" data-status="avoid">
+<td class="val"><div class="v"><code>Gwarikpa, 023401</code></div><div class="type">Town and postcode</div></td>
+<td class="what"><p>City and postcode in the NRS API samples</p><p class="note warn">Misspelling of Gwarinpa (Abuja); 023401 is not a known NIPOST postcode.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://einvoice.nrs.gov.ng/docs/introduction" rel="noopener">NRS e-Invoicing developer documentation</a> <span class="muted">— Nigeria Revenue Service</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ng-avoid-address-nicon" data-status="avoid">
+<td class="val"><div class="v"><code>NICON Insurance Corp. Plc, PMB 246 Garki</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Company address in the UPU addressing sheet</p><p class="note warn">Real company.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/ngaEn.pdf" rel="noopener">UPU Postal addressing systems — Nigeria (10/2022)</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="ng-avoid-bvn-nin-sandbox" data-status="avoid">
+<td class="val"><div class="v"><code>22222222222, 70123456789</code></div><div class="type">BVN / NIN</div></td>
+<td class="what"><p>&quot;Test BVN/NIN&quot; values in a third-party KYC sandbox</p><p class="note warn">Provider-specific sandbox values (Dojah), not issued by NIBSS or NIMC; other systems may treat them as real numbers.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://guides.dojah.io/user-manual/identity-verification/sandbox-test-data" rel="noopener">Dojah — sandbox test data</a> <span class="muted">— Dojah</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Nigeria with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BNG%5D+&amp;country=NG">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

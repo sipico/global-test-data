@@ -1,0 +1,392 @@
+{
+ "code": "KR",
+ "name": "South Korea",
+ "native_name": "대한민국",
+ "region": "Asia",
+ "languages": [
+  "ko",
+  "en"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-japan-korea.md",
+ "summary": "South Korea has no officially reserved example values of any kind: no identifiers, phone numbers or example domains (example.kr and example.co.kr are registered). Its e-tax invoice uses the KEC XML standard, not UBL, and Korea has no Peppol authority. The common \"example\" business registration number 123-45-67890 fails the check digit. A checksum-valid party-set series (000-81-0nnnC) was derived, but Korean registers could not be queried, so it is not listed as usable. Also not listed because unverified: postcodes 00xxx and 64xxx-99xxx (outside the range Korea Post says it assigned, but not checked against the postcode database) and mobile numbers 010-0xxx/010-1xxx (reportedly not assignable; not confirmed in the MSIT rules). What remains usable are the UPU address examples, the placeholder name 홍길동 and RFC 2606/6761 domains.\n",
+ "identifiers": [
+  {
+   "name": "Business registration number (사업자등록번호)",
+   "format": "10 digits, written XXX-XX-XXXXX (tax office, type, serial, check digit)",
+   "check": "kr-brn",
+   "authority": "National Tax Service (국세청)",
+   "notes": "Type digits 81 = for-profit corporation HQ, 85 = branch, 01–79 = individuals. Check digit = weights 1,3,7,1,3,7,1,3,5 on digits 1–9, plus floor(d₉ × 5 / 10), then (10 − sum mod 10) mod 10; algorithm from consistent secondary sources, no NTS primary document found."
+  },
+  {
+   "name": "Corporate registration number (법인등록번호)",
+   "format": "13 digits, written XXXXXX-XXXXXXX",
+   "authority": "Court registry (등기소)",
+   "notes": "Check digit commonly described as weights 1,2,1,2,… then (10 − sum mod 10) mod 10; unverified."
+  },
+  {
+   "name": "Resident registration number (주민등록번호)",
+   "format": "YYMMDD-GNNNNNN",
+   "authority": "Ministry of the Interior and Safety (행정안전부)",
+   "notes": "Since 5 October 2020 the six digits after the gender digit are random, so a checksum proves nothing. Collection restricted by the Personal Information Protection Act. Do not use."
+  },
+  {
+   "name": "Postcode (우편번호, 국가기초구역번호)",
+   "format": "5 digits; digits 1–2 province, 1–3 city/county/district, 4–5 serial",
+   "authority": "Korea Post (우정사업본부) / MOIS",
+   "ubl": [
+    "cac:PostalAddress/cbc:PostalZone"
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "id": "kr-address-upu-daegu",
+   "category": "address",
+   "type": "Address example (apartment complex)",
+   "kind": "placeholder",
+   "value": "Mr. Hong, Gil Dong / 101-dong 103-ho / 2275-12, Dalgubeol-daero, Suseong-gu / DAEGU 42007 / REP. OF KOREA",
+   "label": "UPU example of a Korean address in a building complex",
+   "status": "published-example",
+   "notes": "-dong = building, -ho = unit. In Korean script the order is reversed: 대구광역시 수성구 달구벌대로 2275-12 101동 103호.",
+   "sources": [
+    {
+     "title": "UPU — Postal addressing systems, Korea (Rep.) (03/2016)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-address-upu-incheon",
+   "category": "address",
+   "type": "Address example (urban)",
+   "kind": "placeholder",
+   "value": "Dr. Hong, Gil Dong / 24, Songnim-ro, Dong-gu / INCHEON 22554",
+   "label": "UPU example of an urban Korean address",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "UPU — Postal addressing systems, Korea (Rep.) (03/2016)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-address-upu-changnyeong",
+   "category": "address",
+   "type": "Address example (rural)",
+   "kind": "placeholder",
+   "value": "Mr. Hong, Gil Dong / 6, Jong-ro, Changnyeong-eup, Changnyeong-gun / GYEONGSANGNAM-DO 50329",
+   "label": "UPU example of a rural Korean address",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "UPU — Postal addressing systems, Korea (Rep.) (03/2016)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-address-upu-po-box",
+   "category": "address",
+   "type": "Address example (P.O. box)",
+   "kind": "placeholder",
+   "value": "Mr. Hong, Gil Dong / P.O. Box 00 / 51, Oncheon-ro, Yuseong-gu / DAEJEON 34186",
+   "label": "UPU example of a Korean P.O. box address",
+   "status": "published-example",
+   "notes": "Box number 00 is a placeholder.",
+   "sources": [
+    {
+     "title": "UPU — Postal addressing systems, Korea (Rep.) (03/2016)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-domain-rfc-reserved",
+   "category": "contact",
+   "type": "Email domain",
+   "kind": "range",
+   "value": "<alias>.example, example.com",
+   "label": "RFC-reserved domains to use for Korean parties",
+   "status": "reserved",
+   "notes": "Korea has no reserved example domain like JPRS's example.jp; KISA's rules allow reservations but none for examples was found.",
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-person-hong-gildong",
+   "category": "person",
+   "type": "Person name",
+   "kind": "placeholder",
+   "value": "홍길동 (Hong Gil-dong)",
+   "label": "Official placeholder name on government specimens and forms",
+   "status": "published-example",
+   "notes": "Used in MOIS ID-card specimens and the UPU Korea sheet. 김철수 and 이영희 are common textbook names but not from an official source.",
+   "sources": [
+    {
+     "title": "UPU — Postal addressing systems, Korea (Rep.) (03/2016)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "MOIS — ID card (주민등록증) page",
+     "url": "https://www.mois.go.kr/frt/sub/a06/b06/IDCard/screen.do",
+     "publisher": "Ministry of the Interior and Safety",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-brn-1234567890",
+   "category": "organisation",
+   "type": "Business registration number",
+   "value": "123-45-67890",
+   "label": "Common \"example\" BRN (KEPCO, KIPS, many blogs)",
+   "status": "avoid",
+   "fails_checks": [
+    "kr-brn"
+   ],
+   "reason": "Fails the check digit; no NTS source.",
+   "sources": [
+    {
+     "title": "BRN checksum explanation (hongpage.kr)",
+     "url": "https://hongpage.kr/96",
+     "publisher": "hongpage.kr",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-brn-9876543210",
+   "category": "organisation",
+   "type": "Business registration number",
+   "value": "987-65-43210",
+   "label": "BRN used in blog examples",
+   "status": "avoid",
+   "fails_checks": [
+    "kr-brn"
+   ],
+   "reason": "Fails the check digit.",
+   "sources": [
+    {
+     "title": "BRN checksum explanation (hongpage.kr)",
+     "url": "https://hongpage.kr/96",
+     "publisher": "hongpage.kr",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-brn-2048631263",
+   "category": "organisation",
+   "type": "Business registration number",
+   "value": "204-86-31263",
+   "label": "BRN in a widely copied e-tax invoice sample on GitHub",
+   "status": "avoid",
+   "checks": [
+    "kr-brn"
+   ],
+   "reason": "Passes the check digit, so probably a real business. The same sample uses 602-81-31841, the name (주)샘플사업자 and real-looking emails at klnet.co.kr and freechal.com.",
+   "sources": [
+    {
+     "title": "ruseel/kr-etax-sample (unsigned KEC XML e-tax invoice sample)",
+     "url": "https://github.com/ruseel/kr-etax-sample",
+     "publisher": "GitHub (secondary)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-brn-6028131841",
+   "category": "organisation",
+   "type": "Business registration number",
+   "value": "602-81-31841",
+   "label": "Second BRN in the GitHub e-tax invoice sample",
+   "status": "avoid",
+   "checks": [
+    "kr-brn"
+   ],
+   "reason": "Passes the check digit, so probably a real business.",
+   "sources": [
+    {
+     "title": "ruseel/kr-etax-sample (unsigned KEC XML e-tax invoice sample)",
+     "url": "https://github.com/ruseel/kr-etax-sample",
+     "publisher": "GitHub (secondary)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-brn-1248100998",
+   "category": "organisation",
+   "type": "Business registration number",
+   "value": "124-81-00998",
+   "label": "Seen in BRN validator tutorials",
+   "status": "avoid",
+   "checks": [
+    "kr-brn"
+   ],
+   "reason": "Passes the check digit; widely cited as Samsung Electronics (not verified on Hometax).",
+   "sources": [
+    {
+     "title": "BRN checksum explanation (hongpage.kr)",
+     "url": "https://hongpage.kr/96",
+     "publisher": "hongpage.kr",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-brn-2208162517",
+   "category": "organisation",
+   "type": "Business registration number",
+   "value": "220-81-62517",
+   "label": "Seen in BRN validator tutorials",
+   "status": "avoid",
+   "checks": [
+    "kr-brn"
+   ],
+   "reason": "Passes the check digit; widely cited as Naver (not verified on Hometax).",
+   "sources": [
+    {
+     "title": "BRN checksum explanation (hongpage.kr)",
+     "url": "https://hongpage.kr/96",
+     "publisher": "hongpage.kr",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-address-samsung-card",
+   "category": "address",
+   "type": "Address example (company)",
+   "value": "Samsung Card Bldg. / 194, Yulgok-ro, Jongno-gu / SEOUL 03127",
+   "label": "Company address example in the UPU Korea sheet",
+   "status": "avoid",
+   "reason": "Real company building.",
+   "sources": [
+    {
+     "title": "UPU — Postal addressing systems, Korea (Rep.) (03/2016)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/korEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-address-teheran-ro-123",
+   "category": "address",
+   "type": "Address",
+   "value": "서울특별시 강남구 테헤란로 123",
+   "label": "Address seen in blog invoice examples",
+   "status": "avoid",
+   "reason": "Real road; the building number very likely exists.",
+   "sources": [
+    {
+     "title": "Korea Post — postcode structure",
+     "url": "https://www.epost.go.kr/search/zipcode/cmzcd003k01.jsp",
+     "publisher": "Korea Post",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-phone-02-0xxx",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "02-0xxx-xxxx, 02-1xxx-xxxx",
+   "label": "Seoul numbers with an exchange starting 0 or 1",
+   "status": "avoid",
+   "reason": "Local exchanges start with 2–9; libphonenumber 9.0.42 rejects e.g. 02-0123-4567.",
+   "sources": [
+    {
+     "title": "Korean Wikipedia — 대한민국의 전화번호 체계",
+     "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8_%EC%B2%B4%EA%B3%84",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "phonenumbers (Python port of libphonenumber) 9.0.42",
+     "url": "https://pypi.org/project/phonenumbers/",
+     "publisher": "PyPI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-phone-kofic",
+   "category": "contact",
+   "type": "Phone number",
+   "value": "KOFIC screen phone numbers",
+   "label": "Numbers the Korean Film Council lends to film productions",
+   "status": "avoid",
+   "reason": "Real, unpublished subscriber lines, and not available for OTT or other media (Squid Game incident, 2021).",
+   "sources": [
+    {
+     "title": "HuffPost Korea — KOFIC phone numbers for screen exposure",
+     "url": "https://www.huffingtonpost.kr/article/113673",
+     "publisher": "HuffPost Korea",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-domain-example-kr",
+   "category": "contact",
+   "type": "Email domain",
+   "value": "example.kr, example.co.kr, test.co.kr, sample.co.kr",
+   "label": "Tempting example domains",
+   "status": "avoid",
+   "reason": "All registered (DNS checked 2026-11-05). Use <alias>.example or example.com.",
+   "sources": [
+    {
+     "title": "KISA 도메인이름 관리준칙 (Domain Name Management Rules)",
+     "url": "https://krnic.kisa.or.kr/jsp/infoboard/law/domManRule.jsp",
+     "publisher": "KISA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "kr-avoid-rrn",
+   "category": "person",
+   "type": "Resident registration number",
+   "kind": "range",
+   "value": "YYMMDD-GNNNNNN",
+   "label": "Resident registration number (주민등록번호)",
+   "status": "avoid",
+   "reason": "Collection restricted by the Personal Information Protection Act; since October 2020 the digits are random, so no number can be shown to be fictitious. No official specimen number was found.",
+   "sources": [
+    {
+     "title": "korea.kr — resident registration number reform (2020)",
+     "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148872723",
+     "publisher": "Government of the Republic of Korea",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

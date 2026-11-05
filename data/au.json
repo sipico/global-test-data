@@ -1,0 +1,1791 @@
+{
+ "code": "AU",
+ "name": "Australia",
+ "region": "Oceania",
+ "languages": [
+  "en"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-australia-nz.md",
+ "summary": "Australia has the best official fictitious company identifiers found in any country so far: the Peppol PINT A-NZ examples, maintained by the ATO and MBIE, use four ABNs that pass the mod-89 check and are not in ABN Lookup. The ACMA reserves telephone numbers for creative works (geographic blocks, 23 single mobile numbers confirmed, 1800 numbers); seven more mobile numbers and the 1300/1900 numbers come only from Wikipedia and are left out until re-checked against the ACMA page. No fictitious ACN, test BSB, locality or postcode is reserved: Australia Post's own examples put invented people at real localities.\n",
+ "identifiers": [
+  {
+   "name": "ABN (Australian Business Number)",
+   "format": "11 digits, shown nn nnn nnn nnn",
+   "check": "au-abn",
+   "authority": "Australian Business Register (ATO)",
+   "notes": "Subtract 1 from the first digit, weights 10 1 3 5 7 9 11 13 15 17 19, sum mod 89 = 0. A company's ABN is 2 check digits + its ACN. \"Not in ABN Lookup\" means not issued now, not reserved.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0151",
+    "cbc:EndpointID @schemeID=0151"
+   ]
+  },
+  {
+   "name": "ACN / ARBN (Australian Company Number)",
+   "format": "9 digits, shown nnn nnn nnn",
+   "check": "au-acn",
+   "authority": "ASIC",
+   "notes": "Weights 8 7 6 5 4 3 2 1 on digits 1-8, check = (10 - sum mod 10) mod 10. ASIC's current page no longer shows the algorithm. No official fictitious ACN exists."
+  },
+  {
+   "name": "GST registration / GST branch number",
+   "format": "ABN (11 digits), branches ABN + 3 digits",
+   "authority": "ATO",
+   "notes": "There is no separate GST number; GST is registered against the ABN.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "TFN (Tax File Number)",
+   "format": "8 or 9 digits",
+   "authority": "ATO",
+   "notes": "Mod-11 with weights 1 4 3 7 5 8 6 9 10 (secondary sources only; not published by the ATO). Use is restricted by the Privacy (Tax File Number) Rule 2015; never put a TFN in a business document."
+  },
+  {
+   "name": "BSB (Bank-State-Branch)",
+   "format": "6 digits, shown nnn-nnn",
+   "authority": "AusPayNet",
+   "notes": "No check digit; valid means present in the AusPayNet BSB directory. Australia does not use IBAN.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"
+   ]
+  },
+  {
+   "name": "GLN / GTIN",
+   "format": "13 digits (GLN), GS1 mod-10 check digit",
+   "check": "gs1",
+   "authority": "GS1 Australia (prefix 93)",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ]
+  },
+  {
+   "name": "Medicare card number",
+   "format": "10 digits + IRN (first digit 2-6)",
+   "authority": "Services Australia",
+   "notes": "Weights 1 3 7 9 1 3 7 9 on digits 1-8, digit 9 = sum mod 10, digit 10 = issue number (secondary sources only). Not needed in UBL."
+  }
+ ],
+ "entries": [
+  {
+   "id": "au-abn-47555222000",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "47 555 222 000",
+   "label": "Seller ABN in the official PINT A-NZ example invoices",
+   "status": "published-example",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0151",
+    "cbc:EndpointID @schemeID=0151"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-91888222000",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "91 888 222 000",
+   "label": "Buyer ABN in the official PINT A-NZ example invoices",
+   "status": "published-example",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0151",
+    "cbc:EndpointID @schemeID=0151"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-65631636556",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "65 631 636 556",
+   "label": "Seller endpoint ABN in the PINT A-NZ BIS snippets",
+   "status": "published-example",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0151"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing (BIS)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-46610678455",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "46 610 678 455",
+   "label": "Buyer endpoint ABN in the PINT A-NZ BIS snippets",
+   "status": "published-example",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0151"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing (BIS)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-28555222001",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "28 555 222 001",
+   "label": "Derived ABN on the pattern of the official seller example",
+   "status": "derived",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "notes": "Not issued at the time of checking, but not reserved; it could be issued later.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0151"
+   ],
+   "sources": [
+    {
+     "title": "ABR — ABN format (check digit algorithm)",
+     "url": "https://abr.business.gov.au/Help/AbnFormat",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-98555222002",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "98 555 222 002",
+   "label": "Derived ABN on the pattern of the official seller example",
+   "status": "derived",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "notes": "Not issued at the time of checking, but not reserved.",
+   "sources": [
+    {
+     "title": "ABR — ABN format (check digit algorithm)",
+     "url": "https://abr.business.gov.au/Help/AbnFormat",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-79555222003",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "79 555 222 003",
+   "label": "Derived ABN on the pattern of the official seller example",
+   "status": "derived",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "notes": "Not issued at the time of checking, but not reserved.",
+   "sources": [
+    {
+     "title": "ABR — ABN format (check digit algorithm)",
+     "url": "https://abr.business.gov.au/Help/AbnFormat",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-72888222001",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "72 888 222 001",
+   "label": "Derived ABN on the pattern of the official buyer example",
+   "status": "derived",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "notes": "Not issued at the time of checking, but not reserved.",
+   "sources": [
+    {
+     "title": "ABR — ABN format (check digit algorithm)",
+     "url": "https://abr.business.gov.au/Help/AbnFormat",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-76999222000",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "76 999 222 000",
+   "label": "Derived ABN on the pattern of the official examples",
+   "status": "derived",
+   "checks": [
+    "au-abn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "notes": "Not issued at the time of checking, but not reserved.",
+   "sources": [
+    {
+     "title": "ABR — ABN format (check digit algorithm)",
+     "url": "https://abr.business.gov.au/Help/AbnFormat",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-abn-18123456789",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "18 123 456 789",
+   "label": "Derived ABN built on ASIC's invalid example ACN 123 456 789",
+   "status": "derived",
+   "checks": [
+    "au-abn"
+   ],
+   "fails_checks": [
+    "au-acn"
+   ],
+   "verified": [
+    "No record in ABN Lookup, abr.business.gov.au (2026-11-05)"
+   ],
+   "notes": "Its last 9 digits are not a valid ACN, so it cannot be a company ABN; use it for a non-company party.",
+   "sources": [
+    {
+     "title": "ABR — ABN format (check digit algorithm)",
+     "url": "https://abr.business.gov.au/Help/AbnFormat",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-gst-branch-47555222000001",
+   "category": "organisation",
+   "type": "GST branch number",
+   "value": "47555222000001",
+   "label": "GST branch number for seller ABN 47 555 222 000",
+   "status": "published-example",
+   "notes": "ABN + 3-digit GST branch number.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-gst-branch-91888222000001",
+   "category": "organisation",
+   "type": "GST branch number",
+   "value": "91888222000001",
+   "label": "GST branch number for buyer ABN 91 888 222 000",
+   "status": "published-example",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-gst-branch-65631636556001",
+   "category": "organisation",
+   "type": "GST branch number",
+   "value": "65631636556001",
+   "label": "GST branch number for ABN 65 631 636 556",
+   "status": "published-example",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-name-supplier-abc",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "Supplier ABC Pty Ltd",
+   "label": "Generic seller name in the PINT A-NZ examples",
+   "status": "published-example",
+   "notes": "Other generic names used are Supplier Trading Name Ltd, Supplier Official Name Ltd and Trotters Trading Co Ltd. Elite Insurance and Grey Roo Energy were not checked against business-name registers.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:RegistrationName"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-name-buyer-cde",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "Buyer CDE Pty Ltd",
+   "label": "Generic buyer name in the PINT A-NZ examples",
+   "status": "published-example",
+   "notes": "The examples also use Buyer Official Name.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:RegistrationName"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-address-auspost-private",
+   "category": "address",
+   "type": "Address example (private person)",
+   "kind": "placeholder",
+   "value": "Ms A Citizen / 3 Example Street / PARKVILLE VIC 3052",
+   "label": "Australia Post's own example of a private address",
+   "status": "published-example",
+   "notes": "Invented person at a real locality. Max. 40 characters per line, no punctuation, last line LOCALITY STATE POSTCODE in capitals (AS 4590-1999).",
+   "sources": [
+    {
+     "title": "Australia Post — Correct addressing",
+     "url": "https://auspost.com.au/content/dam/auspost_corp/media/documents/correct-addressing.pdf",
+     "publisher": "Australia Post",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-address-auspost-company",
+   "category": "address",
+   "type": "Address example (company, floor)",
+   "kind": "placeholder",
+   "value": "Mr C.R. MacDonald AO / Manager / Orbit Travel Co / Travel World House / Level 7 17 Jones St / NORTH SYDNEY NSW 2060",
+   "label": "Australia Post's example of a company address in a building",
+   "status": "published-example",
+   "notes": "The same standard has Ms C. Fitzgerald / William Jones Pty Ltd / Level 6 51 Jacobson St / BRISBANE QLD 4000.",
+   "sources": [
+    {
+     "title": "Australia Post — Address Presentation Standards (1999)",
+     "url": "https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-addressing-standards-1999.pdf",
+     "publisher": "Australia Post",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-address-auspost-po-box",
+   "category": "address",
+   "type": "Address example (PO Box)",
+   "kind": "placeholder",
+   "value": "SILKHOUSE TRAVEL CO / ATTN: MR A. BROWN / PO BOX 37 / SPRINGVALE VIC 3171",
+   "label": "Australia Post's example of a company PO Box address",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "Australia Post — Address Presentation Standards (1999)",
+     "url": "https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-addressing-standards-1999.pdf",
+     "publisher": "Australia Post",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-address-auspost-locked-bag",
+   "category": "address",
+   "type": "Address example (Locked Bag)",
+   "kind": "placeholder",
+   "value": "The Secretary / Broken Arrow Corporation / Locked Bag 801 / FORTITUDE VALLEY QLD 4006",
+   "label": "Australia Post's example of a Locked Bag address",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "Australia Post — Address Presentation Standards (1999)",
+     "url": "https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-addressing-standards-1999.pdf",
+     "publisher": "Australia Post",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-postcode-unused",
+   "category": "address",
+   "type": "Postcode range",
+   "kind": "range",
+   "value": "00xx, 01xx, 03xx-07xx, 19xx, 49xx, 75xx-79xx, 86xx, 88xx, 89xx, 91xx-93xx, 95xx, 96xx, 98xx; also 1000 and 0999",
+   "label": "Postcodes not used by any locality (first two digits)",
+   "status": "derived",
+   "verified": [
+    "Checked against the community dataset matthewproctor/australianpostcodes, 3,175 postcodes (2026-11-05); not an official Australia Post file"
+   ],
+   "notes": "Such postcodes pass a 4-digit format check but fail any check that the postcode exists. Never use 9999 (North Pole VIC).",
+   "sources": [
+    {
+     "title": "matthewproctor/australianpostcodes (community dataset)",
+     "url": "https://github.com/matthewproctor/australianpostcodes",
+     "publisher": "Matthew Proctor",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-town-eastmead",
+   "category": "address",
+   "type": "Town name",
+   "value": "EASTMEAD",
+   "label": "Invented locality used in the PINT A-NZ examples (with 2443 NSW)",
+   "status": "published-example",
+   "verified": [
+    "Not a locality in the community postcode dataset (2026-11-05)"
+   ],
+   "notes": "Fails a postcode/locality check by design.",
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "matthewproctor/australianpostcodes (community dataset)",
+     "url": "https://github.com/matthewproctor/australianpostcodes",
+     "publisher": "Matthew Proctor",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-town-sampleville",
+   "category": "address",
+   "type": "Town name",
+   "value": "SAMPLEVILLE",
+   "label": "Obvious placeholder town name that is not a locality",
+   "status": "derived",
+   "verified": [
+    "Not a locality in the community postcode dataset (2026-11-05)"
+   ],
+   "notes": "EXAMPLE, SAMPLE and ANYTOWN are also not localities.",
+   "sources": [
+    {
+     "title": "matthewproctor/australianpostcodes (community dataset)",
+     "url": "https://github.com/matthewproctor/australianpostcodes",
+     "publisher": "Matthew Proctor",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-town-bullamakanka",
+   "category": "address",
+   "type": "Town name",
+   "value": "BULLAMAKANKA",
+   "label": "Australian joke \"middle of nowhere\" name, not a locality",
+   "status": "derived",
+   "verified": [
+    "Not a locality in the community postcode dataset (2026-11-05)"
+   ],
+   "notes": "WOOP WOOP is another recognisable joke name that is not a locality.",
+   "sources": [
+    {
+     "title": "matthewproctor/australianpostcodes (community dataset)",
+     "url": "https://github.com/matthewproctor/australianpostcodes",
+     "publisher": "Matthew Proctor",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-02-5550",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "(02) 5550 xxxx",
+   "label": "Central East (NSW, ACT) numbers reserved for creative works",
+   "status": "reserved",
+   "notes": "International format +61 2 5550 xxxx.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-02-7010",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "(02) 7010 xxxx",
+   "label": "Central East (NSW, ACT) numbers reserved for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-03-5550",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "(03) 5550 xxxx",
+   "label": "South East (VIC, TAS) numbers reserved for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-03-7010",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "(03) 7010 xxxx",
+   "label": "South East (VIC, TAS) numbers reserved for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-07-5550",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "(07) 5550 xxxx",
+   "label": "North East (QLD) numbers reserved for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-07-7010",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "(07) 7010 xxxx",
+   "label": "North East (QLD) numbers reserved for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-08-5550",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "(08) 5550 xxxx",
+   "label": "Central West (SA, WA, NT) numbers reserved for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-08-7010",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "(08) 7010 xxxx",
+   "label": "Central West (SA, WA, NT) numbers reserved for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491570006",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 570 006",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 570 006.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491570156",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 570 156",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 570 156.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491570157",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 570 157",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 570 157.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491570158",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 570 158",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 570 158.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491570159",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 570 159",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 570 159.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491570110",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 570 110",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 570 110.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491570313",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 570 313",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 570 313.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491570737",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 570 737",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 570 737.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491571266",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 571 266",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 571 266.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491571491",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 571 491",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 571 491.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491571804",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 571 804",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 571 804.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491572549",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 572 549",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 572 549.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491572665",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 572 665",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 572 665.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491572983",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 572 983",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 572 983.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491573770",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 573 770",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 573 770.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491573087",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 573 087",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 573 087.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491574118",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 574 118",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 574 118.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491574632",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 574 632",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 574 632.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491575254",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 575 254",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 575 254.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491575789",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 575 789",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 575 789.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491576398",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 576 398",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 576 398.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491576801",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 576 801",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 576 801.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-0491577426",
+   "category": "contact",
+   "type": "Mobile number",
+   "value": "0491 577 426",
+   "label": "Mobile number reserved by ACMA for creative works",
+   "status": "reserved",
+   "notes": "International format +61 491 577 426.",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-1800160401",
+   "category": "contact",
+   "type": "Freephone number",
+   "value": "1800 160 401",
+   "label": "Freephone number reserved by ACMA for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-phone-1800-975707-975711",
+   "category": "contact",
+   "type": "Freephone range",
+   "kind": "range",
+   "value": "1800 975 707 - 1800 975 711",
+   "label": "Five freephone numbers reserved by ACMA for creative works",
+   "status": "reserved",
+   "sources": [
+    {
+     "title": "ACMA — Phone numbers for use in TV shows, films and creative works",
+     "url": "https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works",
+     "publisher": "Australian Communications and Media Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-email-alias-test",
+   "category": "contact",
+   "type": "Email address",
+   "kind": "placeholder",
+   "value": "accounts@<alias>.test",
+   "label": "Pattern for example emails on the reserved .test top-level domain",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "notes": "auDA has no reserved example name in .au, so use .test (or .example, example.com/.net/.org).",
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-bsb-123-456",
+   "category": "banking",
+   "type": "BSB",
+   "value": "123-456",
+   "label": "Example BSB used by PINT A-NZ and AusPayNet's own BSB file guide",
+   "status": "published-example",
+   "verified": [
+    "Not in the AusPayNet BSB directory, BSBDirectoryFull.csv, 17,306 rows (2026-11-05)"
+   ],
+   "notes": "Prefix 12 is allocated to Bank of Queensland. A fictitious BSB fails a directory check by design; no reserved test BSB exists.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "AusPayNet — Downloading BSB files via FTP (example record 123-456)",
+     "url": "https://auspaynet.com.au/sites/default/files/2023-10/Downloading_BSB_Files_from_AusPayNet_via_FTP.pdf",
+     "publisher": "AusPayNet",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-bsb-205-536",
+   "category": "banking",
+   "type": "BSB",
+   "value": "205-536",
+   "label": "Example BSB in the PINT A-NZ BIS",
+   "status": "published-example",
+   "verified": [
+    "Not in the AusPayNet BSB directory; no BSB starts with 20 (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing (BIS)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-bsb-unused-prefixes",
+   "category": "banking",
+   "type": "BSB range",
+   "kind": "range",
+   "value": "00, 05, 07, 13, 16, 17, 20, 27, 28, 38, 44, 50, 54, 60, 62, 66, 69, 71, 74, 75, 78, 79, 86, 87, 97, 99 (first two digits)",
+   "label": "BSB prefixes with no branch in the AusPayNet directory",
+   "status": "derived",
+   "verified": [
+    "No row with these first two digits in BSBDirectoryFull.csv, 17,306 rows (2026-11-05)"
+   ],
+   "notes": "Some may be allocated to an institution in the Key to Abbreviations without branches. Avoid 000-000.",
+   "sources": [
+    {
+     "title": "AusPayNet — BSBDirectoryFull.csv",
+     "url": "https://auspaynetbsbpublic.blob.core.windows.net/bsb-reports/BSBDirectoryFull.csv",
+     "publisher": "AusPayNet",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-account-324875423",
+   "category": "banking",
+   "type": "Account number",
+   "value": "324875423",
+   "label": "Bank account number in the PINT A-NZ examples",
+   "status": "published-example",
+   "notes": "Australian account numbers have no check digit. The examples also use 12345 and 56477787743. Australia does not use IBAN.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-gln-prefix-952",
+   "category": "trade",
+   "type": "GLN / GTIN range",
+   "kind": "range",
+   "value": "952xxxxxxxxxC",
+   "label": "GS1 prefix 952 for demonstrations and examples",
+   "status": "reserved",
+   "notes": "Use instead of the GS1 US range 123… seen in PINT A-NZ. GS1 Australia's own prefix 93 belongs to real companies.",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 Company Prefix",
+     "url": "https://www.gs1.org/standards/id-keys/company-prefix",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "GS1 General Specifications",
+     "url": "https://ref.gs1.org/standards/genspecs/",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-tfn-exemption-codes",
+   "category": "person",
+   "type": "TFN exemption code",
+   "kind": "placeholder",
+   "value": "000 000 000 (not quoted), 111 111 111 (declaration pending), 333 333 333 (under 18), 444 444 444 (pensioner)",
+   "label": "ATO codes used in place of a TFN",
+   "status": "published-example",
+   "notes": "Placeholders with a legal meaning, not test values; use only with that meaning. Only 000000000 passes the TFN check.",
+   "sources": [
+    {
+     "title": "ATO — PAYG payment summary, section A payee details (TFN codes)",
+     "url": "https://www.ato.gov.au/forms-and-instructions/payg-payment-summary-individual-non-business/section-a-payee-details",
+     "publisher": "Australian Taxation Office",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-abn-51824753556",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "51 824 753 556",
+   "label": "ABR worked example; base of the PINT GST branch example 51824753556001",
+   "status": "avoid",
+   "checks": [
+    "au-abn"
+   ],
+   "reason": "Real organisation (Australian Taxation Office), listed in ABN Lookup.",
+   "sources": [
+    {
+     "title": "ABR — ABN format (check digit algorithm)",
+     "url": "https://abr.business.gov.au/Help/AbnFormat",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-abn-57946356658",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "57 946 356 658",
+   "label": "Buyer ABN in five PINT A-NZ freight/GST example files",
+   "status": "avoid",
+   "checks": [
+    "au-abn"
+   ],
+   "reason": "Real organisation (Mid North Coast Local Health District, NSW), listed in ABN Lookup.",
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-abn-53004085616",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "53 004 085 616",
+   "label": "ABN of ASIC's worked example ACN 004 085 616",
+   "status": "avoid",
+   "checks": [
+    "au-abn"
+   ],
+   "reason": "Real company (B P Australia Pty Ltd), listed in ABN Lookup.",
+   "sources": [
+    {
+     "title": "ASIC — Australian company numbers (digit check)",
+     "url": "https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/",
+     "publisher": "ASIC",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-acn-004085616",
+   "category": "organisation",
+   "type": "ACN",
+   "value": "004 085 616",
+   "label": "ASIC's worked ACN example",
+   "status": "avoid",
+   "checks": [
+    "au-acn"
+   ],
+   "reason": "Real company (B P Australia Pty Ltd).",
+   "sources": [
+    {
+     "title": "ASIC — Australian company numbers (digit check)",
+     "url": "https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/",
+     "publisher": "ASIC",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-acn-000000019",
+   "category": "organisation",
+   "type": "ACN",
+   "value": "000 000 019",
+   "label": "From a \"valid ACN\" test list copied from an old ASIC page",
+   "status": "avoid",
+   "checks": [
+    "au-acn"
+   ],
+   "reason": "Real company (MONAKA PTY LTD, ABN 89 000 000 019).",
+   "sources": [
+    {
+     "title": "Drupal ABN module issue",
+     "url": "https://www.drupal.org/project/abn/issues/1878530",
+     "publisher": "Drupal.org",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-acn-000250000",
+   "category": "organisation",
+   "type": "ACN",
+   "value": "000 250 000",
+   "label": "From a \"valid ACN\" test list copied from an old ASIC page",
+   "status": "avoid",
+   "checks": [
+    "au-acn"
+   ],
+   "reason": "Real company (WAM PTY LTD).",
+   "sources": [
+    {
+     "title": "Drupal ABN module issue",
+     "url": "https://www.drupal.org/project/abn/issues/1878530",
+     "publisher": "Drupal.org",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-acn-000500005",
+   "category": "organisation",
+   "type": "ACN",
+   "value": "000 500 005",
+   "label": "From a \"valid ACN\" test list copied from an old ASIC page",
+   "status": "avoid",
+   "checks": [
+    "au-acn"
+   ],
+   "reason": "Real company (A.C.N. 000 500 005 PTY LTD).",
+   "sources": [
+    {
+     "title": "Drupal ABN module issue",
+     "url": "https://www.drupal.org/project/abn/issues/1878530",
+     "publisher": "Drupal.org",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-acn-000750005",
+   "category": "organisation",
+   "type": "ACN",
+   "value": "000 750 005",
+   "label": "From a \"valid ACN\" test list copied from an old ASIC page",
+   "status": "avoid",
+   "checks": [
+    "au-acn"
+   ],
+   "reason": "Real company (ELECTROMEC INDUSTRIES PTY LTD).",
+   "sources": [
+    {
+     "title": "Drupal ABN module issue",
+     "url": "https://www.drupal.org/project/abn/issues/1878530",
+     "publisher": "Drupal.org",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-acn-test-list-others",
+   "category": "organisation",
+   "type": "ACN",
+   "value": "001 000 004, 001 250 004, 001 500 009, 001 749 999",
+   "label": "Rest of the \"valid ACN\" test list from an old ASIC page",
+   "status": "avoid",
+   "reason": "Same list as several real companies; 001 000 004 has no ABN record but may still be a registered company. Not checked in ASIC Connect.",
+   "sources": [
+    {
+     "title": "Drupal ABN module issue",
+     "url": "https://www.drupal.org/project/abn/issues/1878530",
+     "publisher": "Drupal.org",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-abn-83914571673",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "83 914 571 673",
+   "label": "Sample ABN seen in third-party validator code",
+   "status": "avoid",
+   "checks": [
+    "au-abn"
+   ],
+   "reason": "Real entity (The Trustee for Carpenter Family Trust), listed in ABN Lookup.",
+   "sources": [
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-acn-123456789",
+   "category": "organisation",
+   "type": "ACN",
+   "value": "123 456 789",
+   "label": "Example on ASIC's current ACN page",
+   "status": "avoid",
+   "fails_checks": [
+    "au-acn"
+   ],
+   "reason": "Fails the ACN check digit.",
+   "sources": [
+    {
+     "title": "ASIC — Australian company numbers (digit check)",
+     "url": "https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/",
+     "publisher": "ASIC",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-abn-36123456789",
+   "category": "organisation",
+   "type": "ABN",
+   "value": "36 123 456 789",
+   "label": "ABN form of ASIC's example ACN 123 456 789",
+   "status": "avoid",
+   "fails_checks": [
+    "au-abn"
+   ],
+   "reason": "Fails the ABN check.",
+   "sources": [
+    {
+     "title": "ASIC — Australian company numbers (digit check)",
+     "url": "https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/",
+     "publisher": "ASIC",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "ABN Lookup",
+     "url": "https://abr.business.gov.au/",
+     "publisher": "Australian Business Register",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-tfn-samples",
+   "category": "person",
+   "type": "TFN",
+   "value": "123 456 782, 876 543 210",
+   "label": "Common \"valid TFN\" samples",
+   "status": "avoid",
+   "reason": "Not official, and TFN use is restricted by the Privacy (Tax File Number) Rule 2015. Never put a TFN in a business document.",
+   "sources": [
+    {
+     "title": "ATO — PAYG payment summary, section A payee details (TFN codes)",
+     "url": "https://www.ato.gov.au/forms-and-instructions/payg-payment-summary-individual-non-business/section-a-payee-details",
+     "publisher": "Australian Taxation Office",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-gln-1234567890128",
+   "category": "trade",
+   "type": "GLN",
+   "value": "1234567890128",
+   "label": "GLN in the PINT A-NZ examples (also 1234567890135)",
+   "status": "avoid",
+   "checks": [
+    "gs1"
+   ],
+   "fails_checks": [
+    "gs1-952"
+   ],
+   "reason": "Prefix 123 is in a GS1 US range, not the GS1 example prefix 952.",
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-bsb-000-000",
+   "category": "banking",
+   "type": "BSB",
+   "value": "000-000",
+   "label": "Tempting \"dummy\" BSB",
+   "status": "avoid",
+   "reason": "AusPayNet uses it as a format template and in \"Merged — Refer to BSB 000-000\" records.",
+   "sources": [
+    {
+     "title": "AusPayNet — BSBDirectoryFull.csv",
+     "url": "https://auspaynetbsbpublic.blob.core.windows.net/bsb-reports/BSBDirectoryFull.csv",
+     "publisher": "AusPayNet",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-phone-pint",
+   "category": "contact",
+   "type": "Phone number",
+   "value": "02 6123 4567, 07 6123 4567, 0430 123 456, 0450 000 001",
+   "label": "Phone numbers in the PINT A-NZ examples",
+   "status": "avoid",
+   "reason": "In live number ranges, not reserved by ACMA.",
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-postcode-9999",
+   "category": "address",
+   "type": "Postcode",
+   "value": "9999",
+   "label": "Tempting \"dummy\" postcode",
+   "status": "avoid",
+   "reason": "Real postcode (NORTH POLE VIC, Australia Post's letters-to-Santa postcode).",
+   "sources": [
+    {
+     "title": "matthewproctor/australianpostcodes (community dataset)",
+     "url": "https://github.com/matthewproctor/australianpostcodes",
+     "publisher": "Matthew Proctor",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-address-harrison-2912",
+   "category": "address",
+   "type": "Locality / postcode",
+   "value": "Harrison 2912 NSW",
+   "label": "Buyer locality in the PINT A-NZ examples",
+   "status": "avoid",
+   "reason": "Harrison is in the ACT (postcode 2914); 2912 is Gungahlin ACT. The examples also pair Sydney with 2310 (Hunter Region MC) and 2758 (Kurrajong area).",
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-address-auspost-real",
+   "category": "address",
+   "type": "Address / company name",
+   "value": "Compass Airlines Pty Ltd; AUSTRALIA POST / 219-241 CLEVELAND ST / STRAWBERRY HILLS NSW 1427",
+   "label": "Names and addresses in Australia Post's 1999 addressing standard",
+   "status": "avoid",
+   "reason": "Compass Airlines is a real former airline; the Strawberry Hills address is Australia Post's real address.",
+   "sources": [
+    {
+     "title": "Australia Post — Address Presentation Standards (1999)",
+     "url": "https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-addressing-standards-1999.pdf",
+     "publisher": "Australia Post",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-domain-registered",
+   "category": "contact",
+   "type": "Email domain",
+   "value": "example.com.au, test.com.au, qualitygoods.com.au, buyer.com.au, business1.com.au, blackhouse.com",
+   "label": "Domains used or tempting in example emails",
+   "status": "avoid",
+   "reason": "All registered (example.com.au by a private brand agency); DNS checked 2026-11-05. Use a .test domain.",
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "au-avoid-domain-unregistered",
+   "category": "contact",
+   "type": "Email domain",
+   "value": "eliteinsure.com.au, yourpaymentwebsite.com.au, yourwebsiteexample.com.au, example.net.au",
+   "label": "Domains in the PINT A-NZ examples that are not registered today",
+   "status": "avoid",
+   "reason": "NXDOMAIN (example.net.au SERVFAIL) on 2026-11-05, but they could be registered at any time. Use a .test domain.",
+   "sources": [
+    {
+     "title": "Peppol PINT A-NZ Billing 1.1.3 — example files (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/aunz/pint-aunz/resources.zip",
+     "publisher": "Australian & New Zealand Peppol Authorities (ATO, MBIE)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

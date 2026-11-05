@@ -1,0 +1,500 @@
+{
+ "code": "HK",
+ "name": "Hong Kong",
+ "native_name": "香港",
+ "region": "Asia",
+ "languages": [
+  "zh",
+  "en"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-china-hk-taiwan.md",
+ "summary": "Hong Kong reserves no identifiers or telephone numbers for fiction. There is no official valid Business Registration number: the Inland Revenue Department masks BR numbers in its specimen certificates (5XXXXXXX-000-04-17-A), and the BRN has no published check digit. All eight Immigration Department specimen ID cards deliberately fail the HKID check character, which makes them official, obviously fake values. The closest thing to a safe phone number is the unassigned 74–79 level, which OFCA holds for a future longer numbering plan. Hong Kong has no postcodes (Hongkong Post's own guidance could not be read; secondary sources say to leave the field blank or use 000 or HKG where a form requires one). example.hk and example.com.hk are unregistered today but not reserved, so prefer .test.\n",
+ "identifiers": [
+  {
+   "name": "Business Registration number (商業登記號碼, BRN)",
+   "format": "8 digits; full certificate number 99999999-&&&-&&-&&-& (branch, month, year, check character)",
+   "authority": "Inland Revenue Department",
+   "notes": "No check-digit algorithm is published for the 8-digit BRN; validate with ^\\d{8}$ only. Since 2023-12-27 the BRN is also the Unique Business Identifier (replacing the company registration number) and Hong Kong's entity TIN.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID",
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "Hong Kong Identity Card number (香港身份證號碼, HKID)",
+   "format": "1–2 letters + 6 digits + check character (0-9 or A) in brackets, e.g. A123456(3)",
+   "authority": "Immigration Department",
+   "notes": "The check algorithm is not published by ImmD (widely used algorithm: letters A=10…Z=35, a single letter padded with 36, weights 9…2, 11 − (sum mod 11), 10 → A, 11 → 0). No validator in tools/checks.py yet."
+  },
+  {
+   "name": "Bank account",
+   "format": "3-digit bank (clearing) code + 3-digit branch code + account number; no IBAN",
+   "authority": "HKICL",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ]
+  },
+  {
+   "name": "Postcode",
+   "format": "None — Hong Kong has no postcodes",
+   "notes": "Omit cbc:PostalZone; use country code HK. Address order is name, flat/floor, building, number + street, district, region (HONG KONG / KOWLOON / NEW TERRITORIES)."
+  }
+ ],
+ "entries": [
+  {
+   "id": "hk-brc-masked-5xxxxxxx",
+   "category": "organisation",
+   "type": "Business Registration certificate number",
+   "kind": "placeholder",
+   "value": "5XXXXXXX-000-04-17-A",
+   "label": "Masked certificate number on the official specimen certificates",
+   "status": "published-example",
+   "notes": "Masked, so NOT a valid number. Other specimens use 7XXXXXXX-000-02-24-A (limited partnership fund) and 3XXXXXXX-000 (certified extract).",
+   "sources": [
+    {
+     "title": "IRD — Valid business registration certificate (specimens)",
+     "url": "https://www.ird.gov.hk/eng/tax/bre_vbr.htm",
+     "publisher": "Inland Revenue Department",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IRD — Specimen business registration certificate",
+     "url": "https://www.ird.gov.hk/eng/pdf/new_main_brc.pdf",
+     "publisher": "Inland Revenue Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-name-kxx-dxx-transportation",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "KXX DXX TRANSPORTATION COMPANY LIMITED",
+   "label": "Masked company name on the specimen certificates",
+   "status": "published-example",
+   "notes": "Also KXX DXX LIMITED PARTNERSHIP FUND in the limited partnership fund specimen.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:RegistrationName"
+   ],
+   "sources": [
+    {
+     "title": "IRD — Valid business registration certificate (specimens)",
+     "url": "https://www.ird.gov.hk/eng/tax/bre_vbr.htm",
+     "publisher": "Inland Revenue Department",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IRD — Specimen business registration certificate",
+     "url": "https://www.ird.gov.hk/eng/pdf/new_main_brc.pdf",
+     "publisher": "Inland Revenue Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-name-xx-container-transport-zh",
+   "category": "organisation",
+   "type": "Company name (Chinese)",
+   "value": "ＸＸ貨櫃運輸公司",
+   "label": "Masked Chinese company name on the specimen certificates",
+   "status": "published-example",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:RegistrationName"
+   ],
+   "sources": [
+    {
+     "title": "IRD — Valid business registration certificate (specimens)",
+     "url": "https://www.ird.gov.hk/eng/tax/bre_vbr.htm",
+     "publisher": "Inland Revenue Department",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IRD — Specimen business registration certificate",
+     "url": "https://www.ird.gov.hk/eng/pdf/new_main_brc.pdf",
+     "publisher": "Inland Revenue Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-address-ird-gloucester-road",
+   "category": "address",
+   "type": "Address example (company)",
+   "kind": "placeholder",
+   "value": "X/F XXX GLOUCESTER ROAD, WANCHAI, HK",
+   "label": "Masked business address on the specimen certificates",
+   "status": "published-example",
+   "notes": "Masked floor and house number on a real street. Another specimen uses X/F XXX CONCORDE RD KAI TAK KL. No postcode: omit cbc:PostalZone.",
+   "ubl": [
+    "cac:PostalAddress"
+   ],
+   "sources": [
+    {
+     "title": "IRD — Valid business registration certificate (specimens)",
+     "url": "https://www.ird.gov.hk/eng/tax/bre_vbr.htm",
+     "publisher": "Inland Revenue Department",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IRD — Specimen business registration certificate",
+     "url": "https://www.ird.gov.hk/eng/pdf/new_main_brc.pdf",
+     "publisher": "Inland Revenue Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-phone-74-79",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "+852 74xx xxxx – 79xx xxxx",
+   "label": "Unassigned 7(4-9)X levels held for a future longer numbering plan",
+   "status": "derived",
+   "verified": [
+    "Levels 74–79 marked Reserved for migration in OFCA's Numbering Plan, issue 2026-11-02 (2026-11-05)"
+   ],
+   "notes": "Unassigned, so they cannot reach a real subscriber today, but this is not a formal example range.",
+   "sources": [
+    {
+     "title": "Numbering Plan for Telecommunications Services in Hong Kong",
+     "url": "https://www.ofca.gov.hk/filemanager/ofca/en/content_311/no_plan.pdf",
+     "publisher": "OFCA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-phone-74000000",
+   "category": "contact",
+   "type": "Phone number",
+   "value": "+852 7400 0000",
+   "label": "Number on the unassigned 74 level",
+   "status": "derived",
+   "verified": [
+    "Level 74 marked Reserved for migration in OFCA's Numbering Plan, issue 2026-11-02 (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:Contact/cbc:Telephone"
+   ],
+   "sources": [
+    {
+     "title": "Numbering Plan for Telecommunications Services in Hong Kong",
+     "url": "https://www.ofca.gov.hk/filemanager/ofca/en/content_311/no_plan.pdf",
+     "publisher": "OFCA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-email-placeholder-test",
+   "category": "contact",
+   "type": "Email address",
+   "kind": "placeholder",
+   "value": "accounts@<alias>.test",
+   "label": "Accounts email pattern on the reserved .test domain",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "notes": "Replace <alias> with a short alias for the party. example.hk and example.com.hk are unregistered today (NXDOMAIN) but not reserved by HKIRC.",
+   "ubl": [
+    "cac:Contact/cbc:ElectronicMail"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-bic-test-xxxxhkh0",
+   "category": "banking",
+   "type": "BIC",
+   "value": "XXXXHKH0",
+   "label": "Test BIC for Hong Kong (8th character 0)",
+   "status": "reserved",
+   "checks": [
+    "bic",
+    "bic-test"
+   ],
+   "notes": "ISO 9362 convention — '0' as second character of the location code marks a test BIC.",
+   "ubl": [
+    "cac:FinancialInstitutionBranch/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "ISO 9362 (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/ISO_9362",
+     "publisher": "Wikipedia",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-hkid-specimen-d899336-6",
+   "category": "person",
+   "type": "HKID number (specimen)",
+   "value": "D899336(6)",
+   "label": "Number on the labelled permanent ID card diagram (齊煥正 CHAI, Wun Ching)",
+   "status": "published-example",
+   "fails_checks": [
+    "hk-hkid"
+   ],
+   "notes": "Fails the widely used check character (correct would be (0)), apparently deliberately — official and obviously fake.",
+   "sources": [
+    {
+     "title": "ROP133 — Information on the front of the HKID card",
+     "url": "https://www.immd.gov.hk/pdforms/rop133.pdf",
+     "publisher": "Immigration Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-hkid-specimen-z683365-5",
+   "category": "person",
+   "type": "HKID number (specimen)",
+   "value": "Z683365(5)",
+   "label": "Adult permanent ID card specimen (樂永晴 LOK, Wing Ching)",
+   "status": "published-example",
+   "fails_checks": [
+    "hk-hkid"
+   ],
+   "notes": "Fails the widely used check character (correct would be (A)).",
+   "sources": [
+    {
+     "title": "Sample of New Smart Identity Card (press release 2025-04-28, Annex II)",
+     "url": "https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf",
+     "publisher": "HKSAR Government",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Smart Identity Card",
+     "url": "https://www.immd.gov.hk/eng/services/hkid/smartid.html",
+     "publisher": "Immigration Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-hkid-specimen-z691338-2",
+   "category": "person",
+   "type": "HKID number (specimen)",
+   "value": "Z691338(2)",
+   "label": "Juvenile permanent ID card specimen (林日朗 LAM, Yat Long)",
+   "status": "published-example",
+   "fails_checks": [
+    "hk-hkid"
+   ],
+   "notes": "Fails the widely used check character (correct would be (6)).",
+   "sources": [
+    {
+     "title": "Sample of New Smart Identity Card (press release 2025-04-28, Annex II)",
+     "url": "https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf",
+     "publisher": "HKSAR Government",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Smart Identity Card",
+     "url": "https://www.immd.gov.hk/eng/services/hkid/smartid.html",
+     "publisher": "Immigration Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-hkid-specimen-z982600-5",
+   "category": "person",
+   "type": "HKID number (specimen)",
+   "value": "Z982600(5)",
+   "label": "Minor permanent ID card specimen (余樂芯 YU, Lok Sum)",
+   "status": "published-example",
+   "fails_checks": [
+    "hk-hkid"
+   ],
+   "notes": "Fails the widely used check character (correct would be (A)).",
+   "sources": [
+    {
+     "title": "Sample of New Smart Identity Card (press release 2025-04-28, Annex II)",
+     "url": "https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf",
+     "publisher": "HKSAR Government",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Smart Identity Card",
+     "url": "https://www.immd.gov.hk/eng/services/hkid/smartid.html",
+     "publisher": "Immigration Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-hkid-specimen-g908833-1",
+   "category": "person",
+   "type": "HKID number (specimen)",
+   "value": "G908833(1)",
+   "label": "Adult non-permanent ID card specimen (WILLIAMS, Peter)",
+   "status": "published-example",
+   "fails_checks": [
+    "hk-hkid"
+   ],
+   "notes": "Fails the widely used check character (correct would be (3)).",
+   "sources": [
+    {
+     "title": "Sample of New Smart Identity Card (press release 2025-04-28, Annex II)",
+     "url": "https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf",
+     "publisher": "HKSAR Government",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Smart Identity Card",
+     "url": "https://www.immd.gov.hk/eng/services/hkid/smartid.html",
+     "publisher": "Immigration Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-hkid-specimen-z988132-8",
+   "category": "person",
+   "type": "HKID number (specimen)",
+   "value": "Z988132(8)",
+   "label": "Juvenile non-permanent ID card specimen (林日朗 LAM, Yat Long)",
+   "status": "published-example",
+   "fails_checks": [
+    "hk-hkid"
+   ],
+   "notes": "Fails the widely used check character (correct would be (9)).",
+   "sources": [
+    {
+     "title": "Sample of New Smart Identity Card (press release 2025-04-28, Annex II)",
+     "url": "https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf",
+     "publisher": "HKSAR Government",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Smart Identity Card",
+     "url": "https://www.immd.gov.hk/eng/services/hkid/smartid.html",
+     "publisher": "Immigration Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-hkid-specimen-z690266-6",
+   "category": "person",
+   "type": "HKID number (specimen)",
+   "value": "Z690266(6)",
+   "label": "Overseas-issued adult ID card specimen (LOK, Wing Ching)",
+   "status": "published-example",
+   "fails_checks": [
+    "hk-hkid"
+   ],
+   "notes": "Fails the widely used check character (correct would be (A)).",
+   "sources": [
+    {
+     "title": "Sample of New Smart Identity Card (press release 2025-04-28, Annex II)",
+     "url": "https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf",
+     "publisher": "HKSAR Government",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Smart Identity Card",
+     "url": "https://www.immd.gov.hk/eng/services/hkid/smartid.html",
+     "publisher": "Immigration Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-hkid-specimen-z988300-8",
+   "category": "person",
+   "type": "HKID number (specimen)",
+   "value": "Z988300(8)",
+   "label": "Overseas-issued minor ID card specimen (CHEUK, Chi Yin)",
+   "status": "published-example",
+   "fails_checks": [
+    "hk-hkid"
+   ],
+   "notes": "Fails the widely used check character (correct would be (3)).",
+   "sources": [
+    {
+     "title": "Sample of New Smart Identity Card (press release 2025-04-28, Annex II)",
+     "url": "https://gia.info.gov.hk/general/202504/28/P2025042500653_493099_1_1745572608931.pdf",
+     "publisher": "HKSAR Government",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Smart Identity Card",
+     "url": "https://www.immd.gov.hk/eng/services/hkid/smartid.html",
+     "publisher": "Immigration Department",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-avoid-phone-special-blocks",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "2020 xxxx, 2222 xxxx, 3456 xxxx, 4567 xxxx",
+   "label": "Repeating or sequential \"golden number\" blocks",
+   "status": "avoid",
+   "reason": "Reserved by OFCA pending a special number arrangement (auction); may be assigned later.",
+   "sources": [
+    {
+     "title": "Numbering Plan for Telecommunications Services in Hong Kong",
+     "url": "https://www.ofca.gov.hk/filemanager/ofca/en/content_311/no_plan.pdf",
+     "publisher": "OFCA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-avoid-phone-invented",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "+852 xxxx xxxx (invented)",
+   "label": "Arbitrary invented Hong Kong numbers",
+   "status": "avoid",
+   "reason": "No range is reserved for fiction or examples; any invented number outside the 74–79 levels may be real.",
+   "sources": [
+    {
+     "title": "Numbering Plan for Telecommunications Services in Hong Kong",
+     "url": "https://www.ofca.gov.hk/filemanager/ofca/en/content_311/no_plan.pdf",
+     "publisher": "OFCA",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "hk-avoid-bank-code-003-004-012",
+   "category": "banking",
+   "type": "Bank code",
+   "value": "003, 004, 012",
+   "label": "Bank codes seen in example account numbers",
+   "status": "avoid",
+   "reason": "Real banks (Standard Chartered, HSBC, Bank of China (Hong Kong)); every code on the HKICL list is a real bank and no fictitious code exists.",
+   "sources": [
+    {
+     "title": "HKICL — Clearing Code and Branch Code (3 Oct 2026)",
+     "url": "https://www.hkicl.com.hk/files/page_file/118/12916/Clearing%20Code%20and%20Branch%20Code%20(3%20Oct%202026)%20with%20Tel%20No.pdf",
+     "publisher": "HKICL",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

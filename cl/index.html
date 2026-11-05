@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chile — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Latin America</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇨🇱</span> Chile</h1>
+<p class="lede">The Chilean tax authority SII defines generic RUTs with a real meaning: 66.666.666-6 for an anonymous boleta customer and 55.555.555-5 for a foreign receiver without a RUT. Its certification manual uses the &quot;fictitious company&quot; 97975000-5 &quot;RUT DE PRUEBA&quot;. None of these can be checked against the register (the SII lookup needs a captcha). Many other SII example RUTs fall in ranges assigned to real people and companies. E-invoices are SII DTE XML, not UBL. Subtel reserves no telephone numbers for fiction, and no official example bank account exists.</p>
+<p class="meta">Updated 2026-11-05 · searched in es, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-south-america.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/cl.yaml">Data file</a> ·
+<a href="../data/cl.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>5</b> Reserved</span><span class="stat s-published-example"><b>7</b> Official example</span><span class="stat s-avoid"><b>7</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">4</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cl-rut-97975000-5" data-status="published-example">
+<td class="val"><div class="v"><code>97975000-5</code><button class="copy" type="button" data-copy="97975000-5" aria-label="Copy 97975000-5">Copy</button></div><div class="type">RUT</div></td>
+<td class="what"><p>Issuer RUT of the &quot;fictitious company&quot; in the SII certification manual</p><p class="note">Best Chilean company ID, but not checkable against the register. The same manual uses SII&#x27;s own real address (Teatinos 120, Piso 4); do not copy it.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/servicios_online/docs/manual_certificacion.pdf" rel="noopener">Manual para empresas usuarias – ambiente de certificación (§5.1)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-name-rut-de-prueba" data-status="published-example">
+<td class="val"><div class="v"><code>RUT DE PRUEBA</code><button class="copy" type="button" data-copy="RUT DE PRUEBA" aria-label="Copy RUT DE PRUEBA">Copy</button></div><div class="type">Company name</div></td>
+<td class="what"><p>Name of the fictitious company 97975000-5 in the SII manual</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/servicios_online/docs/manual_certificacion.pdf" rel="noopener">Manual para empresas usuarias – ambiente de certificación (§5.1)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-rut-55555555-5" data-status="reserved">
+<td class="val"><div class="v"><code>55.555.555-5</code><button class="copy" type="button" data-copy="55.555.555-5" aria-label="Copy 55.555.555-5">Copy</button></div><div class="type">RUT (generic)</div></td>
+<td class="what"><p>Foreign receiver without a Chilean RUT (export DTEs)</p><p class="note">Correct value for a non-Chilean buyer in an export DTE and the tourist invoice (TipoFactEsp = 1); the foreign ID then goes in CdgIntRecep + Nacionalidad.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/factura_electronica/factura_mercado/formato_dte_202602.pdf" rel="noopener">Formato Documentos Tributarios Electrónicos v2.5 (field 50)</a> <span class="muted">— Servicio de Impuestos Internos</span></li><li><a href="https://www.sii.cl/normativa_legislacion/resoluciones/2022/reso66.pdf" rel="noopener">Resolución Exenta SII 66/2022</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-rut-60803000-k" data-status="reserved">
+<td class="val"><div class="v"><code>60803000-K</code><button class="copy" type="button" data-copy="60803000-K" aria-label="Copy 60803000-K">Copy</button></div><div class="type">RUT (SII)</div></td>
+<td class="what"><p>RutReceptor in the EnvioDTE carátula (the SII itself)</p><p class="note">The SII&#x27;s own RUT, required as receiver of the envelope; never use it as a party.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/servicios_online/docs/inst_set_pruebas.pdf" rel="noopener">Instrucciones set de pruebas</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">4</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cl-address-upu-santiago" data-status="published-example">
+<td class="val"><div class="v"><code>Juan Pérez / Moneda 1152 / 8340648 SANTIAGO</code></div><div class="type">Address example <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU / Correos Chile example of a street address in Santiago</p><p class="note">Fictitious person at a real street and commune.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/chlEn.pdf" rel="noopener">Postal addressing — Chile</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-address-upu-estacion-central" data-status="published-example">
+<td class="val"><div class="v"><code>Ester Avila / Avenida Palena 1084, Depto. 505, Piso 5 / 9180794 ESTACION CENTRAL</code></div><div class="type">Address example (apartment) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU / Correos Chile example of an apartment address</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/chlEn.pdf" rel="noopener">Postal addressing — Chile</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-address-upu-bulnes" data-status="published-example">
+<td class="val"><div class="v"><code>Pedro López / Empresa Automotriz / Avenida Arturo Prat 567 / 3930000 BULNES</code></div><div class="type">Address example (company) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU / Correos Chile example of a company address with a commune-wide code</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/chlEn.pdf" rel="noopener">Postal addressing — Chile</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-address-upu-rural" data-status="published-example">
+<td class="val"><div class="v"><code>Panamericana Norte S/N Km. 15 / 8700000 QUILICURA</code></div><div class="type">Address example (rural) <span class="kind">placeholder</span></div></td>
+<td class="what"><p>UPU / Correos Chile example of a rural address without house number</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/chlEn.pdf" rel="noopener">Postal addressing — Chile</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cl-email-domain-example-com" data-status="reserved">
+<td class="val"><div class="v"><code>example.com</code><button class="copy" type="button" data-copy="example.com" aria-label="Copy example.com">Copy</button></div><div class="type">Email domain</div></td>
+<td class="what"><p>Reserved domain for example e-mail addresses (also *.test)</p><p class="note">The registration status of ejemplo.cl could not be checked (NIC Chile RDAP unreachable), so do not use it.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">2</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cl-rut-66666666-6" data-status="reserved">
+<td class="val"><div class="v"><code>66.666.666-6</code><button class="copy" type="button" data-copy="66.666.666-6" aria-label="Copy 66.666.666-6">Copy</button></div><div class="type">RUT (generic)</div></td>
+<td class="what"><p>Generic boleta customer without RUT (RUTRecep)</p><p class="note">Mandatory when the buyer has no RUT or internal code; not printed. For a consumer, not a business party.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/factura_electronica/factura_mercado/formato_boleta_electronica.pdf" rel="noopener">Formato Boletas Electrónicas v4.2</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-run-7880442-4" data-status="published-example">
+<td class="val"><div class="v"><code>7880442-4</code><button class="copy" type="button" data-copy="7880442-4" aria-label="Copy 7880442-4">Copy</button></div><div class="type">RUN</div></td>
+<td class="what"><p>Authorised sender (person) in the SII certification manual</p><p class="note">In the natural-person range, so possibly a real person; use with caution.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/servicios_online/docs/manual_certificacion.pdf" rel="noopener">Manual para empresas usuarias – ambiente de certificación (§5.1)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="document"><h2>Documents <span class="count">1</span></h2><p class="muted">Specimen documents, document numbers, test texts</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cl-dte-referencia-set" data-status="reserved">
+<td class="val"><div class="v"><code>TpoDocRef = SET / RazonRef = CASO nnnn-n</code></div><div class="type">Certification reference <span class="kind">placeholder</span></div></td>
+<td class="what"><p>Mandatory first reference line of documents in an SII Set de Pruebas</p><p class="note">NroResol = 0 is fixed in certification (environment maullin.sii.cl). The SII asks for receiver RUTs of existing customers in the set; do not copy those.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/servicios_online/docs/inst_set_pruebas.pdf" rel="noopener">Instrucciones set de pruebas</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>RUT / RUN (Rol Único Tributario / Nacional)</b><p class="note">Mod 11 with weights 2–7 repeating from the right; 11 → 0, 10 → K. Natural persons roughly ≤ 30 million, legal entities ≈ 50–99 million (approximate, not officially verified).</p></td><td>Body of up to 8 digits + hyphen + check digit (0–9 or K); written 12.345.678-5, or 12345678-5 in DTE XML</td><td><code title="Chilean RUT mod-11">cl-rut</code></td><td>Servicio de Impuestos Internos (SII)</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Código postal</b><p class="note">DTE XML has no postcode field (DirRecep, CmnaRecep, CiudadRecep are free text).</p></td><td>7 digits (3-digit sector + 4-digit block-face serial), left of the commune name; commune-wide codes end in 0000</td><td><span class="muted">—</span></td><td>Correos de Chile</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">7</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="cl-avoid-rut-11111111-1" data-status="avoid">
+<td class="val"><div class="v"><code>11.111.111-1</code></div><div class="type">RUT</div></td>
+<td class="what"><p>&quot;Ejemplo S.A.&quot; in the SII Instructivo técnico (2021)</p><p class="note warn">In the natural-person range; likely assigned to a real taxpayer (not checkable).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/factura_electronica/factura_mercado/instructivo_emision.pdf" rel="noopener">Instructivo técnico de emisión (2021-10-28)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-avoid-rut-22222222-2" data-status="avoid">
+<td class="val"><div class="v"><code>22.222.222-2</code></div><div class="type">RUT</div></td>
+<td class="what"><p>Example RUT in the SII Instructivo técnico (2021)</p><p class="note warn">In the natural-person range; likely assigned to a real taxpayer (not checkable).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/factura_electronica/factura_mercado/instructivo_emision.pdf" rel="noopener">Instructivo técnico de emisión (2021-10-28)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-avoid-rut-12345678-5" data-status="avoid">
+<td class="val"><div class="v"><code>12.345.678-5</code></div><div class="type">RUT</div></td>
+<td class="what"><p>&quot;Comprador S.A.&quot; in the SII Instructivo técnico (2021)</p><p class="note warn">In the natural-person range; likely assigned to a real taxpayer (not checkable).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/factura_electronica/factura_mercado/instructivo_emision.pdf" rel="noopener">Instructivo técnico de emisión (2021-10-28)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-avoid-rut-77777777-7" data-status="avoid">
+<td class="val"><div class="v"><code>77777777-7</code></div><div class="type">RUT</div></td>
+<td class="what"><p>Example RUT in the SII Instructivo técnico (2021)</p><p class="note warn">In the active company range; likely assigned to a real company (not checkable).</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/factura_electronica/factura_mercado/instructivo_emision.pdf" rel="noopener">Instructivo técnico de emisión (2021-10-28)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-avoid-rut-8414240-9" data-status="avoid">
+<td class="val"><div class="v"><code>8414240-9</code></div><div class="type">RUT</div></td>
+<td class="what"><p>Receiver &quot;JORGE GONZALEZ LTDA, SAN DIEGO 2222&quot; in the SII certification manual</p><p class="note warn">Natural-person range with a person-like company name; possibly real.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="Chilean RUT mod-11">✓ cl-rut</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/servicios_online/docs/manual_certificacion.pdf" rel="noopener">Manual para empresas usuarias – ambiente de certificación (§5.1)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-avoid-address-teatinos-120" data-status="avoid">
+<td class="val"><div class="v"><code>Teatinos 120, Piso 4, Santiago</code></div><div class="type">Address</div></td>
+<td class="what"><p>Address in the SII certification manual examples</p><p class="note warn">Real head office of the SII.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.sii.cl/servicios_online/docs/manual_certificacion.pdf" rel="noopener">Manual para empresas usuarias – ambiente de certificación (§5.1)</a> <span class="muted">— Servicio de Impuestos Internos</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="cl-avoid-address-el-juncal-050" data-status="avoid">
+<td class="val"><div class="v"><code>El Juncal 050, 8720019 QUILICURA</code></div><div class="type">Address</div></td>
+<td class="what"><p>Address in the Correos Chile / UPU examples</p><p class="note warn">Real head office of Correos de Chile.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/chlEn.pdf" rel="noopener">Postal addressing — Chile</a> <span class="muted">— Universal Postal Union</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Chile with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BCL%5D+&amp;country=CL">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

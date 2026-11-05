@@ -1,0 +1,1330 @@
+{
+ "code": "JP",
+ "name": "Japan",
+ "native_name": "日本",
+ "region": "Asia",
+ "languages": [
+  "ja",
+  "en"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-japan-korea.md",
+ "summary": "Japan has an official UBL source, the JP PINT example invoices published by the Digital Agency through OpenPeppol, but their Corporate Numbers and invoice registration numbers (T-numbers) fail the NTA check digit, apparently on purpose, as does the NTA's own T1234567890123. The usable numbers here are those values with the check digit corrected, plus a 999900 series for larger party sets, all confirmed absent from both NTA registers. JPRS reserves example.jp, example.co.jp and example.ne.jp for examples. No phone numbers are reserved for fiction; unassigned MIC blocks are listed instead and may be allocated later. Not included because unverified: the check digit for sole-trader T-numbers, and Tokyo 03-1xxx/2xxx/7xxx-9xxx numbers (not in MIC's list, but the rule was not confirmed). The My Number (individual number) must not be used in samples.\n",
+ "identifiers": [
+  {
+   "name": "Corporate Number (法人番号)",
+   "format": "13 digits; check digit first, then a 12-digit base",
+   "check": "jp-corporate",
+   "authority": "National Tax Agency (国税庁)",
+   "notes": "Check digit = 9 − (Σ Pₙ × Qₙ mod 9), Pₙ = n-th base digit from the right, Qₙ = 1 (odd n) or 2 (even n). Bases starting 0000 belong to government bodies. The NTA publication site lists every number ever assigned, closed entities included.",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188",
+    "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0188"
+   ]
+  },
+  {
+   "name": "Qualified Invoice Issuer registration number (適格請求書発行事業者登録番号)",
+   "format": "T + 13 digits (T + Corporate Number for corporations)",
+   "check": "jp-corporate",
+   "authority": "National Tax Agency (国税庁)",
+   "notes": "Sole traders get T + 13 digits that are neither a My Number nor a Corporate Number; whether the same check digit applies to these is unverified.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cbc:EndpointID @schemeID=0221"
+   ]
+  },
+  {
+   "name": "Standard Company Code (標準企業コード)",
+   "format": "6 + 6 digits with ICD 0147, as used in JP PINT (e.g. 123456:000123:0147:1)",
+   "authority": "JIPDEC"
+  },
+  {
+   "name": "My Number (個人番号)",
+   "format": "12 digits, last digit a mod-11 check digit",
+   "authority": "Ministry of Internal Affairs and Communications (総務省)",
+   "notes": "Use is strictly limited by the My Number Act; no business document needs one. Do not use in samples."
+  },
+  {
+   "name": "NACCS importer/exporter code (輸出入者符号)",
+   "format": "Corporate Number + 4-digit branch number (17 digits)",
+   "authority": "Japan Customs"
+  },
+  {
+   "name": "Postcode (郵便番号)",
+   "format": "7 digits, written NNN-NNNN",
+   "authority": "Japan Post (日本郵便)",
+   "ubl": [
+    "cac:PostalAddress/cbc:PostalZone"
+   ]
+  },
+  {
+   "name": "Bank account (全銀 bank code + branch + type + account)",
+   "format": "4-digit bank code, 3-digit branch, account type (1 ordinary, 2 current), 7-digit account",
+   "authority": "Zengin-kyō (全国銀行協会)",
+   "notes": "Japan does not use IBAN.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "id": "jp-corporate-8700110005901",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "8700110005901",
+   "label": "Worked example in the NTA's check-digit document",
+   "status": "published-example",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188"
+   ],
+   "sources": [
+    {
+     "title": "NTA — Corporate Number check-digit method (checkdigit.pdf)",
+     "url": "https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-9234567890123",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "9234567890123",
+   "label": "JP PINT supplier number with the check digit corrected",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "notes": "JP PINT uses 1234567890123, which fails the check digit.",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188",
+    "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0188"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-2210987654321",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "2210987654321",
+   "label": "JP PINT customer number with the check digit corrected",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "notes": "JP PINT uses 3210987654321, which fails the check digit.",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188",
+    "cac:PartyLegalEntity/cbc:CompanyID @schemeID=0188"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-8654321098765",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "8654321098765",
+   "label": "JP PINT tax representative number with the check digit corrected",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "notes": "JP PINT uses T7654321098765, which fails the check digit.",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-series-999900",
+   "category": "organisation",
+   "type": "Corporate Number range",
+   "kind": "range",
+   "value": "C999900nnnnnn (n = 000001…000027)",
+   "label": "Series of 27 check-digit-valid numbers for a party set",
+   "status": "derived",
+   "verified": [
+    "All 27 values pass the check digit and are absent from both NTA registers (2026-11-05)"
+   ],
+   "notes": "C is the check digit, e.g. 8999900000001, 7999900000002, … 7999900000027 (full list in the research note). Only n = 1…27 were checked; other numbers in the series were not. Prefix T for the invoice registration number.\n",
+   "sources": [
+    {
+     "title": "NTA — Corporate Number check-digit method (checkdigit.pdf)",
+     "url": "https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-8999900000001",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "8999900000001",
+   "label": "Party-set series, party 1",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188"
+   ],
+   "sources": [
+    {
+     "title": "NTA — Corporate Number check-digit method (checkdigit.pdf)",
+     "url": "https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-7999900000002",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "7999900000002",
+   "label": "Party-set series, party 2",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188"
+   ],
+   "sources": [
+    {
+     "title": "NTA — Corporate Number check-digit method (checkdigit.pdf)",
+     "url": "https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-6999900000003",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "6999900000003",
+   "label": "Party-set series, party 3",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188"
+   ],
+   "sources": [
+    {
+     "title": "NTA — Corporate Number check-digit method (checkdigit.pdf)",
+     "url": "https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-5999900000004",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "5999900000004",
+   "label": "Party-set series, party 4",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188"
+   ],
+   "sources": [
+    {
+     "title": "NTA — Corporate Number check-digit method (checkdigit.pdf)",
+     "url": "https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-corporate-4999900000005",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "4999900000005",
+   "label": "Party-set series, party 5",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Corporate Number register (2026-11-05)",
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cbc:EndpointID @schemeID=0188"
+   ],
+   "sources": [
+    {
+     "title": "NTA — Corporate Number check-digit method (checkdigit.pdf)",
+     "url": "https://www.houjin-bangou.nta.go.jp/documents/checkdigit.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-tnumber-t9234567890123",
+   "category": "organisation",
+   "type": "Invoice registration number",
+   "value": "T9234567890123",
+   "label": "T-number for Corporate Number 9234567890123 (JP PINT supplier, corrected)",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA インボイス制度 Q&A 問18 — registration number structure",
+     "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/18.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-tnumber-t2210987654321",
+   "category": "organisation",
+   "type": "Invoice registration number",
+   "value": "T2210987654321",
+   "label": "T-number for Corporate Number 2210987654321 (JP PINT customer, corrected)",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA インボイス制度 Q&A 問18 — registration number structure",
+     "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/18.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-tnumber-t8654321098765",
+   "category": "organisation",
+   "type": "Invoice registration number",
+   "value": "T8654321098765",
+   "label": "T-number for the JP PINT tax representative (corrected)",
+   "status": "derived",
+   "checks": [
+    "jp-corporate"
+   ],
+   "verified": [
+    "Not in the NTA Qualified Invoice Issuer register (2026-11-05)"
+   ],
+   "ubl": [
+    "cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA インボイス制度 Q&A 問18 — registration number structure",
+     "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/18.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-name-marumaru-shoji",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "株式会社 〇〇商事",
+   "label": "Supplier name in all JP PINT examples (Marumaru Shōji)",
+   "status": "published-example",
+   "notes": "〇〇 is the Japanese \"blank\" placeholder. Romanised in some files as 〇〇 Shoji / Marumaru Shoji.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:RegistrationName"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP BIS Self-Billing 1.1.3",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp-sb/",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP BIS Non-tax Registered Businesses 1.1.3",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp-ntr/",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-name-marumaru-bussan",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "株式会社 〇〇物産",
+   "label": "Customer name in all JP PINT examples (Marumaru Bussan)",
+   "status": "published-example",
+   "notes": "Its delivery party is 株式会社 〇〇物産 札幌支社 (Sapporo branch).",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:RegistrationName"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP BIS Self-Billing 1.1.3",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp-sb/",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP BIS Non-tax Registered Businesses 1.1.3",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp-ntr/",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-name-nta-placeholders",
+   "category": "organisation",
+   "type": "Company name placeholders",
+   "kind": "placeholder",
+   "value": "A株式会社, B株式会社, △△商事㈱, ▲▲㈱, ■■建設, スーパー○○, ○○旅館",
+   "label": "Placeholder party names used in NTA invoice-system material",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "NTA インボイス制度 Q&A 01-09 — invoice items",
+     "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/01-09.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA invoice leaflet 0024002-057_a",
+     "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0024002-057_a.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-sccode-123456-000123",
+   "category": "organisation",
+   "type": "Standard Company Code (ICD 0147)",
+   "value": "123456:000123:0147:1",
+   "label": "Supplier Standard Company Code in the JP PINT examples",
+   "status": "published-example",
+   "notes": "Customer uses 654321:000321:0147:1, payee 123456:000124:0147:1. Not checked against a register (no open register exists).",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP BIS Self-Billing 1.1.3",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp-sb/",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP BIS Non-tax Registered Businesses 1.1.3",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp-ntr/",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-address-pint-sapporo",
+   "category": "address",
+   "type": "Address example (company)",
+   "kind": "placeholder",
+   "value": "株式会社 〇〇物産 / 北十二条西76-X / 北区 / 札幌市 / 北海道 / 0010012",
+   "label": "JP PINT customer address with an impossible block number",
+   "status": "published-example",
+   "verified": [
+    "Postcode 001-0012 = 札幌市北区北十二条西 in Japan Post KEN_ALL; the real chōme are 1–4 only (2026-11-05)"
+   ],
+   "notes": "Pattern to reuse - real postcode and district, chōme beyond the real range. Passes a postcode/town lookup but cannot match a real building.",
+   "ubl": [
+    "cac:PostalAddress"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Japan Post — postcode data download (KEN_ALL, JIGYOSYO)",
+     "url": "https://www.post.japanpost.jp/zipcode/download.html",
+     "publisher": "Japan Post (日本郵便)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-address-upu-niigata",
+   "category": "address",
+   "type": "Address example (private person)",
+   "kind": "placeholder",
+   "value": "Mr Taro Tanaka / 10-23, Kotobukicho / Chuo-ku, NIIGATA / 951-8073 JAPAN",
+   "label": "UPU example of a Japanese address in Latin script",
+   "status": "published-example",
+   "verified": [
+    "Postcode/town pair is real in KEN_ALL (2026-11-05)"
+   ],
+   "notes": "Invented person at a real address area. Other UPU examples - 2-17-10, Aioicho, Naka-ku, YOKOHAMA 231-0012; 4-3-2, Hakusan, Bunkyo-ku, TOKYO 112-0001.",
+   "sources": [
+    {
+     "title": "UPU — Postal addressing systems, Japan (06/2019)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/jpnEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-postcode-unused-prefixes",
+   "category": "address",
+   "type": "Postcode range",
+   "kind": "range",
+   "value": "000-xxxx, 008-xxxx, 009-xxxx, 032-xxxx, 908-xxxx, 909-xxxx, 977-xxxx, 978-xxxx",
+   "label": "Three-digit prefixes used by no postcode",
+   "status": "derived",
+   "verified": [
+    "In neither KEN_ALL (120,721 area postcodes) nor JIGYOSYO (22,196 business postcodes) (2026-11-05)"
+   ],
+   "notes": "Passes a 7-digit format check but fails any postcode-existence check. 000-0000 and 999-9999 are also unassigned; codes in use run from 001-0000 to 999-8531.",
+   "sources": [
+    {
+     "title": "Japan Post — postcode data download (KEN_ALL, JIGYOSYO)",
+     "url": "https://www.post.japanpost.jp/zipcode/download.html",
+     "publisher": "Japan Post (日本郵便)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-phone-03-31xx",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "03-3102-xxxx … 03-3199-xxxx",
+   "label": "Tokyo local codes unassigned in the MIC allocation file",
+   "status": "derived",
+   "verified": [
+    "Marked 未使用 (unassigned) in MIC's 03 area file dated 2024-03-01; valid fixed line in libphonenumber 9.0.42 (2026-11-05)"
+   ],
+   "notes": "Japan reserves no numbers for fiction, so these could be allocated later; re-check before freezing. Suggested form 03-3150-00nn (+81 3 3150 00nn).",
+   "sources": [
+    {
+     "title": "MIC 電気通信番号指定状況 (number allocation status)",
+     "url": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/number_shitei.html",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "MIC allocation file — area codes starting with 3 (xls)",
+     "url": "https://www.soumu.go.jp/main_content/000697545.xls",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-phone-070-98",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "070-98xx-xxxx, 070-99xx-xxxx",
+   "label": "Mobile blocks unassigned in the MIC 070 file",
+   "status": "derived",
+   "verified": [
+    "Unassigned in MIC's 070 file dated 2026-09-01; valid mobile in libphonenumber 9.0.42 (2026-11-05)"
+   ],
+   "notes": "Could be allocated later. Suggested form 070-9800-00nn (+81 70 9800 00nn).",
+   "sources": [
+    {
+     "title": "MIC 電気通信番号指定状況 (number allocation status)",
+     "url": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/number_shitei.html",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "MIC allocation file — 070 (xlsx)",
+     "url": "https://www.soumu.go.jp/main_content/001090878.xlsx",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-phone-060-15",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "060-15xx-xxxx … 060-99xx-xxxx",
+   "label": "Mobile blocks unassigned in the recently opened 060 range",
+   "status": "derived",
+   "verified": [
+    "Unassigned in MIC's 060 file dated 2025-07-01; valid mobile in libphonenumber 9.0.42 (2026-11-05)"
+   ],
+   "notes": "060 was opened recently, so blocks are being allocated; prefer 070-98xx.",
+   "sources": [
+    {
+     "title": "MIC 電気通信番号指定状況 (number allocation status)",
+     "url": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/number_shitei.html",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "MIC allocation file — 060 (xlsx)",
+     "url": "https://www.soumu.go.jp/main_content/001019693.xlsx",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-domain-example-jp",
+   "category": "contact",
+   "type": "Email domain",
+   "kind": "range",
+   "value": "example.jp, example.co.jp, example.ne.jp (and example0–example9 under these), ドメイン名例.jp",
+   "label": "Domains reserved by JPRS for use in examples",
+   "status": "reserved",
+   "verified": [
+    "All NXDOMAIN (2026-11-05)"
+   ],
+   "notes": "ドメイン名例.jp is xn--eckwd4c7cu47r2wf.jp. RFC 2606/6761 names (.example, .test, example.com) can also be used.",
+   "sources": [
+    {
+     "title": "JPRS FAQ — 例示に使用可能なドメイン名 (domain names usable for examples)",
+     "url": "https://jprs.jp/faq/use/",
+     "publisher": "JPRS",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-email-seikyu-marumaru-shoji",
+   "category": "contact",
+   "type": "Email address",
+   "value": "seikyu@marumaru-shoji.example.co.jp",
+   "label": "Billing email for 〇〇商事 on a JPRS-reserved domain",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "notes": "Recommended form in the research. Pattern for other parties - <alias>.example.co.jp or <alias>1.example.jp.",
+   "sources": [
+    {
+     "title": "JPRS FAQ — 例示に使用可能なドメイン名 (domain names usable for examples)",
+     "url": "https://jprs.jp/faq/use/",
+     "publisher": "JPRS",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-bank-pint-1234-567",
+   "category": "banking",
+   "type": "Bank account",
+   "value": "1234:567:1:3242394",
+   "label": "JP PINT payee account (bank:branch:type:account)",
+   "status": "published-example",
+   "notes": "No reserved test bank code exists. Bank code 1234 is absent from the community zengin-code list (1,146 codes; not official). Account holder in the examples is ｶ)ﾏﾙﾏﾙｼﾖｳｼﾞ.\n",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "zengin-code/source-data (community bank code list)",
+     "url": "https://github.com/zengin-code/source-data",
+     "publisher": "zengin-code (community)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-gtin-4512345000035",
+   "category": "trade",
+   "type": "GTIN-13 (JAN)",
+   "value": "4512345000035",
+   "label": "Example JAN code in a GS1 Japan presentation",
+   "status": "published-example",
+   "checks": [
+    "gs1"
+   ],
+   "notes": "Not checked against GEPIR - company prefix 4512345 may belong to a real company. GS1 prefix 952 (demo) is safer. The same deck shows ITF/GTIN-14 14512345000032.",
+   "ubl": [
+    "cac:Item/cac:StandardItemIdentification/cbc:ID @schemeID=0160"
+   ],
+   "sources": [
+    {
+     "title": "GS1の仕組み (GS1 Japan, 2019, hosted by MLIT)",
+     "url": "https://www.mlit.go.jp/common/001347058.pdf",
+     "publisher": "GS1 Japan / MLIT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-naccs-9234567890123-0000",
+   "category": "trade",
+   "type": "NACCS importer/exporter code",
+   "value": "9234567890123-0000",
+   "label": "Importer/exporter code built from a corrected Corporate Number",
+   "status": "derived",
+   "verified": [
+    "Corporate Number 9234567890123 not in the NTA registers (2026-11-05)"
+   ],
+   "notes": "Corporate Number + 4-digit branch number, following the Japan Customs example 1234567890123-0000 (whose Corporate Number fails the check digit).",
+   "sources": [
+    {
+     "title": "Japan Customs — NACCS importer/exporter codes using the Corporate Number",
+     "url": "https://www.customs.go.jp/zeikan/seido/zeikancode/upload/naccsriyou.pdf",
+     "publisher": "Japan Customs",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-naccs-customs-10000abc0000",
+   "category": "trade",
+   "type": "NACCS customs-assigned code",
+   "value": "10000ABC0000",
+   "label": "Example code assigned by Customs in the Japan Customs guide",
+   "status": "published-example",
+   "notes": "The same guide shows the JASTPRO code P06543210000.",
+   "sources": [
+    {
+     "title": "Japan Customs — NACCS importer/exporter codes using the Corporate Number",
+     "url": "https://www.customs.go.jp/zeikan/seido/zeikancode/upload/naccsriyou.pdf",
+     "publisher": "Japan Customs",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-person-bango-hanako",
+   "category": "person",
+   "type": "Person name",
+   "kind": "placeholder",
+   "value": "番号 花子",
+   "label": "Name on the official My Number card specimen (Bangō Hanako)",
+   "status": "published-example",
+   "notes": "Specimen date of birth 平成元年3月31日 (31 March 1989). Use the name, not the specimen number.",
+   "sources": [
+    {
+     "title": "MIC My Number card leaflet (specimen)",
+     "url": "https://www.soumu.go.jp/main_content/001039529.pdf",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-person-tanaka-taro",
+   "category": "person",
+   "type": "Person name",
+   "kind": "placeholder",
+   "value": "田中 太郎 (Taro Tanaka)",
+   "label": "Person name in the UPU Japan addressing examples",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "UPU — Postal addressing systems, Japan (06/2019)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/jpnEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-corporate-1234567890123",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "1234567890123",
+   "label": "JP PINT supplier Corporate Number",
+   "status": "avoid",
+   "fails_checks": [
+    "jp-corporate"
+   ],
+   "reason": "Fails the check digit (apparently deliberate). Use 9234567890123.",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-corporate-3210987654321",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "3210987654321",
+   "label": "JP PINT customer Corporate Number",
+   "status": "avoid",
+   "fails_checks": [
+    "jp-corporate"
+   ],
+   "reason": "Fails the check digit. Use 2210987654321.",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-tnumber-t1234567890123",
+   "category": "organisation",
+   "type": "Invoice registration number",
+   "value": "T1234567890123",
+   "label": "NTA's own example T-number, also used in JP PINT",
+   "status": "avoid",
+   "fails_checks": [
+    "jp-corporate"
+   ],
+   "reason": "Fails the check digit. Use T9234567890123.",
+   "sources": [
+    {
+     "title": "NTA インボイス制度 Q&A 問18 — registration number structure",
+     "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/18.pdf",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-tnumber-t7654321098765",
+   "category": "organisation",
+   "type": "Invoice registration number",
+   "value": "T7654321098765",
+   "label": "JP PINT tax representative T-number",
+   "status": "avoid",
+   "fails_checks": [
+    "jp-corporate"
+   ],
+   "reason": "Fails the check digit. Use T8654321098765.",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-tnumber-typo",
+   "category": "organisation",
+   "type": "Invoice registration number",
+   "value": ">T3210987654321",
+   "label": "Customer T-number in six JP PINT/Self-Billing files",
+   "status": "avoid",
+   "fails_checks": [
+    "jp-corporate"
+   ],
+   "reason": "Typo (stray '>') and the check digit is wrong anyway.",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP BIS Self-Billing 1.1.3",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp-sb/",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "JP BIS Non-tax Registered Businesses 1.1.3",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp-ntr/",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-corporate-5001234567890",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "5001234567890",
+   "label": "Corporate Number in the Japan Customs NACCS guide",
+   "status": "avoid",
+   "fails_checks": [
+    "jp-corporate"
+   ],
+   "reason": "Fails the check digit (as does 2345678901234 in the same guide).",
+   "sources": [
+    {
+     "title": "Japan Customs — NACCS importer/exporter codes using the Corporate Number",
+     "url": "https://www.customs.go.jp/zeikan/seido/zeikancode/upload/naccsriyou.pdf",
+     "publisher": "Japan Customs",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-corporate-7000012050002",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "7000012050002",
+   "label": "Seen in check-digit tutorials",
+   "status": "avoid",
+   "checks": [
+    "jp-corporate"
+   ],
+   "reason": "Real - the National Tax Agency (国税庁) itself.",
+   "sources": [
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-corporate-1180301018771",
+   "category": "organisation",
+   "type": "Corporate Number",
+   "value": "1180301018771",
+   "label": "Real company number used as a positive control",
+   "status": "avoid",
+   "checks": [
+    "jp-corporate"
+   ],
+   "reason": "Real - Toyota Motor Corporation, in both NTA registers.",
+   "sources": [
+    {
+     "title": "NTA Corporate Number publication site",
+     "url": "https://www.houjin-bangou.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NTA Qualified Invoice Issuer publication site",
+     "url": "https://www.invoice-kohyo.nta.go.jp/",
+     "publisher": "National Tax Agency",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-gln-pint",
+   "category": "organisation",
+   "type": "GLN endpoint",
+   "value": "9482348239847239874",
+   "label": "GLN endpoint (schemeID 0088) in JP PINT Example2",
+   "status": "avoid",
+   "reason": "Placeholder of 19 digits, not a valid GLN (13 digits).",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-postcode-160-0044",
+   "category": "address",
+   "type": "Postcode",
+   "value": "160-0044",
+   "label": "JP PINT supplier postcode (Yotsuya, Shinjuku)",
+   "status": "avoid",
+   "reason": "Not an assigned postcode (Yotsuya is 160-0004), so the address fails lookups. Checked in KEN_ALL 2026-11-05.",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Japan Post — postcode data download (KEN_ALL, JIGYOSYO)",
+     "url": "https://www.post.japanpost.jp/zipcode/download.html",
+     "publisher": "Japan Post (日本郵便)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-postcode-100-8792",
+   "category": "address",
+   "type": "Postcode",
+   "value": "100-8792",
+   "label": "Business postcode seen in UPU contact data",
+   "status": "avoid",
+   "reason": "Real business postcode of Japan Post Co., Ltd. HQ. Do not use business postcodes (個別番号) for fictional parties.",
+   "sources": [
+    {
+     "title": "Japan Post — postcode data download (KEN_ALL, JIGYOSYO)",
+     "url": "https://www.post.japanpost.jp/zipcode/download.html",
+     "publisher": "Japan Post (日本郵便)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-phone-pint-masked",
+   "category": "contact",
+   "type": "Phone number",
+   "value": "03-3xxx-0001, 011-757-1xxx",
+   "label": "Masked contact phone numbers in JP PINT",
+   "status": "avoid",
+   "reason": "Digits masked with x; fail any phone parser.",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-phone-090-080",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "090-xxxx-xxxx, 080-xxxx-xxxx",
+   "label": "Common mobile ranges",
+   "status": "avoid",
+   "reason": "Fully allocated to subscribers (MIC files dated 2024-09-01). 090-0000-0000 and 03-0xxx are also structurally invalid.",
+   "sources": [
+    {
+     "title": "MIC 電気通信番号指定状況 (number allocation status)",
+     "url": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/tel_number/number_shitei.html",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "MIC allocation file — 090 (xlsx)",
+     "url": "https://www.soumu.go.jp/main_content/000697567.xlsx",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-email-pint",
+   "category": "contact",
+   "type": "Email address",
+   "value": "shirou_aoki@〇〇co.jp, purchaser@oobussan.co.jp",
+   "label": "Contact emails in JP PINT",
+   "status": "avoid",
+   "reason": "The first is malformed; oobussan.co.jp is unregistered (NXDOMAIN 2026-11-05) but not reserved, so anyone could register it. Use example.co.jp.",
+   "sources": [
+    {
+     "title": "JP PINT 1.1.3 — example invoices (resources.zip)",
+     "url": "https://docs.peppol.eu/poac/jp/pint-jp/resources.zip",
+     "publisher": "Digital Agency (デジタル庁) / OpenPeppol",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-bank-codes",
+   "category": "banking",
+   "type": "Bank code",
+   "value": "0001, 0005, 9900",
+   "label": "Bank codes commonly used in examples",
+   "status": "avoid",
+   "reason": "Real banks - Mizuho (0001), MUFG (0005), Japan Post Bank (9900).",
+   "sources": [
+    {
+     "title": "zengin-code/source-data (community bank code list)",
+     "url": "https://github.com/zengin-code/source-data",
+     "publisher": "zengin-code (community)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "jp-avoid-mynumber-123456789012",
+   "category": "person",
+   "type": "My Number",
+   "value": "1234 5678 9012",
+   "label": "Number on the official My Number card specimen",
+   "status": "avoid",
+   "reason": "Fails the check digit (a valid one would be 123456789018), and My Numbers must not be used in samples at all.",
+   "sources": [
+    {
+     "title": "MIC My Number card leaflet (specimen)",
+     "url": "https://www.soumu.go.jp/main_content/001039529.pdf",
+     "publisher": "Ministry of Internal Affairs and Communications (総務省)",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "MIC ordinance No. 85 of 2014 (check digit, art. 5)",
+     "url": "https://laws.e-gov.go.jp/law/426M60000008085",
+     "publisher": "e-Gov",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

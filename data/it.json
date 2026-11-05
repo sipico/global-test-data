@@ -1,0 +1,751 @@
+{
+ "code": "IT",
+ "name": "Italy",
+ "native_name": "Italia",
+ "region": "Europe",
+ "languages": [
+  "it",
+  "en"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-it.md",
+ "summary": "Unlike France, Italy has no official source of fictitious identifiers that also pass validation. The tax agency's FatturaPA examples use VAT numbers that fail the check digit, and the Treasury's NSO UBL order examples use real public bodies (MEF, Sogei, Consip). Partita IVA candidates built with a valid office code and check digit (e.g. 00000010587) were not found in VIES, but they have not yet been checked in the Agenzia delle Entrate \"Verifica partita IVA\" service, so they are not listed as usable values. No reserved fictional telephone range was found in AGCOM material: do not invent Italian numbers. There is no fictitious town or postcode (CAP), and no official open CAP dataset.\n",
+ "identifiers": [
+  {
+   "name": "Partita IVA",
+   "format": "11 digits = 7-digit serial + 3-digit office code + Luhn check digit",
+   "check": "it-piva",
+   "authority": "Agenzia delle Entrate",
+   "notes": "Office code 001–100 (province, roughly the ISTAT province code, e.g. 058 Rome, 015 Milan, 001 Turin) or special codes 120, 121, 888, 999.",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:CompanyID",
+    "cbc:EndpointID @schemeID=0211"
+   ]
+  },
+  {
+   "name": "VAT number (EN 16931 / UBL)",
+   "format": "IT + Partita IVA",
+   "check": "it-piva",
+   "authority": "Agenzia delle Entrate",
+   "notes": "A number missing from VIES may still be a purely domestic Partita IVA; the national check is the Verifica partita IVA service.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "Codice fiscale (company)",
+   "format": "Same 11 digits as the Partita IVA",
+   "check": "it-piva",
+   "authority": "Agenzia delle Entrate",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0210"
+   ]
+  },
+  {
+   "name": "Codice fiscale (person)",
+   "format": "16 characters = surname + name + birth date/sex + birthplace code + check letter",
+   "authority": "Agenzia delle Entrate (D.M. 23/12/1976)",
+   "notes": "No validator yet. No official fictitious personal codice fiscale exists."
+  },
+  {
+   "name": "IPA office code (Codice Univoco Ufficio)",
+   "format": "6 alphanumeric characters",
+   "authority": "AgID (IndicePA)",
+   "notes": "Public bodies only. Listed in the IndicePA open data.",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0201"
+   ]
+  },
+  {
+   "name": "CodiceDestinatario (SDI recipient code)",
+   "format": "6 characters (public-sector office) or 7 characters (private recipient)",
+   "authority": "Agenzia delle Entrate / SdI",
+   "notes": "Routing code of the national FatturaPA exchange system (not UBL)."
+  },
+  {
+   "name": "REA number",
+   "format": "<province>-<number>, e.g. RM-1234567",
+   "authority": "Camere di Commercio",
+   "notes": "Chamber of Commerce economic and administrative register."
+  }
+ ],
+ "entries": [
+  {
+   "id": "it-name-societa-alpha-srl",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "SOCIETA' ALPHA SRL",
+   "label": "Supplier name in the official FatturaPA example invoices",
+   "status": "published-example",
+   "notes": "Other names used are ALPHA SRL, AMMINISTRAZIONE BETA, BETA GAMMA, DITTA BETA and Trasporto spa. Do not reuse the VAT numbers from the same files (see avoid entries).",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:RegistrationName"
+   ],
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-codicedestinatario-aaaaaa",
+   "category": "organisation",
+   "type": "CodiceDestinatario (public office)",
+   "value": "AAAAAA",
+   "label": "Public-sector recipient code in the official FatturaPA examples",
+   "status": "published-example",
+   "verified": [
+    "Not in the IndicePA e-invoicing office list, 56,383 office codes (2026-11-05)"
+   ],
+   "notes": "Same 6-character format as an IPA office code (Peppol scheme 0201).",
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "IndicePA open data — servizi di fatturazione elettronica",
+     "url": "https://indicepa.gov.it/ipa-dati/dataset/servizi-fatturazione-elettronica",
+     "publisher": "AgID",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-codicedestinatario-abc1234",
+   "category": "organisation",
+   "type": "CodiceDestinatario (private recipient)",
+   "value": "ABC1234",
+   "label": "Private-sector recipient code in the official FatturaPA examples",
+   "status": "published-example",
+   "notes": "Private recipient codes are not published in an open list, so this could not be checked.",
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-codicedestinatario-0000000",
+   "category": "organisation",
+   "type": "CodiceDestinatario (special value)",
+   "value": "0000000",
+   "label": "Recipient receives via PEC or has no registered channel",
+   "status": "reserved",
+   "notes": "Defined in the FatturaPA technical specification with a real meaning (consumers, flat-rate taxpayers, PEC delivery). Not a test value, but the correct code for a consumer customer.",
+   "sources": [
+    {
+     "title": "Specifiche tecniche del formato FatturaPA v1.4",
+     "url": "https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.4/Specifiche_tecniche_del_formato_FatturaPA_V1.4.pdf",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-codicedestinatario-xxxxxxx",
+   "category": "organisation",
+   "type": "CodiceDestinatario (special value)",
+   "value": "XXXXXXX",
+   "label": "Recipient not resident in Italy (cross-border invoice)",
+   "status": "reserved",
+   "notes": "Defined in the FatturaPA technical specification with a real meaning. Not a test value.",
+   "sources": [
+    {
+     "title": "Specifiche tecniche del formato FatturaPA v1.4",
+     "url": "https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.4/Specifiche_tecniche_del_formato_FatturaPA_V1.4.pdf",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-address-poste-castelgerundo",
+   "category": "address",
+   "type": "Address example (private person)",
+   "kind": "placeholder",
+   "value": "SIG. MARIO ROSSI / VIA ROMA CAMAIRAGO 8 / 26844 CASTELGERUNDO",
+   "label": "Poste Italiane's example address in a merged municipality",
+   "status": "published-example",
+   "notes": "Invented person at a real municipality. The same page also uses SIG. GIUSEPPE BIANCHI / VIA ROMA CAVACURTA 8 / 26844 CASTELGERUNDO. Rules — 3 to 5 lines, last line CAP TOWN PROVINCE (2-letter code, no brackets), capitals, no comma or \"N.\" before the house number.",
+   "sources": [
+    {
+     "title": "Poste Italiane — CAP",
+     "url": "https://www.poste.it/cap",
+     "publisher": "Poste Italiane",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-address-fatturapa-sassari",
+   "category": "address",
+   "type": "Address example (company)",
+   "kind": "placeholder",
+   "value": "VIALE ROMA 543 / 07100 SASSARI SS",
+   "label": "Address used in the official FatturaPA example invoices",
+   "status": "published-example",
+   "notes": "Real CAP, town and province combination. The examples also use VIA TORINO 38-B / 00145 ROMA RM.",
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-cap-unused-prefixes",
+   "category": "address",
+   "type": "Postcode range",
+   "kind": "range",
+   "value": "49xxx, 68xxx, 69xxx, 77xxx, 78xxx, 79xxx, 99xxx",
+   "label": "First two digits not used by any CAP in a community dataset",
+   "status": "derived",
+   "verified": [
+    "Checked against matteocontrini/comuni-json (2020, 4,678 CAPs, 00010–98168); unofficial dataset, completeness not guaranteed (2026-11-05)"
+   ],
+   "notes": "Such postcodes pass a 5-digit format check but fail any check that the CAP exists. Poste Italiane does not publish an open CAP dataset.",
+   "sources": [
+    {
+     "title": "matteocontrini/comuni-json",
+     "url": "https://github.com/matteocontrini/comuni-json",
+     "publisher": "Matteo Contrini (community dataset)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-cap-unused-values",
+   "category": "address",
+   "type": "Postcode",
+   "kind": "range",
+   "value": "00000, 12345, 99999",
+   "label": "Obviously fictitious CAPs not used in a community dataset",
+   "status": "derived",
+   "verified": [
+    "Checked against matteocontrini/comuni-json (2020, 4,678 CAPs); unofficial dataset (2026-11-05)"
+   ],
+   "notes": "00100 is also unused today but was the general Rome CAP before 1999 and is still often seen; do not use it.",
+   "sources": [
+    {
+     "title": "matteocontrini/comuni-json",
+     "url": "https://github.com/matteocontrini/comuni-json",
+     "publisher": "Matteo Contrini (community dataset)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-town-roccacannuccia",
+   "category": "address",
+   "type": "Town name",
+   "value": "ROCCACANNUCCIA",
+   "label": "Recognisable Italian joke placeholder town name",
+   "status": "derived",
+   "verified": [
+    "Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names, updated 2026-02-21 (2026-11-05)"
+   ],
+   "sources": [
+    {
+     "title": "ISTAT — Elenco comuni italiani (xlsx)",
+     "url": "https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx",
+     "publisher": "ISTAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-town-vattelapesca",
+   "category": "address",
+   "type": "Town name",
+   "value": "VATTELAPESCA",
+   "label": "Recognisable Italian joke placeholder town name (\"who knows where\")",
+   "status": "derived",
+   "verified": [
+    "Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names (2026-11-05)"
+   ],
+   "sources": [
+    {
+     "title": "ISTAT — Elenco comuni italiani (xlsx)",
+     "url": "https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx",
+     "publisher": "ISTAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-town-esempio",
+   "category": "address",
+   "type": "Town name",
+   "value": "ESEMPIO",
+   "label": "Placeholder town name (\"example\")",
+   "status": "derived",
+   "verified": [
+    "Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names (2026-11-05)"
+   ],
+   "sources": [
+    {
+     "title": "ISTAT — Elenco comuni italiani (xlsx)",
+     "url": "https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx",
+     "publisher": "ISTAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-town-citta",
+   "category": "address",
+   "type": "Town name",
+   "value": "CITTÀ",
+   "label": "Placeholder town name (\"town\")",
+   "status": "derived",
+   "verified": [
+    "Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names (2026-11-05)"
+   ],
+   "sources": [
+    {
+     "title": "ISTAT — Elenco comuni italiani (xlsx)",
+     "url": "https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx",
+     "publisher": "ISTAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-town-molto-lontano",
+   "category": "address",
+   "type": "Town name",
+   "value": "MOLTO LONTANO",
+   "label": "Placeholder town name (\"very far away\")",
+   "status": "derived",
+   "verified": [
+    "Not a municipality in the ISTAT Elenco comuni italiani, 7,889 names (2026-11-05)"
+   ],
+   "sources": [
+    {
+     "title": "ISTAT — Elenco comuni italiani (xlsx)",
+     "url": "https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx",
+     "publisher": "ISTAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-email-pec-test",
+   "category": "contact",
+   "type": "PEC address pattern",
+   "kind": "placeholder",
+   "value": "fatture@<alias>.pec.test",
+   "label": "Certified email (PEC) address on the reserved .test domain",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "notes": "No reserved PEC test domain exists in Italy; use .test for PEC addresses in examples.",
+   "ubl": [
+    "cbc:EndpointID",
+    "cac:Contact/cbc:ElectronicMail"
+   ],
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-iban-swift-registry",
+   "category": "banking",
+   "type": "IBAN",
+   "value": "IT60 X054 2811 1010 0000 0123 456",
+   "label": "Official example IBAN for Italy in the SWIFT IBAN Registry",
+   "status": "published-example",
+   "checks": [
+    "iban"
+   ],
+   "notes": "Bank code (ABI) 05428 is a real bank code; the account part is fictitious.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "SWIFT IBAN Registry (ISO 13616 Registration Authority)",
+     "url": "https://www.swift.com/resource/iban-registry-pdf",
+     "publisher": "SWIFT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-bic-test",
+   "category": "banking",
+   "type": "BIC (test)",
+   "kind": "range",
+   "value": "XXXXITM0",
+   "label": "Test-and-training BIC pattern for Italy (8th character 0)",
+   "status": "reserved",
+   "checks": [
+    "bic-test"
+   ],
+   "notes": "ISO 9362 convention; replace XXXX with a bank code. A '0' as 2nd character of the location code marks a test BIC.",
+   "ubl": [
+    "cac:FinancialInstitutionBranch/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "SWIFT white paper on ISO 9362:2014 (§4.5 Test & Training BIC)",
+     "url": "https://www.swift.com/swift-resource/14256/download?language=en",
+     "publisher": "SWIFT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-gln-prefix-952",
+   "category": "trade",
+   "type": "GLN / GTIN prefix",
+   "kind": "range",
+   "value": "952xxxxxxxxxx",
+   "label": "GS1 prefix reserved for demonstrations and examples",
+   "status": "reserved",
+   "notes": "Prefer 952 over the GLNs 7400000001235 / 7560000012345 seen in the NSO examples, whose ownership is unverified. See the global file for ready-made 952 GLNs.",
+   "ubl": [
+    "cbc:EndpointID @schemeID=0088",
+    "cac:PartyIdentification/cbc:ID @schemeID=0088"
+   ],
+   "sources": [
+    {
+     "title": "GS1 General Specifications R24.0 (GS1 Switzerland copy)",
+     "url": "https://www.gs1.ch/sites/default/files/2024-02/GS1%20General%20Specifications%2001_24.pdf",
+     "publisher": "GS1",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-nso-order-id-pattern",
+   "category": "document",
+   "type": "NSO order identifier",
+   "kind": "range",
+   "value": "<ID>#<IssueDate>#<EndpointID>[#Revised|#Cancelled]",
+   "label": "Order ID convention of the national public-sector order hub (NSO)",
+   "status": "published-example",
+   "notes": "NSO accepts only UBL 2.1 Peppol BIS Ordering 3. The NSO example files are a useful structural reference, but their party data is real.",
+   "ubl": [
+    "cac:OrderReference/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "MEF / RGS — Nodo di Smistamento degli Ordini (NSO)",
+     "url": "https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NSO – File di esempio (ZIP)",
+     "url": "https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-piva-01234567890",
+   "category": "organisation",
+   "type": "Partita IVA",
+   "value": "01234567890",
+   "label": "Supplier VAT number in the official FatturaPA examples (IT01234567890)",
+   "status": "avoid",
+   "fails_checks": [
+    "it-piva"
+   ],
+   "reason": "Fails the check digit and is not in VIES; the SDI exchange system would reject it. The most-copied Italian \"example VAT number\".",
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-piva-24681012141",
+   "category": "organisation",
+   "type": "Partita IVA",
+   "value": "24681012141",
+   "label": "Other-party VAT number in the official FatturaPA examples",
+   "status": "avoid",
+   "fails_checks": [
+    "it-piva"
+   ],
+   "reason": "Fails the check digit and is not in VIES.",
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-cf-09876543210",
+   "category": "organisation",
+   "type": "Codice fiscale (company)",
+   "value": "09876543210",
+   "label": "Customer tax code in the official FatturaPA examples",
+   "status": "avoid",
+   "fails_checks": [
+    "it-piva"
+   ],
+   "reason": "Fails the check digit and is not in VIES.",
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-vat-it80415740580",
+   "category": "organisation",
+   "type": "VAT number",
+   "value": "IT80415740580",
+   "label": "Buyer VAT number in the NSO UBL examples",
+   "status": "avoid",
+   "checks": [
+    "it-piva"
+   ],
+   "reason": "Real organisation — Ministero dell'economia e delle finanze (tax code 80415740580).",
+   "sources": [
+    {
+     "title": "MEF / RGS — Nodo di Smistamento degli Ordini (NSO)",
+     "url": "https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NSO – File di esempio (ZIP)",
+     "url": "https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-vat-it01043931003",
+   "category": "organisation",
+   "type": "VAT number",
+   "value": "IT01043931003",
+   "label": "Supplier VAT number in the NSO UBL examples",
+   "status": "avoid",
+   "checks": [
+    "it-piva"
+   ],
+   "reason": "Real company — Sogei S.p.A.",
+   "sources": [
+    {
+     "title": "MEF / RGS — Nodo di Smistamento degli Ordini (NSO)",
+     "url": "https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NSO – File di esempio (ZIP)",
+     "url": "https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-vat-it05359681003",
+   "category": "organisation",
+   "type": "VAT number",
+   "value": "IT05359681003",
+   "label": "Other-party VAT number in the NSO UBL examples",
+   "status": "avoid",
+   "checks": [
+    "it-piva"
+   ],
+   "reason": "Real company — Consip.",
+   "sources": [
+    {
+     "title": "MEF / RGS — Nodo di Smistamento degli Ordini (NSO)",
+     "url": "https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NSO – File di esempio (ZIP)",
+     "url": "https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-ipa-m0e2ri",
+   "category": "organisation",
+   "type": "IPA office code",
+   "value": "M0E2RI",
+   "label": "Office code (schemeID 0201) in the NSO UBL examples",
+   "status": "avoid",
+   "reason": "Real MEF office in IndicePA (Largo Santa Susanna 13, 00187 Roma), checked 2026-11-05.",
+   "sources": [
+    {
+     "title": "IndicePA open data — servizi di fatturazione elettronica",
+     "url": "https://indicepa.gov.it/ipa-dati/dataset/servizi-fatturazione-elettronica",
+     "publisher": "AgID",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-email-nso",
+   "category": "contact",
+   "type": "Email address",
+   "value": "paolo.trimarchi@mef.gov.it, francesco@sogei.it, hd@consip.it",
+   "label": "Contact emails in the NSO UBL examples",
+   "status": "avoid",
+   "reason": "Real-looking personal and organisational emails at real organisations' domains.",
+   "sources": [
+    {
+     "title": "MEF / RGS — Nodo di Smistamento degli Ordini (NSO)",
+     "url": "https://www.rgs.mef.gov.it/VERSIONE-I/e_government/amministrazioni_pubbliche/acquisti_pubblici_in_rete_apir/nodo_di_smistamento_degli_ordini_di_acquisto_delle_amministrazioni_pubbliche_nso/",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "NSO – File di esempio (ZIP)",
+     "url": "https://www.rgs.mef.gov.it/_Documenti/VERSIONE-I/e-GOVERNME1/apir/NSO-File-di-esempio.zip",
+     "publisher": "Ragioneria Generale dello Stato",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-pec-betagamma",
+   "category": "contact",
+   "type": "PEC address",
+   "value": "betagamma@pec.it",
+   "label": "PEC address in the official FatturaPA examples",
+   "status": "avoid",
+   "reason": "pec.it is a real commercial PEC provider domain.",
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-domain-pec-providers",
+   "category": "contact",
+   "type": "Email domain",
+   "value": "pec.it, legalmail.it, pec.sogei.it",
+   "label": "Certified email (PEC) domains",
+   "status": "avoid",
+   "reason": "Real PEC provider domains. Use a .test domain such as <alias>.pec.test.",
+   "sources": [
+    {
+     "title": "Formato FatturaPA — documentation and example files",
+     "url": "https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/",
+     "publisher": "Agenzia delle Entrate / SdI",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-cap-vatican-san-marino",
+   "category": "address",
+   "type": "Postcode",
+   "value": "00120, 47890–47899",
+   "label": "CAPs inside the Italian postcode system",
+   "status": "avoid",
+   "reason": "Not Italy — 00120 is Vatican City and 47890–47899 is San Marino.",
+   "sources": [
+    {
+     "title": "matteocontrini/comuni-json",
+     "url": "https://github.com/matteocontrini/comuni-json",
+     "publisher": "Matteo Contrini (community dataset)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-town-paese",
+   "category": "address",
+   "type": "Town name",
+   "value": "PAESE",
+   "label": "Tempting placeholder town name (\"village\")",
+   "status": "avoid",
+   "reason": "Real municipality (Paese, province of Treviso), in the ISTAT list.",
+   "sources": [
+    {
+     "title": "ISTAT — Elenco comuni italiani (xlsx)",
+     "url": "https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx",
+     "publisher": "ISTAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-town-canicatti",
+   "category": "address",
+   "type": "Town name",
+   "value": "CANICATTÌ",
+   "label": "Used jokingly as \"the middle of nowhere\"",
+   "status": "avoid",
+   "reason": "Real municipality. ROCCASECCA, CAPRACOTTA, PIZZO and FORTEZZA are also real.",
+   "sources": [
+    {
+     "title": "ISTAT — Elenco comuni italiani (xlsx)",
+     "url": "https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx",
+     "publisher": "ISTAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "it-avoid-town-paperopoli",
+   "category": "address",
+   "type": "Town name",
+   "value": "PAPEROPOLI, TOPOLINIA",
+   "label": "Fictional towns used as placeholders",
+   "status": "avoid",
+   "reason": "Not municipalities, but they are Disney's Duckburg and Mouseton (trademark).",
+   "sources": [
+    {
+     "title": "ISTAT — Elenco comuni italiani (xlsx)",
+     "url": "https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.xlsx",
+     "publisher": "ISTAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,440 @@
+{
+ "code": "KE",
+ "name": "Kenya",
+ "native_name": "Kenya",
+ "region": "Africa",
+ "languages": [
+  "en",
+  "sw"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-africa.md",
+ "summary": "The Kenya Revenue Authority uses the obviously fictitious PINs A123456789Z and P123456789Z throughout its eTIMS (OSCU/VSCU) specifications; the PIN check letter algorithm is not published, so only the format can be validated. The Communications Authority reserves the national destination code 199 for network testing, but libphonenumber rejects those numbers. eTIMS is a KRA-specific JSON API, not UBL. There is no fictitious town or postcode, no IBAN and no published bank account check digit. The M-Pesa test shortcode 174379 is widely documented but was not confirmed at the source, and the eTIMS customer name MTEJA LIMITED was not checked against the business register; both are left out.\n",
+ "identifiers": [
+  {
+   "name": "KRA PIN",
+   "format": "A (individual) or P (non-individual) + 9 digits + check letter, 11 characters",
+   "authority": "Kenya Revenue Authority (KRA)",
+   "notes": "The check letter algorithm is not published. A secondary source says issued PINs start with A0 or P0 (unverified).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "National ID number",
+   "format": "7–8 digits (unverified)",
+   "authority": "National Registration Bureau",
+   "notes": "No published check digit and no official specimen."
+  },
+  {
+   "name": "Company registration number",
+   "format": "e.g. PVT-… (unverified)",
+   "authority": "Business Registration Service (BRS)",
+   "notes": "No known check digit; not researched further."
+  },
+  {
+   "name": "eTIMS branch ID (bhfId)",
+   "format": "2 digits, 00 = head office",
+   "authority": "KRA"
+  }
+ ],
+ "entries": [
+  {
+   "id": "ke-pin-a123456789z",
+   "category": "organisation",
+   "type": "KRA PIN (individual)",
+   "value": "A123456789Z",
+   "label": "Taxpayer PIN used throughout the KRA eTIMS specifications",
+   "status": "published-example",
+   "checks": [
+    "ke-kra-pin"
+   ],
+   "notes": "Format only; the check letter cannot be validated offline.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "KRA OSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-pin-p123456789z",
+   "category": "organisation",
+   "type": "KRA PIN (non-individual)",
+   "value": "P123456789Z",
+   "label": "Seller PIN in the KRA VSCU specification",
+   "status": "published-example",
+   "checks": [
+    "ke-kra-pin"
+   ],
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-pin-a987654321z",
+   "category": "organisation",
+   "type": "KRA PIN (individual)",
+   "value": "A987654321Z",
+   "label": "Second individual PIN in the KRA VSCU specification",
+   "status": "published-example",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-pin-p123456789a",
+   "category": "organisation",
+   "type": "KRA PIN (non-individual)",
+   "value": "P123456789A",
+   "label": "Second non-individual PIN in the KRA VSCU specification",
+   "status": "published-example",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-name-taxpayer1",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "TAXPAYER1",
+   "label": "Taxpayer name in the KRA eTIMS specifications",
+   "status": "published-example",
+   "notes": "Other names used are TAXPAYER2, Taxpayer1130 and TEST VSCU; the head-office branch is called \"Headquater\".",
+   "ubl": [
+    "cac:PartyLegalEntity/cbc:RegistrationName"
+   ],
+   "sources": [
+    {
+     "title": "KRA OSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-branch-00",
+   "category": "organisation",
+   "type": "eTIMS branch ID",
+   "value": "00",
+   "label": "Head-office branch ID (bhfId) in the eTIMS specifications",
+   "status": "published-example",
+   "notes": "The first branch is \"01\".",
+   "sources": [
+    {
+     "title": "KRA OSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-address-upu-nakuru",
+   "category": "address",
+   "type": "Address example (P.O. Box)",
+   "kind": "placeholder",
+   "value": "MR. JOHN BWANA / P O BOX 2784 – NAKURU GPO / 20100 / NAKURU / KENYA",
+   "label": "UPU example of a P.O. Box address",
+   "status": "published-example",
+   "notes": "Real post office and postcode (20100 Nakuru; 00100 is Nairobi GPO). The postcode is that of the delivery post office.",
+   "sources": [
+    {
+     "title": "UPU Postal addressing systems — Kenya (09/2004)",
+     "url": "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/kenEn.pdf",
+     "publisher": "Universal Postal Union",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-phone-199",
+   "category": "contact",
+   "type": "Phone range",
+   "kind": "range",
+   "value": "+254 199 xxx xxx",
+   "label": "National destination code reserved for network testing",
+   "status": "reserved",
+   "notes": "\"Shared resource for internal use for purposes network testing, experimentations, and research.\" libphonenumber 9.0.42 rejects these numbers as invalid. There is no drama range; 021–029, 031–039 and 047–049 are only \"reserved for future growth\" and not safe.",
+   "sources": [
+    {
+     "title": "Telecommunication Numbering Plan for Kenya (October 2025)",
+     "url": "https://www.ca.go.ke/sites/default/files/2025-10/Telecommunication%20Numbering%20Plan%20for%20Kenya%20October%202025[1].pdf",
+     "publisher": "Communications Authority of Kenya",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-mpesa-msisdn-254708374149",
+   "category": "banking",
+   "type": "M-Pesa test MSISDN",
+   "value": "254708374149",
+   "label": "Example phone number in the Safaricom Daraja sandbox simulator",
+   "status": "published-example",
+   "notes": "A valid Safaricom mobile number format. Use only as M-Pesa payment data in sandbox tests, never as a contact phone number.",
+   "sources": [
+    {
+     "title": "Safaricom Daraja developer portal (API simulator)",
+     "url": "https://developer.safaricom.co.ke/",
+     "publisher": "Safaricom",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-mpesa-shortcode-600978",
+   "category": "banking",
+   "type": "M-Pesa shortcode",
+   "value": "600978",
+   "label": "Reversal receiver shortcode, Daraja sandbox simulator default",
+   "status": "published-example",
+   "notes": "Another simulator default is 300584.",
+   "sources": [
+    {
+     "title": "Safaricom Daraja developer portal (API simulator)",
+     "url": "https://developer.safaricom.co.ke/",
+     "publisher": "Safaricom",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-mpesa-till-1743791",
+   "category": "banking",
+   "type": "M-Pesa till number",
+   "value": "1743791",
+   "label": "Till number, Daraja sandbox simulator default",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "Safaricom Daraja developer portal (API simulator)",
+     "url": "https://developer.safaricom.co.ke/",
+     "publisher": "Safaricom",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-itemcode-ke1ntxu0000001",
+   "category": "trade",
+   "type": "eTIMS item code",
+   "value": "KE1NTXU0000001",
+   "label": "Item code in the KRA eTIMS specifications",
+   "status": "published-example",
+   "notes": "Structure country + item type + origin + unit + serial.",
+   "ubl": [
+    "cac:Item/cac:SellersItemIdentification/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "KRA OSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-device-dvcv1130",
+   "category": "other",
+   "type": "eTIMS device serial number",
+   "value": "dvcv1130",
+   "label": "Device serial number in the KRA OSCU specification",
+   "status": "published-example",
+   "sources": [
+    {
+     "title": "KRA OSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-avoid-pin-p000591096x",
+   "category": "organisation",
+   "type": "KRA PIN",
+   "value": "P000591096X",
+   "label": "Seen as an \"example KRA PIN\" on third-party sites",
+   "status": "avoid",
+   "reason": "Real company (Kenya Power), per a secondary source.",
+   "sources": [
+    {
+     "title": "lookuptax.com — Kenya tax ID guide",
+     "url": "https://lookuptax.com/docs/tax-identification-number/kenya-tax-id-guide",
+     "publisher": "lookuptax.com",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-avoid-name-oderich",
+   "category": "organisation",
+   "type": "Company name",
+   "value": "ODERICH CONSERVA QUALIDADE BRASIL",
+   "label": "Exporter name in the VSCU import-item sample",
+   "status": "avoid",
+   "reason": "Real Brazilian company.",
+   "sources": [
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-avoid-phone-kra-specs",
+   "category": "contact",
+   "type": "Phone number",
+   "value": "0789001130, 0789011130",
+   "label": "Manager phone numbers in the KRA OSCU/VSCU specifications",
+   "status": "avoid",
+   "reason": "Valid numbers in a real Kenyan mobile range (libphonenumber 9.0.42).",
+   "sources": [
+    {
+     "title": "KRA OSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-avoid-email-test-com",
+   "category": "contact",
+   "type": "Email address",
+   "value": "manage113000@test.com",
+   "label": "Manager email in the KRA OSCU specification",
+   "status": "avoid",
+   "fails_checks": [
+    "reserved-domain"
+   ],
+   "reason": "test.com is a registered domain. Use a .test domain.",
+   "sources": [
+    {
+     "title": "KRA OSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/OSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-avoid-email-gaoin-ke",
+   "category": "contact",
+   "type": "Email address",
+   "value": "test@gaoin.ke",
+   "label": "Email in the KRA VSCU specification",
+   "status": "avoid",
+   "fails_checks": [
+    "reserved-domain"
+   ],
+   "reason": "Not registered on 2026-11-05 (NXDOMAIN) but not reserved, so it could be registered later.",
+   "sources": [
+    {
+     "title": "KRA VSCU Specification v2.0",
+     "url": "https://www.kra.go.ke/images/publications/VSCU_Specification_Document_v2.0.pdf",
+     "publisher": "Kenya Revenue Authority",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-avoid-phone-daraja",
+   "category": "contact",
+   "type": "Phone number",
+   "value": "254722001231, 254726304245, 254705912645",
+   "label": "Default phone numbers in the Daraja portal",
+   "status": "avoid",
+   "reason": "Valid Kenyan mobile numbers, possibly held by real people.",
+   "sources": [
+    {
+     "title": "Safaricom Daraja developer portal (API simulator)",
+     "url": "https://developer.safaricom.co.ke/",
+     "publisher": "Safaricom",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "ke-avoid-domain-mydomain-com",
+   "category": "other",
+   "type": "Callback URL domain",
+   "value": "https://mydomain.com/...",
+   "label": "Callback URLs in the Daraja portal",
+   "status": "avoid",
+   "reason": "mydomain.com is a registered domain.",
+   "sources": [
+    {
+     "title": "Safaricom Daraja developer portal (API simulator)",
+     "url": "https://developer.safaricom.co.ke/",
+     "publisher": "Safaricom",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

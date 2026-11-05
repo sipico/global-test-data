@@ -1,0 +1,2402 @@
+{
+ "code": "MX",
+ "name": "Mexico",
+ "native_name": "México",
+ "region": "Latin America",
+ "languages": [
+  "es",
+  "en"
+ ],
+ "updated": "2026-11-05",
+ "research": "research/example-identifiers-mexico-colombia.md",
+ "summary": "Mexico is the best case found so far: the tax authority SAT publishes 30 official test taxpayers (15 companies, 15 individuals) with test certificates, invented names and RFCs that pass the check digit. They are accepted only by the SAT test environment and PAC sandboxes, and the certificates expire January–May 2027. The company postcodes exist only in the SAT CFDI catalogue (no real settlement). Banxico publishes an example CLABE. No reserved telephone range and no official fictitious street exist. The generic RFCs XAXX010101000 / XEXX010101000 have a legal meaning and are not test values. CFDI is not UBL; the UBL hints are for mapping only. RFC ownership cannot be checked (no open RFC lookup), and the CURP check rule for names with Ñ is unverified.\n",
+ "identifiers": [
+  {
+   "name": "RFC persona moral (company tax ID)",
+   "format": "12 characters — 3 letters (name, may include & and Ñ) + YYMMDD (incorporation) + 2-character homoclave + check digit",
+   "check": "mx-rfc",
+   "authority": "SAT",
+   "notes": "Homoclave is computed by the SAT from the full name and cannot be reproduced; do not derive new RFCs. In CFDI 4.0 the receiver Nombre is sent without the company-type suffix.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "RFC persona física (individual tax ID)",
+   "format": "13 characters — 4 letters + YYMMDD (birth) + 2-character homoclave + check digit",
+   "check": "mx-rfc",
+   "authority": "SAT",
+   "notes": "Check digit: alphabet 0-9 A-N & O-Z (space) Ñ = values 0–38; a 12-character RFC is padded with a leading space; sum value × weight (13…2) over 12 positions; 11 − (sum mod 11), 11 → 0, 10 → A.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ]
+  },
+  {
+   "name": "CURP (personal population registry key)",
+   "format": "18 characters — 4 letters + YYMMDD + sex (H/M) + 2-letter state + 3 internal consonants + differentiator + check digit",
+   "authority": "RENAPO",
+   "notes": "Check digit: alphabet 0-9 A-N Ñ O-Z, weights 18…2, 10 − (sum mod 10), 10 → 0. No validator in tools/checks.py yet; the rule for names with Ñ is unverified."
+  },
+  {
+   "name": "CLABE (standardised bank account number)",
+   "format": "18 digits — 3 bank + 3 plaza + 11 account + 1 check digit",
+   "check": "mx-clabe",
+   "authority": "Banco de México",
+   "notes": "Weights 3 7 1 repeating over 17 digits, each product mod 10, check digit = (10 − sum mod 10) mod 10 (Circular 12/2018). Mexico has no IBAN.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ]
+  },
+  {
+   "name": "Pedimento (customs declaration number)",
+   "format": "year (2) · customs office (2) · broker licence (4) · last digit of year + 6-digit sequence, groups separated by two spaces",
+   "authority": "SAT / Agencia Nacional de Aduanas de México"
+  },
+  {
+   "name": "Código postal",
+   "format": "5 digits",
+   "authority": "Correos de México (SEPOMEX); SAT c_CodigoPostal for CFDI validation",
+   "notes": "The SAT catalogue has 95,749 codes against SEPOMEX's 31,869; codes in SAT only pass CFDI validation but have no real settlement."
+  }
+ ],
+ "entries": [
+  {
+   "id": "mx-rfc-eku9003173c9",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "EKU9003173C9",
+   "label": "SAT test taxpayer ESCUELA KEMPER URGATE SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 601 General de Ley PM. In CFDI 4.0 send Nombre without the company-type suffix: ESCUELA KEMPER URGATE. Most widely used test RFC; recommended supplier. Postcode 42501 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-ewe1709045u0",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "EWE1709045U0",
+   "label": "SAT test taxpayer ESCUELA WILSON ESQUIVEL S DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 603 Fines no lucrativos. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-he951128469",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "H&E951128469",
+   "label": "SAT test taxpayer HERRERIA & ELECTRICOS S DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 601 General de Ley PM. Postcode 06002 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Contains '&': escape as &amp; in XML. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-han930228sm9",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "HAÑ930228SM9",
+   "label": "SAT test taxpayer HERMANOS ANZURES ÑARVAEZ SA",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 603 Fines no lucrativos. Contains 'Ñ': keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-iia040805dz4",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "IIA040805DZ4",
+   "label": "SAT test taxpayer INDISTRIA ILUMINADORA DE ALMACENES SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 626 RESICO. Postcode 62661 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). The misspelling is in the SAT original; copy it exactly. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-ivd920810gu2",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "IVD920810GU2",
+   "label": "SAT test taxpayer INNOVACION VALOR Y DESARROLLO SA",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 601 General de Ley PM. Recommended pick (regime 601). Postcode 63901 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-ixs7607092r5",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "IXS7607092R5",
+   "label": "SAT test taxpayer INTERNACIONAL XIMBO Y SABORES SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 603 Fines no lucrativos. Postcode 23004 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-jes900109q90",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "JES900109Q90",
+   "label": "SAT test taxpayer JIMENEZ ESTRADA SALAS A A",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 622 Agrícolas. Postcode 37161 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-kij0906199r1",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "KIJ0906199R1",
+   "label": "SAT test taxpayer KERNEL INDUSTIA JUGUETERA SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 622 Agrícolas. Postcode 28971 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). The misspelling is in the SAT original; copy it exactly. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-lo950913msa",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "L&O950913MSA",
+   "label": "SAT test taxpayer LUCES & OBRAS SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 626 RESICO. Postcode 60922 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Contains '&': escape as &amp; in XML. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-ono120726rx3",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "OÑO120726RX3",
+   "label": "SAT test taxpayer ORGANICOS ÑAVEZ OSORIO S.A DE C.V SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 601 General de Ley PM. Postcode 40501 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Contains 'Ñ': keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-ss051221se2",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "S&S051221SE2",
+   "label": "SAT test taxpayer S & SOFTWARE SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 624 Coordinados. Contains '&': escape as &amp; in XML. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-ure180429tm6",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "URE180429TM6",
+   "label": "SAT test taxpayer UNIVERSIDAD ROBOTICA ESPAÑOLA SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 601 General de Ley PM. Recommended pick (regime 601). Postcode 86991 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-xia190128j61",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "XIA190128J61",
+   "label": "SAT test taxpayer XENON INDUSTRIAL ARTICLES S DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 622 Agrícolas. Postcode 76343 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-zun920208kl4",
+   "category": "organisation",
+   "type": "RFC (persona moral)",
+   "value": "ZUÑ920208KL4",
+   "label": "SAT test taxpayer ZAPATERIA URTADO ÑERI SA DE CV",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 626 RESICO. Postcode 34541 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Contains 'Ñ': keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID",
+    "cac:PartyLegalEntity/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-cacx7605101p8",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "CACX7605101P8",
+   "label": "SAT test taxpayer (individual) XOCHILT CASAS CHAVEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime not listed in the SAT xlsx. CURP CACX760510MGTSHC04 (certificate serialNumber). Postcode 36257 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-canf770131pa3",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "CAÑF770131PA3",
+   "label": "SAT test taxpayer (individual) FERNANDO CASTILLO ÑABARRO",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 616 Sin obligaciones. CURP CANF770131HBCSBR08 (certificate serialNumber) fails the CURP check digit; do not use the CURP. Contains 'Ñ': keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-funk671228ph6",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "FUNK671228PH6",
+   "label": "SAT test taxpayer (individual) KARLA FUENTE NOLASCO",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 621 / 625. CURP FUNK671228MCLNLR05 (certificate serialNumber). Postcode 01160 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-ianl750210963",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "IAÑL750210963",
+   "label": "SAT test taxpayer (individual) LUIS IAN ÑUZCO",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 608. CURP IANL750210HSRNZS09 (certificate serialNumber) fails the CURP check digit; do not use the CURP. Postcode 82525 (from PAC documentation): in the SAT catalogue only (Sinaloa). Contains 'Ñ': keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-jufa7608212v6",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "JUFA7608212V6",
+   "label": "SAT test taxpayer (individual) ADRIANA JUAREZ FERNANDEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 614 Intereses. CURP JUFA760821MDGRRD04 (certificate serialNumber). Postcode 01160 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-kaho641101b39",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "KAHO641101B39",
+   "label": "SAT test taxpayer (individual) OSCAR KALA HAAK",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 626 RESICO. CURP KAHO641101HNTLKS06 (certificate serialNumber). Postcode 76074 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list). Also named as legal representative in the ZUÑ920208KL4 certificate.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-kicr630120nx3",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "KICR630120NX3",
+   "label": "SAT test taxpayer (individual) RODRIGO KITIA CASTRO",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 626 RESICO. CURP KICR630120HGTTSD05 (certificate serialNumber). Postcode 36246 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-lini920228ks8",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "LIÑI920228KS8",
+   "label": "SAT test taxpayer (individual) IRIS LIANEZ ÑAKI",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 605 Sueldos. CURP LINI920228MOCNKR04 (certificate serialNumber) fails the CURP check digit; do not use the CURP. Contains 'Ñ': keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-misc491214b86",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "MISC491214B86",
+   "label": "SAT test taxpayer (individual) CECILIA MIRANDA SANCHEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 612. CURP MISC491214MCCRNC01 (certificate serialNumber). Postcode 01010 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-raqn7701212m3",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "RAQÑ7701212M3",
+   "label": "SAT test taxpayer (individual) ÑEVES RAMIREZ QUEZADA",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 605 Sueldos. CURP RAQN770121HDFMZV08 (certificate serialNumber) fails the CURP check digit; do not use the CURP. Postcode 78905 (from PAC documentation): in the SAT catalogue. Contains 'Ñ': keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-watm640917j45",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "WATM640917J45",
+   "label": "SAT test taxpayer (individual) MARIA WATEMBER TORRES",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 612. CURP WATM640917MHGTRR01 (certificate serialNumber). Postcode 43543 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-werx631016s30",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "WERX631016S30",
+   "label": "SAT test taxpayer (individual) XAIME WEIR ROJO",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 625 Plataformas. CURP WERX631016HJCRJM08 (certificate serialNumber). Postcode 01279 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-xama620210dq5",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "XAMA620210DQ5",
+   "label": "SAT test taxpayer (individual) ALBA XKARAJAM MENDEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 612 / 606. CURP XAMA620210MSLKNL04 (certificate serialNumber). Postcode 01219 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-xiqb891116qe4",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "XIQB891116QE4",
+   "label": "SAT test taxpayer (individual) BERENICE XIMO QUEZADA",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime not listed in the SAT xlsx. CURP XIQB891116MGRMZR05 (certificate serialNumber). Postcode 40968 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-xoji740919u48",
+   "category": "organisation",
+   "type": "RFC (persona física)",
+   "value": "XOJI740919U48",
+   "label": "SAT test taxpayer (individual) INGRID XODAR JIMENEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Regime 612 / 605. CURP XOJI740919MQTDMN02 (certificate serialNumber). Postcode 76028 (from PAC documentation): real settlement (Col. Universidad, Querétaro). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list). Recommended for the Consumer party.",
+   "ubl": [
+    "cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-xaxx010101000",
+   "category": "organisation",
+   "type": "RFC (generic)",
+   "value": "XAXX010101000",
+   "label": "Generic RFC for the general public (anonymous domestic buyer)",
+   "status": "reserved",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "notes": "Legal meaning, not a test value: receiver = público en general, also used in the global CFDI summarising retail sales. Requires Nombre PUBLICO EN GENERAL, DomicilioFiscalReceptor = the issuer's LugarExpedicion, RegimenFiscalReceptor 616 and UsoCFDI S01. The check digit does not compute; validators special-case this fixed value. Never use it as a party's own tax ID.\n",
+   "ubl": [
+    "cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-xexx010101000",
+   "category": "organisation",
+   "type": "RFC (generic)",
+   "value": "XEXX010101000",
+   "label": "Generic RFC for a foreign resident without a Mexican RFC",
+   "status": "reserved",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "Legal meaning, not a test value: use only for a foreign receiver (e.g. an export invoice), with RegimenFiscalReceptor 616, UsoCFDI S01, ResidenciaFiscal and NumRegIdTrib. The check digit happens to compute. Never use it as a party's own tax ID.\n",
+   "ubl": [
+    "cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID"
+   ],
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-postcode-42501",
+   "category": "address",
+   "type": "Postcode",
+   "value": "42501",
+   "label": "SAT-only postcode (Hidalgo) of test taxpayer EKU9003173C9",
+   "status": "published-example",
+   "verified": [
+    "In SAT c_CodigoPostal (catalogue 2026-10-29), not in the SEPOMEX catalogue (2026-11-05)"
+   ],
+   "notes": "Passes CFDI validation but has no municipality or settlement, so it cannot point to a real address. Sovos/Reachcore gives the older value 26015 for this taxpayer.",
+   "sources": [
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Correos de México — Catálogo Nacional de Códigos Postales",
+     "url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+     "publisher": "Correos de México (SEPOMEX)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-postcode-63901",
+   "category": "address",
+   "type": "Postcode",
+   "value": "63901",
+   "label": "SAT-only postcode (Nayarit) of test taxpayer IVD920810GU2",
+   "status": "published-example",
+   "verified": [
+    "In SAT c_CodigoPostal (catalogue 2026-10-29), not in the SEPOMEX catalogue (2026-11-05)"
+   ],
+   "sources": [
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Correos de México — Catálogo Nacional de Códigos Postales",
+     "url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+     "publisher": "Correos de México (SEPOMEX)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-postcode-86991",
+   "category": "address",
+   "type": "Postcode",
+   "value": "86991",
+   "label": "SAT-only postcode (Tabasco) of test taxpayer URE180429TM6",
+   "status": "published-example",
+   "verified": [
+    "In SAT c_CodigoPostal (catalogue 2026-10-29), not in the SEPOMEX catalogue (2026-11-05)"
+   ],
+   "notes": "The other test-company postcodes (06002, 23004, 28971, 34541, 37161, 40501, 60922, 62661, 76343) are also SAT-only.",
+   "sources": [
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Correos de México — Catálogo Nacional de Códigos Postales",
+     "url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+     "publisher": "Correos de México (SEPOMEX)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-postcode-unused-17-19",
+   "category": "address",
+   "type": "Postcode range",
+   "kind": "range",
+   "value": "17xxx, 18xxx, 19xxx",
+   "label": "First two digits used in neither the SAT nor the SEPOMEX catalogue",
+   "status": "derived",
+   "verified": [
+    "Checked against SAT c_CodigoPostal (95,749 codes, 2026-10-29) and SEPOMEX (31,869 codes, file 2026-11-03) (2026-11-05)"
+   ],
+   "notes": "Pass a 5-digit format check but FAIL CFDI validation. For CFDI samples use a SAT-only postcode instead. 00xxx is also unused except 00004 (SAT only).",
+   "sources": [
+    {
+     "title": "SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Correos de México — Catálogo Nacional de Códigos Postales",
+     "url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+     "publisher": "Correos de México (SEPOMEX)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-postcode-00000",
+   "category": "address",
+   "type": "Postcode",
+   "value": "00000",
+   "label": "Postcode in neither the SAT nor the SEPOMEX catalogue",
+   "status": "derived",
+   "verified": [
+    "Not in SAT c_CodigoPostal or SEPOMEX (2026-11-05)"
+   ],
+   "notes": "Fails CFDI validation. 99999 is NOT a safe alternative (it is in the SAT catalogue, Zacatecas).",
+   "sources": [
+    {
+     "title": "SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Correos de México — Catálogo Nacional de Códigos Postales",
+     "url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+     "publisher": "Correos de México (SEPOMEX)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-email-escuela-kemper-test",
+   "category": "contact",
+   "type": "Email address",
+   "value": "facturacion@escuela-kemper.test",
+   "label": "Billing email on the reserved .test top-level domain",
+   "status": "reserved",
+   "checks": [
+    "reserved-domain"
+   ],
+   "notes": "Pattern <role>@<alias>.test. NIC México reserves no .mx name for examples.",
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-clabe-002180032240946700",
+   "category": "banking",
+   "type": "CLABE",
+   "value": "002180032240946700",
+   "label": "Example CLABE in Banxico Circular 12/2018 (check-digit annex)",
+   "status": "published-example",
+   "checks": [
+    "mx-clabe"
+   ],
+   "notes": "Bank code 002 is a real bank (Banamex); the account part is fictitious.",
+   "ubl": [
+    "cac:PayeeFinancialAccount/cbc:ID"
+   ],
+   "sources": [
+    {
+     "title": "Banxico — Circular 12/2018 (CLABE check digit annex)",
+     "url": "https://www.banxico.org.mx/marco-normativo/normativa-emitida-por-el-banco-de-mexico/circular-12-2018/%7BA6023AE0-8135-44ED-04DA-2068117ED5FD%7D.pdf",
+     "publisher": "Banco de México",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-pedimento-10-47-3807-8003832",
+   "category": "trade",
+   "type": "Pedimento number",
+   "value": "10  47  3807  8003832",
+   "label": "Customs declaration number in the SAT Anexo 20 guide",
+   "status": "published-example",
+   "notes": "Used in InformacionAduanera/NumeroPedimento, with two spaces between groups. Customs office 47 (Aeropuerto Internacional de la Ciudad de México) and broker licence 3807 exist in c_PatenteAduanal and c_NumPedimentoAduana. Inconsistent: year 10 but the last group starts with 8.\n",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-rfc-vada800927dj3",
+   "category": "person",
+   "type": "RFC (persona física)",
+   "value": "VADA800927DJ3",
+   "label": "Legal representative named in the SAT test company certificates",
+   "status": "published-example",
+   "checks": [
+    "mx-rfc"
+   ],
+   "notes": "CURP VADA800927HSRSRL05 (check digit verified in research). Useful as an example contact person. ZUÑ920208KL4 names KAHO641101B39 instead.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-vada800927hsrsrl05",
+   "category": "person",
+   "type": "CURP",
+   "value": "VADA800927HSRSRL05",
+   "label": "CURP of the legal representative in the SAT test company certificates",
+   "status": "published-example",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to RFC VADA800927DJ3. Check digit verified in research; no validator in tools/checks.py yet.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-cacx760510mgtshc04",
+   "category": "person",
+   "type": "CURP",
+   "value": "CACX760510MGTSHC04",
+   "label": "CURP of SAT test taxpayer XOCHILT CASAS CHAVEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC CACX7605101P8. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-funk671228mclnlr05",
+   "category": "person",
+   "type": "CURP",
+   "value": "FUNK671228MCLNLR05",
+   "label": "CURP of SAT test taxpayer KARLA FUENTE NOLASCO",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC FUNK671228PH6. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-jufa760821mdgrrd04",
+   "category": "person",
+   "type": "CURP",
+   "value": "JUFA760821MDGRRD04",
+   "label": "CURP of SAT test taxpayer ADRIANA JUAREZ FERNANDEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC JUFA7608212V6. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-kaho641101hntlks06",
+   "category": "person",
+   "type": "CURP",
+   "value": "KAHO641101HNTLKS06",
+   "label": "CURP of SAT test taxpayer OSCAR KALA HAAK",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC KAHO641101B39. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-kicr630120hgttsd05",
+   "category": "person",
+   "type": "CURP",
+   "value": "KICR630120HGTTSD05",
+   "label": "CURP of SAT test taxpayer RODRIGO KITIA CASTRO",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC KICR630120NX3. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-misc491214mccrnc01",
+   "category": "person",
+   "type": "CURP",
+   "value": "MISC491214MCCRNC01",
+   "label": "CURP of SAT test taxpayer CECILIA MIRANDA SANCHEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC MISC491214B86. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-watm640917mhgtrr01",
+   "category": "person",
+   "type": "CURP",
+   "value": "WATM640917MHGTRR01",
+   "label": "CURP of SAT test taxpayer MARIA WATEMBER TORRES",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC WATM640917J45. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-werx631016hjcrjm08",
+   "category": "person",
+   "type": "CURP",
+   "value": "WERX631016HJCRJM08",
+   "label": "CURP of SAT test taxpayer XAIME WEIR ROJO",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC WERX631016S30. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-xama620210mslknl04",
+   "category": "person",
+   "type": "CURP",
+   "value": "XAMA620210MSLKNL04",
+   "label": "CURP of SAT test taxpayer ALBA XKARAJAM MENDEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC XAMA620210DQ5. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-xiqb891116mgrmzr05",
+   "category": "person",
+   "type": "CURP",
+   "value": "XIQB891116MGRMZR05",
+   "label": "CURP of SAT test taxpayer BERENICE XIMO QUEZADA",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC XIQB891116QE4. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-curp-xoji740919mqtdmn02",
+   "category": "person",
+   "type": "CURP",
+   "value": "XOJI740919MQTDMN02",
+   "label": "CURP of SAT test taxpayer INGRID XODAR JIMENEZ",
+   "status": "reserved",
+   "checks": [
+    "mx-curp"
+   ],
+   "notes": "Belongs to test RFC XOJI740919U48. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-numregidtrib-usa-121585958",
+   "category": "other",
+   "type": "Foreign tax ID (NumRegIdTrib)",
+   "value": "121585958",
+   "label": "Foreign tax registration number with ResidenciaFiscal USA in the Anexo 20 guide",
+   "status": "published-example",
+   "notes": "Used with XEXX010101000 for a foreign receiver.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-lan7008173r5",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "LAN7008173R5",
+   "label": "CFDI 3.3-era test RFC, common placeholder",
+   "status": "avoid",
+   "checks": [
+    "mx-rfc"
+   ],
+   "reason": "Old test certificate revoked; no longer a SAT test taxpayer.",
+   "sources": [
+    {
+     "title": "SW Sapien — CSD de pruebas vigentes",
+     "url": "https://developers.sw.com.mx/knowledge-base/donde-encuentro-csd-de-pruebas-vigentes/",
+     "publisher": "SW Sapien",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Timbox — RFCs ambiente de pruebas SAT",
+     "url": "https://www.timbox.com.mx/rfcs-ambiente-de-pruebas-sat/",
+     "publisher": "Timbox",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-tme960709lr2",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "TME960709LR2",
+   "label": "CFDI 3.3-era test RFC, common placeholder",
+   "status": "avoid",
+   "checks": [
+    "mx-rfc"
+   ],
+   "reason": "Old test certificate revoked; no longer a SAT test taxpayer.",
+   "sources": [
+    {
+     "title": "SW Sapien — CSD de pruebas vigentes",
+     "url": "https://developers.sw.com.mx/knowledge-base/donde-encuentro-csd-de-pruebas-vigentes/",
+     "publisher": "SW Sapien",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Timbox — RFCs ambiente de pruebas SAT",
+     "url": "https://www.timbox.com.mx/rfcs-ambiente-de-pruebas-sat/",
+     "publisher": "Timbox",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-aaa010101aaa",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "AAA010101AAA",
+   "label": "Common placeholder RFC",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SW Sapien — CSD de pruebas vigentes",
+     "url": "https://developers.sw.com.mx/knowledge-base/donde-encuentro-csd-de-pruebas-vigentes/",
+     "publisher": "SW Sapien",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Timbox — RFCs ambiente de pruebas SAT",
+     "url": "https://www.timbox.com.mx/rfcs-ambiente-de-pruebas-sat/",
+     "publisher": "Timbox",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-lin820625pu5",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "LIN820625PU5",
+   "label": "Example RFC in the SAT Anexo 20 guide (La Linterna S.A. de C.V.)",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-nuf150930aaa",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "NUF150930AAA",
+   "label": "Example RFC in the SAT Anexo 20 guide (Nueva Factura, S.A. de C.V.)",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-loav890607py7",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "LOAV890607PY7",
+   "label": "Example RFC in the SAT Anexo 20 guide (VICTORIOSS LOPEZ AVILA (CP 14600))",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-mkiz910508jum",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "MKIZ910508JUM",
+   "label": "Example RFC in the SAT Anexo 20 guide (MARKUZ KURI (CP 33147))",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-cabl840215rf4",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "CABL840215RF4",
+   "label": "Example RFC in the SAT Anexo 20 guide (individual, field example)",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-fima420127r44",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "FIMA420127R44",
+   "label": "Example RFC in the SAT Anexo 20 guide (individual, field example)",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-ent010101000",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "ENT010101000",
+   "label": "Example RFC in the SAT Anexo 20 guide (EENNTT (CP 75450))",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-fme170920pw1",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "FME170920PW1",
+   "label": "Example RFC in the SAT Anexo 20 guide (FIDEICOMISO MÉXICO TE NECESITA)",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-fjp831022pw1",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "FJP831022PW1",
+   "label": "Example RFC in the SAT Anexo 20 guide (FUNDACIÓN DAMNIFICADOS 0917)",
+   "status": "avoid",
+   "fails_checks": [
+    "mx-rfc"
+   ],
+   "reason": "Fails the RFC check digit.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-pal7202161u0",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "PAL7202161U0",
+   "label": "Company RFC used as a field example in the SAT Anexo 20 guide",
+   "status": "avoid",
+   "checks": [
+    "mx-rfc"
+   ],
+   "reason": "Valid check digit but ownership unknown (no open RFC lookup); could belong to a real taxpayer.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-rfc-cor391215f4a",
+   "category": "organisation",
+   "type": "RFC",
+   "value": "COR391215F4A",
+   "label": "Company RFC used as a field example in the SAT Anexo 20 guide",
+   "status": "avoid",
+   "checks": [
+    "mx-rfc"
+   ],
+   "reason": "Valid check digit but ownership unknown (no open RFC lookup); could belong to a real taxpayer.",
+   "sources": [
+    {
+     "title": "SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Guía de llenado del CFDI global",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-curp-canf770131hbcsbr08",
+   "category": "person",
+   "type": "CURP",
+   "value": "CANF770131HBCSBR08",
+   "label": "CURP of a SAT test taxpayer whose name contains Ñ",
+   "status": "avoid",
+   "reason": "Fails the CURP check digit as computed in research (RENAPO's exact rule for Ñ unverified); the RFC of the same taxpayer is fine.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-curp-ianl750210hsrnzs09",
+   "category": "person",
+   "type": "CURP",
+   "value": "IANL750210HSRNZS09",
+   "label": "CURP of a SAT test taxpayer whose name contains Ñ",
+   "status": "avoid",
+   "reason": "Fails the CURP check digit as computed in research (RENAPO's exact rule for Ñ unverified); the RFC of the same taxpayer is fine.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-curp-lini920228mocnkr04",
+   "category": "person",
+   "type": "CURP",
+   "value": "LINI920228MOCNKR04",
+   "label": "CURP of a SAT test taxpayer whose name contains Ñ",
+   "status": "avoid",
+   "reason": "Fails the CURP check digit as computed in research (RENAPO's exact rule for Ñ unverified); the RFC of the same taxpayer is fine.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-curp-raqn770121hdfmzv08",
+   "category": "person",
+   "type": "CURP",
+   "value": "RAQN770121HDFMZV08",
+   "label": "CURP of a SAT test taxpayer whose name contains Ñ",
+   "status": "avoid",
+   "reason": "Fails the CURP check digit as computed in research (RENAPO's exact rule for Ñ unverified); the RFC of the same taxpayer is fine.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-domain-pruebas-gob-mx",
+   "category": "contact",
+   "type": "Email domain",
+   "value": "pruebas.gob.mx, prueba.gob.mx",
+   "label": "Domains of the emails in the SAT test FIEL certificates",
+   "status": "avoid",
+   "reason": "Government second-level names; prueba.gob.mx is registered and pruebas.gob.mx (NXDOMAIN, 2026-11-05) could be. Use a .test domain.",
+   "sources": [
+    {
+     "title": "SAT — Certificados de sello digital (test certificates)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Facturama — CSD de pruebas (test taxpayer postcodes)",
+     "url": "https://facturama.mx/docs/es/catalogos/csds-pruebas",
+     "publisher": "Facturama",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-domain-example-com-mx",
+   "category": "contact",
+   "type": "Email domain",
+   "value": "example.com.mx, ejemplo.com.mx, ejemplo.mx, example.mx, prueba.mx",
+   "label": "Tempting Mexican example domains",
+   "status": "avoid",
+   "reason": "The first three are registered (resolve in DNS, 2026-11-05); the others are unregistered but anyone could register them. NIC México reserves nothing for examples.",
+   "sources": [
+    {
+     "title": "RFC 2606 — Reserved Top Level DNS Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc2606",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "RFC 6761 — Special-Use Domain Names",
+     "url": "https://www.rfc-editor.org/rfc/rfc6761",
+     "publisher": "IETF",
+     "accessed": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "id": "mx-avoid-postcode-real-settlements",
+   "category": "address",
+   "type": "Postcode",
+   "value": "01000, 01160, 76028",
+   "label": "Postcodes in SAT guides and test-taxpayer data",
+   "status": "avoid",
+   "reason": "Real settlements in SEPOMEX (01000 San Ángel, CDMX; 01160 Álvaro Obregón, CDMX; 76028 Col. Universidad, Querétaro). Fine for format, but not fictitious; prefer a SAT-only postcode.",
+   "sources": [
+    {
+     "title": "SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)",
+     "url": "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls",
+     "publisher": "SAT",
+     "accessed": "2026-11-05"
+    },
+    {
+     "title": "Correos de México — Catálogo Nacional de Códigos Postales",
+     "url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+     "publisher": "Correos de México (SEPOMEX)",
+     "accessed": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

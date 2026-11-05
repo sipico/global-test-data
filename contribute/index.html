@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contribute — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html" aria-current=page>Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero"><h1>Contribute</h1>
+<p class="lede">The data set grows through pull requests. A value is accepted only with a source
+that shows it is reserved or published for examples, or with a documented check that it is unassigned.</p></section>
+<section class="prose">
+<h2>What qualifies</h2>
+<ul>
+<li><b>Reserved</b> — a regulator, registry or standard formally reserves the value or range (e.g. phone numbers for drama, GS1 prefix 952).</li>
+<li><b>Official example</b> — an authority uses the value in its own published examples, and it passes the official format and check rules.</li>
+<li><b>Derived</b> — built from the official rules and checked against the official register to be unassigned. State which register and the date.</li>
+<li><b>Avoid</b> — a value that circulates as an "example" but belongs to a real entity or fails validation. These warnings are just as valuable.</li>
+</ul>
+<h2>How</h2>
+<ol>
+<li>Edit or add <code>data/&lt;country&gt;.yaml</code> (copy the structure of <a href="https://github.com/sipico/global-test-data/blob/main/data/fr.yaml">fr.yaml</a>; schema in <a href="https://github.com/sipico/global-test-data/blob/main/schema/country.schema.json">schema/country.schema.json</a>).</li>
+<li>Give every entry at least one source with a URL, preferably the authority's own page or document.</li>
+<li>List the validators the value must pass under <code>checks</code>. Add a validator to <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a> if the identifier type is new.</li>
+<li>Run <code>pip install pyyaml jsonschema</code> and <code>python tools/validate.py</code> — it must report 0 errors. The pull request runs the same check.</li>
+<li>Open a pull request. No code? <a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BXX%5D+">Suggest a value in an issue</a> instead.</li>
+</ol>
+<p>Full guide: <a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>. Contributions are published under CC0 1.0.</p>
+</section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

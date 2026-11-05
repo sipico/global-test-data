@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mexico — Global Test Data</title>
+<meta name="description" content="Country-specific example data that passes validation but belongs to no one.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">◇</span> Global Test Data</a>
+<nav><a href="../index.html">Directory</a><a href="../contribute/index.html">Contribute</a><a href="../index.html#download">Download</a><a href="https://github.com/sipico/global-test-data/tree/main">GitHub</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="../index.html">Directory</a> › Latin America</nav>
+<section class="hero country">
+<h1><span class="flag" aria-hidden="true">🇲🇽</span> Mexico <span class="native">México</span></h1>
+<p class="lede">Mexico is the best case found so far: the tax authority SAT publishes 30 official test taxpayers (15 companies, 15 individuals) with test certificates, invented names and RFCs that pass the check digit. They are accepted only by the SAT test environment and PAC sandboxes, and the certificates expire January–May 2027. The company postcodes exist only in the SAT CFDI catalogue (no real settlement). Banxico publishes an example CLABE. No reserved telephone range and no official fictitious street exist. The generic RFCs XAXX010101000 / XEXX010101000 have a legal meaning and are not test values. CFDI is not UBL; the UBL hints are for mapping only. RFC ownership cannot be checked (no open RFC lookup), and the CURP check rule for names with Ñ is unverified.</p>
+<p class="meta">Updated 2026-11-05 · searched in es, en ·
+<a href="https://github.com/sipico/global-test-data/blob/main/research/example-identifiers-mexico-colombia.md">Research notes</a> · <a href="https://github.com/sipico/global-test-data/blob/main/data/mx.yaml">Data file</a> ·
+<a href="../data/mx.json">JSON</a></p>
+<div class="stats"><span class="stat s-reserved"><b>44</b> Reserved</span><span class="stat s-published-example"><b>8</b> Official example</span><span class="stat s-derived"><b>2</b> Derived</span><span class="stat s-avoid"><b>21</b> Avoid</span></div>
+</section>
+<div class="filters" role="group" aria-label="Filter by status">
+<span>Show:</span>
+<label class="chip s-reserved"><input type="checkbox" data-filter="reserved" checked> Reserved</label><label class="chip s-published-example"><input type="checkbox" data-filter="published-example" checked> Official example</label><label class="chip s-derived"><input type="checkbox" data-filter="derived" checked> Derived</label></div>
+<section class="cat" id="organisation"><h2>Organisation <span class="count">32</span></h2><p class="muted">Company and tax identifiers, names, e-invoicing addresses</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="mx-rfc-eku9003173c9" data-status="reserved">
+<td class="val"><div class="v"><code>EKU9003173C9</code><button class="copy" type="button" data-copy="EKU9003173C9" aria-label="Copy EKU9003173C9">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer ESCUELA KEMPER URGATE SA DE CV</p><p class="note">Regime 601 General de Ley PM. In CFDI 4.0 send Nombre without the company-type suffix: ESCUELA KEMPER URGATE. Most widely used test RFC; recommended supplier. Postcode 42501 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-ewe1709045u0" data-status="reserved">
+<td class="val"><div class="v"><code>EWE1709045U0</code><button class="copy" type="button" data-copy="EWE1709045U0" aria-label="Copy EWE1709045U0">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer ESCUELA WILSON ESQUIVEL S DE CV</p><p class="note">Regime 603 Fines no lucrativos. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-he951128469" data-status="reserved">
+<td class="val"><div class="v"><code>H&amp;E951128469</code><button class="copy" type="button" data-copy="H&amp;E951128469" aria-label="Copy H&amp;E951128469">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer HERRERIA &amp; ELECTRICOS S DE CV</p><p class="note">Regime 601 General de Ley PM. Postcode 06002 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Contains &#x27;&amp;&#x27;: escape as &amp;amp; in XML. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-han930228sm9" data-status="reserved">
+<td class="val"><div class="v"><code>HAÑ930228SM9</code><button class="copy" type="button" data-copy="HAÑ930228SM9" aria-label="Copy HAÑ930228SM9">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer HERMANOS ANZURES ÑARVAEZ SA</p><p class="note">Regime 603 Fines no lucrativos. Contains &#x27;Ñ&#x27;: keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-iia040805dz4" data-status="reserved">
+<td class="val"><div class="v"><code>IIA040805DZ4</code><button class="copy" type="button" data-copy="IIA040805DZ4" aria-label="Copy IIA040805DZ4">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer INDISTRIA ILUMINADORA DE ALMACENES SA DE CV</p><p class="note">Regime 626 RESICO. Postcode 62661 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). The misspelling is in the SAT original; copy it exactly. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-ivd920810gu2" data-status="reserved">
+<td class="val"><div class="v"><code>IVD920810GU2</code><button class="copy" type="button" data-copy="IVD920810GU2" aria-label="Copy IVD920810GU2">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer INNOVACION VALOR Y DESARROLLO SA</p><p class="note">Regime 601 General de Ley PM. Recommended pick (regime 601). Postcode 63901 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-ixs7607092r5" data-status="reserved">
+<td class="val"><div class="v"><code>IXS7607092R5</code><button class="copy" type="button" data-copy="IXS7607092R5" aria-label="Copy IXS7607092R5">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer INTERNACIONAL XIMBO Y SABORES SA DE CV</p><p class="note">Regime 603 Fines no lucrativos. Postcode 23004 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-jes900109q90" data-status="reserved">
+<td class="val"><div class="v"><code>JES900109Q90</code><button class="copy" type="button" data-copy="JES900109Q90" aria-label="Copy JES900109Q90">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer JIMENEZ ESTRADA SALAS A A</p><p class="note">Regime 622 Agrícolas. Postcode 37161 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-kij0906199r1" data-status="reserved">
+<td class="val"><div class="v"><code>KIJ0906199R1</code><button class="copy" type="button" data-copy="KIJ0906199R1" aria-label="Copy KIJ0906199R1">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer KERNEL INDUSTIA JUGUETERA SA DE CV</p><p class="note">Regime 622 Agrícolas. Postcode 28971 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). The misspelling is in the SAT original; copy it exactly. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-lo950913msa" data-status="reserved">
+<td class="val"><div class="v"><code>L&amp;O950913MSA</code><button class="copy" type="button" data-copy="L&amp;O950913MSA" aria-label="Copy L&amp;O950913MSA">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer LUCES &amp; OBRAS SA DE CV</p><p class="note">Regime 626 RESICO. Postcode 60922 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Contains &#x27;&amp;&#x27;: escape as &amp;amp; in XML. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-ono120726rx3" data-status="reserved">
+<td class="val"><div class="v"><code>OÑO120726RX3</code><button class="copy" type="button" data-copy="OÑO120726RX3" aria-label="Copy OÑO120726RX3">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer ORGANICOS ÑAVEZ OSORIO S.A DE C.V SA DE CV</p><p class="note">Regime 601 General de Ley PM. Postcode 40501 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Contains &#x27;Ñ&#x27;: keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-ss051221se2" data-status="reserved">
+<td class="val"><div class="v"><code>S&amp;S051221SE2</code><button class="copy" type="button" data-copy="S&amp;S051221SE2" aria-label="Copy S&amp;S051221SE2">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer S &amp; SOFTWARE SA DE CV</p><p class="note">Regime 624 Coordinados. Contains &#x27;&amp;&#x27;: escape as &amp;amp; in XML. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-ure180429tm6" data-status="reserved">
+<td class="val"><div class="v"><code>URE180429TM6</code><button class="copy" type="button" data-copy="URE180429TM6" aria-label="Copy URE180429TM6">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer UNIVERSIDAD ROBOTICA ESPAÑOLA SA DE CV</p><p class="note">Regime 601 General de Ley PM. Recommended pick (regime 601). Postcode 86991 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-xia190128j61" data-status="reserved">
+<td class="val"><div class="v"><code>XIA190128J61</code><button class="copy" type="button" data-copy="XIA190128J61" aria-label="Copy XIA190128J61">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer XENON INDUSTRIAL ARTICLES S DE CV</p><p class="note">Regime 622 Agrícolas. Postcode 76343 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-zun920208kl4" data-status="reserved">
+<td class="val"><div class="v"><code>ZUÑ920208KL4</code><button class="copy" type="button" data-copy="ZUÑ920208KL4" aria-label="Copy ZUÑ920208KL4">Copy</button></div><div class="type">RFC (persona moral)</div></td>
+<td class="what"><p>SAT test taxpayer ZAPATERIA URTADO ÑERI SA DE CV</p><p class="note">Regime 626 RESICO. Postcode 34541 (from PAC documentation; in SAT c_CodigoPostal, not in SEPOMEX). Contains &#x27;Ñ&#x27;: keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-cacx7605101p8" data-status="reserved">
+<td class="val"><div class="v"><code>CACX7605101P8</code><button class="copy" type="button" data-copy="CACX7605101P8" aria-label="Copy CACX7605101P8">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) XOCHILT CASAS CHAVEZ</p><p class="note">Regime not listed in the SAT xlsx. CURP CACX760510MGTSHC04 (certificate serialNumber). Postcode 36257 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-canf770131pa3" data-status="reserved">
+<td class="val"><div class="v"><code>CAÑF770131PA3</code><button class="copy" type="button" data-copy="CAÑF770131PA3" aria-label="Copy CAÑF770131PA3">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) FERNANDO CASTILLO ÑABARRO</p><p class="note">Regime 616 Sin obligaciones. CURP CANF770131HBCSBR08 (certificate serialNumber) fails the CURP check digit; do not use the CURP. Contains &#x27;Ñ&#x27;: keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-funk671228ph6" data-status="reserved">
+<td class="val"><div class="v"><code>FUNK671228PH6</code><button class="copy" type="button" data-copy="FUNK671228PH6" aria-label="Copy FUNK671228PH6">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) KARLA FUENTE NOLASCO</p><p class="note">Regime 621 / 625. CURP FUNK671228MCLNLR05 (certificate serialNumber). Postcode 01160 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-ianl750210963" data-status="reserved">
+<td class="val"><div class="v"><code>IAÑL750210963</code><button class="copy" type="button" data-copy="IAÑL750210963" aria-label="Copy IAÑL750210963">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) LUIS IAN ÑUZCO</p><p class="note">Regime 608. CURP IANL750210HSRNZS09 (certificate serialNumber) fails the CURP check digit; do not use the CURP. Postcode 82525 (from PAC documentation): in the SAT catalogue only (Sinaloa). Contains &#x27;Ñ&#x27;: keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-jufa7608212v6" data-status="reserved">
+<td class="val"><div class="v"><code>JUFA7608212V6</code><button class="copy" type="button" data-copy="JUFA7608212V6" aria-label="Copy JUFA7608212V6">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) ADRIANA JUAREZ FERNANDEZ</p><p class="note">Regime 614 Intereses. CURP JUFA760821MDGRRD04 (certificate serialNumber). Postcode 01160 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-kaho641101b39" data-status="reserved">
+<td class="val"><div class="v"><code>KAHO641101B39</code><button class="copy" type="button" data-copy="KAHO641101B39" aria-label="Copy KAHO641101B39">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) OSCAR KALA HAAK</p><p class="note">Regime 626 RESICO. CURP KAHO641101HNTLKS06 (certificate serialNumber). Postcode 76074 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list). Also named as legal representative in the ZUÑ920208KL4 certificate.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-kicr630120nx3" data-status="reserved">
+<td class="val"><div class="v"><code>KICR630120NX3</code><button class="copy" type="button" data-copy="KICR630120NX3" aria-label="Copy KICR630120NX3">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) RODRIGO KITIA CASTRO</p><p class="note">Regime 626 RESICO. CURP KICR630120HGTTSD05 (certificate serialNumber). Postcode 36246 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-lini920228ks8" data-status="reserved">
+<td class="val"><div class="v"><code>LIÑI920228KS8</code><button class="copy" type="button" data-copy="LIÑI920228KS8" aria-label="Copy LIÑI920228KS8">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) IRIS LIANEZ ÑAKI</p><p class="note">Regime 605 Sueldos. CURP LINI920228MOCNKR04 (certificate serialNumber) fails the CURP check digit; do not use the CURP. Contains &#x27;Ñ&#x27;: keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-misc491214b86" data-status="reserved">
+<td class="val"><div class="v"><code>MISC491214B86</code><button class="copy" type="button" data-copy="MISC491214B86" aria-label="Copy MISC491214B86">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) CECILIA MIRANDA SANCHEZ</p><p class="note">Regime 612. CURP MISC491214MCCRNC01 (certificate serialNumber). Postcode 01010 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-raqn7701212m3" data-status="reserved">
+<td class="val"><div class="v"><code>RAQÑ7701212M3</code><button class="copy" type="button" data-copy="RAQÑ7701212M3" aria-label="Copy RAQÑ7701212M3">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) ÑEVES RAMIREZ QUEZADA</p><p class="note">Regime 605 Sueldos. CURP RAQN770121HDFMZV08 (certificate serialNumber) fails the CURP check digit; do not use the CURP. Postcode 78905 (from PAC documentation): in the SAT catalogue. Contains &#x27;Ñ&#x27;: keep files in UTF-8. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-watm640917j45" data-status="reserved">
+<td class="val"><div class="v"><code>WATM640917J45</code><button class="copy" type="button" data-copy="WATM640917J45" aria-label="Copy WATM640917J45">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) MARIA WATEMBER TORRES</p><p class="note">Regime 612. CURP WATM640917MHGTRR01 (certificate serialNumber). Postcode 43543 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-werx631016s30" data-status="reserved">
+<td class="val"><div class="v"><code>WERX631016S30</code><button class="copy" type="button" data-copy="WERX631016S30" aria-label="Copy WERX631016S30">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) XAIME WEIR ROJO</p><p class="note">Regime 625 Plataformas. CURP WERX631016HJCRJM08 (certificate serialNumber). Postcode 01279 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-xama620210dq5" data-status="reserved">
+<td class="val"><div class="v"><code>XAMA620210DQ5</code><button class="copy" type="button" data-copy="XAMA620210DQ5" aria-label="Copy XAMA620210DQ5">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) ALBA XKARAJAM MENDEZ</p><p class="note">Regime 612 / 606. CURP XAMA620210MSLKNL04 (certificate serialNumber). Postcode 01219 (from PAC documentation): real settlement (colonia in Álvaro Obregón, Ciudad de México). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-xiqb891116qe4" data-status="reserved">
+<td class="val"><div class="v"><code>XIQB891116QE4</code><button class="copy" type="button" data-copy="XIQB891116QE4" aria-label="Copy XIQB891116QE4">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) BERENICE XIMO QUEZADA</p><p class="note">Regime not listed in the SAT xlsx. CURP XIQB891116MGRMZR05 (certificate serialNumber). Postcode 40968 (from PAC documentation): in the SAT catalogue. Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list).</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-xoji740919u48" data-status="reserved">
+<td class="val"><div class="v"><code>XOJI740919U48</code><button class="copy" type="button" data-copy="XOJI740919U48" aria-label="Copy XOJI740919U48">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>SAT test taxpayer (individual) INGRID XODAR JIMENEZ</p><p class="note">Regime 612 / 605. CURP XOJI740919MQTDMN02 (certificate serialNumber). Postcode 76028 (from PAC documentation): real settlement (Col. Universidad, Querétaro). Test certificate expires January–May 2027; recheck the SAT package after that. Fails in production (not in the SAT LRFC list). Recommended for the Consumer party.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><code>cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-xaxx010101000" data-status="reserved">
+<td class="val"><div class="v"><code>XAXX010101000</code><button class="copy" type="button" data-copy="XAXX010101000" aria-label="Copy XAXX010101000">Copy</button></div><div class="type">RFC (generic)</div></td>
+<td class="what"><p>Generic RFC for the general public (anonymous domestic buyer)</p><p class="note">Legal meaning, not a test value: receiver = público en general, also used in the global CFDI summarising retail sales. Requires Nombre PUBLICO EN GENERAL, DomicilioFiscalReceptor = the issuer&#x27;s LugarExpedicion, RegimenFiscalReceptor 616 and UsoCFDI S01. The check digit does not compute; validators special-case this fixed value. Never use it as a party&#x27;s own tax ID.
+</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><code>cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+<tr id="mx-rfc-xexx010101000" data-status="reserved">
+<td class="val"><div class="v"><code>XEXX010101000</code><button class="copy" type="button" data-copy="XEXX010101000" aria-label="Copy XEXX010101000">Copy</button></div><div class="type">RFC (generic)</div></td>
+<td class="what"><p>Generic RFC for a foreign resident without a Mexican RFC</p><p class="note">Legal meaning, not a test value: use only for a foreign receiver (e.g. an export invoice), with RegimenFiscalReceptor 616, UsoCFDI S01, ResidenciaFiscal and NumRegIdTrib. The check digit happens to compute. Never use it as a party&#x27;s own tax ID.
+</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><code>cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="address"><h2>Address <span class="count">5</span></h2><p class="muted">Postal addresses, postcodes, towns</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="mx-postcode-42501" data-status="published-example">
+<td class="val"><div class="v"><code>42501</code><button class="copy" type="button" data-copy="42501" aria-label="Copy 42501">Copy</button></div><div class="type">Postcode</div></td>
+<td class="what"><p>SAT-only postcode (Hidalgo) of test taxpayer EKU9003173C9</p><p class="note">Passes CFDI validation but has no municipality or settlement, so it cannot point to a real address. Sovos/Reachcore gives the older value 26015 for this taxpayer.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ In SAT c_CodigoPostal (catalogue 2026-10-29), not in the SEPOMEX catalogue (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls" rel="noopener">SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)</a> <span class="muted">— SAT</span></li><li><a href="https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx" rel="noopener">Correos de México — Catálogo Nacional de Códigos Postales</a> <span class="muted">— Correos de México (SEPOMEX)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-postcode-63901" data-status="published-example">
+<td class="val"><div class="v"><code>63901</code><button class="copy" type="button" data-copy="63901" aria-label="Copy 63901">Copy</button></div><div class="type">Postcode</div></td>
+<td class="what"><p>SAT-only postcode (Nayarit) of test taxpayer IVD920810GU2</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ In SAT c_CodigoPostal (catalogue 2026-10-29), not in the SEPOMEX catalogue (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls" rel="noopener">SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)</a> <span class="muted">— SAT</span></li><li><a href="https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx" rel="noopener">Correos de México — Catálogo Nacional de Códigos Postales</a> <span class="muted">— Correos de México (SEPOMEX)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-postcode-86991" data-status="published-example">
+<td class="val"><div class="v"><code>86991</code><button class="copy" type="button" data-copy="86991" aria-label="Copy 86991">Copy</button></div><div class="type">Postcode</div></td>
+<td class="what"><p>SAT-only postcode (Tabasco) of test taxpayer URE180429TM6</p><p class="note">The other test-company postcodes (06002, 23004, 28971, 34541, 37161, 40501, 60922, 62661, 76343) are also SAT-only.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ver">✓ In SAT c_CodigoPostal (catalogue 2026-10-29), not in the SEPOMEX catalogue (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls" rel="noopener">SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)</a> <span class="muted">— SAT</span></li><li><a href="https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx" rel="noopener">Correos de México — Catálogo Nacional de Códigos Postales</a> <span class="muted">— Correos de México (SEPOMEX)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-postcode-unused-17-19" data-status="derived">
+<td class="val"><div class="v"><code>17xxx, 18xxx, 19xxx</code></div><div class="type">Postcode range <span class="kind">range</span></div></td>
+<td class="what"><p>First two digits used in neither the SAT nor the SEPOMEX catalogue</p><p class="note">Pass a 5-digit format check but FAIL CFDI validation. For CFDI samples use a SAT-only postcode instead. 00xxx is also unused except 00004 (SAT only).</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Checked against SAT c_CodigoPostal (95,749 codes, 2026-10-29) and SEPOMEX (31,869 codes, file 2026-11-03) (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls" rel="noopener">SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)</a> <span class="muted">— SAT</span></li><li><a href="https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx" rel="noopener">Correos de México — Catálogo Nacional de Códigos Postales</a> <span class="muted">— Correos de México (SEPOMEX)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-postcode-00000" data-status="derived">
+<td class="val"><div class="v"><code>00000</code><button class="copy" type="button" data-copy="00000" aria-label="Copy 00000">Copy</button></div><div class="type">Postcode</div></td>
+<td class="what"><p>Postcode in neither the SAT nor the SEPOMEX catalogue</p><p class="note">Fails CFDI validation. 99999 is NOT a safe alternative (it is in the SAT catalogue, Zacatecas).</p></td>
+<td><span class="badge s-derived" title="Built from the official format rules and checked to be unassigned.">Derived</span></td>
+<td class="checks"><span class="chk ver">✓ Not in SAT c_CodigoPostal or SEPOMEX (2026-11-05)</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls" rel="noopener">SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)</a> <span class="muted">— SAT</span></li><li><a href="https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx" rel="noopener">Correos de México — Catálogo Nacional de Códigos Postales</a> <span class="muted">— Correos de México (SEPOMEX)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="contact"><h2>Contact <span class="count">1</span></h2><p class="muted">Telephone numbers, email addresses, domains</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="mx-email-escuela-kemper-test" data-status="reserved">
+<td class="val"><div class="v"><code>facturacion@escuela-kemper.test</code><button class="copy" type="button" data-copy="facturacion@escuela-kemper.test" aria-label="Copy facturacion@escuela-kemper.test">Copy</button></div><div class="type">Email address</div></td>
+<td class="what"><p>Billing email on the reserved .test top-level domain</p><p class="note">Pattern &lt;role&gt;@&lt;alias&gt;.test. NIC México reserves no .mx name for examples.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="Reserved example domain (RFC 2606/6761, JPRS)">✓ reserved-domain</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="banking"><h2>Banking <span class="count">1</span></h2><p class="muted">IBAN, account numbers, bank codes, BIC</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="mx-clabe-002180032240946700" data-status="published-example">
+<td class="val"><div class="v"><code>002180032240946700</code><button class="copy" type="button" data-copy="002180032240946700" aria-label="Copy 002180032240946700">Copy</button></div><div class="type">CLABE</div></td>
+<td class="what"><p>Example CLABE in Banxico Circular 12/2018 (check-digit annex)</p><p class="note">Bank code 002 is a real bank (Banamex); the account part is fictitious.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CLABE weighted mod-10">✓ mx-clabe</span></td>
+<td><ul class="src"><li><a href="https://www.banxico.org.mx/marco-normativo/normativa-emitida-por-el-banco-de-mexico/circular-12-2018/%7BA6023AE0-8135-44ED-04DA-2068117ED5FD%7D.pdf" rel="noopener">Banxico — Circular 12/2018 (CLABE check digit annex)</a> <span class="muted">— Banco de México</span></li></ul></td>
+<td class="ubl"><code>cac:PayeeFinancialAccount/cbc:ID</code></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="trade"><h2>Trade &amp; logistics <span class="count">1</span></h2><p class="muted">Location numbers, customs, transport codes</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="mx-pedimento-10-47-3807-8003832" data-status="published-example">
+<td class="val"><div class="v"><code>10  47  3807  8003832</code><button class="copy" type="button" data-copy="10  47  3807  8003832" aria-label="Copy 10  47  3807  8003832">Copy</button></div><div class="type">Pedimento number</div></td>
+<td class="what"><p>Customs declaration number in the SAT Anexo 20 guide</p><p class="note">Used in InformacionAduanera/NumeroPedimento, with two spaces between groups. Customs office 47 (Aeropuerto Internacional de la Ciudad de México) and broker licence 3807 exist in c_PatenteAduanal and c_NumPedimentoAduana. Inconsistent: year 10 but the last group starts with 8.
+</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="person"><h2>Person <span class="count">13</span></h2><p class="muted">Personal identifiers for consumer examples</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="mx-rfc-vada800927dj3" data-status="published-example">
+<td class="val"><div class="v"><code>VADA800927DJ3</code><button class="copy" type="button" data-copy="VADA800927DJ3" aria-label="Copy VADA800927DJ3">Copy</button></div><div class="type">RFC (persona física)</div></td>
+<td class="what"><p>Legal representative named in the SAT test company certificates</p><p class="note">CURP VADA800927HSRSRL05 (check digit verified in research). Useful as an example contact person. ZUÑ920208KL4 names KAHO641101B39 instead.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-vada800927hsrsrl05" data-status="published-example">
+<td class="val"><div class="v"><code>VADA800927HSRSRL05</code><button class="copy" type="button" data-copy="VADA800927HSRSRL05" aria-label="Copy VADA800927HSRSRL05">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of the legal representative in the SAT test company certificates</p><p class="note">Belongs to RFC VADA800927DJ3. Check digit verified in research; no validator in tools/checks.py yet.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-cacx760510mgtshc04" data-status="reserved">
+<td class="val"><div class="v"><code>CACX760510MGTSHC04</code><button class="copy" type="button" data-copy="CACX760510MGTSHC04" aria-label="Copy CACX760510MGTSHC04">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer XOCHILT CASAS CHAVEZ</p><p class="note">Belongs to test RFC CACX7605101P8. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-funk671228mclnlr05" data-status="reserved">
+<td class="val"><div class="v"><code>FUNK671228MCLNLR05</code><button class="copy" type="button" data-copy="FUNK671228MCLNLR05" aria-label="Copy FUNK671228MCLNLR05">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer KARLA FUENTE NOLASCO</p><p class="note">Belongs to test RFC FUNK671228PH6. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-jufa760821mdgrrd04" data-status="reserved">
+<td class="val"><div class="v"><code>JUFA760821MDGRRD04</code><button class="copy" type="button" data-copy="JUFA760821MDGRRD04" aria-label="Copy JUFA760821MDGRRD04">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer ADRIANA JUAREZ FERNANDEZ</p><p class="note">Belongs to test RFC JUFA7608212V6. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-kaho641101hntlks06" data-status="reserved">
+<td class="val"><div class="v"><code>KAHO641101HNTLKS06</code><button class="copy" type="button" data-copy="KAHO641101HNTLKS06" aria-label="Copy KAHO641101HNTLKS06">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer OSCAR KALA HAAK</p><p class="note">Belongs to test RFC KAHO641101B39. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-kicr630120hgttsd05" data-status="reserved">
+<td class="val"><div class="v"><code>KICR630120HGTTSD05</code><button class="copy" type="button" data-copy="KICR630120HGTTSD05" aria-label="Copy KICR630120HGTTSD05">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer RODRIGO KITIA CASTRO</p><p class="note">Belongs to test RFC KICR630120NX3. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-misc491214mccrnc01" data-status="reserved">
+<td class="val"><div class="v"><code>MISC491214MCCRNC01</code><button class="copy" type="button" data-copy="MISC491214MCCRNC01" aria-label="Copy MISC491214MCCRNC01">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer CECILIA MIRANDA SANCHEZ</p><p class="note">Belongs to test RFC MISC491214B86. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-watm640917mhgtrr01" data-status="reserved">
+<td class="val"><div class="v"><code>WATM640917MHGTRR01</code><button class="copy" type="button" data-copy="WATM640917MHGTRR01" aria-label="Copy WATM640917MHGTRR01">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer MARIA WATEMBER TORRES</p><p class="note">Belongs to test RFC WATM640917J45. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-werx631016hjcrjm08" data-status="reserved">
+<td class="val"><div class="v"><code>WERX631016HJCRJM08</code><button class="copy" type="button" data-copy="WERX631016HJCRJM08" aria-label="Copy WERX631016HJCRJM08">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer XAIME WEIR ROJO</p><p class="note">Belongs to test RFC WERX631016S30. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-xama620210mslknl04" data-status="reserved">
+<td class="val"><div class="v"><code>XAMA620210MSLKNL04</code><button class="copy" type="button" data-copy="XAMA620210MSLKNL04" aria-label="Copy XAMA620210MSLKNL04">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer ALBA XKARAJAM MENDEZ</p><p class="note">Belongs to test RFC XAMA620210DQ5. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-xiqb891116mgrmzr05" data-status="reserved">
+<td class="val"><div class="v"><code>XIQB891116MGRMZR05</code><button class="copy" type="button" data-copy="XIQB891116MGRMZR05" aria-label="Copy XIQB891116MGRMZR05">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer BERENICE XIMO QUEZADA</p><p class="note">Belongs to test RFC XIQB891116QE4. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-curp-xoji740919mqtdmn02" data-status="reserved">
+<td class="val"><div class="v"><code>XOJI740919MQTDMN02</code><button class="copy" type="button" data-copy="XOJI740919MQTDMN02" aria-label="Copy XOJI740919MQTDMN02">Copy</button></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of SAT test taxpayer INGRID XODAR JIMENEZ</p><p class="note">Belongs to test RFC XOJI740919U48. Check digit verified in research (RENAPO algorithm); no validator in tools/checks.py yet. Test certificate expires January–May 2027.</p></td>
+<td><span class="badge s-reserved" title="An authority formally reserves this value or range for fiction, examples or tests.">Reserved</span></td>
+<td class="checks"><span class="chk ok" title="CURP check digit (RENAPO; Ñ handling unverified)">✓ mx-curp</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="other"><h2>Other <span class="count">1</span></h2><p class="muted">Everything else</p><div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="mx-numregidtrib-usa-121585958" data-status="published-example">
+<td class="val"><div class="v"><code>121585958</code><button class="copy" type="button" data-copy="121585958" aria-label="Copy 121585958">Copy</button></div><div class="type">Foreign tax ID (NumRegIdTrib)</div></td>
+<td class="what"><p>Foreign tax registration number with ResidenciaFiscal USA in the Anexo 20 guide</p><p class="note">Used with XEXX010101000 for a foreign receiver.</p></td>
+<td><span class="badge s-published-example" title="Published by an authority in its own examples. The Checks column shows whether it passes validation.">Official example</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="cat" id="identifiers"><h2>Identifier rules</h2>
+<p class="muted">Formats and check algorithms. Validators live in <a href="https://github.com/sipico/global-test-data/blob/main/tools/checks.py">tools/checks.py</a>.</p>
+<div class="tbl"><table><thead><tr><th>Identifier</th><th>Format</th><th>Validator</th><th>Authority</th><th>UBL</th></tr></thead>
+<tbody><tr><td><b>RFC persona moral (company tax ID)</b><p class="note">Homoclave is computed by the SAT from the full name and cannot be reproduced; do not derive new RFCs. In CFDI 4.0 the receiver Nombre is sent without the company-type suffix.</p></td><td>12 characters — 3 letters (name, may include &amp; and Ñ) + YYMMDD (incorporation) + 2-character homoclave + check digit</td><td><code title="RFC homoclave check digit">mx-rfc</code></td><td>SAT</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code><code>cac:PartyLegalEntity/cbc:CompanyID</code></td></tr><tr><td><b>RFC persona física (individual tax ID)</b><p class="note">Check digit: alphabet 0-9 A-N &amp; O-Z (space) Ñ = values 0–38; a 12-character RFC is padded with a leading space; sum value × weight (13…2) over 12 positions; 11 − (sum mod 11), 11 → 0, 10 → A.</p></td><td>13 characters — 4 letters + YYMMDD (birth) + 2-character homoclave + check digit</td><td><code title="RFC homoclave check digit">mx-rfc</code></td><td>SAT</td><td class='ubl'><code>cac:PartyTaxScheme/cbc:CompanyID</code></td></tr><tr><td><b>CURP (personal population registry key)</b><p class="note">Check digit: alphabet 0-9 A-N Ñ O-Z, weights 18…2, 10 − (sum mod 10), 10 → 0. No validator in tools/checks.py yet; the rule for names with Ñ is unverified.</p></td><td>18 characters — 4 letters + YYMMDD + sex (H/M) + 2-letter state + 3 internal consonants + differentiator + check digit</td><td><span class="muted">—</span></td><td>RENAPO</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>CLABE (standardised bank account number)</b><p class="note">Weights 3 7 1 repeating over 17 digits, each product mod 10, check digit = (10 − sum mod 10) mod 10 (Circular 12/2018). Mexico has no IBAN.</p></td><td>18 digits — 3 bank + 3 plaza + 11 account + 1 check digit</td><td><code title="CLABE weighted mod-10">mx-clabe</code></td><td>Banco de México</td><td class='ubl'><code>cac:PayeeFinancialAccount/cbc:ID</code></td></tr><tr><td><b>Pedimento (customs declaration number)</b></td><td>year (2) · customs office (2) · broker licence (4) · last digit of year + 6-digit sequence, groups separated by two spaces</td><td><span class="muted">—</span></td><td>SAT / Agencia Nacional de Aduanas de México</td><td class='ubl'><span class=muted>—</span></td></tr><tr><td><b>Código postal</b><p class="note">The SAT catalogue has 95,749 codes against SEPOMEX&#x27;s 31,869; codes in SAT only pass CFDI validation but have no real settlement.</p></td><td>5 digits</td><td><span class="muted">—</span></td><td>Correos de México (SEPOMEX); SAT c_CodigoPostal for CFDI validation</td><td class='ubl'><span class=muted>—</span></td></tr></tbody></table></div></section>
+<section class="cat avoid" id="avoid"><h2>Do not use <span class="count">21</span></h2>
+<p class="muted">These values circulate as "examples" but belong to real organisations or people, or fail validation.</p>
+<div class="tbl"><table>
+<thead><tr><th>Value</th><th>What it is</th><th>Status</th><th>Checks</th><th>Source</th><th>UBL</th></tr></thead>
+<tbody>
+<tr id="mx-avoid-rfc-lan7008173r5" data-status="avoid">
+<td class="val"><div class="v"><code>LAN7008173R5</code></div><div class="type">RFC</div></td>
+<td class="what"><p>CFDI 3.3-era test RFC, common placeholder</p><p class="note warn">Old test certificate revoked; no longer a SAT test taxpayer.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="https://developers.sw.com.mx/knowledge-base/donde-encuentro-csd-de-pruebas-vigentes/" rel="noopener">SW Sapien — CSD de pruebas vigentes</a> <span class="muted">— SW Sapien</span></li><li><a href="https://www.timbox.com.mx/rfcs-ambiente-de-pruebas-sat/" rel="noopener">Timbox — RFCs ambiente de pruebas SAT</a> <span class="muted">— Timbox</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-tme960709lr2" data-status="avoid">
+<td class="val"><div class="v"><code>TME960709LR2</code></div><div class="type">RFC</div></td>
+<td class="what"><p>CFDI 3.3-era test RFC, common placeholder</p><p class="note warn">Old test certificate revoked; no longer a SAT test taxpayer.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="https://developers.sw.com.mx/knowledge-base/donde-encuentro-csd-de-pruebas-vigentes/" rel="noopener">SW Sapien — CSD de pruebas vigentes</a> <span class="muted">— SW Sapien</span></li><li><a href="https://www.timbox.com.mx/rfcs-ambiente-de-pruebas-sat/" rel="noopener">Timbox — RFCs ambiente de pruebas SAT</a> <span class="muted">— Timbox</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-aaa010101aaa" data-status="avoid">
+<td class="val"><div class="v"><code>AAA010101AAA</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Common placeholder RFC</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="https://developers.sw.com.mx/knowledge-base/donde-encuentro-csd-de-pruebas-vigentes/" rel="noopener">SW Sapien — CSD de pruebas vigentes</a> <span class="muted">— SW Sapien</span></li><li><a href="https://www.timbox.com.mx/rfcs-ambiente-de-pruebas-sat/" rel="noopener">Timbox — RFCs ambiente de pruebas SAT</a> <span class="muted">— Timbox</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-lin820625pu5" data-status="avoid">
+<td class="val"><div class="v"><code>LIN820625PU5</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (La Linterna S.A. de C.V.)</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-nuf150930aaa" data-status="avoid">
+<td class="val"><div class="v"><code>NUF150930AAA</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (Nueva Factura, S.A. de C.V.)</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-loav890607py7" data-status="avoid">
+<td class="val"><div class="v"><code>LOAV890607PY7</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (VICTORIOSS LOPEZ AVILA (CP 14600))</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-mkiz910508jum" data-status="avoid">
+<td class="val"><div class="v"><code>MKIZ910508JUM</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (MARKUZ KURI (CP 33147))</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-cabl840215rf4" data-status="avoid">
+<td class="val"><div class="v"><code>CABL840215RF4</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (individual, field example)</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-fima420127r44" data-status="avoid">
+<td class="val"><div class="v"><code>FIMA420127R44</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (individual, field example)</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-ent010101000" data-status="avoid">
+<td class="val"><div class="v"><code>ENT010101000</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (EENNTT (CP 75450))</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-fme170920pw1" data-status="avoid">
+<td class="val"><div class="v"><code>FME170920PW1</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (FIDEICOMISO MÉXICO TE NECESITA)</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-fjp831022pw1" data-status="avoid">
+<td class="val"><div class="v"><code>FJP831022PW1</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Example RFC in the SAT Anexo 20 guide (FUNDACIÓN DAMNIFICADOS 0917)</p><p class="note warn">Fails the RFC check digit.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk bad" title="RFC homoclave check digit">✗ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-pal7202161u0" data-status="avoid">
+<td class="val"><div class="v"><code>PAL7202161U0</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Company RFC used as a field example in the SAT Anexo 20 guide</p><p class="note warn">Valid check digit but ownership unknown (no open RFC lookup); could belong to a real taxpayer.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-rfc-cor391215f4a" data-status="avoid">
+<td class="val"><div class="v"><code>COR391215F4A</code></div><div class="type">RFC</div></td>
+<td class="what"><p>Company RFC used as a field example in the SAT Anexo 20 guide</p><p class="note warn">Valid check digit but ownership unknown (no open RFC lookup); could belong to a real taxpayer.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="chk ok" title="RFC homoclave check digit">✓ mx-rfc</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo_20_Guia_de_llenado_CFDI.pdf" rel="noopener">SAT — Anexo 20, Guía de llenado de los CFDI (CFDI 4.0)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_CFDI_global.pdf" rel="noopener">SAT — Guía de llenado del CFDI global</a> <span class="muted">— SAT</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-curp-canf770131hbcsbr08" data-status="avoid">
+<td class="val"><div class="v"><code>CANF770131HBCSBR08</code></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of a SAT test taxpayer whose name contains Ñ</p><p class="note warn">Fails the CURP check digit as computed in research (RENAPO&#x27;s exact rule for Ñ unverified); the RFC of the same taxpayer is fine.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-curp-ianl750210hsrnzs09" data-status="avoid">
+<td class="val"><div class="v"><code>IANL750210HSRNZS09</code></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of a SAT test taxpayer whose name contains Ñ</p><p class="note warn">Fails the CURP check digit as computed in research (RENAPO&#x27;s exact rule for Ñ unverified); the RFC of the same taxpayer is fine.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-curp-lini920228mocnkr04" data-status="avoid">
+<td class="val"><div class="v"><code>LINI920228MOCNKR04</code></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of a SAT test taxpayer whose name contains Ñ</p><p class="note warn">Fails the CURP check digit as computed in research (RENAPO&#x27;s exact rule for Ñ unverified); the RFC of the same taxpayer is fine.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-curp-raqn770121hdfmzv08" data-status="avoid">
+<td class="val"><div class="v"><code>RAQN770121HDFMZV08</code></div><div class="type">CURP</div></td>
+<td class="what"><p>CURP of a SAT test taxpayer whose name contains Ñ</p><p class="note warn">Fails the CURP check digit as computed in research (RENAPO&#x27;s exact rule for Ñ unverified); the RFC of the same taxpayer is fine.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-domain-pruebas-gob-mx" data-status="avoid">
+<td class="val"><div class="v"><code>pruebas.gob.mx, prueba.gob.mx</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Domains of the emails in the SAT test FIEL certificates</p><p class="note warn">Government second-level names; prueba.gob.mx is registered and pruebas.gob.mx (NXDOMAIN, 2026-11-05) could be. Use a .test domain.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/paginas/certificado_sello_digital.htm" rel="noopener">SAT — Certificados de sello digital (test certificates)</a> <span class="muted">— SAT</span></li><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Certificados_de_Prueba.zip" rel="noopener">SAT — Certificados_de_Prueba.zip (test CSD/FIEL certificates and Caracteristicas fiscales de RFC.xlsx)</a> <span class="muted">— SAT</span></li><li><a href="https://facturama.mx/docs/es/catalogos/csds-pruebas" rel="noopener">Facturama — CSD de pruebas (test taxpayer postcodes)</a> <span class="muted">— Facturama</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-domain-example-com-mx" data-status="avoid">
+<td class="val"><div class="v"><code>example.com.mx, ejemplo.com.mx, ejemplo.mx, example.mx, prueba.mx</code></div><div class="type">Email domain</div></td>
+<td class="what"><p>Tempting Mexican example domains</p><p class="note warn">The first three are registered (resolve in DNS, 2026-11-05); the others are unregistered but anyone could register them. NIC México reserves nothing for examples.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="https://www.rfc-editor.org/rfc/rfc2606" rel="noopener">RFC 2606 — Reserved Top Level DNS Names</a> <span class="muted">— IETF</span></li><li><a href="https://www.rfc-editor.org/rfc/rfc6761" rel="noopener">RFC 6761 — Special-Use Domain Names</a> <span class="muted">— IETF</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+<tr id="mx-avoid-postcode-real-settlements" data-status="avoid">
+<td class="val"><div class="v"><code>01000, 01160, 76028</code></div><div class="type">Postcode</div></td>
+<td class="what"><p>Postcodes in SAT guides and test-taxpayer data</p><p class="note warn">Real settlements in SEPOMEX (01000 San Ángel, CDMX; 01160 Álvaro Obregón, CDMX; 76028 Col. Universidad, Querétaro). Fine for format, but not fictitious; prefer a SAT-only postcode.</p></td>
+<td><span class="badge s-avoid" title="Circulates as an example but belongs to a real entity or fails validation.">Avoid</span></td>
+<td class="checks"><span class="muted">—</span></td>
+<td><ul class="src"><li><a href="http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/catCFDI_V_4_20261029.xls" rel="noopener">SAT — catálogos CFDI 4.0 (catCFDI_V_4_20261029.xls, c_CodigoPostal)</a> <span class="muted">— SAT</span></li><li><a href="https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx" rel="noopener">Correos de México — Catálogo Nacional de Códigos Postales</a> <span class="muted">— Correos de México (SEPOMEX)</span></li></ul></td>
+<td class="ubl"><span class="muted">—</span></td>
+</tr>
+</tbody></table></div></section>
+<section class="suggest"><h2>Know a better source?</h2>
+<p>Suggest a value for Mexico with its official source:
+<a href="https://github.com/sipico/global-test-data/issues/new?template=suggest-data.yml&amp;title=%5BMX%5D+&amp;country=MX">open an issue</a> or
+<a href="https://github.com/sipico/global-test-data/blob/main/CONTRIBUTING.md">send a pull request</a>.</p></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<p>Data: <a href="https://github.com/sipico/global-test-data/blob/main/LICENSE">CC0 1.0</a> — free to copy into tests and documentation.
+Every value cites its source. Values are believed not to belong to any real person or
+organisation; check before relying on one, and <a href="https://github.com/sipico/global-test-data/issues">report problems</a>.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>
